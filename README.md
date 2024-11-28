@@ -14,7 +14,7 @@ Please refer to the original ESRI method for pluggin installation:
 
 ## Latest Version
 
-Please download the latest version from the [Release page](https://github.com/NRCan/XXXXX/Release).
+Please download the latest version from the [Release page](https://github.com/NRCan/GSC-Bedrock-Data-Model-and-Tools/releases).
 
 ## References
 
@@ -63,7 +63,7 @@ Veuillez-vous référer au document d'origine d'ESRI en ce qui concerne l'instal
 
 ## Dernière version
 
-Veuillez télécharger la dernière version depuis la [page des versions](https://github.com/NRCan/XXXXX/Release).
+Veuillez télécharger la dernière version depuis la [page des versions](https://github.com/NRCan/GSC-Bedrock-Data-Model-and-Tools/releases).
 
 ## Références
 
