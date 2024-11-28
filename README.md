@@ -28,6 +28,7 @@ The current tool supports File Geodatabases (.gbd) only.
 ## Contacts
 
 Gabriel Huot-Vézina: gabriel.huot-vezina@nrcan-rncan.gc.ca
+
 Étienne Girard: etienne.girard@nrcan-rncan.gc.ca
 
 ### How to Contribute
@@ -37,7 +38,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 ### License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
-[Licence document](LIC-4026-Legend-Renderer-CC-BY-NC-English.pdf)
+[Licence document](LICENCE.txt)
 
 The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see [Federal identity requirements](https://www.canada.ca/en/treasury-board-secretariat/topics/government-communications/federal-identity-requirements.html).
 
@@ -77,6 +78,7 @@ Les outils supportent les fichiers de type File Geodatabase (.gdb) seulement.
 ## Contacts
 
 Gabriel Huot-Vézina: gabriel.huot-vezina@nrcan-rncan.gc.ca
+
 Étienne Girard: etienne.girard@nrcan-rncan.gc.ca
 
 ### Comment contribuer
