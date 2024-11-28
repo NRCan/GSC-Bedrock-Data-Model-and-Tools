@@ -1,0 +1,94 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE;RELATEDTO
+1;1001;bedding;bedding;
+2;1003;igneous layering;igneous layering;
+3;1004;igneous layering, pillows;igneous layering, pillows;
+4;1005;flow layering;flow layering;
+5;1006;compositional layering;compositional layering;
+6;1007;crossbed foreset;cross-bed foreset;
+7;1008;contact;contact;
+8;1009;dyke margin;dyke margin;
+9;1010;sill margin;sill margin;
+10;1011;vein margin;vein margin;
+11;1012;joint;joint;
+12;1013;fracture;fracture;
+13;1014;fracture zone margin;fracture zone margin;
+14;1015;fault plane, unknown sense;fault plane, unknown sense;
+15;1016;fault plane, normal;fault plane, normal;
+16;1017;fault plane, reverse;fault plane, reverse;
+17;1018;fault plane, thrust;fault plane, thrust;
+18;1019;fault plane, dextral;fault plane, dextral;
+19;1020;fault plane, sinistral;fault plane, sinistral;
+20;1021;fault plane, oblique;fault plane, oblique;
+21;1022;shear band, unknown sense;shear band, unknown sense;
+22;1023;shear band, normal;shear band, normal;
+23;1024;shear band, reverse;shear band, reverse;
+24;1025;shear band, dextral;shear band, dextral;
+25;1026;shear band, sinistral;shear band, sinistral;
+26;1027;shear zone, unknown sense;shear zone, unknown sense;
+27;1028;shear zone, normal;shear zone, normal;
+28;1029;shear zone, reverse;shear zone, reverse;
+29;1030;shear zone, dextral;shear zone, dextral;
+30;1031;shear zone, sinistral;shear zone, sinistral;
+31;1032;shear zone, dextral-normal;shear zone, dextral-normal;
+32;1033;shear zone, dextral-reverse;shear zone, dextral-reverse;
+33;1034;shear zone, sinistral-normal;shear zone, sinistral-normal;
+34;1035;shear zone, sinistral-reverse;shear zone, sinistral-reverse;
+35;1036;axial plane;axial plane;
+36;1039;axial plane, crenulation;axial plane, crenulation;
+37;1040;axial plane, kink-band;axial plane, kink band;
+38;1041;axial plane, minor S fold;axial plane, S-kink;
+39;1042;axial plane, minor Z fold;axial plane, Z-kink;
+40;1044;axial plane, transposition fold;axial plane, transpos'n fold;
+41;1045;cleavage;cleavage;
+42;1046;cleavage, slaty;cleavage, slaty;
+43;1047;cleavage, spaced;cleavage, spaced;
+44;1048;cleavage, crenulation;cleavage, crenulation;
+45;1049;schistosity;schistosity;
+46;1050;gneissosity;gneissosity;
+47;1051;foliation;foliation;
+48;1052;foliation, mylonitic;foliation, mylonitic;
+49;1053;foliation, transposed bedding;foliation, transposed bedding;
+50;1054;banding;banding;
+51;1999;other, see remarks;other, see comment field;
+52;1002;eutaxitic layering;eutaxitic layering;
+53;1040;axial plane, kink-band;kink-band;
+54;1037;axial plane, anticline;anticline;
+55;1041;axial plane, minor S fold;minor S fold;
+56;1042;axial plane, minor Z fold;minor Z fold;
+57;1052;foliation, mylonitic;mylonitic;
+58;1065;fault plane, sinistral contractional;sinistral contractional;
+59;1064;fault plane, sinistral extensional;sinistral extensional;
+60;1034;shear zone, sinistral-normal;sinistral-normal;
+61;1035;shear zone, sinistral-reverse;sinistral-reverse;
+62;1055;stylolitic surface;stylolitic surface;
+63;1038;axial plane, syncline;syncline;
+64;1018;fault plane, thrust;thrust;
+65;1053;foliation, transposed bedding;transposed bedding;
+66;1044;axial plane, transposition fold;transposition fold;
+67;1043;axial plane, minor U fold;minor U fold;
+68;1039;axial plane, crenulation;crenulation;
+69;1063;fault plane, dextral contractional;dextral contractional;
+70;1062;fault plane, dextral extensional;dextral extensional;
+71;1032;shear zone, dextral-normal;dextral-normal;
+72;1033;shear zone, dextral-reverse;dextral-reverse;
+73;1019;fault plane, dextral;dextral;fault plane
+74;1025;shear band, dextral;dextral;shear band
+75;1030;shear zone, dextral;dextral;shear zone
+76;1056;fault plane, horizontal;horizontal;fault plane
+77;1058;shear band, horizontal;horizontal;shear band
+78;1060;shear zone, horizontal;horizontal;shear zone
+79;1016;fault plane, normal;normal;fault plane
+80;1023;shear band, normal;normal;shear band
+81;1028;shear zone, normal;normal;shear zone
+82;1017;fault plane, reverse;reverse;fault plane
+83;1024;shear band, reverse;reverse;shear band
+84;1029;shear zone, reverse;reverse;shear zone
+85;1020;fault plane, sinistral;sinistral;fault plane
+86;1026;shear band, sinistral;sinistral;shear band
+87;1031;shear zone, sinistral;sinistral;shear zone
+88;1015;fault plane, unknown sense;unknown sense;fault plane
+89;1022;shear band, unknown sense;unknown sense;shear band
+90;1027;shear zone, unknown sense;unknown sense;shear zone
+91;1057;fault plane, vertical dip-slip;vertical dip-slip;fault plane
+92;1059;shear band, vertical dip-slip;vertical dip-slip;shear band
+93;1061;shear zone, vertical dip-slip;vertical dip-slip;shear zone

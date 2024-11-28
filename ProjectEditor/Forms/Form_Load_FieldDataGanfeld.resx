@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_CancelAddGanfeldData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 112</value>
+  </data>
+  <data name="btn_CancelAddGanfeldData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_CancelAddGanfeldData.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btn_CancelAddGanfeldData.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btn_CancelAddGanfeldData.Name" xml:space="preserve">
+    <value>btn_CancelAddGanfeldData</value>
+  </data>
+  <data name="&gt;&gt;btn_CancelAddGanfeldData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_CancelAddGanfeldData.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_CancelAddGanfeldData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_ImportGanfeld.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btn_ImportGanfeld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 112</value>
+  </data>
+  <data name="btn_ImportGanfeld.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ImportGanfeld.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btn_ImportGanfeld.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="&gt;&gt;btn_ImportGanfeld.Name" xml:space="preserve">
+    <value>btn_ImportGanfeld</value>
+  </data>
+  <data name="&gt;&gt;btn_ImportGanfeld.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ImportGanfeld.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_ImportGanfeld.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_GanDB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_GanDB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 16</value>
+  </data>
+  <data name="label_GanDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 13</value>
+  </data>
+  <data name="label_GanDB.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label_GanDB.Text" xml:space="preserve">
+    <value>Input Field Geodatabase (GanFeld Database)</value>
+  </data>
+  <data name="&gt;&gt;label_GanDB.Name" xml:space="preserve">
+    <value>label_GanDB</value>
+  </data>
+  <data name="&gt;&gt;label_GanDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_GanDB.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_GanDB.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_GanShapes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_GanShapes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 58</value>
+  </data>
+  <data name="label_GanShapes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 13</value>
+  </data>
+  <data name="label_GanShapes.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_GanShapes.Text" xml:space="preserve">
+    <value>Input Data Folder (GanFeld Shapefiles)</value>
+  </data>
+  <data name="&gt;&gt;label_GanShapes.Name" xml:space="preserve">
+    <value>label_GanShapes</value>
+  </data>
+  <data name="&gt;&gt;label_GanShapes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_GanShapes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_GanShapes.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_SelectGanShapeFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAB0UlEQVQ4T5XR30uaURgH8PMX
+        DP+Bwe53o3QRYyUFoSsIrO1uN0E1ZBfb3M023MILR+WFC5spLdNt1VbmlIycGGriRkVOdP4ovLBNy/0Q
+        DiEbQYzvznums2HFuwc+cM57nuc5D+8hYqL4AxKGVqmqn8UHK2pjcPH+DDLfD8HWd6pHZwdLlDJxoVhA
+        rj/BucEJ+Le/CXt7Ne30YEmhgekwLzzu/C3bn4a1SK72SlPBq5TBMVQYVxjbGS80TLCVK3p5cdyvogzK
+        uYf4RS1/CftdWuHWN528Qe0fhIPjwu0XeION5W4clU0n2grd43bTBnw++MklPjjwdlZRHz/q7sLhV+OJ
+        KgUDCgkt8rEH8M33cx8jd7Fka6s3CC0oWeIIO9AgGb7dIBZQw/+qi916pYFvVkmJf64DpcwjrHn64XUo
+        sGTv+MfKy07sZ4dRKVoaBBevgSw/b0c6qoFnWoXMOw1o3ihKKaPH4mS7m7yZkiPqHcCClU2S1qG8oxcl
+        FhjEnFneR+YtLXDZehB43YsvKa1ormcKvBi7LCEzpkuwjrQiG7mBvbhGlNz7m5gcbXbzV5h43MQ6teDT
+        hlq0kLMHT/VNfbyBWS+jxiEp/hMd08kkhBDyG/S6Yrg9bwXvAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btn_SelectGanShapeFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 72</value>
+  </data>
+  <data name="btn_SelectGanShapeFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="btn_SelectGanShapeFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanShapeFolder.Name" xml:space="preserve">
+    <value>btn_SelectGanShapeFolder</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanShapeFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanShapeFolder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanShapeFolder.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtbox_GanDB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 35</value>
+  </data>
+  <data name="txtbox_GanDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="txtbox_GanDB.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanDB.Name" xml:space="preserve">
+    <value>txtbox_GanDB</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanDB.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanDB.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtbox_GanShapeFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 77</value>
+  </data>
+  <data name="txtbox_GanShapeFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="txtbox_GanShapeFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanShapeFolder.Name" xml:space="preserve">
+    <value>txtbox_GanShapeFolder</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanShapeFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanShapeFolder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtbox_GanShapeFolder.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btn_SelectGanDB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAB0UlEQVQ4T5XR30uaURgH8PMX
+        DP+Bwe53o3QRYyUFoSsIrO1uN0E1ZBfb3M023MILR+WFC5spLdNt1VbmlIycGGriRkVOdP4ovLBNy/0Q
+        DiEbQYzvznums2HFuwc+cM57nuc5D+8hYqL4AxKGVqmqn8UHK2pjcPH+DDLfD8HWd6pHZwdLlDJxoVhA
+        rj/BucEJ+Le/CXt7Ne30YEmhgekwLzzu/C3bn4a1SK72SlPBq5TBMVQYVxjbGS80TLCVK3p5cdyvogzK
+        uYf4RS1/CftdWuHWN528Qe0fhIPjwu0XeION5W4clU0n2grd43bTBnw++MklPjjwdlZRHz/q7sLhV+OJ
+        KgUDCgkt8rEH8M33cx8jd7Fka6s3CC0oWeIIO9AgGb7dIBZQw/+qi916pYFvVkmJf64DpcwjrHn64XUo
+        sGTv+MfKy07sZ4dRKVoaBBevgSw/b0c6qoFnWoXMOw1o3ihKKaPH4mS7m7yZkiPqHcCClU2S1qG8oxcl
+        FhjEnFneR+YtLXDZehB43YsvKa1ormcKvBi7LCEzpkuwjrQiG7mBvbhGlNz7m5gcbXbzV5h43MQ6teDT
+        hlq0kLMHT/VNfbyBWS+jxiEp/hMd08kkhBDyG/S6Yrg9bwXvAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btn_SelectGanDB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 30</value>
+  </data>
+  <data name="btn_SelectGanDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="btn_SelectGanDB.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanDB.Name" xml:space="preserve">
+    <value>btn_SelectGanDB</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanDB.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectGanDB.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>405, 149</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Append Field Data (GanFeld)</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormAddGanfeldData</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

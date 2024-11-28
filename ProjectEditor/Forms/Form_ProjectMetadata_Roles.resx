@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbox_SelectMetaID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 314</value>
+  </data>
+  <data name="cbox_SelectMetaID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbox_SelectMetaID.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectMetaID.Name" xml:space="preserve">
+    <value>cbox_SelectMetaID</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectMetaID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectMetaID.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectMetaID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_ClearBoxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_ClearBoxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 583</value>
+  </data>
+  <data name="btn_ClearBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ClearBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btn_ClearBoxes.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearBoxes.Name" xml:space="preserve">
+    <value>btn_ClearBoxes</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearBoxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearBoxes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearBoxes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.Name" xml:space="preserve">
+    <value>txtbox_PartPersonOrganisation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.Name" xml:space="preserve">
+    <value>cbox_SelectPartActivity</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.Name" xml:space="preserve">
+    <value>cbox_SelectPartSActivity</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.Name" xml:space="preserve">
+    <value>label_PartActivityProject</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.Name" xml:space="preserve">
+    <value>label_SelectPartActivity</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.Name" xml:space="preserve">
+    <value>label_PartPersonOrg</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="grp_NewParticipant.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="grp_NewParticipant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 53</value>
+  </data>
+  <data name="grp_NewParticipant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 168</value>
+  </data>
+  <data name="grp_NewParticipant.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="grp_NewParticipant.Text" xml:space="preserve">
+    <value>Participant Context</value>
+  </data>
+  <data name="&gt;&gt;grp_NewParticipant.Name" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;grp_NewParticipant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grp_NewParticipant.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grp_NewParticipant.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtbox_PartPersonOrganisation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 38</value>
+  </data>
+  <data name="txtbox_PartPersonOrganisation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 20</value>
+  </data>
+  <data name="txtbox_PartPersonOrganisation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.Name" xml:space="preserve">
+    <value>txtbox_PartPersonOrganisation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartPersonOrganisation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbox_SelectPartActivity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 95</value>
+  </data>
+  <data name="cbox_SelectPartActivity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 21</value>
+  </data>
+  <data name="cbox_SelectPartActivity.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.Name" xml:space="preserve">
+    <value>cbox_SelectPartActivity</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartActivity.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbox_SelectPartSActivity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 137</value>
+  </data>
+  <data name="cbox_SelectPartSActivity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 21</value>
+  </data>
+  <data name="cbox_SelectPartSActivity.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.Name" xml:space="preserve">
+    <value>cbox_SelectPartSActivity</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartSActivity.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_PartActivityProject.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartActivityProject.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartActivityProject.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 119</value>
+  </data>
+  <data name="label_PartActivityProject.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="label_PartActivityProject.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_PartActivityProject.Text" xml:space="preserve">
+    <value>Select a Sub Activity *</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.Name" xml:space="preserve">
+    <value>label_PartActivityProject</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;label_PartActivityProject.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_SelectPartActivity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SelectPartActivity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SelectPartActivity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 79</value>
+  </data>
+  <data name="label_SelectPartActivity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 13</value>
+  </data>
+  <data name="label_SelectPartActivity.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_SelectPartActivity.Text" xml:space="preserve">
+    <value>Select a Main Activity *</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.Name" xml:space="preserve">
+    <value>label_SelectPartActivity</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;label_SelectPartActivity.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label_PartPersonOrg.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartPersonOrg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartPersonOrg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 22</value>
+  </data>
+  <data name="label_PartPersonOrg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 13</value>
+  </data>
+  <data name="label_PartPersonOrg.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_PartPersonOrg.Text" xml:space="preserve">
+    <value>Organization (Selected Participant)</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.Name" xml:space="preserve">
+    <value>label_PartPersonOrg</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.Parent" xml:space="preserve">
+    <value>grp_NewParticipant</value>
+  </data>
+  <data name="&gt;&gt;label_PartPersonOrg.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_PartEndDate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartEndDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartEndDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 148</value>
+  </data>
+  <data name="label_PartEndDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="label_PartEndDate.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label_PartEndDate.Text" xml:space="preserve">
+    <value>Select an End Date</value>
+  </data>
+  <data name="&gt;&gt;label_PartEndDate.Name" xml:space="preserve">
+    <value>label_PartEndDate</value>
+  </data>
+  <data name="&gt;&gt;label_PartEndDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartEndDate.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartEndDate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_AddParticipant.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btn_AddParticipant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_AddParticipant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 583</value>
+  </data>
+  <data name="btn_AddParticipant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="btn_AddParticipant.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btn_AddParticipant.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="&gt;&gt;btn_AddParticipant.Name" xml:space="preserve">
+    <value>btn_AddParticipant</value>
+  </data>
+  <data name="&gt;&gt;btn_AddParticipant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddParticipant.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_AddParticipant.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="timepckr_PartEndDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 166</value>
+  </data>
+  <data name="timepckr_PartEndDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="timepckr_PartEndDate.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartEndDate.Name" xml:space="preserve">
+    <value>timepckr_PartEndDate</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartEndDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartEndDate.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartEndDate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.Name" xml:space="preserve">
+    <value>cbox_SelectPartRole</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.Name" xml:space="preserve">
+    <value>txtbox_PartRoleDescription</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.Name" xml:space="preserve">
+    <value>txtbox_PartGeolcode</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.Name" xml:space="preserve">
+    <value>timepckr_PartStartDate</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.Name" xml:space="preserve">
+    <value>txtbox_PartRemarks</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.Name" xml:space="preserve">
+    <value>label_PartMetaID</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.Name" xml:space="preserve">
+    <value>label_PartRemark</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.Name" xml:space="preserve">
+    <value>label_PartGeolcode</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.Name" xml:space="preserve">
+    <value>label_PartRoleDesc</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.Name" xml:space="preserve">
+    <value>label_PartRole</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.Name" xml:space="preserve">
+    <value>label_PartStartDate</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="groupBox_ParticipantInformation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 227</value>
+  </data>
+  <data name="groupBox_ParticipantInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 350</value>
+  </data>
+  <data name="groupBox_ParticipantInformation.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="groupBox_ParticipantInformation.Text" xml:space="preserve">
+    <value>Participant Information</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ParticipantInformation.Name" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ParticipantInformation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ParticipantInformation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ParticipantInformation.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbox_SelectPartRole.Items" xml:space="preserve">
+    <value>Select a Role</value>
+  </data>
+  <data name="cbox_SelectPartRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 43</value>
+  </data>
+  <data name="cbox_SelectPartRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 21</value>
+  </data>
+  <data name="cbox_SelectPartRole.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.Name" xml:space="preserve">
+    <value>cbox_SelectPartRole</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectPartRole.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtbox_PartRoleDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_PartRoleDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 84</value>
+  </data>
+  <data name="txtbox_PartRoleDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 20</value>
+  </data>
+  <data name="txtbox_PartRoleDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.Name" xml:space="preserve">
+    <value>txtbox_PartRoleDescription</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRoleDescription.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtbox_PartGeolcode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 125</value>
+  </data>
+  <data name="txtbox_PartGeolcode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 20</value>
+  </data>
+  <data name="txtbox_PartGeolcode.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.Name" xml:space="preserve">
+    <value>txtbox_PartGeolcode</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartGeolcode.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="timepckr_PartStartDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 166</value>
+  </data>
+  <data name="timepckr_PartStartDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="timepckr_PartStartDate.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.Name" xml:space="preserve">
+    <value>timepckr_PartStartDate</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;timepckr_PartStartDate.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtbox_PartRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 207</value>
+  </data>
+  <data name="txtbox_PartRemarks.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_PartRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 87</value>
+  </data>
+  <data name="txtbox_PartRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.Name" xml:space="preserve">
+    <value>txtbox_PartRemarks</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;txtbox_PartRemarks.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label_PartMetaID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartMetaID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartMetaID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 298</value>
+  </data>
+  <data name="label_PartMetaID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 13</value>
+  </data>
+  <data name="label_PartMetaID.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_PartMetaID.Text" xml:space="preserve">
+    <value>Metadata ID (From Ganfeld)</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.Name" xml:space="preserve">
+    <value>label_PartMetaID</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartMetaID.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label_PartRemark.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartRemark.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartRemark.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 190</value>
+  </data>
+  <data name="label_PartRemark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="label_PartRemark.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_PartRemark.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.Name" xml:space="preserve">
+    <value>label_PartRemark</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartRemark.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label_PartGeolcode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartGeolcode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartGeolcode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 108</value>
+  </data>
+  <data name="label_PartGeolcode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 13</value>
+  </data>
+  <data name="label_PartGeolcode.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_PartGeolcode.Text" xml:space="preserve">
+    <value>Geolcode (Mandatory for Field Data Collection)</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.Name" xml:space="preserve">
+    <value>label_PartGeolcode</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartGeolcode.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label_PartRoleDesc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartRoleDesc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartRoleDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 67</value>
+  </data>
+  <data name="label_PartRoleDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="label_PartRoleDesc.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_PartRoleDesc.Text" xml:space="preserve">
+    <value>Role Description</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.Name" xml:space="preserve">
+    <value>label_PartRoleDesc</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartRoleDesc.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label_PartRole.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartRole.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartRole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 27</value>
+  </data>
+  <data name="label_PartRole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="label_PartRole.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_PartRole.Text" xml:space="preserve">
+    <value>Select a Role *</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.Name" xml:space="preserve">
+    <value>label_PartRole</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartRole.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label_PartStartDate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_PartStartDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_PartStartDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 149</value>
+  </data>
+  <data name="label_PartStartDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="label_PartStartDate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_PartStartDate.Text" xml:space="preserve">
+    <value>Select a Start Date</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.Name" xml:space="preserve">
+    <value>label_PartStartDate</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.Parent" xml:space="preserve">
+    <value>groupBox_ParticipantInformation</value>
+  </data>
+  <data name="&gt;&gt;label_PartStartDate.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label_SelectParticipant.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SelectParticipant.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label_SelectParticipant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SelectParticipant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <data name="label_SelectParticipant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="label_SelectParticipant.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_SelectParticipant.Text" xml:space="preserve">
+    <value>Select a Participant</value>
+  </data>
+  <data name="&gt;&gt;label_SelectParticipant.Name" xml:space="preserve">
+    <value>label_SelectParticipant</value>
+  </data>
+  <data name="&gt;&gt;label_SelectParticipant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SelectParticipant.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SelectParticipant.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbox_SelectParticipant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 26</value>
+  </data>
+  <data name="cbox_SelectParticipant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 21</value>
+  </data>
+  <data name="cbox_SelectParticipant.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectParticipant.Name" xml:space="preserve">
+    <value>cbox_SelectParticipant</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectParticipant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectParticipant.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbox_SelectParticipant.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="button_AddWorkspace.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABh0RVh0U29mdHdh
+        cmUAUGFpbnQuTkVUIHYzLjM2qefiJQAAAPpJREFUOE9jGLzg06dP/0H448ePYAxiQ6WIAx8+fPhvXsEL
+        xyBDoFLEgVevXoM1pi6xAdOvX7+hzAAQHyqFHbwAKkDHhmXc/xMWWf03AtLY5KFaIeDly1f/NYs5IbiE
+        A44jFlgAaahYMQhD2CD1UK0Q8BwooFDA+t9/rglW7AemTcFskDqQeqhWCHgBFOBLZ/jPm4HAIL71NF0E
+        H0kOpB6qFQJAAij4xcv/7EkM/w2naPznTIRoQMdQrdjBs+cv/jPHMPzXnqAOpp8BDYRKEQeegzREMPxX
+        6VcB0yQbAHIBSCMMgw0kBTx++uwTyBAQBml+AuRDpagJGBgADS8U6e2hJAwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="button_AddWorkspace.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_AddWorkspace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 26</value>
+  </data>
+  <data name="button_AddWorkspace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 23</value>
+  </data>
+  <data name="button_AddWorkspace.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;button_AddWorkspace.Name" xml:space="preserve">
+    <value>button_AddWorkspace</value>
+  </data>
+  <data name="&gt;&gt;button_AddWorkspace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_AddWorkspace.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_AddWorkspace.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>391, 624</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAxAAAAMwAAADMAAAAzAAAAMwAAADEAAAANAAAADQAAAA3///8B////Af///wH///8B////Af//
+        /wH///8Bh3Vm84d1Zf+EcmL/gnBg/39tXf97alrzAAAAMwAAADMAAAAzAAAAMf///wH///8B////Af//
+        /wH///8B////AZB+bv/////////////////19fX/gnBg/yRlRv8jY0T/IWFD/x9fQPMAAAAzAAAAHf//
+        /wH///8B////Af///wGWhHT////////57///+vT/qamp/2lcUP9JmID/UamQ/1Oskv8pakv/J2hJ/yFX
+        PZn///8B////Af///wH///8BnYt7////////8+P///Tl/39+fv9RUE//Qnhv/0uomf9UvKv/QIdz/z+H
+        cv8ucVH/////Af///wH///8B////AaORgf///////+/Z///v2v/g39//zMzM/4SDg/9eVyv/UJB8/0mi
+        kv9RtaP/N3xb/////wH///8B////Af///wGqmIj//////////////////////5mSi//m173/vZhW/3ZU
+        Dv9Ljnj/T7Gi/0CHZf////8B////Af///wH///8BsJ6O766cjP+smor/qZeH/6eVhf+rnYb/6c6V//Tc
+        tP+9mFb/dVQO/1SRfv9Af2H/////Af///wH///8B////Af///wFeq4YRYK2I73DGtf940cr/e9LM/5HP
+        vP/qzpb/9Ny0/72YVv9iRw//OlM15wAAACH///8B////Af///wH///8B////AWa1jzFntpDfZrSP/2Wz
+        jf9apoH/iLCA//HNkP/88Nv/xb+0/004FP8XFRGBAAAAIf///wH///8B////Af///wH///8B////ARIo
+        HTMrbU7NJWlJ/x1fP/9nf1H/8c+V//347/+3t7f/MC8v/xUUFIEAAAAh////Af///wH///8B////Af//
+        /wFAhmTNSp13/1u+m/9Zt4z/OoRV/2uEVf+pp6P/8fHx/7e3t/8wLy//FRQUgQAAACH///8B////Af//
+        /wH///8BUqB7/3LPu/+v6OL/meHY/3bAmf8pbk3/coR7gaSkpP/x8fH/vLy8/zEwMP8XFhZX////Af//
+        /wH///8B////AWCyi//Y8u7/5ff2/8nw7P+i18D/N39d/////wGLi4thpKSk/+Hh4f97enr/JCMjc///
+        /wH///8B////Af///wFtwZm/mNS8/8Hr4/+v4tX/dLaV/0WRbb////8B////AYuLi2GioqLvfHt63zMy
+        MYf///8B////Af///wH///8Bc8mgEXHHnr9swJj/ZLeP/1urhb9RoHoR////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Assign Participant Roles</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormParticipantRoles</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

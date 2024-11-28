@@ -1,0 +1,7 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE
+1;01;no strain;none
+2;02;massive;massive
+3;03;weak;weak
+4;04;moderate;moderate
+5;05;strong;strong
+6;06;intense;intense

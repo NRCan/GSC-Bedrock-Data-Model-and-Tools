@@ -1,0 +1,6 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE
+1;01;measured at station;measured at station
+2;02;estimated at station;estimated at station
+3;03;estimated remotely;estimated remotely
+4;04;calculated from data;calculated from data
+5;05;calculated from imagery;calculated from imagery

@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="comboBox_ScaleField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 119</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPage_Metadata.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label_XField.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;checkBox_KeepAllFields.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_Source.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPage_Attributes.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="button_Add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 366</value>
+  </data>
+  <data name="button_AddTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 23</value>
+  </data>
+  <data name="&gt;&gt;label_YField.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="checkBox_KeepAllFields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 17</value>
+  </data>
+  <data name="label_XField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="label_latitude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;button_Add.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="comboBox_YField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 79</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ScaleField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_AngleField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 59</value>
+  </data>
+  <data name="&gt;&gt;label_Source.Parent" xml:space="preserve">
+    <value>tabPage_Metadata</value>
+  </data>
+  <data name="&gt;&gt;label_latitude.Name" xml:space="preserve">
+    <value>label_latitude</value>
+  </data>
+  <data name="label_Source.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label_AngleField.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_ZField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="comboBox_Theme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 21</value>
+  </data>
+  <data name="&gt;&gt;tabPage_CartoInfo.Name" xml:space="preserve">
+    <value>tabPage_CartoInfo</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Metadata.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_ZField.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label_latitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_GIS.Name" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="tabPage_Attributes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;comboBox_YField.Name" xml:space="preserve">
+    <value>comboBox_YField</value>
+  </data>
+  <data name="&gt;&gt;button_AddTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_YField.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="button_AddTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Source.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ScaleField.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBox_AngleField.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;button_Add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_AngleField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 76</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Source.Name" xml:space="preserve">
+    <value>comboBox_Source</value>
+  </data>
+  <data name="comboBox_XField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 33</value>
+  </data>
+  <data name="&gt;&gt;tabPage_GIS.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_XField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Cartographic Points</value>
+  </data>
+  <data name="comboBox_Source.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_XField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="label_SymbolField.Text" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="&gt;&gt;label_ZField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_SymbolField.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabPage_Metadata.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 280</value>
+  </data>
+  <data name="label_CartoTheme.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_KeepAllFields.Text" xml:space="preserve">
+    <value>Keep All Fields</value>
+  </data>
+  <data name="comboBox_XField.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_ZField.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label_longitude.Name" xml:space="preserve">
+    <value>label_longitude</value>
+  </data>
+  <data name="label_AngleField.Text" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="label_latitude.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ScaleField.Name" xml:space="preserve">
+    <value>comboBox_ScaleField</value>
+  </data>
+  <data name="&gt;&gt;label_ScaleField.Name" xml:space="preserve">
+    <value>label_ScaleField</value>
+  </data>
+  <data name="button_Add.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_AngleField.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Attributes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B6Ofmv+jn5v/o5+b/6Ofmj+jn5r/o5+b/6Ofm/+jn5r////8B6Ofm7+jn5v/o5+bv////Af//
+        /wH///8B////Aejn5r+MbEj/az8O/9jRyv/Y0cr/YzQA/4xsSP/o5+a/////Aejn5/9jNAD/6Ofn////
+        /wH///8B////Af///wHp6OdB4d3Z/3lHD/+Yckj/kGc6/3lHD//h3dn/6ejnQerp6BHp6Oj/cjwA/+no
+        6P/q6egR////Af///wH///8B////Aerp6Y+7oYP/gUQA/4FEAP+7oYP/6unpj////wHr6umBw6yS/4FE
+        AP/DrJL/6+rpgf///wH///8B////Af///wHt7Otx1sSw/5BMAP+QTAD/1sSw/+3s63Ht7ewh5+Lc/5ZW
+        D/+QTAD/llYP/+fi3P/t7ewh////Af///wHw8O8h7+/u76lnHv+oZx7/sno8/6lnHv/v7+7v7+/uz8KY
+        aP+fVAD/1b6k/6NeD//CmGj/7+/uv////wH///8B8/Lyn9Gnef+uXAD/4cy1/+XVxP+uXAD/0ad5/+bW
+        xP+uXAD/x5Rb//Py8v/Qp3n/rlwA/+bWxP/z8vJB////Afb29p/39vb/9/b2//b29s/29va/9/b2//f2
+        9v/39vb/9/b2//f29v/29fVh9vb27/f29v/39vb/9vX1Qf///wH///8B////Af///wH///8B////AQAA
+        AB0AAAAzAAAAMwAAADMAAAAd////Af///wH///8B////Af///wH///8B////Af///wH///8B////AQAA
+        AB1WLgCnYjQA/2I0AP9iNAD/Vi4ApwAAAB3///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wFhMwCnkmEn//bWqf//6cn/9tmx/5JjKv9hMwCn////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8Be0EA//bTov/gz7r/rJZ+/+DTxP/22bH/e0EA/////wH///8B////Af///wH///8B////Af//
+        /wH///8B////AYhIAP//6Mj/rJV7/1kvAP+sln7//+nJ/4hIAP////8B////Af///wH///8B////Af//
+        /wH///8B////Af///wGVTwD/+ezc/+DTwv+slXv/4NG9//nYqv+VTwD/////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BoFUAj8CHR//57dz///Lf//ngvP+6eCv/oFUAj////wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wGsWwCPr10A/69dAP+vXQD/rFsAj////wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="&gt;&gt;label_YField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_XField.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="checkBox_KeepAllFields.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Attributes.Name" xml:space="preserve">
+    <value>tabPage_Attributes</value>
+  </data>
+  <data name="&gt;&gt;label_AngleField.Parent" xml:space="preserve">
+    <value>tabPage_CartoInfo</value>
+  </data>
+  <data name="comboBox_ScaleField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="comboBox_ZField.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage_Attributes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 280</value>
+  </data>
+  <data name="checkBox_KeepAllFields.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 22</value>
+  </data>
+  <data name="&gt;&gt;tabPage_CartoInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_YField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label_ZField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 105</value>
+  </data>
+  <data name="tabPage_CartoInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="label_XField.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_CartoTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="label_AngleField.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label_Source.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ZField.Name" xml:space="preserve">
+    <value>comboBox_ZField</value>
+  </data>
+  <data name="&gt;&gt;comboBox_longitude.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Name" xml:space="preserve">
+    <value>button_Cancel</value>
+  </data>
+  <data name="comboBox_Theme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 27</value>
+  </data>
+  <data name="button_Cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Fields.Name" xml:space="preserve">
+    <value>checkedListBox_Fields</value>
+  </data>
+  <data name="tabPage_Metadata.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;label_latitude.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="label_Source.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;comboBox_SymbolField.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_ScaleField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 102</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="tabPage_GIS.Text" xml:space="preserve">
+    <value>GIS</value>
+  </data>
+  <data name="comboBox_longitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="comboBox_latitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 209</value>
+  </data>
+  <data name="&gt;&gt;tabPage_CartoInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_YField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 62</value>
+  </data>
+  <data name="&gt;&gt;checkBox_KeepAllFields.Name" xml:space="preserve">
+    <value>checkBox_KeepAllFields</value>
+  </data>
+  <data name="&gt;&gt;tabControl_CartoPoint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPage_GIS.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;label_longitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_YField.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="&gt;&gt;comboBox_longitude.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Attributes.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabPage_Metadata.Text" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Source.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_ScaleField.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBox_AngleField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="label_YField.Text" xml:space="preserve">
+    <value>Northing (m)</value>
+  </data>
+  <data name="&gt;&gt;comboBox_SymbolField.Parent" xml:space="preserve">
+    <value>tabPage_CartoInfo</value>
+  </data>
+  <data name="&gt;&gt;button_Add.Name" xml:space="preserve">
+    <value>button_Add</value>
+  </data>
+  <data name="label_latitude.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;comboBox_AngleField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_XField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_longitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 149</value>
+  </data>
+  <data name="label_SymbolField.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label_ZField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Fields.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_Add.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;label_Source.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_longitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 166</value>
+  </data>
+  <data name="&gt;&gt;label_Source.Name" xml:space="preserve">
+    <value>label_Source</value>
+  </data>
+  <data name="&gt;&gt;tabControl_CartoPoint.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_YField.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="comboBox_SymbolField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 30</value>
+  </data>
+  <data name="&gt;&gt;label_YField.Name" xml:space="preserve">
+    <value>label_YField</value>
+  </data>
+  <data name="&gt;&gt;label_YField.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button_Cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ZField.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="comboBox_latitude.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label_latitude.Text" xml:space="preserve">
+    <value>Latitude (DD)</value>
+  </data>
+  <data name="label_ZField.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ScaleField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="&gt;&gt;label_CartoTheme.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_latitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 192</value>
+  </data>
+  <data name="tabPage_GIS.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_AngleField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="button_AddTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 25</value>
+  </data>
+  <data name="&gt;&gt;tabPage_GIS.Parent" xml:space="preserve">
+    <value>tabControl_CartoPoint</value>
+  </data>
+  <data name="&gt;&gt;button_Add.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_SymbolField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_ScaleField.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;label_CartoTheme.Name" xml:space="preserve">
+    <value>label_CartoTheme</value>
+  </data>
+  <data name="tabPage_CartoInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label_longitude.Text" xml:space="preserve">
+    <value>Longitude (DD)</value>
+  </data>
+  <data name="tabControl_CartoPoint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="label_longitude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ZField.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="label_SymbolField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="button_Cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 366</value>
+  </data>
+  <data name="comboBox_Source.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 30</value>
+  </data>
+  <data name="checkBox_KeepAllFields.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;tabControl_CartoPoint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="comboBox_Theme.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_AddTheme.Name" xml:space="preserve">
+    <value>button_AddTheme</value>
+  </data>
+  <data name="&gt;&gt;label_latitude.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_AngleField.Name" xml:space="preserve">
+    <value>comboBox_AngleField</value>
+  </data>
+  <data name="button_Add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="label_longitude.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ScaleField.Parent" xml:space="preserve">
+    <value>tabPage_CartoInfo</value>
+  </data>
+  <data name="label_SymbolField.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;checkBox_KeepAllFields.Parent" xml:space="preserve">
+    <value>tabPage_Attributes</value>
+  </data>
+  <data name="label_ScaleField.Text" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="label_ZField.Text" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="&gt;&gt;comboBox_XField.Name" xml:space="preserve">
+    <value>comboBox_XField</value>
+  </data>
+  <data name="&gt;&gt;label_ScaleField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_AddTheme.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABh0RVh0U29mdHdh
+        cmUAUGFpbnQuTkVUIHYzLjM2qefiJQAAAPpJREFUOE9jGLzg06dP/0H448ePYAxiQ6WIAx8+fPhvXsEL
+        xyBDoFLEgVevXoM1pi6xAdOvX7+hzAAQHyqFHbwAKkDHhmXc/xMWWf03AtLY5KFaIeDly1f/NYs5IbiE
+        A44jFlgAaahYMQhD2CD1UK0Q8BwooFDA+t9/rglW7AemTcFskDqQeqhWCHgBFOBLZ/jPm4HAIL71NF0E
+        H0kOpB6qFQJAAij4xcv/7EkM/w2naPznTIRoQMdQrdjBs+cv/jPHMPzXnqAOpp8BDYRKEQeegzREMPxX
+        6VcB0yQbAHIBSCMMgw0kBTx++uwTyBAQBml+AuRDpagJGBgADS8U6e2hJAwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="label_Source.Text" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="&gt;&gt;comboBox_latitude.Name" xml:space="preserve">
+    <value>comboBox_latitude</value>
+  </data>
+  <data name="label_longitude.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="comboBox_ZField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 122</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormAddCartoPoint</value>
+  </data>
+  <data name="&gt;&gt;label_ZField.Name" xml:space="preserve">
+    <value>label_ZField</value>
+  </data>
+  <data name="&gt;&gt;label_ScaleField.Parent" xml:space="preserve">
+    <value>tabPage_CartoInfo</value>
+  </data>
+  <data name="button_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Theme.Name" xml:space="preserve">
+    <value>comboBox_Theme</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Theme.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_latitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Attributes.Parent" xml:space="preserve">
+    <value>tabControl_CartoPoint</value>
+  </data>
+  <data name="tabPage_Attributes.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_longitude.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_GIS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ScaleField.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_AddTheme.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_XField.Name" xml:space="preserve">
+    <value>label_XField</value>
+  </data>
+  <data name="&gt;&gt;label_longitude.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_ScaleField.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_Source.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="tabPage_CartoInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 280</value>
+  </data>
+  <data name="&gt;&gt;label_ZField.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="&gt;&gt;tabControl_CartoPoint.Name" xml:space="preserve">
+    <value>tabControl_CartoPoint</value>
+  </data>
+  <data name="&gt;&gt;label_CartoTheme.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Theme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_CartoTheme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="checkedListBox_Fields.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 47</value>
+  </data>
+  <data name="tabPage_Attributes.Text" xml:space="preserve">
+    <value>Fields</value>
+  </data>
+  <data name="tabPage_CartoInfo.Text" xml:space="preserve">
+    <value>Cartographic Information</value>
+  </data>
+  <data name="&gt;&gt;comboBox_XField.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;comboBox_longitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBox_latitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="&gt;&gt;comboBox_SymbolField.Name" xml:space="preserve">
+    <value>comboBox_SymbolField</value>
+  </data>
+  <data name="&gt;&gt;comboBox_ZField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_XField.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="&gt;&gt;button_AddTheme.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_AngleField.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label_XField.Text" xml:space="preserve">
+    <value>Easting (m)</value>
+  </data>
+  <data name="label_latitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="&gt;&gt;label_AngleField.Name" xml:space="preserve">
+    <value>label_AngleField</value>
+  </data>
+  <data name="tabPage_Metadata.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;comboBox_YField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Theme.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="comboBox_SymbolField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="tabControl_CartoPoint.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="checkedListBox_Fields.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_CartoTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_longitude.Name" xml:space="preserve">
+    <value>comboBox_longitude</value>
+  </data>
+  <data name="checkedListBox_Fields.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkedListBox_Fields.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 214</value>
+  </data>
+  <data name="label_YField.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label_SymbolField.Parent" xml:space="preserve">
+    <value>tabPage_CartoInfo</value>
+  </data>
+  <data name="&gt;&gt;label_SymbolField.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Metadata.Parent" xml:space="preserve">
+    <value>tabControl_CartoPoint</value>
+  </data>
+  <data name="&gt;&gt;label_SymbolField.Name" xml:space="preserve">
+    <value>label_SymbolField</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Source.Parent" xml:space="preserve">
+    <value>tabPage_Metadata</value>
+  </data>
+  <data name="comboBox_longitude.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="comboBox_YField.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage_CartoInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;label_AngleField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Metadata.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_CartoTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;comboBox_latitude.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="comboBox_YField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Fields.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_AngleField.Parent" xml:space="preserve">
+    <value>tabPage_CartoInfo</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>336, 405</value>
+  </data>
+  <data name="tabControl_CartoPoint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 306</value>
+  </data>
+  <data name="label_longitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="label_CartoTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 10</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Metadata.Name" xml:space="preserve">
+    <value>tabPage_Metadata</value>
+  </data>
+  <data name="&gt;&gt;comboBox_latitude.Parent" xml:space="preserve">
+    <value>tabPage_GIS</value>
+  </data>
+  <data name="tabPage_GIS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="comboBox_Source.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <data name="tabPage_GIS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 280</value>
+  </data>
+  <data name="label_XField.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_SymbolField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Fields.Parent" xml:space="preserve">
+    <value>tabPage_Attributes</value>
+  </data>
+  <data name="&gt;&gt;checkBox_KeepAllFields.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_CartoInfo.Parent" xml:space="preserve">
+    <value>tabControl_CartoPoint</value>
+  </data>
+  <data name="label_SymbolField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="comboBox_XField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 21</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

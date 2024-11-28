@@ -1,0 +1,782 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;txtbox_SourceExtension.Name" xml:space="preserve">
+    <value>txtbox_SourceExtension</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceExtension.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceExtension.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.Name" xml:space="preserve">
+    <value>label_SourceExtended</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.Name" xml:space="preserve">
+    <value>txtbox_SourceAbbrName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.Name" xml:space="preserve">
+    <value>txtbox_SourceFullName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.Name" xml:space="preserve">
+    <value>txtbox_SourceRemarks</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.Name" xml:space="preserve">
+    <value>txtbox_SourceDOI</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.Name" xml:space="preserve">
+    <value>label_SourceRemarks</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.Name" xml:space="preserve">
+    <value>label_SourceDOI</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.Name" xml:space="preserve">
+    <value>label_SourceName</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.Name" xml:space="preserve">
+    <value>label_SourceLabel</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="groupBox_Project.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 99</value>
+  </data>
+  <data name="groupBox_Project.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 290</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox_Project.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="groupBox_Project.Text" xml:space="preserve">
+    <value>Source Information</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.Name" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtbox_SourceExtension.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 112</value>
+  </data>
+  <data name="txtbox_SourceExtension.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_SourceExtension.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 46</value>
+  </data>
+  <data name="txtbox_SourceExtension.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceExtension.Name" xml:space="preserve">
+    <value>txtbox_SourceExtension</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceExtension.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceExtension.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_SourceExtended.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label_SourceExtended.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SourceExtended.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 95</value>
+  </data>
+  <data name="label_SourceExtended.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="label_SourceExtended.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label_SourceExtended.Text" xml:space="preserve">
+    <value>Full Citation (Source Description)</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.Name" xml:space="preserve">
+    <value>label_SourceExtended</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceExtended.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtbox_SourceAbbrName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_SourceAbbrName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 72</value>
+  </data>
+  <data name="txtbox_SourceAbbrName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_SourceAbbrName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.Name" xml:space="preserve">
+    <value>txtbox_SourceAbbrName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceAbbrName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtbox_SourceFullName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_SourceFullName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 32</value>
+  </data>
+  <data name="txtbox_SourceFullName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_SourceFullName.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.Name" xml:space="preserve">
+    <value>txtbox_SourceFullName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceFullName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtbox_SourceRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 179</value>
+  </data>
+  <data name="txtbox_SourceRemarks.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_SourceRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 46</value>
+  </data>
+  <data name="txtbox_SourceRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.Name" xml:space="preserve">
+    <value>txtbox_SourceRemarks</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceRemarks.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtbox_SourceDOI.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_SourceDOI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 244</value>
+  </data>
+  <data name="txtbox_SourceDOI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_SourceDOI.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.Name" xml:space="preserve">
+    <value>txtbox_SourceDOI</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_SourceDOI.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_SourceRemarks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SourceRemarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SourceRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 163</value>
+  </data>
+  <data name="label_SourceRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="label_SourceRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_SourceRemarks.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.Name" xml:space="preserve">
+    <value>label_SourceRemarks</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceRemarks.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label_SourceDOI.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SourceDOI.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SourceDOI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 228</value>
+  </data>
+  <data name="label_SourceDOI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 13</value>
+  </data>
+  <data name="label_SourceDOI.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_SourceDOI.Text" xml:space="preserve">
+    <value>Digital Object Identifier (DOI)</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.Name" xml:space="preserve">
+    <value>label_SourceDOI</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceDOI.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label_SourceName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SourceName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SourceName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 56</value>
+  </data>
+  <data name="label_SourceName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="label_SourceName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_SourceName.Text" xml:space="preserve">
+    <value>Alias (e.g. OF1839) *</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.Name" xml:space="preserve">
+    <value>label_SourceName</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label_SourceLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SourceLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SourceLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="label_SourceLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 13</value>
+  </data>
+  <data name="label_SourceLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_SourceLabel.Text" xml:space="preserve">
+    <value>Name (e.g. Open File 1839) *</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.Name" xml:space="preserve">
+    <value>label_SourceLabel</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_SourceLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtBox_SourcePath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtBox_SourcePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 69</value>
+  </data>
+  <data name="txtBox_SourcePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtBox_SourcePath.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtBox_SourcePath.Name" xml:space="preserve">
+    <value>txtBox_SourcePath</value>
+  </data>
+  <data name="&gt;&gt;txtBox_SourcePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtBox_SourcePath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtBox_SourcePath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_SourcePrompt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHRSURBVDhPldHfS5pRGAfw8xcM/4HB7nejdBFjJQWh
+        Kwis7W43QTVkF9vczTbcwgtH5YULmykt023VVuaUjJwYauJGRU50/ii8sE3L/RAOIRtBjO/Oe6azYcW7
+        Bz5wznue5zkP7yFiovgDEoZWqaqfxQcramNw8f4MMt8PwdZ3qkdnB0uUMnGhWECuP8G5wQn4t78Je3s1
+        7fRgSaGB6TAvPO78LdufhrVIrvZKU8GrlMExVBhXGNsZLzRMsJUrenlx3K+iDMq5h/hFLX8J+11a4dY3
+        nbxB7R+Eg+PC7Rd4g43lbhyVTSfaCt3jdtMGfD74ySU+OPB2VlEfP+ruwuFX44kqBQMKCS3ysQfwzfdz
+        HyN3sWRrqzcILShZ4gg70CAZvt0gFlDD/6qL3XqlgW9WSYl/rgOlzCOsefrhdSiwZO/4x8rLTuxnh1Ep
+        WhoEF6+BLD9vRzqqgWdahcw7DWjeKEopo8fiZLubvJmSI+odwIKVTZLWobyjFyUWGMScWd5H5i0tcNl6
+        EHjdiy8prWiuZwq8GLssITOmS7COtCIbuYG9uEaU3PubmBxtdvNXmHjcxDq14NOGWrSQswdP9U19vIFZ
+        L6PGISn+Ex3TySSEEPIb9LpiuD1vBe8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_SourcePrompt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_SourcePrompt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>303, 64</value>
+  </data>
+  <data name="btn_SourcePrompt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="btn_SourcePrompt.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btn_SourcePrompt.Name" xml:space="preserve">
+    <value>btn_SourcePrompt</value>
+  </data>
+  <data name="&gt;&gt;btn_SourcePrompt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_SourcePrompt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_SourcePrompt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_SourcePath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SourcePath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SourcePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 53</value>
+  </data>
+  <data name="label_SourcePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="label_SourcePath.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label_SourcePath.Text" xml:space="preserve">
+    <value>Source Path</value>
+  </data>
+  <data name="&gt;&gt;label_SourcePath.Name" xml:space="preserve">
+    <value>label_SourcePath</value>
+  </data>
+  <data name="&gt;&gt;label_SourcePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SourcePath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SourcePath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_AddSource.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btn_AddSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_AddSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 395</value>
+  </data>
+  <data name="btn_AddSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="btn_AddSource.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btn_AddSource.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="&gt;&gt;btn_AddSource.Name" xml:space="preserve">
+    <value>btn_AddSource</value>
+  </data>
+  <data name="&gt;&gt;btn_AddSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddSource.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_AddSource.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_ClearSourceBoxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_ClearSourceBoxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 395</value>
+  </data>
+  <data name="btn_ClearSourceBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ClearSourceBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="btn_ClearSourceBoxes.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearSourceBoxes.Name" xml:space="preserve">
+    <value>btn_ClearSourceBoxes</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearSourceBoxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearSourceBoxes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearSourceBoxes.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_SelectSource.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SelectSource.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label_SelectSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SelectSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <data name="label_SelectSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="label_SelectSource.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label_SelectSource.Text" xml:space="preserve">
+    <value>Select a Source</value>
+  </data>
+  <data name="&gt;&gt;label_SelectSource.Name" xml:space="preserve">
+    <value>label_SelectSource</value>
+  </data>
+  <data name="&gt;&gt;label_SelectSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SelectSource.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SelectSource.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cbox_selectSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 26</value>
+  </data>
+  <data name="cbox_selectSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 21</value>
+  </data>
+  <data name="cbox_selectSource.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectSource.Name" xml:space="preserve">
+    <value>cbox_selectSource</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectSource.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectSource.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>347, 430</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AACCcGCBfmxc/3xqWv95Z1f/dmRU/3NhUf9xX0//blxM/2tZSf9oVkb/ZlRE/2NRQf9gTj7/Xkw8/1tJ
+        Of9ZRzeBhnRk//f29f//////////////////////////////////////////////////////////////
+        ///19PP/XUs7/4t5af//////qqei/6qln/+qpJz/qqOY/6qhlP+qoJH/qp6N/6qdif+qm4X/qpmC/6qY
+        fv+ql3r//////2JQQP+PfW3//////6qln///9+v///Xn///z4v//8d3//+/X////////////////////
+        ////////qpZ5//////9mVET/lIJy//////+qpJv///Xm/9m3jf/Zt43/2beN///u1f//////xaJ7/9Kk
+        cf+2kWn//////6qWeP//////a1lJ/5mHd///////qqOY///z4f//8t7///Da///u1v//7dL/9/Lt/+W+
+        jv//7NL/1Kd0//////+qlXf//////3BeTv+ejHz//////6qhlP//8dz/xJRY/8SUWP/ElFj//+vO////
+        ///bvZb/58CR/82shP//////qpV2//////91Y1P/o5GB//////+qn5D//+/X///u1P//7NL//+vO///p
+        yv///////////////////////////6qUdP//////eWdX/6eVhf//////qp6M///s0f//7M///+vN///p
+        yv//6Mb///////////////////////////+qk3L//////35sXP+smor//////6qdif//6sz/2beN/9m3
+        jf/Zt43//+bC//////97sMX/cbnS/2mgtv//////qpJw//////+DcWH/sZ+P//////+qm4X//+jG///n
+        xf//5sP//+XA///kvf/t9Pf/js/l/9L0//90vNT//////6qRbv//////iHZm/7aklP//////qpmB///m
+        wf/ElFj/xJRY/8SUWP//4rj//////5bH2/+R0ef/hLjN//////+qkWz//////4x6av+7qZn//////6qY
+        fv//47v//+O6///iuP//4bb//+Cz////////////////////////////qo9p//////+Rf2//wK6e////
+        //+qlnr/qpZ5/6qWeP+qlXf/qpV2/6qUdP+qk3L/qpJw/6qRbv+qkWz/qo9p/6qPZ///////loR0/8Sy
+        ov/7+vn/////////////////////////////////////////////////////////////////+fXw/5uJ
+        ef/HtaWBxrSk/8Syov/Br5//vqyc/7upmf+4ppb/tqSU/7Ohkf+wno7/rZuL/6uZif+olob/pZOD/6KQ
+        gP+fjX2BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add Source Information</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form_Load_SourceInformation</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -1,0 +1,169 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--Project Data Management Tools Specific-->
+  <Name>GSC Bedrock Project</Name>
+  <AddInID>{02a0ca2e-8588-45e3-8f3a-3e011b10f973}</AddInID>
+  <Description>Project Data Management Tools</Description>
+  <Version>3.3.1</Version>
+  <Image>Images\GSCLogo.png</Image>
+  <Author>Geological Survey Canada</Author>
+  <Company>NRCan-RNCan</Company>
+  <Date>2021-05-05</Date>
+  <Targets>
+    <Target name="Desktop" version="10.8" />
+  </Targets>
+  <AddIn language="CLR" library="GSC_ProjectEditor.dll" namespace="GSC_ProjectEditor">
+    <ArcMap>
+      <Toolbars>
+        <Toolbar id="NRCan-RNCan_Addin_ArcMap_GSC_Editing" caption="GSC Bedrock Project Editor " showInitially="true">
+          <Items>
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonRefreshSymbols" />
+            <Menu refID="NRCan-RNCan_Addin_ArcMap_My_Menu" />
+            <Menu refID="NRCan-RNCan_Addin_ArcMap_View" />
+            <Menu refID="NRCan-RNCan_Addin_ArcMap_CGM" />
+            <ComboBox refID="NRCan-RNCan_Addin_ArcMap_combobox_SelectDataSource" />
+            <ComboBox refID="NRCan-RNCan_Addin_ArcMap_Combobox_SelectParticipant" />
+          </Items>
+        </Toolbar>
+        <Toolbar id="NRCan-RNCan_Addin_ArcCatalog_My_Toolbar" caption="GSC Bedrock Project Manager" showInitially="true">
+          <Items>
+            <Menu refID="NRCan-RNCan_Addin_ArcCatalog_SetUp_Menu" />
+            <Menu refID="NRCan-RNCan_Addin_ArcCatalog_IMLeader_Menu" />
+            <Menu refID="NRCan-RNCan_Addin_ArcCatalog_GIS_Project_Specialist" />
+          </Items>
+        </Toolbar>
+      </Toolbars>
+      <Menus>
+        <Menu id="NRCan-RNCan_Addin_ArcMap_My_Menu" caption="Create/Edit" isRootMenu="true" isShortcutMenu="true">
+          <Items>
+            <Button refID="NRCan-RNCan_Addin_ArcMap_buttonAddSymbolLine" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonAddSymbolPoint" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_buttonAddLabel" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_buttonCreatePolyMapUnit" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonQualityControlGeoline" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_buttonQualityControl" />
+            <Button refID="NRCan-RNCan_GSC_ProjectEditor_ButtonAddGeoEvent" />
+          </Items>
+        </Menu>
+        <Menu id="NRCan-RNCan_Addin_ArcMap_View" caption="View" isRootMenu="true">
+          <Items>
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonCreateThematicLayers" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonCreateOverprintThematicLayer" />
+            <Button refID="NRCan-RNCan_GSC_ProjectEditor_ButtonKeepCustomSymbols" />
+          </Items>
+        </Menu>
+        <Menu id="NRCan-RNCan_Addin_ArcMap_CGM" caption="Legend" isRootMenu="true">
+          <Items>
+            <Button refID="NRCan-RNCan_Addin_ArcMap_buttonLegendItems" />
+            <Button refID="NRCan-RNCan_GSC_ProjectEditor_ButtonCGMLegendOrder" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonManageCGMLegendItems" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonCGMDescription" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonCreateTempLegendGenerator" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonCGM" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonCreatePublishingDatabase" />
+            <Button refID="NRCan-RNCan_GSC_ProjectEditor_ArcMap_ButtonLegendExport" />
+            <Button refID="NRCan-RNCan_GSC_ProjectEditor_Button_Legend_Import"/>
+          </Items>
+        </Menu>
+        <Menu id="NRCan-RNCan_Addin_ArcCatalog_SetUp_Menu" caption="Environment" isRootMenu="true">
+          <Items>
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonNewGeodatabase" />
+            <Button refID="NRCan-RNCan_Addin_ArcMap_ButtonCreateTopology" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonCreateMXD" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonUpgradeGDBVersion" separator="true" />
+          </Items>
+        </Menu>
+        <Menu id="NRCan-RNCan_Addin_ArcCatalog_IMLeader_Menu" caption="Project Metadata" isRootMenu="true" isShortcutMenu="true">
+          <Items>
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonProject" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonActivity" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonOrganisation" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonPerson" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonParticipant" />
+          </Items>
+        </Menu>
+        <Menu id="NRCan-RNCan_Addin_ArcCatalog_GIS_Project_Specialist" caption="Load" isRootMenu="true">
+          <Items>
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonAddSource" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonStudyArea" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonAddGanfeldData" separator="true" />
+            <Button refID="NRCan-RNCan_Addin_ArcCatalog_ButtonAppendProjectData" />
+            <Button refID="NRCan-RNCan_GSC_ProjectEditor_ButtonAddCartoPoint" />
+            <Button refID="NRCan-RNCan_GSC_ProjectEditor_ButtonTranslateFStrucToGeoPoint" separator="true" />
+          </Items>
+        </Menu>
+      </Menus>
+      <Commands>
+        <!-- Create edit menu -->
+        <Button id="NRCan-RNCan_Addin_ArcMap_buttonAddSymbolLine" class="Button_CreateEdit_GeolineTemplate" message="Create a customized template for attributing and symbolizing linear features during an ArcMap edit session." caption="Geoline Templates" tip="Create Geoline Template" category="Add-In Controls" image="Images\Button_CreateEdit_GeolineTemplate.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonAddSymbolPoint" class="Button_CreateEdit_GeopointTemplate" message="Create a customized template for attributing and symbolizing point features during an ArcMap edit session." caption="Geopoint Templates" tip="Create Geopoint Template" category="Add-In Controls" image="Images\Button_CreateEdit_GeopointTemplate.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_buttonAddLabel" class="Button_CreateEdit_LabelTemplate" message="Create a customized labelling template by adding a label code and symbol colour. Map unit polygons are built from Geoline boundaries and use the label code and colour to attribute and visualize the unit." caption="Label Templates" tip="Create Label Template" category="Add-In Controls" image="Images\Button_CreateEdit_LabelTemplate.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_buttonCreatePolyMapUnit" class="Button_CreateEdit_CreateMapUnits" message="Creates map unit polygons from geoline boundaries and labels. The unit polygon uses the colour symbol assigned to its associated map label." caption="Create Map Units" tip="Create Map Unit Polygons" category="Add-In Controls" image="Images\Button_CreateEdit_CreateMapUnits.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonQualityControlGeoline" class="Button_CreateEdit_ValidateGeolineIntegrity" message="Validates the internal geometry of Geolines by: deleting empty geometries (length=0), exploding multipart lines, and removing Bezier curves." caption="Validate Geoline Integrity" tip="Geoline validation tool." category="Add-In Controls" image="Images\Button_CreateEdit_ValidateGeolineIntegrity.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_buttonQualityControl" class="Button_CreateEdit_QualityControl" message="Provides various tools to identify geometry or data entry errors. Most tools will add a query layer within the VALIDATION group layer of the Table of Contents. The user is responsible to complete any necessary edits." caption="Quality Control Tools" tip="Quality Control Tools" category="Add-In Controls" image="Images\Button_CreateEdit_QualityControl.png" />
+        <Button id="NRCan-RNCan_GSC_ProjectEditor_ButtonAddGeoEvent" class="Button_CreateEdit_GeologicalEvents" message="Create and associates geological events to lines and map units." caption="Geological Events" tip="Geological Event and Timescale management." category="Add-In Controls" image="Images\Button_CreateEdit_GeologicalEvents.png" />
+        <!--View menu-->
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonCreateThematicLayers" class="Button_View_CreateThematicLayers" message="Create and add symbolized layers based on Geoline and Geopoint subtypes (e.g. contacts, faults, folds, etc.). The thematic layers are added to the VISUALIZATION group layer." caption="Create Thematic Layers" tip="Create Thematic Symbolized Layers" category="Add-In Controls" image="Images\Button_View_CreateThematicLayers.png" />
+        <Button id="NRCan-RNCan_GSC_ProjectEditor_ButtonKeepCustomSymbols" class="Button_View_KeepCustomStyle" message="This button is intended to trigger an on/off option for user to keep modified symbols in working layers by not updating the style according to project legend. This can improve digitizing effectiveness." caption="Keep Custom Style" tip="Will keep user symbols in layer by not updating the style according to project legend." category="Add-In Controls" image="Images\Button_View_KeepCustomStyle.png" onDemand="false" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonCreateOverprintThematicLayer" class="Button_View_CreateMapUnitOverprintLayer" message="Creates two layers (overprints and no overprint) based on the Map Units layer. The overprint layers are added to the VISUALIZATION group layer." caption="Create Map Unit Overprint Layer" tip="Create a Map Unit Overprint Layer" category="Add-In Controls" image="Images\Button_View_CreateMapUnitOverprintLayer.png" />
+        <!--Legend menu-->
+        <Button id="NRCan-RNCan_Addin_ArcMap_buttonLegendItems" class="Button_Legend_ItemsModification" message="Modify project legend items including map units, lines, points and headers." caption="Items Modification" tip="Manage Legend Items" category="Add-In Controls" image="Images\Button_Legend_ItemsModification.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonManageCGMLegendItems" class="Button_Legend_IntersectItemsWithStudyArea" message="Spatially intersects symbolized features with the extent of individual map areas in a project. Generates an index table of all features and information to generate individual legends for each map." caption="Intersect Items with Study Areas" tip="Intersect Legend Items with Study Areas" category="Add-In Controls" image="Images\ButtonManageCGMLegendItems.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonCGMDescription" class="Button_Legend_ItemDescription" message="Create, edit and assign legend item descriptions for geolines, geopoints and unit labels. Assign these to any or all maps being managed within the BGDB." caption="Items Description" tip="Manage Legend Item Descriptions" category="Add-In Controls" image="Images\Button_Legend_ItemDescription.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonCGM" class="Button_Legend_SurroundInformation" message="Store information used in Canadian Geoscience Map (CGM) surrounds including abstract, descriptive notes, etc." caption="Surround Information" tip="Manage CGM Surround Information" category="Add-In Controls" image="Images\Button_Legend_SurroundInformation.png" />
+        <Button id="NRCan-RNCan_GSC_ProjectEditor_ButtonCGMLegendOrder" class="Button_Legend_ItemsOrder" message="This tool will enable user to order and manage all legend items." caption="Items Order" tip="Manage Legend Item Order" category="Dissemination" image="Images\Button_Legend_ItemsOrder.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonCreateTempLegendGenerator" class="Button_Legend_CreateTempTableLegendGenerator" message="Generates a persistant view table inside the project geodatabase named P_LEGEND_VIEW_CGM_XYZ. The table contains all necessary information to build a cartographic legend (for some or all of the project map areas)." caption="Create Legend Table View" tip="Creates a Legend Table view for chosen map" category="Add-In Controls" image="Images\Button_Legend_CreateTempTableLegendGenerator.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonCreatePublishingDatabase" class="Button_Legend_CreateDataBundle" message="Generates a set of sub-folders inside the project workspace to store database and shapefiles based on the CGM publication standards." caption="Create Data Bundle (Cartographic Preparation)" tip="Create a Publication Version of Database" category="Add-In Controls" image="Images\Button_Legend_CreateDataBundle.png" />
+        <Button id="NRCan-RNCan_GSC_ProjectEditor_ArcMap_ButtonLegendExport" class="Button_Legend_Export" message="Will export a selected legend table into a CSV file." caption="Export Legend (CSV)" tip="Add-in command tooltip." category="Add-In Controls" image="Images\Button_Legend_Export.png" />
+        <Button id="NRCan-RNCan_GSC_ProjectEditor_Button_Legend_Import" class="Button_Legend_Import" message="Will import a selected table into a selected legend table view." caption="Import Legend (CSV)" tip="Add-in command tooltip." category="Add-In Controls" image="Images\Button_Legend_Import.png" />
+        <!--Root tools-->
+        <ComboBox id="NRCan-RNCan_Addin_ArcMap_combobox_SelectDataSource" class="Combobox_SelectDataSource" message="Select a source reference before digitizing new interpretations or modifying existing data during an edit session." caption="Source" tip="Data Source Reference" category="Add-In Controls" image="Images\Combobox_SelectDataSource.png" sizeString="WWWWWWWWWW" itemSizeString="WWWWWWWWWWWWWWWWWWW" showCaption="true" />
+        <ComboBox id="NRCan-RNCan_Addin_ArcMap_Combobox_SelectParticipant" class="Combobox_SelectParticipant" message="Select a participant before digitizing new interpretations or modifying existing data during an edit session. This will identify the features' creator/editor." caption="Participant" tip="Select a Project Participant" category="Add-In Controls" image="Images\Combobox_SelectParticipant.png" sizeString="WWWWWWWWWWWWWWWW" itemSizeString="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" showCaption="true" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonRefreshSymbols" onDemand="false" class="Button_RefreshSymbols" message="Refreshes the symbology of feature layers within the INTERPRETATION group layer. A refresh should be done after ading new objects or following manual edits of the attribute tables in the GEO_POINTS, GEO_LINES and LABELS feature classes." caption="Refresh Symbols" tip="Refresh Symbols" category="Add-In Controls" image="Images\Button_RefreshSymbols.png" />
+        <!--Environment menu-->
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonNewGeodatabase" class="Button_Environment_NewGeodatabase" message="Create a new project geodatabase from a given XML file." caption="New Geodatabase" tip="Create New Project Geodatabase." category="Add-In Controls" image="Images\Button_Environment_NewGeodatabase.png" />
+        <Button id="NRCan-RNCan_Addin_ArcMap_ButtonCreateTopology" class="Button_Environment_CreateApplyTopologicalRules" message="Creates a topological layer (GEO_TOPO) inside the project geodatabase." caption="Create and Apply Topological Rules" tip="Create Topology Layer" category="Add-In Controls" image="Images\Button_Environment_CreateApplyTopologicalRules.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonCreateMXD" class="Button_Environment_AddProjectLayers" message="Adds project layers with preloaded and symbolized data." caption="Add Project Layers" tip="Add project related layers" category="Add-In Controls" image="Images\Button_Environment_AddProjectLayers.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonUpgradeGDBVersion" class="Button_Environment_UpgradeGSCBedrockGeodatabase" message="Upgrades a project datavase to latest version of the Bedrock geodatabase by creating a new empty geodatabase and appending data from an existing geodatabase. NOTE: Topology and MXD must be re-created after running the upgrade." caption="Upgrade GSC Bedrock Geodatabase" tip="Upgrade To Latest Version of Geodatabase" category="Add-In Controls" image="Images\Button_Environment_UpgradeGSCBedrockGeodatabase.png" />
+        <!--Project metadata menu-->
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonProject" class="Button_ProjectMetadata_Definition" message="Prompts a form to add or modify a project within a new database. NOTE: Project definition form must be populated before project activities can be added." caption="Definition" tip="Manage Project information" category="Add-In Controls" image="Images\Button_ProjectMetadata_Definition.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonActivity" class="Button_ProjectMetadata_Activities" message="Prompts a form to add or modify a project activities (main or sub). NOTE: Project Defintion form must be populated before project activities can be added." caption="Main/Sub Activities" tip="Manage Project Activities Information" category="Add-In Controls" image="Images\Button_ProjectMetadata_Activities.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonOrganisation" class="Button_ProjectMetadata_Organization" message="Prompts a form to add or modify current organisation within a GSC project database." caption="Organization" tip="Manage Organization Information" category="Add-In Controls" image="Images\Button_ProjectMetadata_Organization.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonPerson" class="Button_ProjectMetadata_Participants" message="Prompts a form to add or modify contact information for contributing members of a project. NOTE: This form must be populated before Project Roles can be assigned." caption="Participants" tip="Manage Participant Roles" category="Add-In Controls" image="Images\Button_ProjectMetadata_Participants.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonParticipant" class="Button_ProjectMetadata_Roles" message="Prompts a form to add or modify role assignations for contributing members of a project. NOTE: Participant Information form must be populated before Participants Roles Can be assigned" caption="Roles" tip="Manage roles of person inside a project." category="Add-In Controls" image="Images\Button_ProjectMetadata_Roles.png" />
+        <!--Load menu-->
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonAppendProjectData" class="Button_Load_LinesPoints" message="Append existing line and point data to active geodatabase." caption="Lines and Points" tip="Add Line and Point Data" category="Add-In Controls" image="Images\Button_Load_LinesPoints.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonAddGanfeldData" class="Button_Load_FieldDataGanfeld" message="Add existing field work data from the GanFeld application." caption="Field Data (GanFeld)" tip="Add Ganfeld Data" category="Add-In Controls" image="Images\Button_Load_FieldDataGanfeld.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonAddSource" class="Button_Load_SourceInformation" message="Prompts a form to add or modify project sources." caption="Source Information" tip="Manage Source Information" category="Add-In Controls" image="Images\Button_Load_SourceInformation.png" />
+        <Button id="NRCan-RNCan_Addin_ArcCatalog_ButtonStudyArea" class="Button_Load_StudyAreas" message="Prompts a form to add or modify project study areas." caption="Study Areas" tip="Manage Project Study Areas" category="Add-In Controls" image="Images\Button_Load_StudyAreas.png" />
+        <Button id="NRCan-RNCan_GSC_ProjectEditor_ButtonAddCartoPoint" class="Button_Load_CartographicPoints" message="Append thematic cartographic point inside project geodatrabase coming from other sources like geochronology database, other legacy maps, etc." caption="Cartographic Points" tip="Append Cartographic Ppint" category="Load" image="Images\Button_Load_CartographicPoints.png" />
+        <Button id="NRCan-RNCan_GSC_ProjectEditor_ButtonTranslateFStrucToGeoPoint" class="Button_Load_TranslateGanfeldPointStructure" message="Will translate item from a structure field table into feature class GEO_POINT." caption="Translate Field Data Point Structure" tip="Will translate item inside structure table into feature class GEO_POINT." category="Add-In Controls" image="Images\Button_Load_TranslateGanfeldPointStructure.png" />
+
+      </Commands>
+      <DockableWindows>
+        <DockableWindow id="NRCan-RNCan_Addin_ArcMap_dockablewindowAddGeoline" class="Dockablewindow_CreateEdit_GeolineTemplate+AddinImpl" caption="Geoline Templates" image="Images\Dockablewindow_CreateEdit_GeolineTemplate.png">
+          <InitialPlacement height="675" width="375" state="pinned" position="right" />
+        </DockableWindow>
+        <DockableWindow id="NRCan-RNCan_Addin_ArcMap_dockablewindowQualityControl" class="Dockablewindow_CreateEdit_QualityControl+AddinImpl" caption="Quality Control" image="Images\Dockablewindow_CreateEdit_QualityControl.png">
+          <InitialPlacement height="575" width="325" state="pinned" position="right" />
+        </DockableWindow>
+        <DockableWindow id="NRCan-RNCan_Addin_ArcMap_dockablewindowAddLabel" class="Dockablewindow_CreateEdit_LabelTemplate+AddinImpl" caption="Label Templates" image="Images\Dockablewindow_CreateEdit_LabelTemplate.png">
+          <InitialPlacement height="200" width="375" state="pinned" position="right" />
+        </DockableWindow>
+        <DockableWindow id="NRCan-RNCan_Addin_ArcMap_DockableWindowCGM" class="DockableWindow_Legend_SurroundInformation+AddinImpl" caption="Canadian Geoscience Map (CGM)" image="Images\DockableWindow_Legend_SurroundInformation.png">
+          <InitialPlacement height="625" width="325" state="pinned" position="right" />
+        </DockableWindow>
+        <DockableWindow id="NRCan-RNCan_Addin_ArcMap_DockableWindowCGMDescription" class="DockableWindow_Legend_ItemDescription+AddinImpl" caption="Legend Item Descriptions" image="Images\DockableWindowCGMDescription.png">
+          <InitialPlacement height="575" width="325" state="pinned" position="right" />
+        </DockableWindow>
+        <DockableWindow id="NRCan-RNCan_Addin_ArcMap_DockableWindowAddGeopoint" class="DockableWindow_CreateEdit_GeopointTemplate+AddinImpl" caption="Geopoint Templates" image="Images\DockableWindow_CreateEdit_GeopointTemplate.png">
+          <InitialPlacement height="700" width="350" state="pinned" position="right" />
+        </DockableWindow>
+      </DockableWindows>
+      <Editor>
+        <Extensions>
+          <Extension id="NRCan-RNCan_Addin_ArcMap_EditorExtension" class="EditorExtension" />
+        </Extensions>
+      </Editor>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>

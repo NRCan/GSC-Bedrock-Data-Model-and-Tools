@@ -1,0 +1,11 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE
+1;02;SSS;SSS
+2;03;S>L;S>L
+3;04;S>=L;S>=L
+4;05;S=L;S=L
+5;06;S<=L;S<=L
+6;07;S<L;S<L
+7;08;LLL;LLL
+8;01;S tectonite;S tectonite
+9;09;L tectonite;L tectonite
+10;99;not applicable;not applicable

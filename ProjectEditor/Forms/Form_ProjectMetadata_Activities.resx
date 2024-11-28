@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBox_CGM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_CGM.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBox_CGM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBox_CGM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 28</value>
+  </data>
+  <data name="checkBox_CGM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="checkBox_CGM.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBox_CGM.Text" xml:space="preserve">
+    <value>CGM Map</value>
+  </data>
+  <data name="&gt;&gt;checkBox_CGM.Name" xml:space="preserve">
+    <value>checkBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;checkBox_CGM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_CGM.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;checkBox_CGM.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_MainSubActivity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_MainSubActivity.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label_MainSubActivity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_MainSubActivity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 124</value>
+  </data>
+  <data name="label_MainSubActivity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="label_MainSubActivity.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="label_MainSubActivity.Text" xml:space="preserve">
+    <value>Main Activity *</value>
+  </data>
+  <data name="&gt;&gt;label_MainSubActivity.Name" xml:space="preserve">
+    <value>label_MainSubActivity</value>
+  </data>
+  <data name="&gt;&gt;label_MainSubActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_MainSubActivity.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_MainSubActivity.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtbox_ActAbbr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_ActAbbr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 107</value>
+  </data>
+  <data name="txtbox_ActAbbr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_ActAbbr.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActAbbr.Name" xml:space="preserve">
+    <value>txtbox_ActAbbr</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActAbbr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActAbbr.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActAbbr.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="timepckr_ActStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 146</value>
+  </data>
+  <data name="timepckr_ActStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="timepckr_ActStart.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActStart.Name" xml:space="preserve">
+    <value>timepckr_ActStart</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActStart.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActStart.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_SelectAct.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SelectAct.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label_SelectAct.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SelectAct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 124</value>
+  </data>
+  <data name="label_SelectAct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="label_SelectAct.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label_SelectAct.Text" xml:space="preserve">
+    <value>Select a</value>
+  </data>
+  <data name="&gt;&gt;label_SelectAct.Name" xml:space="preserve">
+    <value>label_SelectAct</value>
+  </data>
+  <data name="&gt;&gt;label_SelectAct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SelectAct.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SelectAct.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtbox_ActName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_ActName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 68</value>
+  </data>
+  <data name="txtbox_ActName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_ActName.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActName.Name" xml:space="preserve">
+    <value>txtbox_ActName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActName.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButton_MainAct.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_MainAct.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_MainAct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 23</value>
+  </data>
+  <data name="radioButton_MainAct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 17</value>
+  </data>
+  <data name="radioButton_MainAct.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="radioButton_MainAct.Text" xml:space="preserve">
+    <value>Main Activity</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MainAct.Name" xml:space="preserve">
+    <value>radioButton_MainAct</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MainAct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MainAct.Parent" xml:space="preserve">
+    <value>groupBox_ActicvityType</value>
+  </data>
+  <data name="&gt;&gt;radioButton_MainAct.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.Name" xml:space="preserve">
+    <value>radioButton_SubAct</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.Parent" xml:space="preserve">
+    <value>groupBox_ActicvityType</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_ActicvityType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="groupBox_ActicvityType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 48</value>
+  </data>
+  <data name="groupBox_ActicvityType.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="groupBox_ActicvityType.Text" xml:space="preserve">
+    <value>Activity Type</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ActicvityType.Name" xml:space="preserve">
+    <value>groupBox_ActicvityType</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ActicvityType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ActicvityType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox_ActicvityType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="radioButton_SubAct.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_SubAct.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_SubAct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 23</value>
+  </data>
+  <data name="radioButton_SubAct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 17</value>
+  </data>
+  <data name="radioButton_SubAct.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radioButton_SubAct.Text" xml:space="preserve">
+    <value>Sub Activity</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.Name" xml:space="preserve">
+    <value>radioButton_SubAct</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.Parent" xml:space="preserve">
+    <value>groupBox_ActicvityType</value>
+  </data>
+  <data name="&gt;&gt;radioButton_SubAct.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbox_ActRelation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 91</value>
+  </data>
+  <data name="cbox_ActRelation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 21</value>
+  </data>
+  <data name="cbox_ActRelation.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;cbox_ActRelation.Name" xml:space="preserve">
+    <value>cbox_ActRelation</value>
+  </data>
+  <data name="&gt;&gt;cbox_ActRelation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_ActRelation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbox_ActRelation.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_ActDynamic.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ActDynamic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ActDynamic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 74</value>
+  </data>
+  <data name="label_ActDynamic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="label_ActDynamic.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="label_ActDynamic.Text" xml:space="preserve">
+    <value>Project *</value>
+  </data>
+  <data name="&gt;&gt;label_ActDynamic.Name" xml:space="preserve">
+    <value>label_ActDynamic</value>
+  </data>
+  <data name="&gt;&gt;label_ActDynamic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActDynamic.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_ActDynamic.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtbox_ActDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_ActDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 225</value>
+  </data>
+  <data name="txtbox_ActDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_ActDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActDescription.Name" xml:space="preserve">
+    <value>txtbox_ActDescription</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActDescription.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ActDescription.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbox_selectAct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 141</value>
+  </data>
+  <data name="cbox_selectAct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 21</value>
+  </data>
+  <data name="cbox_selectAct.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectAct.Name" xml:space="preserve">
+    <value>cbox_selectAct</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectAct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectAct.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectAct.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="timepckr_ActEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 185</value>
+  </data>
+  <data name="timepckr_ActEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="timepckr_ActEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActEnd.Name" xml:space="preserve">
+    <value>timepckr_ActEnd</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActEnd.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ActEnd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_AddAct.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btn_AddAct.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_AddAct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 430</value>
+  </data>
+  <data name="btn_AddAct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="btn_AddAct.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="btn_AddAct.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="&gt;&gt;btn_AddAct.Name" xml:space="preserve">
+    <value>btn_AddAct</value>
+  </data>
+  <data name="&gt;&gt;btn_AddAct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddAct.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_AddAct.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="cultureInfoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 29</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>If sub-activity is a CGM Map</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.Name" xml:space="preserve">
+    <value>label_ActDescription</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.Name" xml:space="preserve">
+    <value>label_ActEnd</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.Name" xml:space="preserve">
+    <value>label_ActStart</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.Name" xml:space="preserve">
+    <value>label_ActAbbr</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.Name" xml:space="preserve">
+    <value>label_ActName</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="groupBox_Act.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 168</value>
+  </data>
+  <data name="groupBox_Act.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 256</value>
+  </data>
+  <data name="groupBox_Act.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="groupBox_Act.Text" xml:space="preserve">
+    <value>Activity Information</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Act.Name" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Act.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Act.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Act.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label_ActDescription.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ActDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ActDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 208</value>
+  </data>
+  <data name="label_ActDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="label_ActDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_ActDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.Name" xml:space="preserve">
+    <value>label_ActDescription</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActDescription.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label_ActEnd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ActEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ActEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 169</value>
+  </data>
+  <data name="label_ActEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label_ActEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_ActEnd.Text" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.Name" xml:space="preserve">
+    <value>label_ActEnd</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActEnd.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label_ActStart.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ActStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ActStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 130</value>
+  </data>
+  <data name="label_ActStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="label_ActStart.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_ActStart.Text" xml:space="preserve">
+    <value>Start Date *</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.Name" xml:space="preserve">
+    <value>label_ActStart</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActStart.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label_ActAbbr.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ActAbbr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ActAbbr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 91</value>
+  </data>
+  <data name="label_ActAbbr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label_ActAbbr.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_ActAbbr.Text" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.Name" xml:space="preserve">
+    <value>label_ActAbbr</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActAbbr.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label_ActName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ActName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ActName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 52</value>
+  </data>
+  <data name="label_ActName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="label_ActName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_ActName.Text" xml:space="preserve">
+    <value>Name *</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.Name" xml:space="preserve">
+    <value>label_ActName</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.Parent" xml:space="preserve">
+    <value>groupBox_Act</value>
+  </data>
+  <data name="&gt;&gt;label_ActName.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label_ActRelation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ActRelation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ActRelation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 74</value>
+  </data>
+  <data name="label_ActRelation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="label_ActRelation.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="label_ActRelation.Text" xml:space="preserve">
+    <value>Select a Related</value>
+  </data>
+  <data name="&gt;&gt;label_ActRelation.Name" xml:space="preserve">
+    <value>label_ActRelation</value>
+  </data>
+  <data name="&gt;&gt;label_ActRelation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ActRelation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_ActRelation.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btn_ClearActBoxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_ClearActBoxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 430</value>
+  </data>
+  <data name="btn_ClearActBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ClearActBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="btn_ClearActBoxes.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearActBoxes.Name" xml:space="preserve">
+    <value>btn_ClearActBoxes</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearActBoxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearActBoxes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearActBoxes.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>335, 474</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAbAAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAMwAA
+        ABv///8Ba2BPmYBzX/+Ac1//gHNf/4BzX/+Ac1//gHNf/4BzX/+Ac1//gHNf/4BzX/+Ac1//gHNf/4Bz
+        X/9rYE+Z////AYBzX//36tz///Pm///06f//9ev///bt///47///+fH///rz///79v///Pj///36///+
+        /P/39vT/gHNf/////wGAc1////Lk///z5v//9Oj/o4xn///27f+jjWj/o41o/6ONaf+jjWn///v3///8
+        +f///fv///78/4BzX/////8BgHNf///y5P//8+b///To///16v//9uz///fu///48P//+fL///r0///7
+        9v///Pj///z5///9+v+Ac1//////AYBzX///8uP///Pl///05/+jjGf///bs/6ONaP+jjWj/o41o/6ON
+        af+jjWn/o41p///79////Pj/gHNf/////wGAc1////Li///y5f//8+f///Tp///16///9u3///fu///4
+        8P//+fL///nz///69f//+vX///v2/4BzX/////8BgHNf///x4v//8uT/o4xm///06P+jjGf/o4xn/6ON
+        Z/+jjWj/o41o/6ONaP//+fP///nz///69P+Ac1//////AYBzX///8eH///Lj///z5f//8+f///To///1
+        6v//9uz///ft///37///+PD///jw///48f//+fL/gHNf/////wGAc1////Dg///x4v//8uT///Pl/6OM
+        Zv//9On/o4xn/6OMZ/+jjGf/o41o/6ONaP//9+////jv/4BzX/////8BgHNf///w3///8eH///Hi///y
+        5P//8+X///Tn///06P//9er///Xr///27P//9uz///bt///37f+Ac1//////AYBzX///793///Df///x
+        4f+ji2X///Lk/6OMZv+jjGb/o4xm///16f//9er///Xq///16///9uv/gHNf/////wGAc1///+7c///v
+        3v//8N////Hh///x4v//8uT///Pl///z5v//9Of///To///06P//9On///Xp/4BzX/////8BgHNf///u
+        2///79z/o4tk///w3/+ji2X/o4tl/6OMZf+jjGb/o4xm///z5f//8+b///Pm///05/+Ac1//////AYBz
+        X//35dL//+7b///u3P//793///Df///w4P//8eH///Hi///y4///8uP///Lk///y5P/36tz/gHNf////
+        /wGAc1+BgHNf/4BzX/+Ac1//gHNf/4BzX/+Ac1//gHNf/4BzX/+Ac1//gHNf/4BzX/+Ac1//gHNf/4Bz
+        X4H///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Main and Sub Activities</value>
+  </data>
+  <data name="&gt;&gt;cultureInfoBindingSource.Name" xml:space="preserve">
+    <value>cultureInfoBindingSource</value>
+  </data>
+  <data name="&gt;&gt;cultureInfoBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormActivity</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

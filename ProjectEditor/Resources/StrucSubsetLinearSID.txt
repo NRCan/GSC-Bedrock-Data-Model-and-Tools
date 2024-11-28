@@ -1,0 +1,64 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE
+1;2001;symmetrical ripple crest;symmetrical ripple crest
+2;2002;asymmetrical ripple paleoflow;asymmetrical ripple paleoflow
+3;2003;imbrication paleoflow;imbrication paleoflow
+4;2004;flute;flute
+5;2005;tool mark;tool mark
+6;2006;prod mark;prod mark
+7;2007;parting lineation;parting lineation
+8;2008;trough axis;trough axis
+9;2009;slump fold hinge;slump fold hinge
+10;2010;slump fold hinge, Z;slump fold hinge, Z
+11;2011;slump fold hinge, S;slump fold hinge, S
+12;2012;igenous flow lineation;igneous flow lineation
+13;2013;fold hinge;fold hinge
+14;2014;fold hinge, solf-sediment;fold hinge, soft-sediment
+15;2015;fold hinge, anticline;fold hinge, anticline
+16;2016;fold hinge, syncline;fold hinge, syncline
+17;2017;fold hinge, antiform;fold hinge, antiform
+18;2018;fold hinge, synform;fold hinge, synform
+19;2019;fold hinge, minor S;fold hinge, minor S
+20;2020;fold hinge, S crenulation;fold hinge, S crenulation
+21;2021;fold hinge, minor Z;fold hinge, minor Z
+22;2022;fold hinge, Z crenulation;fold hinge, Z crenulation
+23;2023;fold hinge, minor U;fold hinge, minor U
+24;2024;fold hinge, U crenulation;fold hinge, U crenulation
+25;2025;fold hinge, crenulation;fold hinge, crenulation
+26;2026;axis of sheath fold;fold hinge, axis of sheath fold
+27;2027;axis of sheath antiform;fold hinge, axis of sheath antiform
+28;2028;axis of sheath synform;fold hinge, axis of sheath synform
+29;2029;intersection lineation;intersection lineation
+30;2030;intersection, cleavage-bedding;intersection, cleav-bed
+31;2031;intersection, cleavage-cleavage;intersection, cleav-cleav
+32;2032;fault striae;fault striae
+33;2033;fault grooves;fault grooves
+34;2034;slickensides;slickensides
+35;2035;mineral growth fibres;mineral growth fibres
+36;2036;mineral lineation;mineral lineation
+37;2037;stretching lineation;stretching lineation
+38;2038;boudinage axis;boudinage axis
+39;2039;rodding;rodding
+40;2040;mullions;mullions
+41;2042;glacial striae;glacial striae
+42;2043;glacial groves;glacial grooves
+43;2999;other, see remarks;other, see comment field
+44;2014;fold hinge, solf-sediment;soft-sediment
+45;2015;fold hinge, anticline;anticline
+46;2016;fold hinge, syncline;syncline
+47;2017;fold hinge, antiform;antiform
+48;2018;fold hinge, synform;synform
+49;2019;fold hinge, minor S;minor S
+50;2020;fold hinge, S crenulation;S crenulation
+51;2021;fold hinge, minor Z;minor Z
+52;2022;fold hinge, Z crenulation;Z crenulation
+53;2023;fold hinge, minor U;minor U
+54;2024;fold hinge, U crenulation;U crenulation
+55;2025;fold hinge, crenulation;crenulation
+56;2026;axis of sheath fold;axis of sheath fold
+57;2027;axis of sheath antiform;axis of sheath antiform
+58;2028;axis of sheath synform;axis of sheath synform
+59;2030;intersection, cleavage-bedding;cleavage-bedding
+60;2031;intersection, cleavage-cleavage;cleavage-cleavage
+61;2041;boudins;boudins
+62;2044;flute, down plunge;flute, down plunge
+63;2045;flute, up plunge;flute, up plunge

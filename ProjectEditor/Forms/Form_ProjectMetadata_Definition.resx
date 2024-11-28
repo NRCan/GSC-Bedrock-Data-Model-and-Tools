@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtbox_ProjectCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtbox_ProjectCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 44</value>
+  </data>
+  <data name="txtbox_ProjectCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtbox_ProjectCode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectCode.Name" xml:space="preserve">
+    <value>txtbox_ProjectCode</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectCode.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectCode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_ProjectID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ProjectID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ProjectID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 28</value>
+  </data>
+  <data name="label_ProjectID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 13</value>
+  </data>
+  <data name="label_ProjectID.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_ProjectID.Text" xml:space="preserve">
+    <value>GSC Project Code (e.g. MGM2013) *</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectID.Name" xml:space="preserve">
+    <value>label_ProjectID</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectID.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectID.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtbox_ProjectName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_ProjectName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 83</value>
+  </data>
+  <data name="txtbox_ProjectName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_ProjectName.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectName.Name" xml:space="preserve">
+    <value>txtbox_ProjectName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_ProjectName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ProjectName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ProjectName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 67</value>
+  </data>
+  <data name="label_ProjectName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="label_ProjectName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_ProjectName.Text" xml:space="preserve">
+    <value>Name *</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectName.Name" xml:space="preserve">
+    <value>label_ProjectName</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectName.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtbox_ProjectAbbr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_ProjectAbbr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 122</value>
+  </data>
+  <data name="txtbox_ProjectAbbr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_ProjectAbbr.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectAbbr.Name" xml:space="preserve">
+    <value>txtbox_ProjectAbbr</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectAbbr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectAbbr.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectAbbr.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label_ProjectAbbr.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ProjectAbbr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ProjectAbbr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 106</value>
+  </data>
+  <data name="label_ProjectAbbr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label_ProjectAbbr.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_ProjectAbbr.Text" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectAbbr.Name" xml:space="preserve">
+    <value>label_ProjectAbbr</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectAbbr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectAbbr.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectAbbr.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtbox_ProjectRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 239</value>
+  </data>
+  <data name="txtbox_ProjectRemarks.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_ProjectRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 87</value>
+  </data>
+  <data name="txtbox_ProjectRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectRemarks.Name" xml:space="preserve">
+    <value>txtbox_ProjectRemarks</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectRemarks.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectRemarks.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="timepckr_ProjectStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 161</value>
+  </data>
+  <data name="timepckr_ProjectStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="timepckr_ProjectStart.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectStart.Name" xml:space="preserve">
+    <value>timepckr_ProjectStart</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectStart.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectStart.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="timepckr_ProjectEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 200</value>
+  </data>
+  <data name="timepckr_ProjectEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="timepckr_ProjectEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectEnd.Name" xml:space="preserve">
+    <value>timepckr_ProjectEnd</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectEnd.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;timepckr_ProjectEnd.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtbox_ProjectWebLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_ProjectWebLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 345</value>
+  </data>
+  <data name="txtbox_ProjectWebLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_ProjectWebLink.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectWebLink.Name" xml:space="preserve">
+    <value>txtbox_ProjectWebLink</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectWebLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectWebLink.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;txtbox_ProjectWebLink.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label_ProjectWebLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ProjectWebLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ProjectWebLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 329</value>
+  </data>
+  <data name="label_ProjectWebLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="label_ProjectWebLink.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label_ProjectWebLink.Text" xml:space="preserve">
+    <value>Web Link</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectWebLink.Name" xml:space="preserve">
+    <value>label_ProjectWebLink</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectWebLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectWebLink.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectWebLink.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label_ProjectRemarks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ProjectRemarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ProjectRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 223</value>
+  </data>
+  <data name="label_ProjectRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="label_ProjectRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_ProjectRemarks.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectRemarks.Name" xml:space="preserve">
+    <value>label_ProjectRemarks</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectRemarks.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectRemarks.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label_ProjectEnd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ProjectEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ProjectEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 184</value>
+  </data>
+  <data name="label_ProjectEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label_ProjectEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_ProjectEnd.Text" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectEnd.Name" xml:space="preserve">
+    <value>label_ProjectEnd</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectEnd.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectEnd.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label_ProjectStart.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_ProjectStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_ProjectStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 145</value>
+  </data>
+  <data name="label_ProjectStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="label_ProjectStart.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_ProjectStart.Text" xml:space="preserve">
+    <value>Start Date *</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectStart.Name" xml:space="preserve">
+    <value>label_ProjectStart</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectStart.Parent" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;label_ProjectStart.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="groupBox_Project.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 12</value>
+  </data>
+  <data name="groupBox_Project.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 377</value>
+  </data>
+  <data name="groupBox_Project.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="groupBox_Project.Text" xml:space="preserve">
+    <value>Project Information</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.Name" xml:space="preserve">
+    <value>groupBox_Project</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Project.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_ClearProjectBoxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_ClearProjectBoxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 395</value>
+  </data>
+  <data name="btn_ClearProjectBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ClearProjectBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btn_ClearProjectBoxes.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearProjectBoxes.Name" xml:space="preserve">
+    <value>btn_ClearProjectBoxes</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearProjectBoxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearProjectBoxes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearProjectBoxes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_AddProject.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btn_AddProject.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_AddProject.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 395</value>
+  </data>
+  <data name="btn_AddProject.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="btn_AddProject.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btn_AddProject.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProject.Name" xml:space="preserve">
+    <value>btn_AddProject</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProject.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProject.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_AddProject.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>331, 436</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAxAAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAMwAAADMAAAAzAAAAMf//
+        /wH///8BDUJP8w5FVf8ORVb/DkRW/w5FVv8ORFX/DkRW/w5EVf8ORFX/DkRW/w5EVv8ORVb/DkVW/w1D
+        VPMLRlcR////AQ5GVP8dZHn/Ysvr/2HK6v9hy+v/Ycvr/2HK6v9hy+v/Ycrq/2HL6/9hyur/Ycrr/2HK
+        6/89lK7/C0xeYf///wEQUmL/HF9z/1q61f9r0O7/a9Dt/2vQ7f9r0O7/a9Dt/2vR7v9r0O3/a9Dt/2vQ
+        7v9r0O3/X8Dc/wdSZa////8BEVhp/zyHnf8ziKD/dtXw/3bV8P921fD/dtXw/3bV8P921fD/dtXw/3bV
+        7/921fD/dtXw/3bV7/8dcIX/A1twERBdb/9aqsD/FWuA/3nT6/+A2vT/f9rz/4Da9P+A2vP/f9rz/4Da
+        9P+A2vT/gNrz/4Da9P9/2vP/TqW8/wBfdWERY3f/Z73T/y1+k/9bs8r/i+D1/4rf9f+K4PX/i+D2/4vg
+        9v+L4Pb/i+D2/4rf9f+K3/X/i+D2/3vR5v8AZX2vEWl9/3fT6f9QnLL/AG+H/wBshf8AbIX/AGuE/wBr
+        hP8Ec4v/es7k/5Tl+f+U5Pn/lOX5/5Tk+f+U5fn/IIOb/xJvhP9issj/YbDG/2Cvxf9gr8X/YK/F/2Cv
+        xf9gsMb/UKW8/wB2kP8Acov/AHOM/wByi/8Acov/AHOM/wBxjO8RdIv/XVxc/2BeXv9jYWD/aGZm/2lo
+        Zv9vbWz/eHZ1/23B2P9rv9b/ar7V/2u/1f9rv9X/DGF0/////wH///8BEXuR/0tLS///////fX19////
+        //99fX3//////2ZlZf+N7P//ju3//4/t//+T7v//mO7//y6Lnv////8B////AQ+Al+9KSUn/fX19/319
+        ff99fX3/fX19/319ff9kY2P/E4GZ/xOBmP8dhp3/OJWo/2SsvP92tsT3////Af///wH///8BSEhI////
+        //99fX3//////319ff//////Z2Zm/////wH///8B////Af///wH///8B////Af///wH///8B////AUZG
+        Rv99fX3/fX19/319ff99fX3/gICA/29ubv////8BrVkA/6ZVAP+fUQD/////Af///wH///8B////Af//
+        /wFDQ0P/9bVZ///Ynf//26X//+Cx//TYr/90c3L/////AaZVAP+eUQD/nlEAP////wFdPBoTg1Upm///
+        /wH///8BQkJC/0JCQv9IRkb/Tk1N/05OTv9hX1//bm1t/////wGeUQD/nlEAR5FKAP90OQD9ZzcJuV08
+        Ghn///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Set Project Info</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormProjectDefinition</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

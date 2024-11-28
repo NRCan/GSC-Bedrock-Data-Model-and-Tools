@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEE7FDD9-0B86-4EFA-971B-72B64CE8C038}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GSC_ProjectEditor</RootNamespace>
+    <AssemblyName>GSC_ProjectEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AddIns, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=AMD64" />
+    <Reference Include="ESRI.ArcGIS.ADF, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
+    <Reference Include="ESRI.ArcGIS.AnalysisTools, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.ArcMap, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMapUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Catalog, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.CatalogUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ConversionTools, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.DataManagementTools, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesOleDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Desktop.AddIns, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DisplayUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Editor, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.EditorExt, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoprocessingUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Maplex, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons\Button_Legend_Export.cs" />
+    <Compile Include="Buttons\Button_ProjectMetadata_Activities.cs" />
+    <Compile Include="Buttons\Button_Load_CartographicPoints.cs" />
+    <Compile Include="Buttons\Button_Load_FieldDataGanfeld.cs" />
+    <Compile Include="Buttons\Button_CreateEdit_GeologicalEvents.cs" />
+    <Compile Include="Buttons\Button_Load_SourceInformation.cs" />
+    <Compile Include="Buttons\Button_CreateEdit_GeopointTemplate.cs" />
+    <Compile Include="Buttons\Button_CreateEdit_LabelTemplate.cs" />
+    <Compile Include="Buttons\Button_Load_LinesPoints.cs" />
+    <Compile Include="Buttons\Button_Environment_AddProjectLayers.cs" />
+    <Compile Include="Buttons\Button_Environment_CreateApplyTopologicalRules.cs" />
+    <Compile Include="Buttons\Button_View_KeepCustomStyle.cs" />
+    <Compile Include="Buttons\Button_Legend_ItemsModification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Buttons\Button_CreateEdit_GeolineTemplate.cs" />
+    <Compile Include="Buttons\Button_Legend_SurroundInformation.cs" />
+    <Compile Include="Buttons\Button_Legend_ItemDescription.cs" />
+    <Compile Include="Buttons\Button_Legend_ItemsOrder.cs" />
+    <Compile Include="Buttons\Button_View_CreateMapUnitOverprintLayer.cs" />
+    <Compile Include="Buttons\Button_CreateEdit_CreateMapUnits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Buttons\Button_Legend_CreateDataBundle.cs" />
+    <Compile Include="Buttons\Button_Legend_CreateTempTableLegendGenerator.cs" />
+    <Compile Include="Buttons\Button_View_CreateThematicLayers.cs" />
+    <Compile Include="Buttons\Button_Legend_IntersectItemsWithStudyArea.cs" />
+    <Compile Include="Buttons\Button_Environment_NewGeodatabase.cs" />
+    <Compile Include="Buttons\Button_ProjectMetadata_Organization.cs" />
+    <Compile Include="Buttons\Button_ProjectMetadata_Roles.cs" />
+    <Compile Include="Buttons\Button_ProjectMetadata_Partitipants.cs" />
+    <Compile Include="Buttons\Button_ProjectMetadata_Definition.cs" />
+    <Compile Include="Buttons\Button_CreateEdit_QualityControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Buttons\Button_CreateEdit_ValidateGeolineIntegrity.cs" />
+    <Compile Include="Buttons\Button_RefreshSymbols.cs" />
+    <Compile Include="Buttons\Button_Load_StudyAreas.cs" />
+    <Compile Include="Buttons\Button_Load_TranslateGanfeldPointStructure.cs" />
+    <Compile Include="Buttons\Button_Environment_UpgradeGSCBedrockGeodatabase.cs" />
+    <Compile Include="Buttons\Button_Legend_Import.cs" />
+    <Compile Include="Comboboxes\Combobox_SelectDataSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comboboxes\Combobox_SelectParticipant.cs" />
+    <Compile Include="Config.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Config.esriaddinx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_Import.Designer.cs">
+      <DependentUpon>Form_Legend_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_Items_DEV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_Items_DEV.Designer.cs">
+      <DependentUpon>Form_Legend_Items_DEV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_Export.Designer.cs">
+      <DependentUpon>Form_Legend_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Utilities\CustomGxFilter.cs" />
+    <Compile Include="Utilities\Datasets.cs" />
+    <Compile Include="Utilities\Dialog.cs" />
+    <Compile Include="Utilities\Dictionaries.cs" />
+    <Compile Include="Utilities\Domains.cs" />
+    <Compile Include="Utilities\Environment.cs" />
+    <Compile Include="Utilities\Exceptions.cs" />
+    <Compile Include="Utilities\FeatureClass.cs" />
+    <Compile Include="Utilities\FeatureDataset.cs" />
+    <Compile Include="Utilities\FeatureLayers.cs" />
+    <Compile Include="Utilities\FolderAndFiles.cs" />
+    <Compile Include="Forms\Form_ProjectMetadata_Activities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Activities.Designer.cs">
+      <DependentUpon>Form_ProjectMetadata_Activities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Load_CartographicPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Load_CartographicPoints.Designer.cs">
+      <DependentUpon>Form_Load_CartographicPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Load_CartographicPoints_SelectData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Load_CartographicPoints_SelectData.Designer.cs">
+      <DependentUpon>Form_Load_CartographicPoints_SelectData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Load_FieldDataGanfeld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Load_FieldDataGanfeld.Designer.cs">
+      <DependentUpon>Form_Load_FieldDataGanfeld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_CreateEdit_GeologicalEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_CreateEdit_GeologicalEvents.Designer.cs">
+      <DependentUpon>Form_CreateEdit_GeologicalEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Load_LinesPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Load_LinesPoints.Designer.cs">
+      <DependentUpon>Form_Load_LinesPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_CreateDataBundle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_CreateDataBundle.Designer.cs">
+      <DependentUpon>Form_Legend_CreateDataBundle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_CreateTempTableLegendGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_CreateTempTableLegendGenerator.Designer.cs">
+      <DependentUpon>Form_Legend_CreateTempTableLegendGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_View_CreateThematicLayers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_View_CreateThematicLayers.Designer.cs">
+      <DependentUpon>Form_View_CreateThematicLayers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockableWindows\Dockablewindow_CreateEdit_LabelTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DockableWindows\Dockablewindow_CreateEdit_LabelTemplate.Designer.cs">
+      <DependentUpon>Dockablewindow_CreateEdit_LabelTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockableWindows\DockableWindow_CreateEdit_GeopointTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DockableWindows\DockableWindow_CreateEdit_GeopointTemplate.Designer.cs">
+      <DependentUpon>DockableWindow_CreateEdit_GeopointTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockableWindows\DockableWindow_Legend_SurroundInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DockableWindows\DockableWindow_Legend_SurroundInformation.Designer.cs">
+      <DependentUpon>DockableWindow_Legend_SurroundInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockableWindows\DockableWindow_Legend_ItemDescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DockableWindows\DockableWindow_Legend_ItemDescription.Designer.cs">
+      <DependentUpon>DockableWindow_Legend_ItemDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockableWindows\Dockablewindow_CreateEdit_QualityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DockableWindows\Dockablewindow_CreateEdit_QualityControl.Designer.cs">
+      <DependentUpon>Dockablewindow_CreateEdit_QualityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockableWindows\Dockablewindow_CreateEdit_GeolineTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DockableWindows\Dockablewindow_CreateEdit_GeolineTemplate.Designer.cs">
+      <DependentUpon>Dockablewindow_CreateEdit_GeolineTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\EditorExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_ItemsOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_ItemsOrder.Designer.cs">
+      <DependentUpon>Form_Legend_ItemsOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputCombobox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputCombobox.Designer.cs">
+      <DependentUpon>Form_Generic_InputCombobox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputListBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputListBox.Designer.cs">
+      <DependentUpon>Form_Generic_InputListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputTextbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputTextbox.Designer.cs">
+      <DependentUpon>Form_Generic_InputTextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_ItemsModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Legend_ItemsModification.Designer.cs">
+      <DependentUpon>Form_Legend_ItemsModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputLongTextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Generic_InputLongTextBox.Designer.cs">
+      <DependentUpon>Form_Generic_InputLongTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Environment_NewGeodatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Environment_NewGeodatabase.Designer.cs">
+      <DependentUpon>Form_Environment_NewGeodatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Organization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Organization.Designer.cs">
+      <DependentUpon>Form_ProjectMetadata_Organization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_CreateEdit_CreateMapUnits_OverprintHierarchy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_CreateEdit_CreateMapUnits_OverprintHierarchy.Designer.cs">
+      <DependentUpon>Form_CreateEdit_CreateMapUnits_OverprintHierarchy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Participants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Participants.Designer.cs">
+      <DependentUpon>Form_ProjectMetadata_Participants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Roles.Designer.cs">
+      <DependentUpon>Form_ProjectMetadata_Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Definition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_ProjectMetadata_Definition.Designer.cs">
+      <DependentUpon>Form_ProjectMetadata_Definition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_RefreshSymbols.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_RefreshSymbols.Designer.cs">
+      <DependentUpon>Form_RefreshSymbols.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Form_Generic.cs" />
+    <Compile Include="Forms\Form_Load_SourceInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Load_SourceInformation.Designer.cs">
+      <DependentUpon>Form_Load_SourceInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Load_StudyAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Load_StudyAreas.Designer.cs">
+      <DependentUpon>Form_Load_StudyAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Load_TranslateGanfeldPointStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Load_TranslateGanfeldPointStructure.Designer.cs">
+      <DependentUpon>Form_Load_TranslateGanfeldPointStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Environment_UpgradeGSCBedrockGeodatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Environment_UpgradeGSCBedrockGeodatabase.Designer.cs">
+      <DependentUpon>Form_Environment_UpgradeGSCBedrockGeodatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Geometry.cs" />
+    <Compile Include="Utilities\GeoProcessing.cs" />
+    <Compile Include="Utilities\IDs.cs" />
+    <Compile Include="Utilities\Joins.cs" />
+    <Compile Include="Utilities\MathCustom.cs" />
+    <Compile Include="Utilities\Messages.cs" />
+    <Compile Include="Utilities\MXD.cs" />
+    <Compile Include="Utilities\ObjectManagement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Queries.cs" />
+    <Compile Include="Utilities\RelationshipClass.cs" />
+    <Compile Include="Utilities\Reports.cs" />
+    <Compile Include="Utilities\Settings.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Utilities\SpatialReferences.cs" />
+    <Compile Include="Utilities\Subtypes.cs" />
+    <Compile Include="Utilities\Symbols.cs" />
+    <Compile Include="Utilities\Tables.cs" />
+    <Compile Include="Utilities\Topology.cs" />
+    <Compile Include="Utilities\Culture.cs" />
+    <Compile Include="Utilities\CustomXMLFilter.cs" />
+    <Compile Include="Utilities\MapDocumentFeatureLayers.cs" />
+    <Compile Include="Utilities\MapDocumentSymbol.cs" />
+    <Compile Include="Utilities\Controls.cs" />
+    <Compile Include="Utilities\EditSession.cs" />
+    <Compile Include="Utilities\ProjectSymbols.cs" />
+    <Compile Include="Utilities\Templates.cs" />
+    <Compile Include="Utilities\ToolBarControls.cs" />
+    <Compile Include="Utilities\Workspace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Config.esriaddinx">
+      <Generator>ArcGISAddInHostGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+    </AddInContent>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Form_Legend_Import.fr.resx">
+      <DependentUpon>Form_Legend_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_Import.resx">
+      <DependentUpon>Form_Legend_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_Items_DEV.resx">
+      <DependentUpon>Form_Legend_Items_DEV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_Export.fr.resx">
+      <DependentUpon>Form_Legend_Export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_Export.resx">
+      <DependentUpon>Form_Legend_Export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Activities.fr.resx">
+      <DependentUpon>Form_ProjectMetadata_Activities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Activities.resx">
+      <DependentUpon>Form_ProjectMetadata_Activities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_CartographicPoints.fr.resx">
+      <DependentUpon>Form_Load_CartographicPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_CartographicPoints.resx">
+      <DependentUpon>Form_Load_CartographicPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_CartographicPoints_SelectData.fr.resx">
+      <DependentUpon>Form_Load_CartographicPoints_SelectData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_CartographicPoints_SelectData.resx">
+      <DependentUpon>Form_Load_CartographicPoints_SelectData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_FieldDataGanfeld.fr.resx">
+      <DependentUpon>Form_Load_FieldDataGanfeld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_FieldDataGanfeld.resx">
+      <DependentUpon>Form_Load_FieldDataGanfeld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_CreateEdit_GeologicalEvents.fr.resx">
+      <DependentUpon>Form_CreateEdit_GeologicalEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_CreateEdit_GeologicalEvents.resx">
+      <DependentUpon>Form_CreateEdit_GeologicalEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_LinesPoints.fr.resx">
+      <DependentUpon>Form_Load_LinesPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_LinesPoints.resx">
+      <DependentUpon>Form_Load_LinesPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_CreateDataBundle.fr.resx">
+      <DependentUpon>Form_Legend_CreateDataBundle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_CreateDataBundle.resx">
+      <DependentUpon>Form_Legend_CreateDataBundle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_CreateTempTableLegendGenerator.fr.resx">
+      <DependentUpon>Form_Legend_CreateTempTableLegendGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_CreateTempTableLegendGenerator.resx">
+      <DependentUpon>Form_Legend_CreateTempTableLegendGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_View_CreateThematicLayers.fr.resx">
+      <DependentUpon>Form_View_CreateThematicLayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_View_CreateThematicLayers.resx">
+      <DependentUpon>Form_View_CreateThematicLayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\Dockablewindow_CreateEdit_LabelTemplate.fr.resx">
+      <DependentUpon>Dockablewindow_CreateEdit_LabelTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\Dockablewindow_CreateEdit_LabelTemplate.resx">
+      <DependentUpon>Dockablewindow_CreateEdit_LabelTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\DockableWindow_CreateEdit_GeopointTemplate.fr.resx">
+      <DependentUpon>DockableWindow_CreateEdit_GeopointTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\DockableWindow_CreateEdit_GeopointTemplate.resx">
+      <DependentUpon>DockableWindow_CreateEdit_GeopointTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\DockableWindow_Legend_SurroundInformation.fr.resx">
+      <DependentUpon>DockableWindow_Legend_SurroundInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\DockableWindow_Legend_SurroundInformation.resx">
+      <DependentUpon>DockableWindow_Legend_SurroundInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\DockableWindow_Legend_ItemDescription.fr.resx">
+      <DependentUpon>DockableWindow_Legend_ItemDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\DockableWindow_Legend_ItemDescription.resx">
+      <DependentUpon>DockableWindow_Legend_ItemDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\Dockablewindow_CreateEdit_QualityControl.fr.resx">
+      <DependentUpon>Dockablewindow_CreateEdit_QualityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\Dockablewindow_CreateEdit_QualityControl.resx">
+      <DependentUpon>Dockablewindow_CreateEdit_QualityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\Dockablewindow_CreateEdit_GeolineTemplate.fr.resx">
+      <DependentUpon>Dockablewindow_CreateEdit_GeolineTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockableWindows\Dockablewindow_CreateEdit_GeolineTemplate.resx">
+      <DependentUpon>Dockablewindow_CreateEdit_GeolineTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_ItemsOrder.fr.resx">
+      <DependentUpon>Form_Legend_ItemsOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_ItemsOrder.resx">
+      <DependentUpon>Form_Legend_ItemsOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Generic_InputCombobox.resx">
+      <DependentUpon>Form_Generic_InputCombobox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Generic_InputListBox.resx">
+      <DependentUpon>Form_Generic_InputListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Generic_InputTextbox.resx">
+      <DependentUpon>Form_Generic_InputTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_ItemsModification.fr.resx">
+      <DependentUpon>Form_Legend_ItemsModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Legend_ItemsModification.resx">
+      <DependentUpon>Form_Legend_ItemsModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Generic_InputLongTextBox.fr.resx">
+      <DependentUpon>Form_Generic_InputLongTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Generic_InputLongTextBox.resx">
+      <DependentUpon>Form_Generic_InputLongTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Environment_NewGeodatabase.fr.resx">
+      <DependentUpon>Form_Environment_NewGeodatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Environment_NewGeodatabase.resx">
+      <DependentUpon>Form_Environment_NewGeodatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Organization.fr.resx">
+      <DependentUpon>Form_ProjectMetadata_Organization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Organization.resx">
+      <DependentUpon>Form_ProjectMetadata_Organization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_CreateEdit_CreateMapUnits_OverprintHierarchy.fr.resx">
+      <DependentUpon>Form_CreateEdit_CreateMapUnits_OverprintHierarchy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_CreateEdit_CreateMapUnits_OverprintHierarchy.resx">
+      <DependentUpon>Form_CreateEdit_CreateMapUnits_OverprintHierarchy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Participants.fr.resx">
+      <DependentUpon>Form_ProjectMetadata_Participants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Participants.resx">
+      <DependentUpon>Form_ProjectMetadata_Participants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Roles.fr.resx">
+      <DependentUpon>Form_ProjectMetadata_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Roles.resx">
+      <DependentUpon>Form_ProjectMetadata_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Definition.fr.resx">
+      <DependentUpon>Form_ProjectMetadata_Definition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_ProjectMetadata_Definition.resx">
+      <DependentUpon>Form_ProjectMetadata_Definition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_RefreshSymbols.fr.resx">
+      <DependentUpon>Form_RefreshSymbols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_RefreshSymbols.resx">
+      <DependentUpon>Form_RefreshSymbols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_SourceInformation.fr.resx">
+      <DependentUpon>Form_Load_SourceInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_SourceInformation.resx">
+      <DependentUpon>Form_Load_SourceInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_StudyAreas.fr.resx">
+      <DependentUpon>Form_Load_StudyAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_StudyAreas.resx">
+      <DependentUpon>Form_Load_StudyAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_TranslateGanfeldPointStructure.fr.resx">
+      <DependentUpon>Form_Load_TranslateGanfeldPointStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Load_TranslateGanfeldPointStructure.resx">
+      <DependentUpon>Form_Load_TranslateGanfeldPointStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Environment_UpgradeGSCBedrockGeodatabase.fr.resx">
+      <DependentUpon>Form_Environment_UpgradeGSCBedrockGeodatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Environment_UpgradeGSCBedrockGeodatabase.resx">
+      <DependentUpon>Form_Environment_UpgradeGSCBedrockGeodatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\Dockablewindow_CreateEdit_GeolineTemplate.png" />
+    <AddInContent Include="Images\Dockablewindow_CreateEdit_QualityControl.png" />
+    <AddInContent Include="Images\Combobox_SelectDataSource.png" />
+    <AddInContent Include="Images\Dockablewindow_CreateEdit_LabelTemplate.png" />
+    <AddInContent Include="Images\Button_CreateEdit_GeolineTemplate.png" />
+    <AddInContent Include="Images\Button_CreateEdit_QualityControl.png" />
+    <AddInContent Include="Images\Button_CreateEdit_CreateMapUnits.png" />
+    <AddInContent Include="Images\Button_CreateEdit_LabelTemplate.png" />
+    <AddInContent Include="Images\Button_Legend_SurroundInformation.png" />
+    <AddInContent Include="Images\DockableWindow_Legend_SurroundInformation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="LayerFiles\EARTHMAT_DETAIL.lyr" />
+    <EmbeddedResource Include="LayerFiles\EARTHMAT_GROUP.lyr" />
+    <EmbeddedResource Include="LayerFiles\EARTHMAT_TYPE.lyr" />
+    <EmbeddedResource Include="LayerFiles\INTERPRETATION_Geolines.lyr" />
+    <EmbeddedResource Include="LayerFiles\PHOTOS_ALL.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLE_Geochemistry.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLE_Geochronology.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLE_Mineralogy.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLE_Other.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLE_PT_estimate.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLE_Representative_Lithology.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLE_thin_section.lyr" />
+    <EmbeddedResource Include="LayerFiles\SAMPLES_ALL.lyr" />
+    <EmbeddedResource Include="LayerFiles\STATIONS_ALL.lyr" />
+    <EmbeddedResource Include="LayerFiles\STRUC_ALL.lyr" />
+    <EmbeddedResource Include="LayerFiles\STRUC_LINEAR_ALL.lyr" />
+    <EmbeddedResource Include="LayerFiles\STRUC_PLAN_DIP_0.lyr" />
+    <EmbeddedResource Include="LayerFiles\STRUC_PLAN_DIP_0_90.lyr" />
+    <EmbeddedResource Include="LayerFiles\STRUC_PLAN_DIP_90.lyr" />
+    <EmbeddedResource Include="MXDs\CGMTemplate.mxd" />
+    <EmbeddedResource Include="MXDs\MXDTemplate.mxd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="ReportTemplates\QCReport_NumericalData.rlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\Button_Legend_ItemsModification.png" />
+    <AddInContent Include="Images\Button_Legend_ItemDescription.png" />
+    <AddInContent Include="Images\DockableWindow_Legend_ItemDescription.png" />
+    <AddInContent Include="Images\Combobox_SelectParticipant.png" />
+    <AddInContent Include="Images\Button_View_CreateThematicLayers.png" />
+    <AddInContent Include="Images\GSCLogo.png" />
+    <AddInContent Include="Images\Button_CreateEdit_GeopointTemplate.png" />
+    <AddInContent Include="Images\DockableWindow_CreateEdit_GeopointTemplate.png" />
+    <AddInContent Include="Images\Button_RefreshSymbols.png" />
+    <AddInContent Include="Images\Button_Legend_CreateTempTableLegendGenerator.png" />
+    <AddInContent Include="Images\Button_Legend_CreateDataBundle.png" />
+    <AddInContent Include="Images\Button_View_CreateMapUnitOverprintLayer.png" />
+    <AddInContent Include="Images\Button_Legend_ItemsOrder.png" />
+    <AddInContent Include="Images\Button_CreateEdit_GeologicalEvents.png" />
+    <AddInContent Include="Images\Button_View_KeepCustomStyle.png" />
+    <AddInContent Include="Images\Button_ProjectMetadata_Activities.png" />
+    <AddInContent Include="Images\Button_Load_CartographicPoints.png" />
+    <AddInContent Include="Images\Button_Load_FieldDataGanfeld.png" />
+    <AddInContent Include="Images\Button_Load_SourceInformation.png" />
+    <AddInContent Include="Images\Button_Environment_AddProjectLayers.png" />
+    <AddInContent Include="Images\Button_Environment_NewGeodatabase.png" />
+    <AddInContent Include="Images\Button_Environment_CreateApplyTopologicalRules.png" />
+    <AddInContent Include="Images\Button_ProjectMetadata_Organization.png" />
+    <AddInContent Include="Images\Button_ProjectMetadata_Roles.png" />
+    <AddInContent Include="Images\Button_ProjectMetadata_Participants.png" />
+    <AddInContent Include="Images\Button_ProjectMetadata_Definition.png" />
+    <AddInContent Include="Images\Button_Load_StudyAreas.png" />
+    <AddInContent Include="Images\Button_Load_TranslateGanfeldPointStructure.png" />
+    <AddInContent Include="Images\Button_Environment_UpgradeGSCBedrockGeodatabase.png" />
+    <None Include="Resources\StrucSubsetPlanarSID.txt" />
+    <None Include="Resources\StrucSubsetLinearSID.txt" />
+    <None Include="Resources\StrucStrainSID.txt" />
+    <None Include="Resources\StrucPlanarYoungingSID.txt" />
+    <None Include="Resources\StrucMethodSID.txt" />
+    <None Include="Resources\StrucGenerationSID.txt" />
+    <None Include="Resources\StrucFlatteningSID.txt" />
+    <None Include="Resources\StrucAttitudeSID.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GSC_PROJECT_EDITOR_WORKSPACE.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\Button_Load_LinesPoints.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\Button_CreateEdit_ValidateGeolineIntegrity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GSC_BEDROCKGDB_SCHEMA_V2_10.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\Button_Legend_Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\Button_Legend_Import.png" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ZipFileExtension>esriAddIn</ZipFileExtension>
+    <AddInTargetProduct>Desktop</AddInTargetProduct>
+    <AddInTargetVersion>10.1</AddInTargetVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\ESRI\ESRI.ArcGIS.AddIns.targets" Condition="Exists('$(MSBuildExtensionsPath)\ESRI\ESRI.ArcGIS.AddIns.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <!-- Gives build warning when add-in targets file is not found. -->
+    <Warning Text="Unable to create .esriAddin; missing ESRI ArcGIS Add-in SDK component(s)." Condition="!Exists('$(MSBuildExtensionsPath)\ESRI\ESRI.ArcGIS.AddIns.targets')" />
+  </Target>
+  <ProjectExtensions>
+    <!-- Default ESRI add-in properties -->
+    <ESRIAddInProperties>
+      <Host>ArcMap</Host>
+    </ESRIAddInProperties>
+  </ProjectExtensions>
+</Project>

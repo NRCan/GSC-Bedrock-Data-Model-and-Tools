@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Error_AccessDB" xml:space="preserve">
+    <value>Project database can't be access, please make sure it's available or exists.</value>
+  </data>
+  <data name="Error_AddGeoline" xml:space="preserve">
+    <value>A value must be selected in all the lists.</value>
+  </data>
+  <data name="Error_GSC_MissingSymbol" xml:space="preserve">
+    <value>MISSING SYMBOL</value>
+  </data>
+  <data name="Error_GSC_NoFeaturePlabel" xml:space="preserve">
+    <value>GSC ERROR: Missing feature P_LABELS in database.</value>
+  </data>
+  <data name="Error_GSC_NoGeoline" xml:space="preserve">
+    <value>GSC ERROR: Missing feature GEO_LINES in database.</value>
+  </data>
+  <data name="Error_InvalideGeolineType" xml:space="preserve">
+    <value>Invalid geoline type.</value>
+  </data>
+  <data name="Error_InvalidGeolineID" xml:space="preserve">
+    <value>Invalid GEOLINEID value.</value>
+  </data>
+  <data name="Error_MapUnit" xml:space="preserve">
+    <value>You must enter value for name and abbreviation of new map unit or a valid value for symbol.</value>
+  </data>
+  <data name="Error_Organisation" xml:space="preserve">
+    <value>No valid organisation is attached to selected Person.</value>
+  </data>
+  <data name="Error_StartEdit" xml:space="preserve">
+    <value>Already in an edit session, close and restart.</value>
+  </data>
+  <data name="Error_StartEditFeature" xml:space="preserve">
+    <value>Project features are not available in Arc Map.</value>
+  </data>
+  <data name="Error_StopEdit" xml:space="preserve">
+    <value>Edit session was already closed.</value>
+  </data>
+  <data name="Error_ValidNumber" xml:space="preserve">
+    <value>Entered value must be a valid number</value>
+  </data>
+  <data name="Message_FolderPrompt" xml:space="preserve">
+    <value>Please select path to folder Tools4Project</value>
+  </data>
+  <data name="Message_FolderPromptButton" xml:space="preserve">
+    <value>Modify current path?</value>
+  </data>
+  <data name="Message_FolderPromptTitle" xml:space="preserve">
+    <value>Current path to Tools4Project folder: </value>
+  </data>
+  <data name="Text_ButtonInfo_01" xml:space="preserve">
+    <value>Validation results could be either: \n -A query layer added to VALIDATION group layer in the Table of Content or \n -Create a report in project workspace folder ..\\ProjectFolder\\Report or \n -Make the correction needed directly to the data.</value>
+  </data>
+  <data name="Text_ParticipantGeolcode" xml:space="preserve">
+    <value>Geolcode</value>
+  </data>
+  <data name="Text_PartipantRemarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="Text_RoleDescription" xml:space="preserve">
+    <value>Enter a Role Description</value>
+  </data>
+  <data name="Warning_NotImplemented" xml:space="preserve">
+    <value>Not yet implemented...</value>
+  </data>
+  <data name="Warning_QC_NoSameAdjLabel" xml:space="preserve">
+    <value>No neighbouring Map Units with same label value found.</value>
+  </data>
+  <data name="Warning_QC_OrphanMU" xml:space="preserve">
+    <value>No lonely Map Unit found.</value>
+  </data>
+  <data name="Warning_StopEdit" xml:space="preserve">
+    <value>All changes were saved.</value>
+  </data>
+  <data name="Error_InvalidGeolineIDQuery" xml:space="preserve">
+    <value>Selected values for Geoline feature, does not exist within SYMBOL_GEOLINES table.</value>
+  </data>
+  <data name="Warning_QC_NoDiffLabel" xml:space="preserve">
+    <value>All labels are unique within all map units.</value>
+  </data>
+  <data name="Warning_QC_NoLabel" xml:space="preserve">
+    <value>All map units contains at least one label.</value>
+  </data>
+  <data name="Warning_QC_NoIsBoundNo" xml:space="preserve">
+    <value>No Geoline with field value "IsBoundary" = No was found.</value>
+  </data>
+  <data name="Warning_QC_NoIsBoundYes" xml:space="preserve">
+    <value>No Geoline with field value "IsBoundary" = Yes was found.</value>
+  </data>
+  <data name="Warning_QC_NoStations" xml:space="preserve">
+    <value>No stations were found within field station feature.</value>
+  </data>
+  <data name="Warning_QC_NoStationXYMismatch" xml:space="preserve">
+    <value>No mismatch found.</value>
+  </data>
+  <data name="Warning_NoLegendItem" xml:space="preserve">
+    <value>No Items available within table.</value>
+  </data>
+  <data name="Message_AddNewHeader" xml:space="preserve">
+    <value>Add New Header with option of Legend Order within Legend Display tab.</value>
+  </data>
+  <data name="Warning_NoCGM" xml:space="preserve">
+    <value>No CGM maps available within feature.</value>
+  </data>
+  <data name="Error_CGM" xml:space="preserve">
+    <value>You must enter value for name and id of current selected CGM map.</value>
+  </data>
+  <data name="Message_AddNewDescription" xml:space="preserve">
+    <value>Add New Description</value>
+  </data>
+  <data name="EmptyFields" xml:space="preserve">
+    <value>Please fill in all fields with an asterix.</value>
+  </data>
+  <data name="Error_NoSpecificGeolines" xml:space="preserve">
+    <value>No defined depositional-unconformable contact detected within geoline feature.</value>
+  </data>
+  <data name="Warning_QC_GenericNoProblem" xml:space="preserve">
+    <value>No problem was detected.</value>
+  </data>
+  <data name="Error_MissingFeature" xml:space="preserve">
+    <value>Missing feature from Arc Map project:</value>
+  </data>
+  <data name="Error_NoSelection" xml:space="preserve">
+    <value>No layer was selected in Table of Content, please select one for the tool to work.</value>
+  </data>
+  <data name="Error_NoSubtypes" xml:space="preserve">
+    <value>There is no subtypes within selected layer.</value>
+  </data>
+  <data name="Message_SaveEdit" xml:space="preserve">
+    <value>All edits were saved.</value>
+  </data>
+  <data name="Warning_GanfeldNoStations" xml:space="preserve">
+    <value>No station were selected.</value>
+  </data>
+  <data name="Warning_GanfeldTooManyStations" xml:space="preserve">
+    <value>Please select only one station.</value>
+  </data>
+  <data name="Message_StopEdit" xml:space="preserve">
+    <value>Do you wish to save all changes?</value>
+  </data>
+  <data name="Message_StopEditTitle" xml:space="preserve">
+    <value>Stop Editing</value>
+  </data>
+  <data name="Error_InvalidGeopointIDQuery" xml:space="preserve">
+    <value>Selected values for Geopoint feature, does not exist within SYMBOL_GEOPOINTS table.</value>
+  </data>
+  <data name="Warning_RemoveItemFromProject" xml:space="preserve">
+    <value>Deleting a legend item from a project cannot be undone. Are you sure you want to delete this item?</value>
+  </data>
+  <data name="Warning_RemoveItemFromProjectTitle" xml:space="preserve">
+    <value>DELETE SELECTED LEGEND ITEM?</value>
+  </data>
+  <data name="Error_LegendItemExists" xml:space="preserve">
+    <value>The selected legend item exists within a feature class and cannot be deleted.</value>
+  </data>
+  <data name="Error_LegendItemExistsTitle" xml:space="preserve">
+    <value>SELECTED LEGEND ITEM EXISTS</value>
+  </data>
+  <data name="Warning_NoOverprintFound" xml:space="preserve">
+    <value>No overprint were found inside the project, thus no overprint layer will be created.</value>
+  </data>
+  <data name="Warning_NoOverprintFoundTitle" xml:space="preserve">
+    <value>Missing data</value>
+  </data>
+  <data name="Warning_MultiFGDCFoundTitle" xml:space="preserve">
+    <value>Multiple Symbol Code</value>
+  </data>
+  <data name="Warning_MultipleFGDCFound" xml:space="preserve">
+    <value>More then one symbol code were found in feature, only first one will be used in project legend.</value>
+  </data>
+  <data name="Error_NotEnable" xml:space="preserve">
+    <value>You must first enable workspace by clicking "Enable Interfaces" to launch properly this tool.</value>
+  </data>
+  <data name="Error_NotEnableTitle" xml:space="preserve">
+    <value>Enable interfaces</value>
+  </data>
+  <data name="Error_SymbolMistmatchWithStyle" xml:space="preserve">
+    <value>A symbol wasn't found in the GSC style. Verify the value is written correctly. Following is the missing symbol value and it's associated item ID:</value>
+  </data>
+  <data name="ToolTip_LegendOrderListBox" xml:space="preserve">
+    <value>Item Color Code: {0}Orange: Map Units{0}Blue: Geolines{0}Green: Geopoints{0}White: Headers{0}Pink: Others</value>
+  </data>
+  <data name="Message_EventNameAdd" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Message_EventNameAddTitle" xml:space="preserve">
+    <value>New Geological Event Name</value>
+  </data>
+  <data name="Error_NoSelectionFeature" xml:space="preserve">
+    <value>No feature were selected on the map, please do and restart current tool.</value>
+  </data>
+  <data name="Message_AgeItemMessage" xml:space="preserve">
+    <value>Select wanted items.</value>
+  </data>
+  <data name="Message_AgeItemTitle" xml:space="preserve">
+    <value>Map Units and Geolines from Legend</value>
+  </data>
+  <data name="Message_AddTheme" xml:space="preserve">
+    <value>New Type</value>
+  </data>
+  <data name="Message_AddThemeTitle" xml:space="preserve">
+    <value>Add New Item Type</value>
+  </data>
+  <data name="WarningQuestion_WrongProject" xml:space="preserve">
+    <value>Current ArcMap layers are not related to an active project geodatabase. Would you like to set them as active?</value>
+  </data>
+  <data name="Error_TooManyCharacters" xml:space="preserve">
+    <value>Too many characters were entered. Limit: </value>
+  </data>
+  <data name="Warning_MissingFonts" xml:space="preserve">
+    <value>Detected some missing fonts, please installed proper project fonts.</value>
+  </data>
+  <data name="Message_SelectCartoElement" xml:space="preserve">
+    <value>Select CartoElement database</value>
+  </data>
+  <data name="Dialog_DescriptionGanfeldDB" xml:space="preserve">
+    <value>Select a database containing Ganfeld data.</value>
+  </data>
+  <data name="Dialog_DescriptionProjectFolder" xml:space="preserve">
+    <value>Enter a new project folder name.</value>
+  </data>
+  <data name="Dialog_DescriptionSource" xml:space="preserve">
+    <value>Select desire source file.</value>
+  </data>
+  <data name="Dialog_NewParticipantLabel" xml:space="preserve">
+    <value>Choose one</value>
+  </data>
+  <data name="Dialog_NewParticipantTitle" xml:space="preserve">
+    <value>Select a Person</value>
+  </data>
+  <data name="Dialog_SelectGanfeldShapefileFolder" xml:space="preserve">
+    <value>Select a folder containing Ganfeld Shapefiles.</value>
+  </data>
+  <data name="Dialog_SelectLUTFolder" xml:space="preserve">
+    <value>Select a folder containing Ganfeld LUT files.</value>
+  </data>
+  <data name="EmptyFields1" xml:space="preserve">
+    <value>Please fill in all fields with an asterix.</value>
+  </data>
+  <data name="Error_CopyStyleFailed" xml:space="preserve">
+    <value>Entered style can't be copied because a file with the same name already exists in style folder.</value>
+  </data>
+  <data name="Error_CopyTitle" xml:space="preserve">
+    <value>Can't copy</value>
+  </data>
+  <data name="Error_GenericTitle" xml:space="preserve">
+    <value>Error found</value>
+  </data>
+  <data name="Error_InvalidCoord" xml:space="preserve">
+    <value>Invalid coordinate entry.</value>
+  </data>
+  <data name="Error_MissingStructureIDFields" xml:space="preserve">
+    <value>Can't find EARTHMATID or STATIONID fields. Make sure input data respects field data schema and has field names exaclty like an original field dataset.</value>
+  </data>
+  <data name="Error_MissingTable" xml:space="preserve">
+    <value>A table is missing inside project database.</value>
+  </data>
+  <data name="Error_Name25Lenght" xml:space="preserve">
+    <value>Entered value for Name exceeds the maximum of 25 characters.</value>
+  </data>
+  <data name="Error_NeedPolygon" xml:space="preserve">
+    <value>Imported feature needs to be polygons in order to work.</value>
+    <comment>Define Study Area tool</comment>
+  </data>
+  <data name="Error_NeedPolygonTitle" xml:space="preserve">
+    <value>Wrong geometry!</value>
+    <comment>Define Study Area tool</comment>
+  </data>
+  <data name="Error_NotEnable1" xml:space="preserve">
+    <value>You must first enable workspace by clicking "Enable Interfaces" to launch properly this tool.</value>
+  </data>
+  <data name="Error_NotEnableTitle1" xml:space="preserve">
+    <value>Enable interfaces</value>
+  </data>
+  <data name="Error_NotInScientificLanguageDictionary" xml:space="preserve">
+    <value>Missing Value in Scientific Language</value>
+  </data>
+  <data name="Error_Organisation1" xml:space="preserve">
+    <value>No valid organisation is attached to selected Person.</value>
+  </data>
+  <data name="Error_PersonIDTooLong" xml:space="preserve">
+    <value>Entered alias is too long, it must be less than 8 caracters.</value>
+  </data>
+  <data name="Error_PurposeValue" xml:space="preserve">
+    <value>No selected purpose values exists in database.</value>
+  </data>
+  <data name="Error_RestrictiedFieldName" xml:space="preserve">
+    <value>Input feature field is restricted, please rename input field: </value>
+  </data>
+  <data name="Error_TopologyAlreadyExists" xml:space="preserve">
+    <value>A topology layer already exists within project database.</value>
+  </data>
+  <data name="Error_WrongFileType" xml:space="preserve">
+    <value>Enter dataset is not handle by the tool. Please select a Shapefile, File Geodatabase data, text file or Excel sheet for the load.</value>
+  </data>
+  <data name="Error_WrongGeometry" xml:space="preserve">
+    <value>Entered feature needs to be point.</value>
+  </data>
+  <data name="FindKeyWord_01" xml:space="preserve">
+    <value>Add</value>
+    <comment>Will be used to detect if selected combobox item has "Add" in it. Based on comments #1,2,3,4</comment>
+  </data>
+  <data name="Keyword_ActivDatabase" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Keyword_BuildCGM" xml:space="preserve">
+    <value>Build_CGM_</value>
+  </data>
+  <data name="Keyword_NewSource" xml:space="preserve">
+    <value>SRC-</value>
+  </data>
+  <data name="Label_Activity_RelatedToMainAct" xml:space="preserve">
+    <value>Main Activity *</value>
+  </data>
+  <data name="Label_Activity_RelatedToProject" xml:space="preserve">
+    <value>Project *</value>
+  </data>
+  <data name="Label_Activity_SubAct" xml:space="preserve">
+    <value>Sub Activity *</value>
+  </data>
+  <data name="Message_AddExistingWorkspace" xml:space="preserve">
+    <value>Add Existing Workspace</value>
+  </data>
+  <data name="Message_AddNewActivity" xml:space="preserve">
+    <value>Add New Activity</value>
+    <comment>4, see FindKeyWord_01</comment>
+  </data>
+  <data name="Message_AddNewArea" xml:space="preserve">
+    <value>Add New Study Area</value>
+    <comment>5, see FindKeyWorkd_01</comment>
+  </data>
+  <data name="Message_AddNewDatabase" xml:space="preserve">
+    <value>Add Existing Database</value>
+  </data>
+  <data name="Message_AddNewDescription1" xml:space="preserve">
+    <value>Add New Description</value>
+  </data>
+  <data name="Message_AddNewHeader1" xml:space="preserve">
+    <value>Add New Header</value>
+  </data>
+  <data name="Message_AddNewOrganisation" xml:space="preserve">
+    <value>Add New Organisation</value>
+    <comment>1, see FindKeyWord_01</comment>
+  </data>
+  <data name="Message_AddNewParticipant" xml:space="preserve">
+    <value>Set as New Participant</value>
+  </data>
+  <data name="Message_AddNewPerson" xml:space="preserve">
+    <value>Add New Participant</value>
+    <comment>2, see FindKeyWord_01</comment>
+  </data>
+  <data name="Message_AddNewProject" xml:space="preserve">
+    <value>Add New Project</value>
+    <comment>3, see FindKeyWord_01</comment>
+  </data>
+  <data name="Message_AddNewsSource" xml:space="preserve">
+    <value>Add New Source</value>
+  </data>
+  <data name="Message_AddStyle" xml:space="preserve">
+    <value>Add Custom Style File</value>
+  </data>
+  <data name="Message_AddTheme1" xml:space="preserve">
+    <value>Write new theme.</value>
+  </data>
+  <data name="Message_AddThemeTitle1" xml:space="preserve">
+    <value>New Theme</value>
+  </data>
+  <data name="Message_CreateMXD" xml:space="preserve">
+    <value>Create MXD</value>
+  </data>
+  <data name="Message_CreateWorkspace" xml:space="preserve">
+    <value>Create workspace</value>
+  </data>
+  <data name="Message_DataPromptTitle" xml:space="preserve">
+    <value>Select data to load</value>
+  </data>
+  <data name="Message_FolderPrompt1" xml:space="preserve">
+    <value>Please select path to folder Tools4Project</value>
+  </data>
+  <data name="Message_FolderPromptButton1" xml:space="preserve">
+    <value>Modify current path?</value>
+  </data>
+  <data name="Message_FStruc" xml:space="preserve">
+    <value>Entered structural data is missing key fields, check wheter or not input data comes from Ganfeld.</value>
+  </data>
+  <data name="Message_FStrucTitle" xml:space="preserve">
+    <value>Missing Key Fields</value>
+  </data>
+  <data name="Message_NoMainActivityInDB" xml:space="preserve">
+    <value>No Activity exists in database</value>
+  </data>
+  <data name="Message_NoSubAct" xml:space="preserve">
+    <value>No Sub Activity</value>
+  </data>
+  <data name="Message_OtherSourceTransfered" xml:space="preserve">
+    <value>Some data present in the old version didn't match current Bedrock Project Database schema. They have been transfered into another database: </value>
+  </data>
+  <data name="Message_OtherSourceTransfered_Title" xml:space="preserve">
+    <value>Other data sources have been found!</value>
+  </data>
+  <data name="Message_SelectOLDPGDB" xml:space="preserve">
+    <value>Select geodatabase to upgrade</value>
+  </data>
+  <data name="Message_TextFileSeperatorQuestion" xml:space="preserve">
+    <value>Enter current text file column seperator character.</value>
+  </data>
+  <data name="Message_TextFileSeperatorTitle" xml:space="preserve">
+    <value>Seperator Character</value>
+  </data>
+  <data name="Message_ToolEnds" xml:space="preserve">
+    <value>Process completed.</value>
+  </data>
+  <data name="Message_ToolEndsTitle" xml:space="preserve">
+    <value>Tool</value>
+  </data>
+  <data name="Warning_BasicTitle" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Warning_CartoAttribute" xml:space="preserve">
+    <value>Please select a theme before loading any data.</value>
+  </data>
+  <data name="Warning_EnvDBChanged" xml:space="preserve">
+    <value>The current version of Working_Environment.gdb was deprecated, a new version was added. You'll need to go to customize in order to re-initialize your settings.</value>
+  </data>
+  <data name="Warning_MissingTopology" xml:space="preserve">
+    <value>A topology feature wasn't found in database. Process will keep going.</value>
+  </data>
+  <data name="Warning_ParticipantDomainCleanUp" xml:space="preserve">
+    <value>Participant Domain can't be cleaned up of old value, please refresh manually.</value>
+  </data>
+  <data name="ErrorEventCreation" xml:space="preserve">
+    <value>An error occured while creating the XY Event for field data. Check field data and make sure there is no unique key duplicate inside table.</value>
+  </data>
+  <data name="ErrorEventCreationTitle" xml:space="preserve">
+    <value>Field Data XY Event</value>
+  </data>
+  <data name="ErrorNoExtensionTitle" xml:space="preserve">
+    <value>Extension Not Available</value>
+  </data>
+  <data name="ErrorNoMaplexInMXD" xml:space="preserve">
+    <value>Maplex Label Engine extension is not available for the moment. Map document will be created without it.</value>
+  </data>
+  <data name="Error_AccessDB1" xml:space="preserve">
+    <value>Project database can't be accessed. Make sure it's available or exists.</value>
+  </data>
+  <data name="Error_AddGeoline1" xml:space="preserve">
+    <value>A value must be selected in all the lists.</value>
+  </data>
+  <data name="Error_CantDeleteWorkspace" xml:space="preserve">
+    <value>Workspace can't be deleted, check for a possible lock.</value>
+  </data>
+  <data name="Error_DisplayField" xml:space="preserve">
+    <value>GSC ERROR: A join currently exists on GEO_LINE feature, please remove it to make layer symbol appear correctly. This problem will be corrected.</value>
+  </data>
+  <data name="Error_FileOrFolderDontExists" xml:space="preserve">
+    <value>Input file or folder doesn't exists or is not a valid single copyable file. The copy process didn't happen. Path:</value>
+    <comment>Intented to show when a copy method fails.</comment>
+  </data>
+  <data name="Error_FileOrFolderDontExistsTitle" xml:space="preserve">
+    <value>Missing parameter</value>
+  </data>
+  <data name="Error_GenericTitle1" xml:space="preserve">
+    <value>An error was found</value>
+  </data>
+  <data name="Error_GeoprocessingFail" xml:space="preserve">
+    <value>Geoprocessing Failed.</value>
+  </data>
+  <data name="Error_GSC_MissingSymbol1" xml:space="preserve">
+    <value>GSC MISSING SYMBOL</value>
+  </data>
+  <data name="Error_GSC_NoFeaturePlabel1" xml:space="preserve">
+    <value>GSC ERROR: Missing feature P_LABELS in database.</value>
+  </data>
+  <data name="Error_GSC_NoGeoline1" xml:space="preserve">
+    <value>GSC ERROR: Missing feature GEO_LINES in database.</value>
+  </data>
+  <data name="Error_InvalideGeolineType1" xml:space="preserve">
+    <value>Invalid geoline type.</value>
+  </data>
+  <data name="Error_InvalidGeolineID1" xml:space="preserve">
+    <value>Invalid GEOLINEID value.</value>
+  </data>
+  <data name="Error_InvalidGeolineIDQuery1" xml:space="preserve">
+    <value>Selected values for Geoline feature, does not exist within GEOLINE_SYMBOL table.</value>
+  </data>
+  <data name="Error_InvalidGeopointID" xml:space="preserve">
+    <value>Invalid GEOPOINTID value.</value>
+  </data>
+  <data name="Error_MapUnit1" xml:space="preserve">
+    <value>You must enter value for name and abbreviation of new map unit or a valid value for symbol.</value>
+  </data>
+  <data name="Error_MissingActicity" xml:space="preserve">
+    <value>A given activity wasn't found inside activity table.</value>
+  </data>
+  <data name="Error_NoEnvDB" xml:space="preserve">
+    <value>Please run set working environment tool in Arc Catalog before launching any tools in Arc Map.</value>
+  </data>
+  <data name="Error_NoParticipant" xml:space="preserve">
+    <value>No participant are present in the project.</value>
+  </data>
+  <data name="Error_NoSelectedValue" xml:space="preserve">
+    <value>Please, select a value inside a required list.</value>
+  </data>
+  <data name="Error_NotInScientificLanguageDictionary1" xml:space="preserve">
+    <value>Missing Value in Scientific Language</value>
+  </data>
+  <data name="Error_Organisation2" xml:space="preserve">
+    <value>No valid organisation is attached to selected Person.</value>
+  </data>
+  <data name="Error_SpatialRefMismatch" xml:space="preserve">
+    <value>Spatial Reference mismatch between input feature and feature to append.</value>
+  </data>
+  <data name="Error_StartEdit1" xml:space="preserve">
+    <value>Already in an edit session, close and restart.</value>
+  </data>
+  <data name="Error_StartEditFeature1" xml:space="preserve">
+    <value>There might be an existing file lock due to processing by another application/user, be sure to close ArcCatalog or notify the other user.</value>
+  </data>
+  <data name="Error_StopEdit1" xml:space="preserve">
+    <value>Edit session was already closed.</value>
+  </data>
+  <data name="Error_SymbolMistmatch" xml:space="preserve">
+    <value>Selected layer contains missing symbols. Still, they will be added to the new layer, but won't have a proper style and legend description.</value>
+    <comment>Create Thematic layer (from selected layer) tool.</comment>
+  </data>
+  <data name="Error_SymbolMistmatch2" xml:space="preserve">
+    <value>Selected layer contains missing symbols. Please refer to symbology to know the problematic codes and edit them. Use a join or a relation with another table or edit symbol with tool "Legend Items".</value>
+    <comment>Create Thematic layer (from selected layer) tool.</comment>
+  </data>
+  <data name="Error_SymbolMistmatchMessageboxTitle" xml:space="preserve">
+    <value>Missing Symbol</value>
+  </data>
+  <data name="Error_ValidNumber1" xml:space="preserve">
+    <value>Entered value must be a valid number</value>
+  </data>
+  <data name="FileName_FStrucValidation" xml:space="preserve">
+    <value>AppendStrucFromGanfeldErrors</value>
+  </data>
+  <data name="GroupLayerBedrock" xml:space="preserve">
+    <value>BEDROCK</value>
+  </data>
+  <data name="GroupLayerEarthMaterials" xml:space="preserve">
+    <value>EARTH MATERIALS</value>
+  </data>
+  <data name="GroupLayerFieldWork" xml:space="preserve">
+    <value>FIELDWORK</value>
+  </data>
+  <data name="GroupLayerInterpretation" xml:space="preserve">
+    <value>INTERPRETATION</value>
+  </data>
+  <data name="GroupLayerPhotos" xml:space="preserve">
+    <value>PHOTOS</value>
+  </data>
+  <data name="GroupLayerProject" xml:space="preserve">
+    <value>PROJECT</value>
+  </data>
+  <data name="GroupLayerSamples" xml:space="preserve">
+    <value>SAMPLES</value>
+  </data>
+  <data name="GroupLayerSource" xml:space="preserve">
+    <value>SOURCE</value>
+  </data>
+  <data name="GroupLayerStations" xml:space="preserve">
+    <value>STATIONS</value>
+  </data>
+  <data name="GroupLayerStruc" xml:space="preserve">
+    <value>STRUCTURES</value>
+  </data>
+  <data name="GroupLayerSurficial" xml:space="preserve">
+    <value>SURFICIAL</value>
+  </data>
+  <data name="GroupLayerValidation" xml:space="preserve">
+    <value>VALIDATION</value>
+  </data>
+  <data name="GroupLayerVisualization" xml:space="preserve">
+    <value>VISUALIZATION</value>
+  </data>
+  <data name="Message_FeaturePromptTitle" xml:space="preserve">
+    <value>Select a feature</value>
+  </data>
+  <data name="Message_FolderPrompt2" xml:space="preserve">
+    <value>Select Tools4Project folder.</value>
+  </data>
+  <data name="Message_FolderPromptButton2" xml:space="preserve">
+    <value>Tool4Project folder path</value>
+  </data>
+  <data name="Message_FolderPromptTitle1" xml:space="preserve">
+    <value>Do you wish to change current path to Tools4Project folder: </value>
+  </data>
+  <data name="Message_SpatialRefPromptTitle" xml:space="preserve">
+    <value>Select a Projection</value>
+  </data>
+  <data name="Message_ToolEnds1" xml:space="preserve">
+    <value>Process completed.</value>
+  </data>
+  <data name="Message_ToolEnds11" xml:space="preserve">
+    <value>Process completed.</value>
+  </data>
+  <data name="Message_ToolEndsTitle1" xml:space="preserve">
+    <value>Tool</value>
+  </data>
+  <data name="Message_ToolEndsTitle11" xml:space="preserve">
+    <value>Tool</value>
+  </data>
+  <data name="Message_XMLFilePrompt" xml:space="preserve">
+    <value>Select XML file</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="StrucAttitudeSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucAttitudeSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StrucFlatteningSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucFlatteningSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StrucGenerationSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucGenerationSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StrucMethodSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucMethodSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StrucPlanarYoungingSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucPlanarYoungingSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StrucStrainSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucStrainSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StrucSubsetLinearSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucSubsetLinearSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="StrucSubsetPlanarSID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrucSubsetPlanarSID.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Text_ButtonInfo_011" xml:space="preserve">
+    <value>All validations steps will: \n -Create layers in TOC of the current MXD under Validation's layer group or \n -Create a report folder in folder ..\\ProjectFolder\\Report or \n -Make the correction.</value>
+  </data>
+  <data name="Text_ParticipantGeolcode1" xml:space="preserve">
+    <value>Geolcode</value>
+  </data>
+  <data name="Text_PartipantRemarks1" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="Text_RoleDescription1" xml:space="preserve">
+    <value>Enter a Role Description</value>
+  </data>
+  <data name="Warning_BasicTitle1" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Warning_EnvDBChanged1" xml:space="preserve">
+    <value>The current version of Working_Environment.gdb was deprecated, a new version was added. You'll need to go to customize in order to re-initialize your settings.</value>
+  </data>
+  <data name="Warning_ExistingFile" xml:space="preserve">
+    <value>A copy with the same name already existed, it has been renamed with current date, and new file has been copied.</value>
+  </data>
+  <data name="Warning_FStrucValidationErrorFound" xml:space="preserve">
+    <value>Some errors from Ganfeld data has been found. For more details, a text file is available here:</value>
+  </data>
+  <data name="Warning_FStrucValidationErrorFoundTitle" xml:space="preserve">
+    <value>Validation errors</value>
+  </data>
+  <data name="Warning_NotImplemented1" xml:space="preserve">
+    <value>Not yet implemented...</value>
+  </data>
+  <data name="Warning_QC_NoSameAdjLabel1" xml:space="preserve">
+    <value>No neighbouring Map Units with same label value found.</value>
+  </data>
+  <data name="Warning_QC_OrphanMU1" xml:space="preserve">
+    <value>No lonely Map Unit found.</value>
+  </data>
+  <data name="Warning_StopEdit1" xml:space="preserve">
+    <value>All changes were saved.</value>
+  </data>
+  <data name="Word_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Word_French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="GSC_PROJECT_EDITOR_WORKSPACE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GSC_PROJECT_EDITOR_WORKSPACE.XML;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Form_Legend_CreateDataBundleCompleted" xml:space="preserve">
+    <value>Outputs can be found here: </value>
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V2_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GSC_BEDROCKGDB_SCHEMA_V2_10.XML;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Error_QC_ConcealedLinesEmptySelectedLayer" xml:space="preserve">
+    <value>Selected layer is empty, please select a valid feature layer in table of content.</value>
+  </data>
+  <data name="Error_QC_ConcealedLinesNoSelectedLayer" xml:space="preserve">
+    <value>Please select a valid feature layer in table of content. Selected layer must be of polygon type.</value>
+  </data>
+  <data name="Warning_QC_ConcealedLinesEmptyTouchLayer" xml:space="preserve">
+    <value>No concealed Geolines that touches boundaries of selected feature layer were found.</value>
+  </data>
+  <data name="Warning_QC_ConcealedLinesEmptyWithinLayer" xml:space="preserve">
+    <value>No concealed Geolines that falls completely inside the boundaries of selected feature layer were found.</value>
+  </data>
+  <data name="Warning_LegendExport_MissingTable" xml:space="preserve">
+    <value>Selected map does not have a legend table view associated to it. Please create one with tool Create Temporary Table for Legend Generator.</value>
+  </data>
+  <data name="Warning_LegendImport_MissingLegendTable" xml:space="preserve">
+    <value>Please select a valid legend table name before continuing.</value>
+  </data>
+  <data name="Error_MissingKeyFields" xml:space="preserve">
+    <value>Couldn't find one or more key fields in input table: </value>
+  </data>
+</root>

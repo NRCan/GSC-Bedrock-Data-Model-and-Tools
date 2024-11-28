@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_Cancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_Cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 164</value>
+  </data>
+  <data name="btn_Cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_Cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="btn_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btn_Cancel.Name" xml:space="preserve">
+    <value>btn_Cancel</value>
+  </data>
+  <data name="&gt;&gt;btn_Cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Cancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Cancel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_Upgrade.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btn_Upgrade.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Upgrade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 164</value>
+  </data>
+  <data name="btn_Upgrade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_Upgrade.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btn_Upgrade.Text" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
+  <data name="&gt;&gt;btn_Upgrade.Name" xml:space="preserve">
+    <value>btn_Upgrade</value>
+  </data>
+  <data name="&gt;&gt;btn_Upgrade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Upgrade.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Upgrade.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_OutputDBName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_OutputDBName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_OutputDBName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 55</value>
+  </data>
+  <data name="label_OutputDBName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="label_OutputDBName.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label_OutputDBName.Text" xml:space="preserve">
+    <value>New Upgraded Database Path*</value>
+  </data>
+  <data name="&gt;&gt;label_OutputDBName.Name" xml:space="preserve">
+    <value>label_OutputDBName</value>
+  </data>
+  <data name="&gt;&gt;label_OutputDBName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_OutputDBName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_OutputDBName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label_InDB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_InDB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_InDB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <data name="label_InDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 13</value>
+  </data>
+  <data name="label_InDB.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_InDB.Text" xml:space="preserve">
+    <value>Database to Upgrade *</value>
+  </data>
+  <data name="&gt;&gt;label_InDB.Name" xml:space="preserve">
+    <value>label_InDB</value>
+  </data>
+  <data name="&gt;&gt;label_InDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_InDB.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_InDB.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btn_SelectDB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHRSURBVDhPldHfS5pRGAfw8xcM/4HB7nejdBFjJQWh
+        Kwis7W43QTVkF9vczTbcwgtH5YULmykt023VVuaUjJwYauJGRU50/ii8sE3L/RAOIRtBjO/Oe6azYcW7
+        Bz5wznue5zkP7yFiovgDEoZWqaqfxQcramNw8f4MMt8PwdZ3qkdnB0uUMnGhWECuP8G5wQn4t78Je3s1
+        7fRgSaGB6TAvPO78LdufhrVIrvZKU8GrlMExVBhXGNsZLzRMsJUrenlx3K+iDMq5h/hFLX8J+11a4dY3
+        nbxB7R+Eg+PC7Rd4g43lbhyVTSfaCt3jdtMGfD74ySU+OPB2VlEfP+ruwuFX44kqBQMKCS3ysQfwzfdz
+        HyN3sWRrqzcILShZ4gg70CAZvt0gFlDD/6qL3XqlgW9WSYl/rgOlzCOsefrhdSiwZO/4x8rLTuxnh1Ep
+        WhoEF6+BLD9vRzqqgWdahcw7DWjeKEopo8fiZLubvJmSI+odwIKVTZLWobyjFyUWGMScWd5H5i0tcNl6
+        EHjdiy8prWiuZwq8GLssITOmS7COtCIbuYG9uEaU3PubmBxtdvNXmHjcxDq14NOGWrSQswdP9U19vIFZ
+        L6PGISn+Ex3TySSEEPIb9LpiuD1vBe8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_SelectDB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_SelectDB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 23</value>
+  </data>
+  <data name="btn_SelectDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="btn_SelectDB.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectDB.Name" xml:space="preserve">
+    <value>btn_SelectDB</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectDB.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_SelectDB.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtbox_DBName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 74</value>
+  </data>
+  <data name="txtbox_DBName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="txtbox_DBName.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtbox_DBName.Name" xml:space="preserve">
+    <value>txtbox_DBName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_DBName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_DBName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtbox_DBName.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtbox_inDBPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 28</value>
+  </data>
+  <data name="txtbox_inDBPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="txtbox_inDBPath.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtbox_inDBPath.Name" xml:space="preserve">
+    <value>txtbox_inDBPath</value>
+  </data>
+  <data name="&gt;&gt;txtbox_inDBPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_inDBPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtbox_inDBPath.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label_upgradedSchema.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_upgradedSchema.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_upgradedSchema.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 97</value>
+  </data>
+  <data name="label_upgradedSchema.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 13</value>
+  </data>
+  <data name="label_upgradedSchema.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="label_upgradedSchema.Text" xml:space="preserve">
+    <value>New Upgraded Database Schema (.xml) *</value>
+  </data>
+  <data name="&gt;&gt;label_upgradedSchema.Name" xml:space="preserve">
+    <value>label_upgradedSchema</value>
+  </data>
+  <data name="&gt;&gt;label_upgradedSchema.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_upgradedSchema.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_upgradedSchema.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_PromptXML.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHRSURBVDhPldHfS5pRGAfw8xcM/4HB7nejdBFjJQWh
+        Kwis7W43QTVkF9vczTbcwgtH5YULmykt023VVuaUjJwYauJGRU50/ii8sE3L/RAOIRtBjO/Oe6azYcW7
+        Bz5wznue5zkP7yFiovgDEoZWqaqfxQcramNw8f4MMt8PwdZ3qkdnB0uUMnGhWECuP8G5wQn4t78Je3s1
+        7fRgSaGB6TAvPO78LdufhrVIrvZKU8GrlMExVBhXGNsZLzRMsJUrenlx3K+iDMq5h/hFLX8J+11a4dY3
+        nbxB7R+Eg+PC7Rd4g43lbhyVTSfaCt3jdtMGfD74ySU+OPB2VlEfP+ruwuFX44kqBQMKCS3ysQfwzfdz
+        HyN3sWRrqzcILShZ4gg70CAZvt0gFlDD/6qL3XqlgW9WSYl/rgOlzCOsefrhdSiwZO/4x8rLTuxnh1Ep
+        WhoEF6+BLD9vRzqqgWdahcw7DWjeKEopo8fiZLubvJmSI+odwIKVTZLWobyjFyUWGMScWd5H5i0tcNl6
+        EHjdiy8prWiuZwq8GLssITOmS7COtCIbuYG9uEaU3PubmBxtdvNXmHjcxDq14NOGWrSQswdP9U19vIFZ
+        L6PGISn+Ex3TySSEEPIb9LpiuD1vBe8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="button_PromptXML.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_PromptXML.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 111</value>
+  </data>
+  <data name="button_PromptXML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="button_PromptXML.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;button_PromptXML.Name" xml:space="preserve">
+    <value>button_PromptXML</value>
+  </data>
+  <data name="&gt;&gt;button_PromptXML.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_PromptXML.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_PromptXML.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBox_upgradedSchemaPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 116</value>
+  </data>
+  <data name="textBox_upgradedSchemaPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="textBox_upgradedSchemaPath.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;textBox_upgradedSchemaPath.Name" xml:space="preserve">
+    <value>textBox_upgradedSchemaPath</value>
+  </data>
+  <data name="&gt;&gt;textBox_upgradedSchemaPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_upgradedSchemaPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_upgradedSchemaPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_select_DBPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHRSURBVDhPldHfS5pRGAfw8xcM/4HB7nejdBFjJQWh
+        Kwis7W43QTVkF9vczTbcwgtH5YULmykt023VVuaUjJwYauJGRU50/ii8sE3L/RAOIRtBjO/Oe6azYcW7
+        Bz5wznue5zkP7yFiovgDEoZWqaqfxQcramNw8f4MMt8PwdZ3qkdnB0uUMnGhWECuP8G5wQn4t78Je3s1
+        7fRgSaGB6TAvPO78LdufhrVIrvZKU8GrlMExVBhXGNsZLzRMsJUrenlx3K+iDMq5h/hFLX8J+11a4dY3
+        nbxB7R+Eg+PC7Rd4g43lbhyVTSfaCt3jdtMGfD74ySU+OPB2VlEfP+ruwuFX44kqBQMKCS3ysQfwzfdz
+        HyN3sWRrqzcILShZ4gg70CAZvt0gFlDD/6qL3XqlgW9WSYl/rgOlzCOsefrhdSiwZO/4x8rLTuxnh1Ep
+        WhoEF6+BLD9vRzqqgWdahcw7DWjeKEopo8fiZLubvJmSI+odwIKVTZLWobyjFyUWGMScWd5H5i0tcNl6
+        EHjdiy8prWiuZwq8GLssITOmS7COtCIbuYG9uEaU3PubmBxtdvNXmHjcxDq14NOGWrSQswdP9U19vIFZ
+        L6PGISn+Ex3TySSEEPIb9LpiuD1vBe8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_select_DBPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_select_DBPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 65</value>
+  </data>
+  <data name="btn_select_DBPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="btn_select_DBPath.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;btn_select_DBPath.Name" xml:space="preserve">
+    <value>btn_select_DBPath</value>
+  </data>
+  <data name="&gt;&gt;btn_select_DBPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_select_DBPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_select_DBPath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>399, 207</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8BlYNz762fk/+rnZH/qZuP/6eZjf+kl4v/opWJ/5qMgP+ekIT/gXRp/11TS/98cWf/lYh8/21c
+        TO////8B////AZiGdv////////////////////////////n5+f+rq6v/wMDA/5CQkP+Mi4v/kJCQ/8DA
+        wP9bUUj/AAAAB////wGbiXn///////Xs4v/17eP/9e7l//Xv5//EwLv/eXl5/3d3dv9mZmX/yMbG/2Zl
+        Zf9ycXH/cG9v/1hYWFH///8Bnox8///////17OH///z4///9+f///fv/zczL/3l5ef/X1tX/yMfH/7Kx
+        sf+8u7r/trW0/2tqaf8/Pz9DAAAAMaminP/y8vL/xLSi/72uoP+3raX/z87M/5SUk/9paWn/19bW/3Jy
+        cv+CgoL/X19f/769vf9gX17/T09Ps/zy4fP68N//2dbS/+LXx//y59b/7OLU/+DZzv+5t7X/8fHx/83M
+        zP+CgoL//////4KCgv+2tbX/z87O/4qJif//9eT/uZVW///15P/HqHL/q4I5/6uCOf/AnmT/8eXQ/66s
+        qf/t7e3/YmJi/4KCgv9hYWH/z87O/2FgX/9YWFif//Xk/49bAP+dbh3/j1sA/5ZlDv+rgjn/j1sA/7mV
+        Vv/m3tL/+vr6/+np6f/R0dH/3t3d/9jX1/90c3L/Tk5ON//15P+PWwD/j1sA/5ZlDv/469b/+fDg//jr
+        1v+yi0f///Xk/7++vf9oamj//////2VnZP9+fX3/fX19/1hYWFH/9eT/j1sA/49bAP+PWwD/uZVW//nw
+        4P+8vbj/+fDh//zy4v/v7er/gIyA/6Ghof9xfGv/zsbB/3tvZP////8B/PLh8//15P//9eT///Xk///1
+        5P//9eT///Xk///15P/88uL///v2/9LLw//Mw7r/z76t/9zOw/+OfGz/////Afzy4fP68OD/2dbS//vx
+        4P+5lVb/j1sA/49bAP+PWwD///Xk//358/+di3v/moh4/5eFdf+UgnL/koBw/////wH469b/sotH//jr
+        1v/37dz/+OvW/5ZlDv+PWwD/j1sA///15P/58+z/oI5+////////////2NLM/5WDc+////8B//Xkv7mV
+        Vv+PWwD/q4I5/5ZlDv+PWwD/nW4d/49bAP//9eT/8une/6ORgf//////29TO/5uJee+YhnYx////Aeri
+        1UH26dT/wJ5k/6uCOf+rgjn/x6hy///15P+5lVb///Xk//Dq5f+mlIT/3dbQ/6GPf++ejHwx////Af//
+        /wGqqKYR4tnQ7/Pp2//37d7/9+3e//Dm2f/k2tD//fPi//3z4v/WzcX/qpiI/6eVhe+kkoIx////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Upgrade Geodatabase Version</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormUpgradeGDBVersion</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

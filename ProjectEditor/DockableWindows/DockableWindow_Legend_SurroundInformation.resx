@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtbox_MapName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtbox_MapName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 44</value>
+  </data>
+  <data name="txtbox_MapName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtbox_MapName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapName.Name" xml:space="preserve">
+    <value>txtbox_MapName</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapName.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_MapName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_MapName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_MapName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 28</value>
+  </data>
+  <data name="label_MapName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="label_MapName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_MapName.Text" xml:space="preserve">
+    <value>Name *</value>
+  </data>
+  <data name="&gt;&gt;label_MapName.Name" xml:space="preserve">
+    <value>label_MapName</value>
+  </data>
+  <data name="&gt;&gt;label_MapName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_MapName.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;label_MapName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtbox_MapID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_MapID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 83</value>
+  </data>
+  <data name="txtbox_MapID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 20</value>
+  </data>
+  <data name="txtbox_MapID.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapID.Name" xml:space="preserve">
+    <value>txtbox_MapID</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapID.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_mapID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_mapID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_mapID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 67</value>
+  </data>
+  <data name="label_mapID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="label_mapID.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_mapID.Text" xml:space="preserve">
+    <value>Map ID (ex: CGM490) *</value>
+  </data>
+  <data name="&gt;&gt;label_mapID.Name" xml:space="preserve">
+    <value>label_mapID</value>
+  </data>
+  <data name="&gt;&gt;label_mapID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_mapID.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;label_mapID.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtbox_MapAbstract.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_MapAbstract.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 120</value>
+  </data>
+  <data name="txtbox_MapAbstract.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_MapAbstract.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 80</value>
+  </data>
+  <data name="txtbox_MapAbstract.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="txtbox_MapAbstract.Text" xml:space="preserve">
+    <value>Pop a window with more text</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapAbstract.Name" xml:space="preserve">
+    <value>txtbox_MapAbstract</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapAbstract.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapAbstract.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapAbstract.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label_MapAbstract.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_MapAbstract.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_MapAbstract.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 104</value>
+  </data>
+  <data name="label_MapAbstract.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="label_MapAbstract.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_MapAbstract.Text" xml:space="preserve">
+    <value>Abstract</value>
+  </data>
+  <data name="&gt;&gt;label_MapAbstract.Name" xml:space="preserve">
+    <value>label_MapAbstract</value>
+  </data>
+  <data name="&gt;&gt;label_MapAbstract.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_MapAbstract.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;label_MapAbstract.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtbox_MapResume.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_MapResume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 219</value>
+  </data>
+  <data name="txtbox_MapResume.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_MapResume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 80</value>
+  </data>
+  <data name="txtbox_MapResume.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="txtbox_MapResume.Text" xml:space="preserve">
+    <value>Pop a window with more text space</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapResume.Name" xml:space="preserve">
+    <value>txtbox_MapResume</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapResume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapResume.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapResume.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label_MapResume.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_MapResume.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_MapResume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 203</value>
+  </data>
+  <data name="label_MapResume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="label_MapResume.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_MapResume.Text" xml:space="preserve">
+    <value>Résumé</value>
+  </data>
+  <data name="&gt;&gt;label_MapResume.Name" xml:space="preserve">
+    <value>label_MapResume</value>
+  </data>
+  <data name="&gt;&gt;label_MapResume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_MapResume.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;label_MapResume.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtbox_MapDescNotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_MapDescNotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 318</value>
+  </data>
+  <data name="txtbox_MapDescNotes.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_MapDescNotes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 80</value>
+  </data>
+  <data name="txtbox_MapDescNotes.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="txtbox_MapDescNotes.Text" xml:space="preserve">
+    <value>Pop a window with more text space</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapDescNotes.Name" xml:space="preserve">
+    <value>txtbox_MapDescNotes</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapDescNotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapDescNotes.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapDescNotes.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label_MapDescNotes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_MapDescNotes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_MapDescNotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 302</value>
+  </data>
+  <data name="label_MapDescNotes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="label_MapDescNotes.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_MapDescNotes.Text" xml:space="preserve">
+    <value>Descriptive Notes</value>
+  </data>
+  <data name="&gt;&gt;label_MapDescNotes.Name" xml:space="preserve">
+    <value>label_MapDescNotes</value>
+  </data>
+  <data name="&gt;&gt;label_MapDescNotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_MapDescNotes.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;label_MapDescNotes.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtbox_MapRemarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtbox_MapRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 417</value>
+  </data>
+  <data name="txtbox_MapRemarks.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtbox_MapRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 80</value>
+  </data>
+  <data name="txtbox_MapRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapRemarks.Name" xml:space="preserve">
+    <value>txtbox_MapRemarks</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapRemarks.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;txtbox_MapRemarks.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label_MapRemarks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_MapRemarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_MapRemarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 401</value>
+  </data>
+  <data name="label_MapRemarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="label_MapRemarks.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_MapRemarks.Text" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="&gt;&gt;label_MapRemarks.Name" xml:space="preserve">
+    <value>label_MapRemarks</value>
+  </data>
+  <data name="&gt;&gt;label_MapRemarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_MapRemarks.Parent" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;label_MapRemarks.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="groupBox_CGM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 54</value>
+  </data>
+  <data name="groupBox_CGM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 516</value>
+  </data>
+  <data name="groupBox_CGM.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox_CGM.Text" xml:space="preserve">
+    <value>Surround Information</value>
+  </data>
+  <data name="&gt;&gt;groupBox_CGM.Name" xml:space="preserve">
+    <value>groupBox_CGM</value>
+  </data>
+  <data name="&gt;&gt;groupBox_CGM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_CGM.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox_CGM.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_AddCGM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btn_AddCGM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_AddCGM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 576</value>
+  </data>
+  <data name="btn_AddCGM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 23</value>
+  </data>
+  <data name="btn_AddCGM.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btn_AddCGM.Text" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="&gt;&gt;btn_AddCGM.Name" xml:space="preserve">
+    <value>btn_AddCGM</value>
+  </data>
+  <data name="&gt;&gt;btn_AddCGM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddCGM.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_AddCGM.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_SelectCGMap.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_SelectCGMap.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label_SelectCGMap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_SelectCGMap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 10</value>
+  </data>
+  <data name="label_SelectCGMap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="label_SelectCGMap.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label_SelectCGMap.Text" xml:space="preserve">
+    <value>Select a CGM map</value>
+  </data>
+  <data name="&gt;&gt;label_SelectCGMap.Name" xml:space="preserve">
+    <value>label_SelectCGMap</value>
+  </data>
+  <data name="&gt;&gt;label_SelectCGMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_SelectCGMap.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_SelectCGMap.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbox_selectCGMap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 27</value>
+  </data>
+  <data name="cbox_selectCGMap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 21</value>
+  </data>
+  <data name="cbox_selectCGMap.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectCGMap.Name" xml:space="preserve">
+    <value>cbox_selectCGMap</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectCGMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectCGMap.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbox_selectCGMap.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_ClearCGMBoxes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_ClearCGMBoxes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 576</value>
+  </data>
+  <data name="btn_ClearCGMBoxes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ClearCGMBoxes.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btn_ClearCGMBoxes.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearCGMBoxes.Name" xml:space="preserve">
+    <value>btn_ClearCGMBoxes</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearCGMBoxes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearCGMBoxes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_ClearCGMBoxes.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="tooltip_AssignLegend.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 609</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;tooltip_AssignLegend.Name" xml:space="preserve">
+    <value>tooltip_AssignLegend</value>
+  </data>
+  <data name="&gt;&gt;tooltip_AssignLegend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DockableWindowCGM</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

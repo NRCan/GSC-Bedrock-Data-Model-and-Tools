@@ -1,0 +1,15 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE
+1;01;first;first
+2;02;second;second
+3;03;third;third
+4;04;fourth;fourth
+5;10;primary;primary
+6;11;multi-generation;multi-generation
+7;88;undefined;undefined
+8;66;not entered;
+9;66;not entered; 
+10;66;not entered;  
+11;66;not entered;";"
+12;05;fifth;fifth
+13;66;not entered;not entered
+14;88;undefined;not applicable

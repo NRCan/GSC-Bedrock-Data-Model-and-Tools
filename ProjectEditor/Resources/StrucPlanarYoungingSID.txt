@@ -1,0 +1,15 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE
+1;01;younging known, sedimentary structure;known, sedimentary structure
+2;02;younging known, igneous structure;known, igneous structure
+3;03;younging known, stratigraphic order;known, stratigraphic order
+4;04;younging inferred, stratigraphic order;inferred, stratigraphic order
+5;05;younging inferred, bedding-cleavage ;inferred, bedding-cleavage relations
+6;06;younging evidence unknown, historical data;unknown
+7;07;no younging evidence;assumed, no evidence
+8;07;no younging evidence;
+9;07;no younging evidence; 
+10;99;younging evidence not applicable;not applicable
+11;99;younging evidence not applicable;unknown/not applicable
+12;07;no younging evidence;no younging evidence
+13;05;younging inferred, bedding-cleavage ;inferred, bedding-cleavage
+14;66;not entered;not entered

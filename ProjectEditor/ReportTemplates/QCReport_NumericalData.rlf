@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Version="2.0" Name="QC_NumericalDataReportTable" Layer="False" TOCField="" DatasetMode="0" StartingPageNumber="1">
+	<DataSource Name="QC_NumericalDataReportTable" BrowseName="QC_NumericalDataReportTable" Type="10" FullName="">
+		<Workspace WorkspaceType="1" PathName="C:\Users\ghuotvez\Documents\ArcGIS\Working_Environment.gdb">
+			<Property Name="DATABASE" Value="C:\Users\ghuotvez\Documents\ArcGIS\\Working_Environment.gdb" />
+		</Workspace>
+	</DataSource>
+	<SourceFields>
+		<Field Name="OBJECTID" SafeName="OBJECTID" Type="6" SortAsc="True" />
+		<Field Name="DATASET_NAME" SafeName="DATASET_NAME" Type="4" SortAsc="True" />
+		<Field Name="FIELD_NAME" SafeName="FIELD_NAME" Type="4" SortAsc="True" />
+		<Field Name="FIELD_TYPE" SafeName="FIELD_TYPE" Type="4" SortAsc="True" />
+		<Field Name="FIELD_MIN" SafeName="FIELD_MIN" Type="3" SortAsc="True" />
+		<Field Name="FIELD_MAX" SafeName="FIELD_MAX" Type="3" SortAsc="True" />
+		<Field Name="FIELD_AVG" SafeName="FIELD_AVG" Type="3" SortAsc="True" />
+		<Field Name="FIELD_STD" SafeName="FIELD_STD" Type="3" SortAsc="True" />
+		<Field Name="FIELD_COUNT" SafeName="FIELD_COUNT" Type="1" SortAsc="True" />
+	</SourceFields>
+	<ReportFields>
+		<Field Name="DATASET_NAME" />
+		<Field Name="FIELD_NAME" />
+		<Field Name="FIELD_MIN" />
+		<Field Name="FIELD_MAX" />
+		<Field Name="FIELD_AVG" />
+		<Field Name="FIELD_STD" />
+		<Field Name="FIELD_COUNT" />
+	</ReportFields>
+	<GroupFields>
+		<Field Name="DATASET_NAME" />
+	</GroupFields>
+	<ReportStyle Name="Tonawanda" UserStyle="False">
+		<SectionStyle Type="0" BackColor="#4580B5">
+			<Font Size="18" Style="Bold" Color="#FFFFFF">Verdana</Font>
+		</SectionStyle>
+		<SectionStyle Type="1" Lines="1" LinesColor="#000000">
+			<Font Size="9" Style="Bold" Color="#4580B5">Verdana</Font>
+		</SectionStyle>
+		<SectionStyle Type="2">
+			<Font Size="9" Style="Regular" Color="#4580B5">Verdana</Font>
+		</SectionStyle>
+		<DetailSectionStyle Type="3">
+			<Font Size="9" Style="Regular" Color="#000000">Verdana</Font>
+		</DetailSectionStyle>
+		<SectionStyle Type="4">
+			<Font Size="8" Style="Regular" Color="#000000">Verdana</Font>
+		</SectionStyle>
+		<SectionStyle Type="5">
+			<Font Size="8" Style="Regular" Color="#000000">Verdana</Font>
+		</SectionStyle>
+		<SectionStyle Type="6">
+			<Font Size="8" Style="Regular" Color="#000000">Verdana</Font>
+		</SectionStyle>
+	</ReportStyle>
+	<ActiveReportsLayout Version="3.1" PrintWidth="12960" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+		<StyleSheet>
+			<Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+			<Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+			<Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+			<Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+		</StyleSheet>
+		<Sections>
+			<Section Type="ReportHeader" Name="ReportHeader" Height="723" BackStyle="1" BackColor="11894853">
+				<Control Type="AR.Label" Name="lblReportTitle" Left="0" Top="72" Width="8600" Height="580" Caption="QC_NumericalDataReportTable" Style="color: #FFFFFF; font-weight: bold; background-color: #4580B5; font-size: 18pt; font-family: Verdana; vertical-align: middle; " />
+			</Section>
+			<Section Type="PageHeader" Name="pageHeader" Height="344" BackColor="16777215">
+				<Control Type="AR.Label" Name="lblDATASET_NAME" Left="0" Top="14.4" Width="2300" Height="280" Caption="Dataset Name" Style="color: #4580B5; font-weight: bold; font-size: 10pt; font-family: Verdana; white-space: nowrap; " />
+				<Control Type="AR.Label" Name="lblFIELD_NAME" Left="2301.44" Top="14.4" Width="2300" Height="280" Caption="Field" Style="color: #4580B5; font-weight: bold; font-size: 10pt; font-family: Verdana; white-space: nowrap; " />
+				<Control Type="AR.Label" Name="lblFIELD_MIN" Left="4602.88" Top="14.4" Width="1580" Height="280" Caption="Minimum" Style="color: #4580B5; font-weight: bold; font-size: 10pt; font-family: Verdana; white-space: nowrap; " />
+				<Control Type="AR.Label" Name="lblFIELD_MAX" Left="6184.32" Top="14.4" Width="1580" Height="280" Caption="Maximum" Style="color: #4580B5; font-weight: bold; font-size: 10pt; font-family: Verdana; white-space: nowrap; " />
+				<Control Type="AR.Label" Name="lblFIELD_AVG" Left="7765.759" Top="14.4" Width="1580" Height="280" Caption="Average" Style="color: #4580B5; font-weight: bold; font-size: 10pt; font-family: Verdana; white-space: nowrap; " />
+				<Control Type="AR.Label" Name="lblFIELD_STD" Left="9347.2" Top="14.4" Width="1580" Height="280" Caption="Std. Dev." Style="color: #4580B5; font-weight: bold; font-size: 10pt; font-family: Verdana; white-space: nowrap; " />
+				<Control Type="AR.Label" Name="lblFIELD_COUNT" Left="10928.64" Top="14.4" Width="1580" Height="280" Caption="Count" Style="color: #4580B5; font-weight: bold; font-size: 10pt; font-family: Verdana; white-space: nowrap; " />
+				<Control Type="AR.Line" Name="styleLine1" X1="0" Y1="0" X2="12960" Y2="0" LineColor="0" />
+			</Section>
+			<Section Type="GroupHeader" Name="ghDATASET_NAME" Height="280" DataField="DATASET_NAME" BackStyle="1" BackColor="14737632">
+				<Control Type="AR.Field" Name="txtDATASET_NAME" DataField="DATASET_NAME" Left="0" Top="0" Width="2300" Height="280" Text="DATASET_NAME" Style="color: Black; text-align: left; font-weight: bold; font-size: 8pt; font-family: Verdana; " />
+			</Section>
+			<Section Type="Detail" Name="detail" Height="280" BackColor="16777215">
+				<Control Type="AR.Field" Name="txtFIELD_NAME" DataField="FIELD_NAME" Left="2301.44" Top="0" Width="2300" Height="280" Text="FIELD_NAME" Style="color: #000000; font-size: 9pt; font-family: Verdana; " />
+				<Control Type="AR.Field" Name="txtFIELD_MIN" DataField="FIELD_MIN" Left="4602.88" Top="0" Width="1580" Height="280" Text="FIELD_MIN" Style="color: #000000; text-align: left; font-size: 9pt; font-family: Verdana; " />
+				<Control Type="AR.Field" Name="txtFIELD_MAX" DataField="FIELD_MAX" Left="6184.32" Top="0" Width="1580" Height="280" Text="FIELD_MAX" Style="color: #000000; text-align: left; font-size: 9pt; font-family: Verdana; " />
+				<Control Type="AR.Field" Name="txtFIELD_AVG" DataField="FIELD_AVG" Left="7765.759" Top="0" Width="1580" Height="280" Text="FIELD_AVG" Style="color: #000000; text-align: left; font-size: 9pt; font-family: Verdana; " />
+				<Control Type="AR.Field" Name="txtFIELD_STD" DataField="FIELD_STD" Left="9347.2" Top="0" Width="1580" Height="280" Text="FIELD_STD" Style="color: #000000; text-align: left; font-size: 9pt; font-family: Verdana; " />
+				<Control Type="AR.Field" Name="txtFIELD_COUNT" DataField="FIELD_COUNT" Left="10928.64" Top="0" Width="1580" Height="280" Text="FIELD_COUNT" Style="color: #000000; text-align: left; font-size: 9pt; font-family: Verdana; " />
+			</Section>
+			<Section Type="GroupFooter" Name="gfDATASET_NAME" Height="0" BackColor="16777215" />
+			<Section Type="PageFooter" Name="pageFooter" Height="299" BackColor="16777215">
+				<Control Type="AR.ReportInfo" Name="rptInfoPgNo" Left="1980" Top="0" Width="5400" Height="288" FormatString="Page {PageNumber} of {PageCount}" Style="color: #000000; text-align: center; font-size: 8pt; font-family: Verdana; " />
+			</Section>
+			<Section Type="ReportFooter" Name="ReportFooter" Height="0" BackColor="16777215" />
+		</Sections>
+		<PageSettings TopMargin="720" Orientation="2" />
+		<Parameters />
+	</ActiveReportsLayout>
+</Report>

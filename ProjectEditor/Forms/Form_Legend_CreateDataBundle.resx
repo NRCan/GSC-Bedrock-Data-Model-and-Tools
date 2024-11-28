@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;checkedListBox_Maps.Name" xml:space="preserve">
+    <value>checkedListBox_Maps</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Maps.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Maps.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Maps.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 138</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Available Maps</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkedListBox_Maps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="checkedListBox_Maps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 109</value>
+  </data>
+  <data name="checkedListBox_Maps.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Maps.Name" xml:space="preserve">
+    <value>checkedListBox_Maps</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Maps.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Maps.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox_Maps.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_Create.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_Create.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Create.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 296</value>
+  </data>
+  <data name="btn_Create.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="btn_Create.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btn_Create.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="&gt;&gt;btn_Create.Name" xml:space="preserve">
+    <value>btn_Create</value>
+  </data>
+  <data name="&gt;&gt;btn_Create.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Create.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Create.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.Name" xml:space="preserve">
+    <value>label_AddToCartoElement</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.Name" xml:space="preserve">
+    <value>label_newProjection</value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.Name" xml:space="preserve">
+    <value>btn_AddToCartoElement</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.Name" xml:space="preserve">
+    <value>txtbox_AddToCartoElement</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.Name" xml:space="preserve">
+    <value>btn_newProjection</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.Name" xml:space="preserve">
+    <value>txtbox_newProjection</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox_Options.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 156</value>
+  </data>
+  <data name="groupBox_Options.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 134</value>
+  </data>
+  <data name="groupBox_Options.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="groupBox_Options.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Options.Name" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Options.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Options.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox_Options.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_AddToCartoElement.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_AddToCartoElement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_AddToCartoElement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 77</value>
+  </data>
+  <data name="label_AddToCartoElement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 13</value>
+  </data>
+  <data name="label_AddToCartoElement.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label_AddToCartoElement.Text" xml:space="preserve">
+    <value>Add layers to CartoElement database</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.Name" xml:space="preserve">
+    <value>label_AddToCartoElement</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;label_AddToCartoElement.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_newProjection.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_newProjection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_newProjection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 25</value>
+  </data>
+  <data name="label_newProjection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="label_newProjection.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label_newProjection.Text" xml:space="preserve">
+    <value>Set new projection </value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.Name" xml:space="preserve">
+    <value>label_newProjection</value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;label_newProjection.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_AddToCartoElement.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHRSURBVDhPldHfS5pRGAfw8xcM/4HB7nejdBFjJQWh
+        Kwis7W43QTVkF9vczTbcwgtH5YULmykt023VVuaUjJwYauJGRU50/ii8sE3L/RAOIRtBjO/Oe6azYcW7
+        Bz5wznue5zkP7yFiovgDEoZWqaqfxQcramNw8f4MMt8PwdZ3qkdnB0uUMnGhWECuP8G5wQn4t78Je3s1
+        7fRgSaGB6TAvPO78LdufhrVIrvZKU8GrlMExVBhXGNsZLzRMsJUrenlx3K+iDMq5h/hFLX8J+11a4dY3
+        nbxB7R+Eg+PC7Rd4g43lbhyVTSfaCt3jdtMGfD74ySU+OPB2VlEfP+ruwuFX44kqBQMKCS3ysQfwzfdz
+        HyN3sWRrqzcILShZ4gg70CAZvt0gFlDD/6qL3XqlgW9WSYl/rgOlzCOsefrhdSiwZO/4x8rLTuxnh1Ep
+        WhoEF6+BLD9vRzqqgWdahcw7DWjeKEopo8fiZLubvJmSI+odwIKVTZLWobyjFyUWGMScWd5H5i0tcNl6
+        EHjdiy8prWiuZwq8GLssITOmS7COtCIbuYG9uEaU3PubmBxtdvNXmHjcxDq14NOGWrSQswdP9U19vIFZ
+        L6PGISn+Ex3TySSEEPIb9LpiuD1vBe8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btn_AddToCartoElement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_AddToCartoElement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 91</value>
+  </data>
+  <data name="btn_AddToCartoElement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="btn_AddToCartoElement.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.Name" xml:space="preserve">
+    <value>btn_AddToCartoElement</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;btn_AddToCartoElement.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtbox_AddToCartoElement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 96</value>
+  </data>
+  <data name="txtbox_AddToCartoElement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="txtbox_AddToCartoElement.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.Name" xml:space="preserve">
+    <value>txtbox_AddToCartoElement</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;txtbox_AddToCartoElement.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_newProjection.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIqSURBVDhPjZLfS1NhGMcP9A94HXjbRRdBRRfizUZ3
+        FQUFaUVaItkvtuZAa9M4rXaoIwypVnniNIvaLzDbwm3NDd1waaU3MUepmxLi5pbOlWvuR357z5yzSYt9
+        4cPzPs/7PF94Xl6qnMbeqK55TEra0dtK92sviczdzSKD5nxV4ZrSjc6KCHQhLdWwUaEL+41YX/IgHrQg
+        MmnC1HsO43YW4zYWVk6C+/xjOOfWUBjZkPtVe9WQQTG0ErLg4wCD1MIAcjE3slEXYRCZRSfhHdIRBzhD
+        L3hfsNTA2nNV9/2rGby6HoFhFvHpF0iH7QQb1hbe4kdQj7mxLsyMqEF3dUJl9oJqlNM0ARfbO+B7TcNr
+        lkN3+whsfAtCoxqsTOnw61sfic8w7VXhQ78UevYoTjfV4YJGnzfAajIFr/UR/C4GysZ9cDw9C+ZyDYIj
+        dxD03cNy4AlC5PzJIsPD62IoG/agRlyLvadkGwbZ3DoGX7aBu3kYfHcH1JJDeNAmhvbGQdi4BkxYZTBp
+        TkDZdAD1omqGbLuTUE3YlTdIZX+DY5rxXHsLq6kMIrEl3JUfR+vJ3bBzZ8BKasFpFKhrkQqPtoOwpfwK
+        6RzsE7NwfZ6H50u0mPPGPqg6pfmYSKYh9BbGtiQUE6lcRZQ1WE5m4Q5Ei2zPN2tlDWI/MxVR1iCSyMDp
+        XyyyPd+slTWYCScwH0//F6HnnwbHzl3pES4qQegtjJVI+BT7K0To/UsU9QdRijWzqQbuuwAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="btn_newProjection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_newProjection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 39</value>
+  </data>
+  <data name="btn_newProjection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="btn_newProjection.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.Name" xml:space="preserve">
+    <value>btn_newProjection</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;btn_newProjection.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtbox_newProjection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 44</value>
+  </data>
+  <data name="txtbox_newProjection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="txtbox_newProjection.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.Name" xml:space="preserve">
+    <value>txtbox_newProjection</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.Parent" xml:space="preserve">
+    <value>groupBox_Options</value>
+  </data>
+  <data name="&gt;&gt;txtbox_newProjection.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>423, 331</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////AQAAABEgSmVlAAsUVwAAAAn///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8BFTBCHSBLZnkrYobnM3Ka/xU0Ss8AAAA3AAAACf//
+        /wH///8B////Af///wH///8B////AQAAAAMYOU8xI1FvkStjh/MycJn/Nneh/zl8p/8hT27/AhEdcQAA
+        ADcAAAAF////Af///wH///8BAAAABRo+VkEjU3KvK2SI/ytljf8dUXb/GU9z/zt/qv8/hLH/NG+W/wQj
+        OM8AAABBAAAAI////wH///8B////AS5igsMqY4n/L22U/xhMb/8SQ2T/Ilh8/y1tlf81d6H/RIy7/0iP
+        vP8GLkn/AhMfZQAAADkAAAAD////Af///wFKhanvMW+Y/zV1nv8cVXr/IEpp/xAtR/8vaZH/KGaN/0mU
+        xP9Nmcv/HE1u/wYpQrcAAAA/AAAAG////wH///8BVZG2vzd4ov86faj/I16E/xQ2VP8GID3/OHei/ypq
+        kv9PnM7/UqLV/zBtlf8JOFn/AxQhTQAAACUAAAAD////AWOfxIE8gKv/P4Wy/yViif9Cibf/J16H/yZk
+        i/8zdqH/TqLU/1Gr3P9FmcL/DUNn/wk1VasAAAAXAAAAB////wFzr9NRRIq3/0SNvP8xc53/JmOL/zN2
+        of9Vp9j/TqjZ/1u34/9xxuv/eszv/yRih/8NRm3xAAAAB////wH///8BdrPXIVOaxv9Klcb/SZvN/0ij
+        1v9jvuv/cMXt/3HG6v9yxOn/UprE/0yTwv9XmMP/GleA/w9MdjH///8B////Af///wFWptXvO5zR/1Oy
+        4P9sw+r/c8nu/2/F6v9ivuT/S5zJ/zFrmv9Eh7f/Roq5/0yLtP8QUX2B////Af///wH///8BYbvlv3rM
+        7v90xOj/Z7Da/1uj0P9dueP/csfr/1285v9Ejbz/Roq6/0aKuf9Ki7f/M3Sfz////wH///8B////AXbI
+        6yF0uOLPY6jW/1+j0P9bnsv/VZ7L/1y54v9wx+z/Wbfk/0uSwv9Firj/UZnE/2Gv1v9zx+sR////Af//
+        /wH///8Bf73kEXGy3M9fo9D/W57L/1eZxv9Wo8//Xrjh/23H8P9YsuH/bL/l/3PH689zx+thc8frEf//
+        /wH///8B////Af///wF9u+ERbq7Yz1uey/9Wmsf/XKbQ/2S+5/9kvOTvYsPxn2i74jH///8B////Af//
+        /wH///8B////Af///wH///8B////AXu43hFpuODPb8br72/G659wxutR////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Create Data Bundle</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormCreatePublication</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

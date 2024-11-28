@@ -1,0 +1,14 @@
+OID;CODE;DESCRIPTION;FIELD_VALUE
+1;01;inclined, upright;inclined, upright
+2;02;inclined, overturned < 180;overturned < 180
+3;03;inclined, overturned > 180;overturned > 180
+4;04;vertical;vertical
+5;05;horizontal;horizontal
+6;06;inclined;inclined
+7;07;horizontal, upright;horizontal, upright
+8;08;horizontal, overturned;horizontal, overturned
+9;88;undefined;indeterminate
+10;88;undefined;not applicable
+11;88;undefined;
+12;88;undefined; 
+13;88;undefined;undefined

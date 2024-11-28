@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_AddEvent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABh0RVh0U29mdHdh
+        cmUAUGFpbnQuTkVUIHYzLjM2qefiJQAAAPpJREFUOE9jGLzg06dP/0H448ePYAxiQ6WIAx8+fPhvXsEL
+        xyBDoFLEgVevXoM1pi6xAdOvX7+hzAAQHyqFHbwAKkDHhmXc/xMWWf03AtLY5KFaIeDly1f/NYs5IbiE
+        A44jFlgAaahYMQhD2CD1UK0Q8BwooFDA+t9/rglW7AemTcFskDqQeqhWCHgBFOBLZ/jPm4HAIL71NF0E
+        H0kOpB6qFQJAAij4xcv/7EkM/w2naPznTIRoQMdQrdjBs+cv/jPHMPzXnqAOpp8BDYRKEQeegzREMPxX
+        6VcB0yQbAHIBSCMMgw0kBTx++uwTyBAQBml+AuRDpagJGBgADS8U6e2hJAwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="label_EventName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label_EventName.Text" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="button_Cancel.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="button_AddModify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 23</value>
+  </data>
+  <data name="button_AddModify.Text" xml:space="preserve">
+    <value>Ajouter/Modifier</value>
+  </data>
+  <data name="button_AddItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABh0RVh0U29mdHdh
+        cmUAUGFpbnQuTkVUIHYzLjM2qefiJQAAAPpJREFUOE9jGLzg06dP/0H448ePYAxiQ6WIAx8+fPhvXsEL
+        xyBDoFLEgVevXoM1pi6xAdOvX7+hzAAQHyqFHbwAKkDHhmXc/xMWWf03AtLY5KFaIeDly1f/NYs5IbiE
+        A44jFlgAaahYMQhD2CD1UK0Q8BwooFDA+t9/rglW7AemTcFskDqQeqhWCHgBFOBLZ/jPm4HAIL71NF0E
+        H0kOpB6qFQJAAij4xcv/7EkM/w2naPznTIRoQMdQrdjBs+cv/jPHMPzXnqAOpp8BDYRKEQeegzREMPxX
+        6VcB0yQbAHIBSCMMgw0kBTx++uwTyBAQBml+AuRDpagJGBgADS8U6e2hJAwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="label_linkedItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="label_linkedItem.Text" xml:space="preserve">
+    <value>Élements Reliés</value>
+  </data>
+  <data name="label_PrefixMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="label_PrefixMin.Text" xml:space="preserve">
+    <value>Préfixe</value>
+  </data>
+  <data name="label_TimescaleMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="label_TimescaleMin.Text" xml:space="preserve">
+    <value>Échelle de Temps</value>
+  </data>
+  <data name="groupBox_MinAge.Text" xml:space="preserve">
+    <value>Âge Minimum</value>
+  </data>
+  <data name="label_CertaintyMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="label_CertaintyMin.Text" xml:space="preserve">
+    <value>Incertitude (+/-Ma)</value>
+  </data>
+  <data name="label_ValueMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="label_ValueMin.Text" xml:space="preserve">
+    <value>Valeur (Ma)</value>
+  </data>
+  <data name="groupBox_MaxAge.Text" xml:space="preserve">
+    <value>Âge Maximum</value>
+  </data>
+  <data name="label_CertaintyMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="label_CertaintyMax.Text" xml:space="preserve">
+    <value>Incertitude (+/-Ma)</value>
+  </data>
+  <data name="label_ValueMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="label_ValueMax.Text" xml:space="preserve">
+    <value>Valeur (Ma)</value>
+  </data>
+  <data name="label_TimescaleMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="label_TimescaleMax.Text" xml:space="preserve">
+    <value>Échelle de Temps</value>
+  </data>
+  <data name="label_PrefixMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="label_PrefixMax.Text" xml:space="preserve">
+    <value>Préfixe</value>
+  </data>
+  <data name="button_RenameEvent.Text" xml:space="preserve">
+    <value>Renommer Sélection</value>
+  </data>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACyElEQVQ4T41TX0jTURS+T72m
+        Dw6aDxNc0KJW5ExT58rQiT34r800oSzUfDEy3HSpDQINwRT2IBEoCdZTk3zQZFQaFmnpVgydo23VQ5ub
+        v21uOBrDfd17NUEQ6sDHvb97zvf9zjn3XBIOh0MUHooKQu1K7dUUipC2phaXNTWortbg2vUG3OvqhsHQ
+        hc5OA/QdndDp9FCrS0MkFArjRsNNrK05EQqFBpkAIxPLN5DZnyAffKivr0ckEkEsFkM8HkcikcD29jaK
+        i0tAgsEgCvKVUJeUYmpqGkIwaL3TdnePTBYFqA0P4HQ695EDgcCOgCAIyM3JxerKKirKK9Hb2weHw4Fa
+        u5+TyXIE0mevMTQ0xMnRaBQmkwl6vX5HILCxgawzCu6kJaCn5z40Gi0+LizA9COIw1+3QOxxlOt7MDMz
+        A6PRCIvFAmbnVRdA/IENyE+e4gJ/YTZPoKREjeHhx1jyCTjh/I1Dtihq2nQYGRnh5GQyiUKlCmTdH4BM
+        dnyfAIPdbkdlRSUaG5vgcnvQ9H0LRywO9Pf3czKLKShQUoF1P6TSo/xAEIJ8bW5uRl1tHVSFKu5T0sD5
+        +fdUJAYtzWJzc5PfSF5ePoiPCmRIMihZgJbWztaBgUeoqqzC1PSrPVhtX9Dk2YJy4AlsNhvv17nccyBe
+        3zrSxelobb0NhSIb3XRgmIjsmAxzc++Q54qDrAHEkQRZSUD6/A2/Ba/Xi5yzOTsCIpEISmUhlpatyMyU
+        wu12Y3x8HGVll+htLPJus4axmlna7M+MnK3IjnCB1NRUvJ2dBd17umgGLbdaeC/kcjleTk7ihdlspFOe
+        dQBOk19eH/r6HoKuExQZbKTFYjFcLhfGno6hqOgi83lo8MFGndZdpOx+j+r1HfQRVXOkpYmw+OkzE8ng
+        hH8ZC3TQLCQSCdrbdWB7eja46/4/YwQKRhxlgrvHBxghfwAirVxmRhZnhAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Sélection à l'écran</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8BbFpK72lXR/9mVET/Y1FB/2BOPv9dSzv/Wkg4/1dFNf9TQTH/UD4u/007
+        K/9KOCjv////Af///wH///8B////AW5cTP//9Oz///Pq///z6P//8eb///Dl///v4///7uH//+3f///t
+        3f/+7Nz/TDoq/////wH///8B////Af///wFxX0////Xu///07f//8+v///Pp///y5///8eb///Dj///v
+        4v//7uD//+3e/089Lf////8B////Af///wH///8Bc2FR///38f//9u////Xt///06///8+r///Lo/zUj
+        E///8OT//+/i///u4f9SQDD/////Af///wH///8B////AXZkVP//+fT///fy///28P//9e7///Ts///z
+        6v81IxP///Ln///x5f//8OP/VEIy/////wH///8B////Af///wF4Zlb///n2/zUjE/81IxP/NSMT/zUj
+        E/81IxP/NSMT/zUjE/81IxP///Hm/1dFNf////8B////Af///wH///8Be2lZ///7+f//+vf///n1/zUj
+        E///9/L///bw///17v//9Oz///Pq///z6P9ZRzf/////AWxqaiFlY2OvXVtb/31rW////Pv///v6///6
+        9/81IxP///n0///48v//9/D///bv///07f//8+v/XEo6/3h1dSFxb2/vvrOl//bp1f+Abl7///7+///9
+        /P///Pr///v4///69///+fX///jz///38f//9u////Xu/15MPP9+e3uvxLak///w2v/27+b/inlq/39t
+        Xf98alr/eWdX/3ZkVP9zYVH/cF5O/21bS/9qWEj/Z1VF/2NRQf9hTz/vhYKC///nxP//79j///fr///4
+        7v//8d3//+nJ///gtP9MSkv/////Af///wH///8B////Af///wH///8B////AYuIiP//47v/vq6Y///v
+        2P8qKir/Kioq/yoqKv//3a3/U1BR/////wH///8B////Af///wH///8B////Af///wGRjo3//96t///j
+        u///58T/Kioq///lvv//37H//9mh/1lXV/////8B////Af///wH///8B////Af///wH///8BlZKRr9C5
+        mf//26j//96u/yoqKv//3Kr//9ig/7yjgP9gXV6v////Af///wH///8B////Af///wH///8B////AZaT
+        kiGVkpHvz7aU///Vmf//1Zn//9SW/8KohP9samrvZmRkIf///wH///8B////Af///wH///8B////Af//
+        /wH///8BlpOSIZSRkK+PjIv/n5SH/4B+ff95dnavcm9vIf///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Événement Géologique</value>
+  </data>
+</root>
