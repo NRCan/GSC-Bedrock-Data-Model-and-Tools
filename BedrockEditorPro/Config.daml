@@ -15,11 +15,11 @@
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="BedrockEditorPro_Edit" caption="Bedrock Editor" keytip="tab key tip">
-			<group refID="BedrockEditorPro_Templates" />
-            <group refID="BedrockEditorPro_CreateEdit" />
-            <group refID="BedrockEditorPro_View" />
-            <group refID="BedrockEditorPro_Legend" />
-            <group refID="BedrockEditorPro_Root" />
+          <group refID="BedrockEditorPro_Templates" />
+          <group refID="BedrockEditorPro_CreateEdit" />
+          <group refID="BedrockEditorPro_View" />
+          <group refID="BedrockEditorPro_Legend" />
+          <group refID="BedrockEditorPro_Root" />
         </tab>
         <tab id="BedrockEditorPro_Manager" caption="Bedrock Manager" keytip="tab key tip">
           <group refID="BedrockEditorPro_Environment" />
@@ -33,7 +33,6 @@
           <button refID="BedrockEditorPro_Buttons_Button_RefreshSymbols" size="large" />
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" />
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" />
-          
           
         </group>
         <!--Templates-->
@@ -60,9 +59,10 @@
         </group>
         <!--Environment-->
         <group id="BedrockEditorPro_Environment" caption="Enviromment" appearsOnAddInTab="false" keytip="Enviromment">
-          <button refID="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" size="large" />
-          <button refID="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" size="large" />
-			<button refID="BedrockEditorPro_Buttons_Button_Environment_AddProjectLayers" size="large" />
+		    <button refID="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" size="large" />
+            <!--<button refID="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" size="large" />-->
+            <button refID="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" size="large" />
+            <button refID="BedrockEditorPro_Buttons_Button_Environment_AddProjectLayers" size="large" />
         </group>
         <!--Metadata-->
         <group id="BedrockEditorPro_Metadata" caption="Project Metadata" appearsOnAddInTab="false" keytip="Metadata">
@@ -70,7 +70,7 @@
         </group>
         <!--Load-->
         <group id="BedrockEditorPro_Load" caption="Load" appearsOnAddInTab="false" keytip="Load">
-			<button refID="BedrockEditorPro_Buttons_Button_Load_StudyAreas" size="large" />
+          <button refID="BedrockEditorPro_Buttons_Button_Load_StudyAreas" size="large" />
         </group>
       </groups>
       <controls>
@@ -112,9 +112,9 @@
         <button id="BedrockEditorPro_Buttons_Button_Legend_ItemDescription" caption="Items Description" keytip="Manage Legend Item Descriptions" className="BedrockEditorPro.Buttons.Button_Legend_ItemDescription" loadOnClick="true" smallImage="Grouping16" largeImage="Grouping32">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
-        <button id="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.Buttons.Button_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
+        <!--<button id="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.Buttons.Button_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
-        </button>
+        </button>-->
         <button id="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" caption="Create and Apply Topological Rules" keytip="Create Topology Layer" className="BedrockEditorPro.Buttons.Button_Environment_CreateApplyTopologicalRules" loadOnClick="true" smallImage="EditingReshapeTopologyEdgeTool16" largeImage="EditingReshapeTopologyEdgeTool32">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
@@ -122,6 +122,9 @@
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Load_StudyAreas" caption="Study Areas" keytip="Manage Project Study Areas" className="BedrockEditorPro.Buttons.Button_Load_StudyAreas" loadOnClick="true" smallImage="ReshapeMapFrameRectangle16" largeImage="ReshapeMapFrameRectangle32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.ProWindows.ShowForm_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>
