@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BedrockEditorPro": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\ghuotvez\\AppData\\Local\\Programs\\ArcGIS\\Pro\\bin\\ArcGISPro.exe"
+    }
+  }
+}

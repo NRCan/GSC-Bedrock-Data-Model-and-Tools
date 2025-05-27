@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArcGIS defaultAssembly="BedrockEditorPro.dll"
+        defaultNamespace="BedrockEditorPro"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Users/ghuotvez/AppData/Local/Programs/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{c4ac06a4-3afa-4bf5-ad80-8080d10b68f3}" version="4.0.0" desktopVersion="3.5.57366" product="ArcGISPro">
+    <Name>GSC Bedrock Project</Name>   
+    <Description>Bedrock Data Management Tools</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Geological Survey Canada</Author>
+    <Company>Government of Canada - Gouvernement du Canada</Company>
+    <Date>5/27/2025 9:40:03 AM</Date>
+    <Subject>Framework, Editing, Geodatabase, Geometry, Geology, Bedrock</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+
+  <modules>
+    <insertModule id="BedrockEditorPro_Module" className="BedrockModule" autoLoad="false" caption="GSC Bedrock Module">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+		  
+        <tab id="BedrockEditorPro_Edit" caption="Bedrock Editor" keytip="tab key tip">
+          <group refID="BedrockEditorPro_Group1"/>
+        </tab>
+
+		<tab id="BedrockEditorPro_Manage" caption="Bedrock Manager" keytip="tab key tip">
+			<group refID="BedrockEditorPro_Group2"/>
+		</tab>
+		  
+      </tabs>
+		
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="BedrockEditorPro_Group1" caption="Group 1" appearsOnAddInTab="false" keytip="group 1 key tip">
+          <!-- host controls within groups -->
+        </group>
+
+		  <group id="BedrockEditorPro_Group2" caption="Group 2" appearsOnAddInTab="false" keytip="group 2 key tip">
+			  <!-- host controls within groups -->
+		  </group>
+      </groups>
+      
+      <controls>
+        <!-- add your controls here -->
+      </controls> 
+      
+    </insertModule>
+  </modules>
+</ArcGIS>
