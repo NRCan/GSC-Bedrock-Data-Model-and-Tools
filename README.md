@@ -5,7 +5,7 @@ In the early years of use of spatial databases, geologic data models were design
 
 ## Requirements
 
-ESRI ArcGIS Desktop 10.8.X and higher
+ESRI ArcGIS Pro 3.5.X and higher
 
 ## Installation
 
@@ -55,7 +55,7 @@ Lors des premières années d'utilisation des bases de données à référence s
 
 ## Pré-requis
 
-Cet outil a été developé et testé sous ArcGIS Desktop TM version 10.8.X et plus.
+Cet outil a été developé et testé sous ArcGIS Pro TM version 3.5.X et plus.
 
 ## Installation
 
