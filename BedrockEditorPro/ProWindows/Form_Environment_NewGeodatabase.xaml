@@ -4,12 +4,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BedrockEditorPro.Properties"
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Create Project GDB from Master Schema" Height="275" Width="500"
-        WindowStartupLocation="CenterOwner"
-    >
+        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="275" Width="500"
+        WindowStartupLocation="CenterOwner">
+    
     <controls:ProWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -21,6 +22,7 @@
     </controls:ProWindow.Resources>
     <Grid Style="{DynamicResource BedrockGrid}" Margin="10,10,10,10">
 
+        <!--Create Project GDB from Master Schema-->
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
@@ -37,26 +39,27 @@
             <ColumnDefinition Width="50"/>
         </Grid.ColumnDefinitions>
 
-        <CheckBox Grid.Row="0" IsChecked="True" Content="Default Embedded (XML Version 10.2)" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox Grid.Row="0" IsChecked="True" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <!--Manual xml file entry-->
-        <Label Grid.Row="1" Content="Input Project Template (.xml)" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>
-        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" IsEnabled="False"/>
+        <!--<Label Grid.Row="1" Content="Input Project Template (.xml)" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>-->
+        <Label Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput1 }" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>
+        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" IsEnabled="False" Margin="0,0,10,0"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Browse" HorizontalAlignment="Center" VerticalAlignment="Stretch" IsEnabled="False"/>
 
         <!--Output-->
-        <Label Grid.Row="3" Content="Output Database Path" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" />
+        <Label Grid.Row="3" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" />
+        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0"/>
         <Button Grid.Row="4" Grid.Column="1" Content="Browse" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
 
         <!--Projection-->
-        <Label Grid.Row="5" Content="Projection" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="6" Style="{DynamicResource BedrockTextboxInputs}"/>
+        <Label Grid.Row="5" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" />
+        <TextBox Grid.Row="6" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0"/>
         <Button Grid.Row="6" Grid.Column="1" Content="Browse" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
 
         <!--Save/Cancel-->
-        <Button Grid.Row="8" Content="Save" Style="{DynamicResource BedrockButtonSave}" HorizontalAlignment="Left"/>
-        <Button Grid.Row="8" Content="Cancel" Style="{DynamicResource BedrockButtonCancel}" HorizontalAlignment="Right"/>
+        <Button Grid.Row="8" Content="{x:Static local:Resources.GenericButtonSave}" Style="{DynamicResource BedrockButtonSave}" HorizontalAlignment="Left" Width="100"/>
+        <Button Grid.Row="8" Content="{x:Static local:Resources.GenericButtonCancel}" Style="{DynamicResource BedrockButtonCancel}" HorizontalAlignment="Right" Width="100"/>
 
     </Grid>
 </controls:ProWindow>

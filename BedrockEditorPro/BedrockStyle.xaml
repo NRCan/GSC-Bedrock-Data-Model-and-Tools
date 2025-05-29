@@ -1,11 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
+    <!--Warning: Margin setting in here doesn't work-->
+
     <!--Custom styles for BedrockEditorPro-->
     <Style x:Key="BedrockTextboxInputs" TargetType="TextBox">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Margin" Value="0,0,10,0"/>
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 

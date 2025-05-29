@@ -21,22 +21,25 @@ using ArcGIS.Desktop.KnowledgeGraph;
 namespace BedrockEditorPro.ProWindows
 {
     internal class ShowForm_Environment_NewGeodatabase : Button
-{
-
-    private Form_Environment_NewGeodatabase _form_environment_newgeodatabase = null;
-
-    protected override void OnClick()
     {
-        //already open?
-        if (_form_environment_newgeodatabase != null)
-            return;
-        _form_environment_newgeodatabase = new Form_Environment_NewGeodatabase();
-        _form_environment_newgeodatabase.Owner = FrameworkApplication.Current.MainWindow;
-        _form_environment_newgeodatabase.Closed += (o, e) => { _form_environment_newgeodatabase = null; };
-        _form_environment_newgeodatabase.Show();
-         //uncomment for modal
-         //_form_environment_newgeodatabase.ShowDialog();
-}
 
-}
+        private Form_Environment_NewGeodatabase _form_environment_newgeodatabase = null;
+
+        protected override void OnClick()
+        {
+            //already open?
+            if (_form_environment_newgeodatabase != null)
+                return;
+            _form_environment_newgeodatabase = new Form_Environment_NewGeodatabase();
+            _form_environment_newgeodatabase.Owner = FrameworkApplication.Current.MainWindow;
+            _form_environment_newgeodatabase.Closed += (o, e) => { _form_environment_newgeodatabase = null; };
+
+             //show the form
+             //uncomment for modeless
+            _form_environment_newgeodatabase.Show();
+             //uncomment for modal
+             //_form_environment_newgeodatabase.ShowDialog();
+        }
+
+    }
 }
