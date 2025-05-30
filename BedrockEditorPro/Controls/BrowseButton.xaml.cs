@@ -12,22 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BedrockEditorPro.ProWindows;
 
-namespace BedrockEditorPro.ProWindows
+namespace BedrockEditorPro.Controls
 {
     /// <summary>
-    /// Interaction logic for Form_Environment_NewGeodatabase.xaml
+    /// Interaction logic for BrowseButton.xaml
     /// </summary>
-    public partial class Form_Environment_NewGeodatabase : ArcGIS.Desktop.Framework.Controls.ProWindow
+    public partial class BrowseButton : UserControl
     {
-        Form_Environment_NewGeodatabaseViewModel viewModel = new Form_Environment_NewGeodatabaseViewModel();
-
-        public Form_Environment_NewGeodatabase()
+        public BrowseButton()
         {
             InitializeComponent();
+        }
 
-            this.DataContext = viewModel;
+        public ImageSource BrowserButtonImage
+        {
+            get
+            {
+                var imageSource = System.Windows.Application.Current.Resources["FolderOpenState16"] as ImageSource;
+                return imageSource;
+            }
+
         }
     }
 }

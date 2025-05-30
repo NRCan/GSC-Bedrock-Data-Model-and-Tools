@@ -5,10 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BedrockEditorPro.Properties"
+        xmlns:bedrockcontrols="clr-namespace:BedrockEditorPro.Controls"
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="275" Width="500"
+        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="300" Width="550"
         WindowStartupLocation="CenterOwner">
     
     <controls:ProWindow.Resources>
@@ -26,31 +27,29 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
         <CheckBox Grid.Row="0" IsChecked="True" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <!--Manual xml file entry-->
-        <!--<Label Grid.Row="1" Content="Input Project Template (.xml)" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>-->
-        <Label Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput1 }" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>
-        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" IsEnabled="False" Margin="0,0,10,0"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="Browse" HorizontalAlignment="Center" VerticalAlignment="Stretch" IsEnabled="False"/>
+        <Label Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput1}" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>
+        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" IsEnabled="False" Margin="0,0,10,0" Height="25"/>
+        <bedrockcontrols:BrowseButton Grid.Row="2" Grid.Column="1" IsEnabled="false"/>
 
         <!--Output-->
         <Label Grid.Row="3" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0"/>
-        <Button Grid.Row="4" Grid.Column="1" Content="Browse" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25"/>
+        <bedrockcontrols:BrowseButton Grid.Row="4" Grid.Column="1"/>
 
         <!--Projection-->
         <Label Grid.Row="5" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" />

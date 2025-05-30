@@ -132,6 +132,9 @@
   <data name="FormEnvironmentNewGeodatabaseTitle" xml:space="preserve">
     <value>Create Project Geodatabase</value>
   </data>
+  <data name="GenericButtonBrowse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
   <data name="GenericButtonCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>

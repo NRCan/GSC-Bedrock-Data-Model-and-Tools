@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ArcGIS.Desktop.Framework.Contracts;
+using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,18 +13,17 @@ using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
-using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.KnowledgeGraph;
+using System.Windows.Media;
 
 namespace BedrockEditorPro.ProWindows
 {
-    internal class ShowForm_Environment_NewGeodatabase : Button
+    class Show_Form_Environment_NewGeodatabase: Button
     {
-
         private Form_Environment_NewGeodatabase _form_environment_newgeodatabase = null;
 
         protected override void OnClick()
@@ -30,15 +31,13 @@ namespace BedrockEditorPro.ProWindows
             //already open?
             if (_form_environment_newgeodatabase != null)
                 return;
+
             _form_environment_newgeodatabase = new Form_Environment_NewGeodatabase();
             _form_environment_newgeodatabase.Owner = FrameworkApplication.Current.MainWindow;
             _form_environment_newgeodatabase.Closed += (o, e) => { _form_environment_newgeodatabase = null; };
 
-             //show the form
-             //uncomment for modeless
             _form_environment_newgeodatabase.Show();
-             //uncomment for modal
-             //_form_environment_newgeodatabase.ShowDialog();
+
         }
 
     }
