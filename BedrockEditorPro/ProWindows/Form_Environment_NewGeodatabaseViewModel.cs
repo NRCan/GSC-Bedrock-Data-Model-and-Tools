@@ -19,11 +19,34 @@ using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.KnowledgeGraph;
 using System.Windows.Media;
 using System.Windows.Data;
+using System.Windows.Input;
 
 namespace BedrockEditorPro.ProWindows
 {
     public class Form_Environment_NewGeodatabaseViewModel : PropertyChangedBase
     {
+
+        #region RELAYS
+
+        private ICommand _openBrowseWindow = null;
+        public ICommand OpenBrowseWindow
+        {
+            get
+            {
+                if (_openBrowseWindow == null)
+                {
+                    _openBrowseWindow = new RelayCommand(() =>
+                    {
+                        // Implement the logic to open a browse window here
+                        MessageBox.Show("Browse button clicked!");
+                    });
+                }
+                return _openBrowseWindow;
+            }
+        }
+
+        #endregion
+
 
         public Form_Environment_NewGeodatabaseViewModel()
         {

@@ -5,16 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BedrockEditorPro.Controls"
              xmlns:localize="clr-namespace:BedrockEditorPro.Properties"
-             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    
-    <Button Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+             d:DesignHeight="35" d:DesignWidth="100">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component/XamlImages.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Button x:Name="buttonBrowse" Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="Center" HorizontalContentAlignment="Right"
+            Command="{Binding OpenBrowseWindow}">
         <Button.Content>
             <Border>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="{Binding BrowserButtonImage}"  Margin="5" HorizontalAlignment="Center" Width="16" Height="16"/>
+                    <Image Source="{DynamicResource FolderOpenState16}"  Margin="3" HorizontalAlignment="Center" Width="16" Height="16"/>
                     <TextBlock Text="{x:Static localize:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="5,5,5,5" />
                 </StackPanel>
             </Border>

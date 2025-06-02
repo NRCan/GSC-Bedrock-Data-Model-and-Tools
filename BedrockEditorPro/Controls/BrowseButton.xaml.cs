@@ -20,19 +20,26 @@ namespace BedrockEditorPro.Controls
     /// </summary>
     public partial class BrowseButton : UserControl
     {
+
         public BrowseButton()
         {
             InitializeComponent();
         }
 
-        public ImageSource BrowserButtonImage
-        {
-            get
-            {
-                var imageSource = System.Windows.Application.Current.Resources["FolderOpenState16"] as ImageSource;
-                return imageSource;
-            }
+        //TODO: Attempt at binding properties - it gets mixed up with the view model from the calling form
 
-        }
+        //public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(
+        //    nameof(BrowserButtonImage),
+        //    typeof(ImageSource),
+        //    typeof(BrowseButton),
+        //    new UIPropertyMetadata(null)
+        //);
+
+        //public ImageSource BrowserButtonImage
+        //{
+        //    get { return (ImageSource)GetValue(ImageSourceProperty); }
+        //    set { SetValue(ImageSourceProperty, value); }
+        //}
+
     }
 }
