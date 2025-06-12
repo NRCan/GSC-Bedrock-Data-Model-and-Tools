@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="BedrockEditorPro.Controls.CancelButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BedrockEditorPro.Controls"
+             xmlns:localize="clr-namespace:BedrockEditorPro.Properties"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component/XamlImages.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="/BedrockEditorPro;component/BedrockStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Button x:Name="buttonCancel" Content="{x:Static localize:Resources.GenericButtonCancel}"  Style="{DynamicResource BedrockButtonCancel}" HorizontalAlignment="Right" Width="100"
+            Margin="0,0,10,0" Click="buttonCancel_Click"/>
+
+</UserControl>

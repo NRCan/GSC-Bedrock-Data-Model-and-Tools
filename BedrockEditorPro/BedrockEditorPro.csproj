@@ -21,6 +21,9 @@
     <None Include="Properties\launchSettings.json" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="ArcGIS.Desktop.Framework">
       <HintPath>C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
       <CopyLocal>False</CopyLocal>
@@ -90,6 +93,9 @@
       <HintPath>C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\ArcGIS.Desktop.Resources.dll</HintPath>
       <CopyLocal>False</CopyLocal>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Desktop.AddIns">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\ArcGIS\DeveloperKit10.8\bin\ESRI.ArcGIS.Desktop.AddIns.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.ItemIndex">
       <HintPath>C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>

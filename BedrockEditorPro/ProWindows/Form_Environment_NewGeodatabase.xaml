@@ -69,7 +69,7 @@
 
         <!--Save/Cancel-->
         <Button Grid.Row="8" Content="{x:Static local:Resources.GenericButtonSave}" Style="{DynamicResource BedrockButtonSave}" HorizontalAlignment="Left" Width="100"/>
-        <Button Grid.Row="8" Content="{x:Static local:Resources.GenericButtonCancel}" Style="{DynamicResource BedrockButtonCancel}" HorizontalAlignment="Right" Width="100" Margin="0,0,10,0"/>
+        <bedrockcontrols:CancelButton Grid.Row="8" />
 
     </Grid>
 </controls:ProWindow>
