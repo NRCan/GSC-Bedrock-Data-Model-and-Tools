@@ -46,6 +46,13 @@ namespace GSCFieldApp.Services
 
             try
             {
+                //Make sure the directory exists
+                if (!Directory.Exists(Path.GetDirectoryName(path)))
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(path));
+                }
+
+                //Write the error to the log file
                 using (var writer = new StreamWriter(path, true))
                 {
                     writer.WriteLine("-----------------------------------------------------------------------------");

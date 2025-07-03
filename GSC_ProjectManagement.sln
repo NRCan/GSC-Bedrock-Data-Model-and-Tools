@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedrockEditorPro", "BedrockEditorPro\BedrockEditorPro.csproj", "{4E10F41D-9F08-460C-93EC-E45FBED14A18}"
+Project("{c4ac06a4-3afa-4bf5-ad80-8080d10b68f3}") = "BedrockEditorPro", "BedrockEditorPro\BedrockEditorPro.csproj", "{4E10F41D-9F08-460C-93EC-E45FBED14A18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

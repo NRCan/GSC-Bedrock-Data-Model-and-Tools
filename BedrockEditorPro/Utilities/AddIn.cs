@@ -1,10 +1,13 @@
-﻿using System;
+﻿using ArcGIS.Desktop.Editing.Attributes;
+using ArcGIS.Desktop.Internal.Editing.COGO;
+using System;
 using System.Collections.Generic;
-using System.IO.Compression;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Xml;
@@ -30,10 +33,27 @@ namespace BedrockEditorPro.Utilities
         /// <returns></returns>
         public static string GetAddInId()
         {
+            string fileName = string.Empty;
+
             // Module.Id is internal, but we can still get the ID from the assembly
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
-            var fileName = Path.Combine($@"{{{attribute.Value.ToString()}}}", $@"{assembly.FullName.Split(',')[0]}.esriAddInX");
+            object[] guidAttribute = assembly.GetCustomAttributes(typeof(GuidAttribute), true);
+            if (guidAttribute != null && guidAttribute.Count() > 0)
+            {
+                var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+                fileName = Path.Combine($@"{{{attribute.Value.ToString()}}}", $@"{assembly.FullName.Split(',')[0]}.esriAddInX");
+            }
+            else
+            {
+                //Get addin guid with regex
+                var result = Regex.Match(
+                      assembly.Location,
+                      @"[({]?[a-fA-F0-9]{8}[-]?([a-fA-F0-9]{4}[-]?){3}[a-fA-F0-9]{12}[})]?",
+                      RegexOptions.IgnoreCase
+                );
+                fileName = Path.Combine($@"{result}", $@"{assembly.FullName.Split(',')[0]}.esriAddInX");
+            }
+
             return fileName;
         }
 
@@ -47,6 +67,7 @@ namespace BedrockEditorPro.Utilities
             var esriAddInX = new AddIn();
             XmlDocument xDoc = new XmlDocument();
             var esriAddInXPath = FindEsriAddInXPath(fileName);
+
             try
             {
                 esriAddInX.AddInPath = esriAddInXPath;

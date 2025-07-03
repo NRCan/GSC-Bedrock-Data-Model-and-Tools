@@ -21,9 +21,6 @@
     <None Include="Properties\launchSettings.json" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="ArcGIS.Desktop.Framework">
       <HintPath>C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
       <CopyLocal>False</CopyLocal>
@@ -94,9 +91,6 @@
       <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.Desktop.AddIns">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\ArcGIS\DeveloperKit10.8\bin\ESRI.ArcGIS.Desktop.AddIns.dll</HintPath>
-    </Reference>
     <Reference Include="ESRI.ArcGIS.ItemIndex">
       <HintPath>C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>
       <CopyLocal>False</CopyLocal>
@@ -109,6 +103,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.fr.resx">
@@ -118,6 +117,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
    <Import Project="C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

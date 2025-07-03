@@ -1,10 +1,8 @@
-﻿using ESRI.ArcGIS.Desktop.AddIns;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 
 namespace BedrockEditorPro.Utilities
 {
@@ -13,8 +11,12 @@ namespace BedrockEditorPro.Utilities
         //The path were configuration and user visible settings are stored.
         public string WorkingEnvironmentPath
         {
-            get { return Preferences.Get(nameof(WorkingEnvironmentPath), ""); }
-            set { Preferences.Set(nameof(WorkingEnvironmentPath), value); }
+            get { return Properties.Settings.Default.WorkingEnvironmentPath; }
+            set
+            {
+                Properties.Settings.Default.WorkingEnvironmentPath = value;
+                Properties.Settings.Default.Save();
+            }
         }
 
         public WorkingEnvironment()
@@ -33,7 +35,6 @@ namespace BedrockEditorPro.Utilities
                 // 3. set the WorkingEnvironmentPath to the default path
                 string outputFolderName = System.IO.Path.Combine(Constants.ESRI.defaultArcGISFolderName, versionTuple.Name + " " + versionTuple.Version);
                 WorkingEnvironmentPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), outputFolderName);
-                
             }
         }
     }
