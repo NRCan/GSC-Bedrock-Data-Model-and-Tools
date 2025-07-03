@@ -20,11 +20,40 @@ using ArcGIS.Desktop.KnowledgeGraph;
 using System.Windows.Media;
 using System.Windows.Data;
 using System.Windows.Input;
+using BedrockEditorPro.Utilities;
 
 namespace BedrockEditorPro.ProWindows
 {
     public class Form_Environment_NewGeodatabaseViewModel : PropertyChangedBase
     {
+        #region INIT
+        private Dialog dialogs = new Dialog();
+        private string _xmlFilePath = string.Empty;
+        private string _outputGDBPath = string.Empty;
+
+        #endregion
+
+        #region PROPERTIES
+
+        public string XMLFilePath
+        {
+            get { return _xmlFilePath; }
+            set
+            {
+                SetProperty(ref _xmlFilePath, value, () => XMLFilePath);
+            }
+        }
+
+        public string OutputGDBPath
+        {
+            get { return _outputGDBPath; }
+            set
+            {
+                SetProperty(ref _outputGDBPath, value, () => OutputGDBPath);
+            }
+        }
+
+        #endregion
 
         #region RELAYS
 
@@ -35,11 +64,7 @@ namespace BedrockEditorPro.ProWindows
             {
                 if (_openBrowseWindow == null)
                 {
-                    _openBrowseWindow = new RelayCommand(() =>
-                    {
-                        // Implement the logic to open a browse window here
-                        MessageBox.Show("Browse button clicked!");
-                    });
+                    _openBrowseWindow = new RelayCommand(ShowDialog, () => true);
                 }
                 return _openBrowseWindow;
             }
@@ -52,6 +77,26 @@ namespace BedrockEditorPro.ProWindows
         {
             // Initialize any properties or commands here
             // For example, you can set default values or load data
+        }
+
+        public void ShowDialog(object commandControl) 
+        {
+            if (commandControl != null)
+            {
+                Controls.BrowseButton browseButton = commandControl as Controls.BrowseButton;
+
+                //Make user select a xml file to build the geodatabase
+                if (browseButton.Name.Contains("XML"))
+                {
+                    XMLFilePath = dialogs.GetXMLFilePrompt();
+                }
+
+                //Make user select a folder to build the geodatabase
+                if (browseButton.Name.Contains("OutputGDB"))
+                {
+                    OutputGDBPath = dialogs.GetFGDBSavePrompt();
+                }
+            }
         }
     }
 }

@@ -29,5 +29,32 @@ namespace BedrockEditorPro.ProWindows
 
             this.DataContext = viewModel;
         }
+
+        /// <summary>
+        /// Disable the whole XML file block if user wants to use it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (this.NewGeodatabaseXMLBrowse != null)
+            {
+                NewGeodatabaseXMLLabel.IsEnabled = NewGeodatabaseXMLTextbox.IsEnabled = NewGeodatabaseXMLBrowse.IsEnabled = false;
+            }
+            
+        }
+
+        /// <summary>
+        /// Enable the whole XML file block if user wants to use it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (this.NewGeodatabaseXMLBrowse != null)
+            {
+                NewGeodatabaseXMLLabel.IsEnabled = NewGeodatabaseXMLTextbox.IsEnabled = NewGeodatabaseXMLBrowse.IsEnabled = true;
+            }
+        }
     }
 }

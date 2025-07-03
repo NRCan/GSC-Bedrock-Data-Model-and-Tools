@@ -18,8 +18,12 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Button x:Name="buttonBrowse" Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="Center" HorizontalContentAlignment="Right"
-            Command="{Binding OpenBrowseWindow}">
+    <!--This button is used to open a browse window for selecting files or folders.-->
+    <!--It is bound to a command in the ViewModel, which handles the logic for opening the browse window.-->
+    <!-- Setting the x:name in the parent xaml control controls the logic of which browsing window to open eg. MyControlNameXMLBrowseControl
+    will open the XML filtering dialog-->
+    <Button Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="center" HorizontalContentAlignment="Right"
+            Command="{Binding OpenBrowseWindow}" CommandParameter="{Binding Path=Parent, RelativeSource={RelativeSource Self}}">
         <Button.Content>
             <Border>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

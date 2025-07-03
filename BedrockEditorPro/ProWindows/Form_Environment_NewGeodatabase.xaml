@@ -41,17 +41,21 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
-        <CheckBox Grid.Row="0" IsChecked="True" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <CheckBox x:Name="NewGeodatabaseCheckbox" Grid.Row="0" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" 
+                  Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseCheckbox}" 
+                  HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <!--Manual xml file entry-->
-        <Label Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput1}" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>
-        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" IsEnabled="False" Margin="0,0,10,0" Height="25"/>
-        <bedrockcontrols:BrowseButton Grid.Row="2" Grid.Column="1" IsEnabled="false"/>
+        <Label x:Name="NewGeodatabaseXMLLabel" Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput1}" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>
+        <TextBox x:Name="NewGeodatabaseXMLTextbox" Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" IsEnabled="False" Margin="0,0,10,0" Height="25"
+                 Text="{Binding Path=XMLFilePath}"/>
+        <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseXMLBrowse" Grid.Row="2" Grid.Column="1" IsEnabled="false"/>
         
         <!--Output-->
         <Label Grid.Row="3" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25"/>
-        <bedrockcontrols:BrowseButton  Grid.Row="4" Grid.Column="1"/>
+        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25"
+                 Text="{Binding Path=OutputGDBPath}"/>
+        <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseOutputGDBBrowse" Grid.Row="4" Grid.Column="1"/>
 
         <!--Projection-->
         <Label Grid.Row="5" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" />

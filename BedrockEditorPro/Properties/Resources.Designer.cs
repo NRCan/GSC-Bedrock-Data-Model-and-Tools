@@ -61,6 +61,24 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New File Geodatabase.
+        /// </summary>
+        public static string DialogFGDBSavePromptTitle {
+            get {
+                return ResourceManager.GetString("DialogFGDBSavePromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XML File.
+        /// </summary>
+        public static string DialogXMLPromptTitle {
+            get {
+                return ResourceManager.GetString("DialogXMLPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default Embedded (XML Version 10.2).
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseCheckbox {
