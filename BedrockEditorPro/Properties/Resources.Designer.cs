@@ -70,6 +70,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select a projection.
+        /// </summary>
+        public static string DialogProjectionPromptTitle {
+            get {
+                return ResourceManager.GetString("DialogProjectionPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to XML File.
         /// </summary>
         public static string DialogXMLPromptTitle {

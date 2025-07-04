@@ -33,6 +33,7 @@
           <button refID="BedrockEditorPro_Buttons_Button_RefreshSymbols" size="large" />
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" />
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" />
+          <button refID="BedrockEditorPro_Controls_CoordSysDialog" size="large" />
         </group>
         <!--Templates-->
         <group id="BedrockEditorPro_Templates" caption="Templates" appearsOnAddInTab="false" keytip="Other">
@@ -124,6 +125,9 @@
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.ProWindows.Show_Form_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+        <button id="BedrockEditorPro_Controls_CoordSysDialog" caption="CoordSysDialog" className="BedrockEditorPro.Controls.ShowCoordSysDialog" loadOnClick="true" smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>

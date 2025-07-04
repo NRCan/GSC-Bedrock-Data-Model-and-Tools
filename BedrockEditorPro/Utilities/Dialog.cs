@@ -1,5 +1,10 @@
-﻿using ArcGIS.Desktop.Catalog;
+﻿using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Internal.Mapping.Table.QueryTable;
+using BedrockEditorPro.Controls;
+using BedrockEditorPro.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +17,10 @@ namespace BedrockEditorPro.Utilities
     {
         //Source
         //https://github.com/Esri/arcgis-pro-sdk-community-samples/blob/master/Content/OpenItemDialogBrowseFilter/CustomFilters.cs#L41
+
+        //Events
+        public static EventHandler<SpatialReference> spatialReferenceSelected; //This event is triggered when a different fb is selected so field notes and map pages forces a refresh.  
+
 
         public Dialog() { }
 
@@ -93,6 +102,44 @@ namespace BedrockEditorPro.Utilities
             }
 
             return fgdbPath;
+        }
+
+        /// <summary>
+        /// Will prompt a projection dialog (spatial reference)
+        /// </summary>
+        /// <returns>Returns a spatial reference object</returns>
+        public static void GetProjectionPrompt()
+        {
+            //Variable
+            SpatialReference spatialReference = null;
+            CoordSysDialog _coordDialog = null;
+
+            //Create a new dialog instance
+            _coordDialog = new CoordSysDialog();
+            _coordDialog.Closing += _coordDialog_Closing;
+            _coordDialog.Owner = FrameworkApplication.Current.MainWindow;
+            _coordDialog.Show();
+
+        }
+
+        /// <summary>
+        /// Event handler for the projection dialog closing event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void _coordDialog_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            CoordSysDialog senderDialog = sender as CoordSysDialog;
+            if (senderDialog != null && senderDialog.SpatialReference != null)
+            {
+                //Send call to refresh other pages
+                EventHandler<SpatialReference> spatialReferenceRequest= spatialReferenceSelected;
+                if (spatialReferenceRequest != null)
+                {
+                    spatialReferenceRequest(sender, senderDialog.SpatialReference);
+                }
+
+            }
         }
 
     }

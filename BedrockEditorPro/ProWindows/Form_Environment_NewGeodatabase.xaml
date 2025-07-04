@@ -9,7 +9,7 @@
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions" 
         mc:Ignorable="d"
         ResizeMode="NoResize" 
-        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" MinHeight="310" Width="550"
+        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" MaxHeight="310" Width="550"
         WindowStartupLocation="CenterOwner">
     
     <controls:ProWindow.Resources>
@@ -47,25 +47,29 @@
 
         <!--Manual xml file entry-->
         <Label x:Name="NewGeodatabaseXMLLabel" Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput1}" Style="{DynamicResource BedrockButtonLabel}" IsEnabled="False"/>
-        <TextBox x:Name="NewGeodatabaseXMLTextbox" Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" IsEnabled="False" Margin="0,0,10,0" Height="25"
+        <TextBox x:Name="NewGeodatabaseXMLTextbox" Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" 
+                 VerticalContentAlignment="Center"
+                 IsEnabled="False" Margin="0,0,10,0" Height="25"
                  Text="{Binding Path=XMLFilePath}"/>
         <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseXMLBrowse" Grid.Row="2" Grid.Column="1" IsEnabled="false"/>
         
         <!--Output-->
         <Label Grid.Row="3" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25"
+        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25" VerticalContentAlignment="Center"
                  Text="{Binding Path=OutputGDBPath}"/>
         <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseOutputGDBBrowse" Grid.Row="4" Grid.Column="1"/>
 
         <!--Projection-->
         <Label Grid.Row="5" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="6" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25"/>
-        <Button Grid.Row="6" Grid.Column="1" Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="Center" HorizontalContentAlignment="Right">
+        <TextBox Grid.Row="6" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25" VerticalContentAlignment="Center"
+                 Text="{Binding Path=OutputSRName}"/>
+        <Button Grid.Row="6" Grid.Column="1" Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="Center" HorizontalContentAlignment="Right"
+                Command="{Binding OpenProjectionBrowse}">
             <Button.Content>
                 <Border>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Image Source="{DynamicResource CoordinateSystem16}"  Margin="3" HorizontalAlignment="Center" Width="16" Height="16"/>
-                        <TextBlock Text="{x:Static local:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="5,5,5,5" />
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="5,5,5,5"/>
                     </StackPanel>
                 </Border>
             </Button.Content>

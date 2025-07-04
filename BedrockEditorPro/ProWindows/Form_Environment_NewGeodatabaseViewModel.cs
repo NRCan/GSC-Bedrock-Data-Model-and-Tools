@@ -30,6 +30,8 @@ namespace BedrockEditorPro.ProWindows
         private Dialog dialogs = new Dialog();
         private string _xmlFilePath = string.Empty;
         private string _outputGDBPath = string.Empty;
+        private string _outputSRName = string.Empty;
+        private SpatialReference _outputSR = null;
 
         #endregion
 
@@ -53,6 +55,23 @@ namespace BedrockEditorPro.ProWindows
             }
         }
 
+        public string OutputSRName
+        {
+            get { return _outputSRName; }
+            set
+            {
+                SetProperty(ref _outputSRName, value, () => OutputSRName);
+            }
+        }
+
+        public SpatialReference OutputSR
+        {
+            get { return _outputSR; }
+            set
+            {
+                SetProperty(ref _outputSR, value, () => OutputSR);
+            }
+        }
         #endregion
 
         #region RELAYS
@@ -70,16 +89,32 @@ namespace BedrockEditorPro.ProWindows
             }
         }
 
+        private ICommand _openProjectionBrowse = null;
+        public ICommand OpenProjectionBrowse
+        {
+            get
+            {
+                if (_openProjectionBrowse == null)
+                {
+                    _openProjectionBrowse = new RelayCommand(() => Dialog.GetProjectionPrompt(), () => true);
+                }
+                return _openProjectionBrowse;
+            }
+        }
+
         #endregion
 
 
         public Form_Environment_NewGeodatabaseViewModel()
         {
-            // Initialize any properties or commands here
-            // For example, you can set default values or load data
+            Dialog.spatialReferenceSelected += SelectedSpatialReferenceFromPrompt;
         }
 
-        public void ShowDialog(object commandControl) 
+        /// <summary>
+        /// Will show the proper browsing dialog to user depending on which command they tapped.
+        /// </summary>
+        /// <param name="commandControl"></param>
+        public void ShowDialog(object commandControl)
         {
             if (commandControl != null)
             {
@@ -96,6 +131,21 @@ namespace BedrockEditorPro.ProWindows
                 {
                     OutputGDBPath = dialogs.GetFGDBSavePrompt();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Evend detect when user does select a spatial reference from the prompt dialog.
+        /// Will update the textbox in the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="sr"></param>
+        public void SelectedSpatialReferenceFromPrompt(object sender, SpatialReference sr)
+        {
+            if (sr != null)
+            {
+                OutputSR = sr;
+                OutputSRName = sr.Name;
             }
         }
     }

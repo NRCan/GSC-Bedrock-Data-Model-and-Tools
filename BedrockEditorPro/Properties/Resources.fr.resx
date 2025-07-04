@@ -120,6 +120,9 @@
   <data name="DialogFGDBSavePromptTitle" xml:space="preserve">
     <value>Nouvelle File Geodatabase</value>
   </data>
+  <data name="DialogProjectionPromptTitle" xml:space="preserve">
+    <value>Sélectionnez une projection</value>
+  </data>
   <data name="DialogXMLPromptTitle" xml:space="preserve">
     <value>Fichier XML</value>
   </data>
