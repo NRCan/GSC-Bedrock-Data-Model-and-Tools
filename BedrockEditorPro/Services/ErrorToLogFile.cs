@@ -1,4 +1,6 @@
-﻿using BedrockEditorPro.Utilities;
+﻿using ArcGIS.Desktop.Core.Geoprocessing;
+using ArcGIS.Desktop.Framework;
+using BedrockEditorPro.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,8 +8,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
-namespace GSCFieldApp.Services
+namespace BedrockEditorPro.Utilities
 {
     internal class ErrorToLogFile
     {
@@ -21,6 +24,7 @@ namespace GSCFieldApp.Services
 
         public string Message { get; set; }
         public Exception Exception { get; set; }
+        public IGPResult GeoprocessingResult { get; set; }
         public string DefaultPath
         {
             get
@@ -35,10 +39,11 @@ namespace GSCFieldApp.Services
 
         public ErrorToLogFile(string message) { Message = message; }
         public ErrorToLogFile(Exception ex) { Exception = ex; }
-
+        public ErrorToLogFile(IGPResult gpResult) { GeoprocessingResult = gpResult; }
 
         public bool WriteToFile(string path = "")
         {
+
             if (string.IsNullOrEmpty(path))
             {
                 path = DefaultPath;
@@ -71,6 +76,34 @@ namespace GSCFieldApp.Services
                     if (!string.IsNullOrEmpty(Message))
                     {
                         writer.WriteLine(Message);
+                    }
+
+                    if (GeoprocessingResult != null)
+                    {
+                        writer.WriteLine(GeoprocessingResult.GetType().FullName);
+                        if (GeoprocessingResult.Parameters != null && GeoprocessingResult.Parameters.Count() > 0)
+                        {
+                            foreach (Tuple<string,string, string, bool> item in GeoprocessingResult.Parameters.ToList())
+                            {
+                                writer.WriteLine("Parameters : " + item.Item1 + ", " + item.Item2 + ", " + item.Item3);
+                            }
+                            
+                        }
+                        if (GeoprocessingResult.Messages != null && GeoprocessingResult.Messages.Count() > 0)
+                        {
+                            foreach (IGPMessage message in GeoprocessingResult.Messages)
+                            {
+                                if (message != null)
+                                {
+                                    writer.WriteLine("Message : " + message.Text);
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                        writer.WriteLine("ErrorCode : " + GeoprocessingResult.ErrorCode.ToString());
+
                     }
 
                     writer.Close();

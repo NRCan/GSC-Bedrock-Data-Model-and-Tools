@@ -141,13 +141,38 @@
   <data name="FormEnvironmentNewGeodatabaseTitle" xml:space="preserve">
     <value>Création d'une geodatabase de projet</value>
   </data>
+  <data name="FormEnvironmentNewGeodatabaseWarningDBExist" xml:space="preserve">
+    <value>La base de données existe déjà.</value>
+  </data>
   <data name="GenericButtonBrowse" xml:space="preserve">
     <value>Parcourir</value>
   </data>
   <data name="GenericButtonCancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <data name="GenericButtonRun" xml:space="preserve">
+    <value>Démarrer</value>
+  </data>
   <data name="GenericButtonSave" xml:space="preserve">
     <value>Enregistrer</value>
+  </data>
+  <data name="GenericMessageCompleted" xml:space="preserve">
+    <value>Procédure terminée</value>
+  </data>
+  <data name="GenericMessageError" xml:space="preserve">
+    <value>Erreur: Consultez le journal de débogage pour plus de détails.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GSC_BEDROCKGDB_P_ORGANIZATION_V2_10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V2_10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
 </root>

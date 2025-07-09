@@ -133,6 +133,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Database already exists..
+        /// </summary>
+        public static string FormEnvironmentNewGeodatabaseWarningDBExist {
+            get {
+                return ResourceManager.GetString("FormEnvironmentNewGeodatabaseWarningDBExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse.
         /// </summary>
         public static string GenericButtonBrowse {
@@ -151,11 +160,78 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Run.
+        /// </summary>
+        public static string GenericButtonRun {
+            get {
+                return ResourceManager.GetString("GenericButtonRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string GenericButtonSave {
             get {
                 return ResourceManager.GetString("GenericButtonSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process completed.
+        /// </summary>
+        public static string GenericMessageCompleted {
+            get {
+                return ResourceManager.GetString("GenericMessageCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: see debug file for more information..
+        /// </summary>
+        public static string GenericMessageError {
+            get {
+                return ResourceManager.GetString("GenericMessageError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GSC_BEDROCKGDB_P_ORGANIZATION_V2_10 {
+            get {
+                object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_P_ORGANIZATION_V2_10", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GSC_BEDROCKGDB_SCHEMA_V2_10 {
+            get {
+                object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SCHEMA_V2_10", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10 {
+            get {
+                object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10 {
+            get {
+                object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

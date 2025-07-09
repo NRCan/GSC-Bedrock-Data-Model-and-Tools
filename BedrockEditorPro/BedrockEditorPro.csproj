@@ -8,6 +8,11 @@
     <NoWarn>CA1416</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\GSC_BEDROCKGDB_P_ORGANIZATION_V2_10.csv" />
+    <None Remove="Assets\GSC_BEDROCKGDB_SCHEMA_V2_10.json" />
+    <None Remove="Assets\GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10.csv" />
+    <None Remove="Assets\GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10.csv" />
+    <None Remove="Assets\P_ORGANIZATION.csv" />
     <None Remove="Config.daml" />
   </ItemGroup>
   <ItemGroup>
@@ -16,6 +21,12 @@
     <Content Include="Images\AddInDesktop32.png" />
     <Content Include="DarkImages\AddInDesktop16.png" />
     <Content Include="DarkImages\AddInDesktop32.png" />    
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_P_ORGANIZATION_V2_10.csv" />
+    <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SCHEMA_V2_10.json" />
+    <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10.csv" />
+    <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\launchSettings.json" />
@@ -88,11 +99,6 @@
     </Reference>
     <Reference Include="ArcGIS.Desktop.Resources">
       <HintPath>C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\ArcGIS.Desktop.Resources.dll</HintPath>
-      <CopyLocal>False</CopyLocal>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ESRI.ArcGIS.ItemIndex">
-      <HintPath>C:\Users\ghuotvez\AppData\Local\Programs\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>
       <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
