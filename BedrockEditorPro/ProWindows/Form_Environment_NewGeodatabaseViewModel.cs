@@ -284,7 +284,7 @@ namespace BedrockEditorPro.ProWindows
                         {
                             File.Delete(XMLFilePath); // Delete existing XML file if it exists so it can take the latest spatial reference
                         }
-                        await ConvertJSONToXML(JSONFilePath, workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10) + ".xml");
+                        await GeoprocessingBedrock.ConvertJSONToXML(JSONFilePath, workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10) + ".xml");
 
                         //Import the xml file into the new database
                         if (File.Exists(XMLFilePath))
@@ -298,9 +298,9 @@ namespace BedrockEditorPro.ProWindows
                                 string symGeopoint = Path.Combine(OutputGDBPath, Constants.Database.TGeopointSymbol);
                                 string org = Path.Combine(OutputGDBPath, Constants.Database.TOrganisation);
 
-                                await AppendInEmptyTables(OrgCSVFilePath, org);
-                                await AppendInEmptyTables(GeolineCSVFilePath, symGeoline);
-                                await AppendInEmptyTables(GeopointCSVFilePath, symGeopoint);
+                                await GeoprocessingBedrock.AppendInEmptyTables(OrgCSVFilePath, org);
+                                await GeoprocessingBedrock.AppendInEmptyTables(GeolineCSVFilePath, symGeoline);
+                                await GeoprocessingBedrock.AppendInEmptyTables(GeopointCSVFilePath, symGeopoint);
                             }
 
                         }
@@ -337,119 +337,6 @@ namespace BedrockEditorPro.ProWindows
                 WaitingCursorVisibility = Visibility.Collapsed;
                 _view.Close();
             }
-
-        }
-
-        /// <summary>
-        /// Will import any xml workspace into an existing file geodatabase
-        /// </summary>
-        /// <param name="inputWorkspace">The input database object</param>
-        /// <param name="importPath">The input path to XML</param>
-        public async Task<IGPResult> ConvertJSONToXML(string reportPath, string outputFolder, string name )
-        {
-            //Build an array of parameters
-            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
-            {
-
-                var valueArray = Geoprocessing.MakeValueArray(reportPath, outputFolder, name, "XML");
-                return valueArray;
-            });
-
-            //Launch
-            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.ConvertSchemaReport", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
-
-            // Check if the tool was successful
-            if (gpResult.IsFailed)
-            {
-                // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
-
-                FrameworkApplication.AddNotification(new Notification()
-                {
-                    Title = Properties.Resources.FormEnvironmentNewGeodatabaseTitle,
-                    Message = Properties.Resources.GenericMessageError,
-                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
-                });
-            }
-
-            return gpResult;
-
-        }
-
-        ///// <summary>
-        ///// Will import any xml workspace into an existing file geodatabase
-        ///// </summary>
-        ///// <param name="inputWorkspace">The input database object</param>
-        ///// <param name="importPath">The input path to XML</param>
-        //public async Task<IGPResult> DeleteSymbolTables()
-        //{
-        //    //The symbol tables to delete path
-        //    string symGeoline = Path.Combine(OutputGDBPath, Constants.Database.TGeolineSymbol);
-        //    string symGeopoint = Path.Combine(OutputGDBPath, Constants.Database.TGeopointSymbol);
-
-        //    //Build an array of parameters
-        //    IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
-        //    {
-
-        //        var valueArray = Geoprocessing.MakeValueArray(symGeoline + ";" + symGeopoint);
-        //        return valueArray;
-        //    });
-
-        //    //Launch
-        //    IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.delete", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
-
-        //    // Check if the tool was successful
-        //    if (gpResult.IsFailed)
-        //    {
-        //        // display error messages if the tool fails, otherwise shows the default messages
-        //        new ErrorToLogFile(gpResult).WriteToFile();
-
-        //        FrameworkApplication.AddNotification(new Notification()
-        //        {
-        //            Title = Properties.Resources.FormEnvironmentNewGeodatabaseTitle,
-        //            Message = Properties.Resources.GenericMessageError,
-        //            ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
-        //        });
-        //    }
-
-        //    return gpResult;
-
-        //}
-
-        /// <summary>
-        /// Will append csv datasets into emptied tables when rebuilding the file geodatabase
-        /// </summary>
-        /// <param name="inputWorkspace">The input database object</param>
-        /// <param name="importPath">The input path to XML</param>
-        public async Task<IGPResult> AppendInEmptyTables(string inputTablePath, string targetTablePath)
-        {
-
-            //Build an array of parameters
-            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
-            {
-
-                var valueArray = Geoprocessing.MakeValueArray(inputTablePath, targetTablePath, "NO_TEST");
-                return valueArray;
-            });
-
-            //Launch
-            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.append", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
-
-            // Check if the tool was successful
-            if (gpResult.IsFailed)
-            {
-                // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
-
-                FrameworkApplication.AddNotification(new Notification()
-                {
-                    Title = Properties.Resources.FormEnvironmentNewGeodatabaseTitle,
-                    Message = Properties.Resources.GenericMessageError,
-                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
-                });
-            }
-
-            return gpResult;
 
         }
 
