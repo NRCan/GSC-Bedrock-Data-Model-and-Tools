@@ -1,5 +1,6 @@
 ﻿using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.DDL;
+using ArcGIS.Core.Data.Topology;
 using ArcGIS.Desktop.Core.Geoprocessing;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using BedrockEditorPro.Utilities;
@@ -972,6 +973,69 @@ namespace BedrockEditorPro.Utilities
 
         //    return isValid;
         //}
+
+        /// <summary>
+        /// Will check for the existance of a feature class inside a geodatabase
+        /// </summary>
+        /// <param name="geodatabase"></param>
+        /// <param name="featureClassName"></param>
+        /// <returns></returns>
+        public static bool FeatureClassExists(Geodatabase geodatabase, string featureClassName)
+        {
+            try
+            {
+                FeatureClassDefinition fcDefinition = geodatabase.GetDefinition<FeatureClassDefinition>(featureClassName);
+                fcDefinition.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Will check for the existance of a feature dataset inside a geodatabase
+        /// </summary>
+        /// <param name="geodatabase"></param>
+        /// <param name="featureClassName"></param>
+        /// <returns></returns>
+        public static bool FeatureDatasetExists(Geodatabase geodatabase, string featureDatasetName)
+        {
+            try
+            {
+                FeatureDatasetDefinition fdDefinition = geodatabase.GetDefinition<FeatureDatasetDefinition>(featureDatasetName);
+                fdDefinition.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Will check for the existance of some topology inside a geodatabase
+        /// </summary>
+        /// <param name="geodatabase"></param>
+        /// <param name="featureClassName"></param>
+        /// <returns></returns>
+        public static bool TopologyExists(Geodatabase geodatabase, string topologyName)
+        {
+            try
+            {
+                TopologyDefinition fdDefinition = geodatabase.GetDefinition<TopologyDefinition>(topologyName);
+                fdDefinition.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         #endregion
 

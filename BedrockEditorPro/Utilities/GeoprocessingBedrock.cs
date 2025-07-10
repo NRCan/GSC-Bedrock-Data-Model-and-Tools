@@ -39,7 +39,7 @@ namespace BedrockEditorPro.Utilities
 
                 FrameworkApplication.AddNotification(new Notification()
                 {
-                    Title = Properties.Resources.FormEnvironmentNewGeodatabaseTitle,
+                    Title = Properties.Resources.GenericMessageErrorTitle,
                     Message = Properties.Resources.GenericMessageError,
                     ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
                 });
@@ -75,7 +75,115 @@ namespace BedrockEditorPro.Utilities
 
                 FrameworkApplication.AddNotification(new Notification()
                 {
-                    Title = Properties.Resources.FormEnvironmentNewGeodatabaseTitle,
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
+
+        }
+
+        /// <summary>
+        /// Will create a topology layer within a given feature dataset
+        /// </summary>
+        /// <param name="featureDatasetPath">The input feature dataset path</param>
+        /// <param name="topologyName">The output topology name</param>
+        public static async Task<IGPResult> CreateTopology(string featureDatasetPath, string topologyName)
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(featureDatasetPath, topologyName);
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.CreateTopology", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorToLogFile(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
+
+        }
+
+        /// <summary>
+        /// Will add a given rule to a topology within a geodatabase
+        /// </summary>
+        /// <param name="featureDatasetPath">The input feature dataset path</param>
+        /// <param name="topologyName">The output topology name</param>
+        public static async Task<IGPResult> AddRuleToTopology(string topologyPath, string topologyRuleName, string fromFeatureClassPath, string againstFeatureClassPath, string fromSubtype = "", string againstSubtype = "")
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(topologyPath, topologyRuleName, fromFeatureClassPath, fromSubtype, againstFeatureClassPath, againstSubtype);
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.AddRuleToTopology", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorToLogFile(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
+
+        }
+
+        /// <summary>
+        /// Will add a given rule to a topology within a geodatabase
+        /// </summary>
+        /// <param name="featureDatasetPath">The input feature dataset path</param>
+        /// <param name="topologyName">The output topology name</param>
+        public static async Task<IGPResult> AddFeatureClassToTopology(string topologyPath, string featureClassPath)
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(topologyPath, featureClassPath, 1, 1);
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.AddFeatureClassToTopology", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorToLogFile(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
                     Message = Properties.Resources.GenericMessageError,
                     ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
                 });

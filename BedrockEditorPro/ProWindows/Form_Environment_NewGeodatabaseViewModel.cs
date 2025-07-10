@@ -311,6 +311,7 @@ namespace BedrockEditorPro.ProWindows
                     //Close window
                     _view.Close();
 
+                    //Show notication success
                     FrameworkApplication.AddNotification(new Notification()
                     {
                         Title = Properties.Resources.FormEnvironmentNewGeodatabaseTitle,

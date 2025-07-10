@@ -142,5 +142,46 @@ namespace BedrockEditorPro.Utilities
             }
         }
 
+        /// <summary>
+        /// Will prpt a custom FGDB file dialog, that uses special custom file filter class.
+        /// </summary>
+        /// <returns></returns>
+        public static string GetFGDBPrompt(string title)
+        {
+            string fgdbPath = string.Empty;
+
+            //Create new browser filter
+            var bpf_gdb = new BrowseProjectFilter("fgdb");
+
+            //Add typeID for file geodatabase
+            bpf_gdb.AddCanBeTypeId("database_fgdb");
+
+            //Display only folders and GDB in the browse dialog
+            bpf_gdb.Includes.Add("FolderConnection");
+            bpf_gdb.Includes.Add("FileGeodatabase");
+            bpf_gdb.FileExtension = ".gdb";
+
+            //Does not display Online places in the browse dialog
+            bpf_gdb.Excludes.Add("esri_browsePlaces_Online");
+
+            //Display the filter in an Open Item dialog
+            OpenItemDialog openDialogItem = new OpenItemDialog
+            {
+                Title = title,
+                MultiSelect = false,
+                BrowseFilter = bpf_gdb,
+                Filter = "File Geodatabase (*.gdb)|*.gdb|All Files (*.*)|*.*"
+            };
+
+            bool? ok = openDialogItem.ShowDialog();
+
+            if (ok.HasValue && ok.Value && openDialogItem.Items.Count() > 0)
+            {
+                fgdbPath = openDialogItem.Items.First().Path;
+            }
+
+            return fgdbPath;
+        }
+
     }
 }

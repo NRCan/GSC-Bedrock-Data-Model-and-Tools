@@ -61,6 +61,33 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select File Geodatabase to add Topology to:.
+        /// </summary>
+        public static string ButtonEnvironmentTopologicalRulesPromptTitle {
+            get {
+                return ResourceManager.GetString("ButtonEnvironmentTopologicalRulesPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Topological rules.
+        /// </summary>
+        public static string ButtonEnvironmentTopologicalRulesTitle {
+            get {
+                return ResourceManager.GetString("ButtonEnvironmentTopologicalRulesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select File Geodatabase.
+        /// </summary>
+        public static string DialogFGDBPromptTitle {
+            get {
+                return ResourceManager.GetString("DialogFGDBPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New File Geodatabase.
         /// </summary>
         public static string DialogFGDBSavePromptTitle {
@@ -192,6 +219,15 @@ namespace BedrockEditorPro.Properties {
         public static string GenericMessageError {
             get {
                 return ResourceManager.GetString("GenericMessageError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string GenericMessageErrorTitle {
+            get {
+                return ResourceManager.GetString("GenericMessageErrorTitle", resourceCulture);
             }
         }
         
