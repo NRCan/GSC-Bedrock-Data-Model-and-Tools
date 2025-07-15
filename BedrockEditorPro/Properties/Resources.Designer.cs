@@ -61,6 +61,24 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select database source to build layers from.
+        /// </summary>
+        public static string ButtonEnvironmentAddProjectLayersPromptTitle {
+            get {
+                return ResourceManager.GetString("ButtonEnvironmentAddProjectLayersPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project layers.
+        /// </summary>
+        public static string ButtonEnvironmentAddProjectLayersTitle {
+            get {
+                return ResourceManager.GetString("ButtonEnvironmentAddProjectLayersTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select File Geodatabase to add Topology to:.
         /// </summary>
         public static string ButtonEnvironmentTopologicalRulesPromptTitle {
@@ -228,6 +246,123 @@ namespace BedrockEditorPro.Properties {
         public static string GenericMessageErrorTitle {
             get {
                 return ResourceManager.GetString("GenericMessageErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BEDROCK.
+        /// </summary>
+        public static string GroupLayerBedrock {
+            get {
+                return ResourceManager.GetString("GroupLayerBedrock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERPRETATION.
+        /// </summary>
+        public static string GroupLayerInterpretation {
+            get {
+                return ResourceManager.GetString("GroupLayerInterpretation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map Index.
+        /// </summary>
+        public static string GroupLayerInterpretationCGM {
+            get {
+                return ResourceManager.GetString("GroupLayerInterpretationCGM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geolines.
+        /// </summary>
+        public static string GroupLayerInterpretationGeoline {
+            get {
+                return ResourceManager.GetString("GroupLayerInterpretationGeoline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geopoints.
+        /// </summary>
+        public static string GroupLayerInterpretationGeopoint {
+            get {
+                return ResourceManager.GetString("GroupLayerInterpretationGeopoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map Units.
+        /// </summary>
+        public static string GroupLayerInterpretationGeopoly {
+            get {
+                return ResourceManager.GetString("GroupLayerInterpretationGeopoly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Labels.
+        /// </summary>
+        public static string GroupLayerInterpretationLabel {
+            get {
+                return ResourceManager.GetString("GroupLayerInterpretationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROJECT.
+        /// </summary>
+        public static string GroupLayerProject {
+            get {
+                return ResourceManager.GetString("GroupLayerProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SOURCE.
+        /// </summary>
+        public static string GroupLayerSource {
+            get {
+                return ResourceManager.GetString("GroupLayerSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Study Areas.
+        /// </summary>
+        public static string GroupLayerSourceStudyArea {
+            get {
+                return ResourceManager.GetString("GroupLayerSourceStudyArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VALIDATION.
+        /// </summary>
+        public static string GroupLayerValidation {
+            get {
+                return ResourceManager.GetString("GroupLayerValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Topology.
+        /// </summary>
+        public static string GroupLayerValidationTopology {
+            get {
+                return ResourceManager.GetString("GroupLayerValidationTopology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VISUALIZATION.
+        /// </summary>
+        public static string GroupLayerVisualization {
+            get {
+                return ResourceManager.GetString("GroupLayerVisualization", resourceCulture);
             }
         }
         
