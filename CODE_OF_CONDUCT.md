@@ -1,6 +1,6 @@
 # Contributor Covenant Code of Conduct for Bedrock data model and tools project
 
-([Français](#Code-de-conduite-pour-le-projet-des-outils-et-du-modèle-de-roches-en place))
+([Français](#code-de-conduite-pour-le-projet-des-outils-et-du-mod%C3%A8le-de-roches-en-place))
 
 Contributors to repositories hosted in Geoscaler are expected to follow the Contributor Covenant Code of Conduct, and those working within Government are also expected to follow the Values and Ethics Code for the Public Sector
 
