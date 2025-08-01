@@ -1,6 +1,6 @@
-# Contributor Covenant Code of Conduct for Geoscaler project
+# Contributor Covenant Code of Conduct for Bedrock data model and tools project
 
-([Français](#Code-de-conduite-pour-le-projet-du-Geoscaler))
+([Français](#Code-de-conduite-pour-le-projet-des-outils-et-du-modèle-de-roches-en place))
 
 Contributors to repositories hosted in Geoscaler are expected to follow the Contributor Covenant Code of Conduct, and those working within Government are also expected to follow the Values and Ethics Code for the Public Sector
 
@@ -62,10 +62,10 @@ This Code of Conduct is also inspired by GDS' `alphagov` [Code of conduct](https
 
 ---
 <!--markdownlint-disable MD025-->
-# Code de conduite pour le projet du Geoscaler'
+# Code de conduite pour le projet des outils et du modèle de roches en place'
 <!--markdownlint-enable MD025-->
 
-([English](#Contributor-Covenant-Code-of-Conduct-for-the-Geoscaler-project))
+([English](#Contributor-Covenant-Code-of-Conduct-for-Bedrock-data-model-and-tools-project))
 
 Les contributeurs aux dépôts hébergés sous Geoscaler sont tenus de respecter le Code de conduite du Pacte des contributeurs, et ceux qui travaillent au sein du gouvernement sont également tenus de respecter le Code de valeurs et d'éthique du secteur public.
 
