@@ -60,7 +60,7 @@
           <button refID="BedrockEditorPro_Buttons_Button_Legend_ItemDescription" size="large" />
         </group>
         <!--Environment-->
-        <group id="BedrockEditorPro_Environment" caption="Enviromment" appearsOnAddInTab="false" keytip="Enviromment">
+        <group id="BedrockEditorPro_Environment" caption="Environment" appearsOnAddInTab="false" keytip="Enviromment">
           <button refID="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" size="large" />
           <!--<button refID="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" size="large" />-->
           <button refID="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" size="large" />
@@ -78,13 +78,13 @@
       <controls>
         <!-- Root tools -->
         <button id="BedrockEditorPro_Buttons_Button_RefreshSymbols" caption="Refresh Symbols" className="BedrockEditorPro.Buttons.Button_RefreshSymbols" loadOnClick="true" smallImage="GenericRefresh16" largeImage="GenericRefresh32" keytip="Refresh">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Editor">Tooltip text<disabledText /></tooltip>
         </button>
         <comboBox id="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" caption="Source" keytip="Data Source Reference" className="BedrockEditorPro.Comboboxes.Combobox_SelectDataSource" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Editor">Tooltip text<disabledText /></tooltip>
         </comboBox>
         <comboBox id="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" caption="Participant" keytip="Select a Project Participant" className="BedrockEditorPro.Comboboxes.Combobox_SelectParticipant" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Editor">Tooltip text<disabledText /></tooltip>
         </comboBox>
         <!-- Create edit menu -->
         <button id="BedrockEditorPro_Buttons_Button_CreateEdit_GeolineTemplate" caption="Geoline Templates" keytip="Create Geoline Template" className="BedrockEditorPro.Buttons.Button_CreateEdit_GeolineTemplate" loadOnClick="true" smallImage="EditingEditLine16" largeImage="EditingEditLine32">
@@ -118,16 +118,16 @@
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>-->
         <button id="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" caption="Create and Apply Topological Rules" keytip="Create Topology Layer" className="BedrockEditorPro.Buttons.Button_Environment_CreateApplyTopologicalRules" loadOnClick="true" smallImage="EditingReshapeTopologyEdgeTool16" largeImage="EditingReshapeTopologyEdgeTool32">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Environment">Creates a topological dataset (GEO_TOPO) inside the project geodatabase.<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Environment_AddProjectLayers" caption="Add Project Layers" keytip="Add project related layers" className="BedrockEditorPro.Buttons.Button_Environment_AddProjectLayers" loadOnClick="true" smallImage="LayerImportSymbology16" largeImage="LayerImportSymbology32">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Environment">Adds project layers with preloaded and symbolized data.<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Load_StudyAreas" caption="Study Areas" keytip="Manage Project Study Areas" className="BedrockEditorPro.Buttons.Button_Load_StudyAreas" loadOnClick="true" smallImage="ReshapeMapFrameRectangle16" largeImage="ReshapeMapFrameRectangle32">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Load">Prompts a form to add or modify project study areas.<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.ProWindows.Show_Form_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Environment">Create a new project file geodatabase<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
