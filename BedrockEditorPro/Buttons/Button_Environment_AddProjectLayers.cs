@@ -30,22 +30,26 @@ namespace BedrockEditorPro.Buttons
         protected override async void OnClick()
         {
 
-            bool success = await AddProjectLayers();
+            bool? success = await AddProjectLayers();
 
-            if (success)
+            if (success.HasValue)
             {
-                //Show notification sucess
-                FrameworkApplication.AddNotification(new Notification()
+                if (success.Value)
                 {
-                    Title = Properties.Resources.ButtonEnvironmentAddProjectLayersTitle,
-                    Message = Properties.Resources.GenericMessageCompleted,
-                    ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
-                });
+                    //Show notification sucess
+                    FrameworkApplication.AddNotification(new Notification()
+                    {
+                        Title = Properties.Resources.ButtonEnvironmentAddProjectLayersTitle,
+                        Message = Properties.Resources.GenericMessageCompleted,
+                        ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
+                    });
+                }
+                else
+                {
+                    MessageBox.Show(Properties.Resources.GenericMessageError, "", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show(Properties.Resources.GenericMessageError, "", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
-            }
+
 
         }
 
@@ -54,9 +58,9 @@ namespace BedrockEditorPro.Buttons
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        private async Task<bool> AddProjectLayers()
+        private async Task<bool?> AddProjectLayers()
         {
-            bool isSuccess = false;
+            bool? isSuccess = null;
 
             try
             {

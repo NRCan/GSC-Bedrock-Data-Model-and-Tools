@@ -42,22 +42,26 @@ namespace BedrockEditorPro.Buttons
         protected override async void OnClick()
         {
 
-            bool success = await CreateAppllyTopologicalRules();
+            bool? success = await CreateAppllyTopologicalRules();
 
-            if (success)
+            if (success.HasValue)
             {
-                //Show notification sucess
-                FrameworkApplication.AddNotification(new Notification()
+                if (success.HasValue && success.Value)
                 {
-                    Title = Properties.Resources.ButtonEnvironmentTopologicalRulesTitle,
-                    Message = Properties.Resources.GenericMessageCompleted,
-                    ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
-                });
+                    //Show notification sucess
+                    FrameworkApplication.AddNotification(new Notification()
+                    {
+                        Title = Properties.Resources.ButtonEnvironmentTopologicalRulesTitle,
+                        Message = Properties.Resources.GenericMessageCompleted,
+                        ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
+                    });
+                }
+                else
+                {
+                    MessageBox.Show(Properties.Resources.GenericMessageError, "", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show(Properties.Resources.GenericMessageError, "", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
-            }
+
 
         }
 
@@ -66,10 +70,10 @@ namespace BedrockEditorPro.Buttons
         /// in a bedrock model
         /// </summary>
         /// <returns></returns>
-        public async Task<bool> CreateAppllyTopologicalRules()
+        public async Task<bool?> CreateAppllyTopologicalRules()
         {
             //Variables
-            bool success = false;
+            bool? success = null;
 
             //Get wanted geodatabase to add topology to
             string GeodatabasePath = Dialog.GetFGDBPrompt(Properties.Resources.ButtonEnvironmentTopologicalRulesPromptTitle);
