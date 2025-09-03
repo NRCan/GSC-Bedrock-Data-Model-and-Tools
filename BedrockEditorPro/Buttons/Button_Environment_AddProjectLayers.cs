@@ -438,6 +438,7 @@ namespace BedrockEditorPro.Buttons
                     //Set renderer for validation
                     if (featureLayers == Constants.Database.Topology)
                     {
+
                         using (Topology topology = inWorkspace.OpenDataset<Topology>(Constants.Database.Topology))
                         {
                             ///No use on changing the default rendering on the topo layers
@@ -450,15 +451,21 @@ namespace BedrockEditorPro.Buttons
                             //Create the layer with the right typed object
                             TopologyLayer topoLayer = LayerFactory.Instance.CreateLayer<TopologyLayer>(topologyLayerCreationParams, groupLayer);
 
-
                         }
+
                     }
                     #endregion
                 }
-                catch (Exception layerProcessingException)
+
+                catch (Exception layerProcessingException) 
                 {
                     new ErrorToLogFile(layerProcessingException).WriteToFile();
-                    featureLayerRenderingSucess = false;
+
+                    //Special case for topology, it is not mandatory so we can ignore this error
+                    if (!layerProcessingException.Message.ToLower().Contains("topology"))
+                    {
+                        featureLayerRenderingSucess = false;
+                    }
                 }
             }
 
