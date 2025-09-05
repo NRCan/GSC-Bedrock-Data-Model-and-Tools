@@ -142,7 +142,7 @@
     <value>Fichier XML</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseCheckbox" xml:space="preserve">
-    <value>Version intégrée (XML Version 10.2)</value>
+    <value>Modèle intégré par défaut (XML Version 10.2)</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseInput1" xml:space="preserve">
     <value>Gabarit de projet (.xml)</value>
@@ -231,5 +231,23 @@
   </data>
   <data name="GroupLayerValidationTopology" xml:space="preserve">
     <value>Topologie</value>
+  </data>
+  <data name="FormLoadStudyAreaTitle" xml:space="preserve">
+    <value>Zone d'étude</value>
+  </data>
+  <data name="FormLoadStudyAreaLayer" xml:space="preserve">
+    <value>Couche des zones</value>
+  </data>
+  <data name="FormLoadStudyAreaPurpose" xml:space="preserve">
+    <value>Sujet</value>
+  </data>
+  <data name="FormLoadStudyAreaPurposeValues" xml:space="preserve">
+    <value>Type de sujet</value>
+  </data>
+  <data name="FormLoadStudyAreaName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="FormLoadStudyAreaRemark" xml:space="preserve">
+    <value>Remarques</value>
   </data>
 </root>

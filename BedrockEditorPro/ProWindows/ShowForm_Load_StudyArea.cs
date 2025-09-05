@@ -12,21 +12,31 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.KnowledgeGraph;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
-using BedrockEditorPro.ProWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BedrockEditorPro.Buttons
+namespace BedrockEditorPro.ProWindows
 {
-	internal class Button_Load_StudyAreas : Button
-	{
+    internal class ShowForm_Load_StudyArea : Button
+    {
+
+        private Form_Load_StudyArea _form_load_studyarea = null;
+
         protected override void OnClick()
         {
-            Form_Load_StudyArea studyAreaForm = new Form_Load_StudyArea();
-            studyAreaForm.ShowDialog();
+            //already open?
+            if (_form_load_studyarea != null)
+                return;
+            _form_load_studyarea = new Form_Load_StudyArea();
+            _form_load_studyarea.Owner = FrameworkApplication.Current.MainWindow;
+            _form_load_studyarea.Closed += (o, e) => { _form_load_studyarea = null; };
+            _form_load_studyarea.Show();
+            //uncomment for modal
+            //_form_load_studyarea.ShowDialog();
         }
+
     }
 }

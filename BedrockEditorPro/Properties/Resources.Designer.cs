@@ -133,7 +133,7 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default Embedded (XML Version 10.2).
+        ///   Looks up a localized string similar to Default Embedded Model (XML Version 10.2).
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseCheckbox {
             get {
@@ -183,6 +183,60 @@ namespace BedrockEditorPro.Properties {
         public static string FormEnvironmentNewGeodatabaseWarningDBExist {
             get {
                 return ResourceManager.GetString("FormEnvironmentNewGeodatabaseWarningDBExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input study area layer.
+        /// </summary>
+        public static string FormLoadStudyAreaLayer {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaLayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FormLoadStudyAreaName {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purpose.
+        /// </summary>
+        public static string FormLoadStudyAreaPurpose {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaPurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purpose Value.
+        /// </summary>
+        public static string FormLoadStudyAreaPurposeValues {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaPurposeValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remarks.
+        /// </summary>
+        public static string FormLoadStudyAreaRemark {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaRemark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Study Areas.
+        /// </summary>
+        public static string FormLoadStudyAreaTitle {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaTitle", resourceCulture);
             }
         }
         
