@@ -18,7 +18,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Button x:Name="buttonCancel" Content="{x:Static localize:Resources.GenericButtonCancel}"  Style="{DynamicResource BedrockButtonCancel}" HorizontalAlignment="Right" Width="100"
+    <Button x:Name="buttonCancel" Content="{x:Static localize:Resources.GenericButtonCancel}" Style="{DynamicResource BedrockButtonCancel}" HorizontalAlignment="Right" Width="100"
             Margin="0,0,10,0" Click="buttonCancel_Click"/>
 
 </UserControl>

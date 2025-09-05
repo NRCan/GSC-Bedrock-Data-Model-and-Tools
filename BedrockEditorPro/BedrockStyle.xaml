@@ -4,13 +4,16 @@
     <!--Warning: Margin setting in here doesn't work-->
     <!--Warning: VertocalContentAlignment setting in here doesn't work-->
     
+    <!--TIP: ESRI left alignment of labels and controls needs margin="-5,0,0,0"-->
+    <!--TIP: ESRI Controls height is 22-->
+    
     <!--Custom styles for BedrockEditorPro-->
     <Style x:Key="BedrockTextboxInputs" TargetType="TextBox">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap" />
-        <Setter Property="Height" Value="20"/>
+        <Setter Property="Height" Value="22"/>
     </Style>
 
     <Style x:Key="BedrockGrid" TargetType="Grid">
@@ -25,6 +28,7 @@
     </Style>
 
     <Style x:Key="BedrockButtonCancel" TargetType="Button">
+        <Setter Property="Background" Value="White"/>
         <Setter Property="Margin" Value="110,0,10,0"/>
         <Setter Property="Width" Value="100" />
         <Setter Property="HorizontalAlignment" Value="Left"/>

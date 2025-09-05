@@ -8,7 +8,7 @@
              xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
              mc:Ignorable="d" 
-             d:DesignHeight="35" d:DesignWidth="100">
+             d:DesignHeight="25" d:DesignWidth="100">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -22,13 +22,13 @@
     <!--It is bound to a command in the ViewModel, which handles the logic for opening the browse window.-->
     <!-- Setting the x:name in the parent xaml control controls the logic of which browsing window to open eg. MyControlNameXMLBrowseControl
     will open the XML filtering dialog-->
-    <Button Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="center" HorizontalContentAlignment="Right"
+    <Button Style="{DynamicResource Esri_Button}" Margin="10,-5,5,-10" VerticalAlignment="Center" HorizontalContentAlignment="Right"
             Command="{Binding OpenBrowseWindow}" CommandParameter="{Binding Path=Parent, RelativeSource={RelativeSource Self}}">
         <Button.Content>
             <Border>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="{DynamicResource FolderOpenState16}"  Margin="3" HorizontalAlignment="Center" Width="16" Height="16"/>
-                    <TextBlock Text="{x:Static localize:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="5,5,5,5" />
+                    <Image Source="{DynamicResource FolderOpenState16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                    <TextBlock Text="{x:Static localize:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="3" />
                 </StackPanel>
             </Border>
         </Button.Content>

@@ -9,7 +9,7 @@
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions" 
         mc:Ignorable="d"
         ResizeMode="NoResize" 
-        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="265" Width="550"
+        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="210" Width="500"
         WindowStartupLocation="CenterOwner">
     
     <controls:ProWindow.Resources>
@@ -22,16 +22,21 @@
 
         </ResourceDictionary>
     </controls:ProWindow.Resources>
-    <Grid Style="{DynamicResource BedrockGrid}" Margin="10,0,10,10" VerticalAlignment="Center">
+    <Grid Style="{DynamicResource BedrockGrid}" Margin="10" VerticalAlignment="Top">
 
         <!--Create Project GDB from Master Schema-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="25"/>
+            <!--Label italic for warning-->
+            <RowDefinition Height="20"/> 
+            <!--output-->
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="5"/>
+            <!--Projection-->
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <!--Command buttons-->
             <RowDefinition Height="25"/>
 
         </Grid.RowDefinitions>
@@ -40,40 +45,50 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
-        <Label x:Name="NewGeodatabaseVersionLabel" Grid.Row="0" FontStyle="Italic"
+        <Label x:Name="NewGeodatabaseVersionLabel" Grid.Row="0" FontStyle="Italic" Margin="-5,0,0,-5"
            Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseCheckbox}" 
            Style="{DynamicResource BedrockButtonLabel}" />
   
         <!--Output-->
-        <Label Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25" VerticalContentAlignment="Center"
-                 Text="{Binding Path=OutputGDBPath}"/>
-        <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseOutputGDBBrowse" Grid.Row="2" Grid.Column="1"/>
+        <Label Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" Margin="-5,0,0,-5" />
+        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+                Text="{Binding Path=OutputGDBPath}"/>
+        <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseOutputGDBBrowse" Grid.Row="2" Grid.Column="1"  />
 
         <!--Projection-->
-        <Label Grid.Row="3" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" />
-        <TextBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,10,0" Height="25" VerticalContentAlignment="Center"
-                 Text="{Binding Path=OutputSRName}"/>
-        <Button Grid.Row="4" Grid.Column="1" Style="{DynamicResource Esri_Button}" Margin="5" VerticalAlignment="Center" HorizontalContentAlignment="Right"
-                Command="{Binding OpenProjectionBrowse}">
+        <Label Grid.Row="4" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" Margin="-5,0,0,-5" />
+        <TextBox Grid.Row="5" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+                Text="{Binding Path=OutputSRName}"/>
+        <Button Grid.Row="5" Grid.Column="1" Style="{DynamicResource Esri_Button}"  Margin="10,-5,5,-10" VerticalAlignment="Center" HorizontalContentAlignment="Right"
+            Command="{Binding OpenProjectionBrowse}">
             <Button.Content>
                 <Border>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Image Source="{DynamicResource CoordinateSystem16}"  Margin="3" HorizontalAlignment="Center" Width="16" Height="16"/>
-                        <TextBlock Text="{x:Static local:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="5,5,5,5"/>
+                        <Image Source="{DynamicResource CoordinateSystem16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="3"/>
                     </StackPanel>
                 </Border>
             </Button.Content>
         </Button>
 
         <!--Save/Cancel-->
-        <Button Grid.Row="6" Content="{x:Static local:Resources.GenericButtonRun}" 
-                Style="{DynamicResource BedrockButtonSave}" HorizontalAlignment="Left" Width="100"
-                Command="{Binding RunTool}"/>
-        <bedrockcontrols:CancelButton Grid.Row="6" />
+        <Button Grid.Row="7" Margin="0"
+            Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
+            Command="{Binding RunTool}">
+            <Button.Content>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource GenericRun16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonRun}" VerticalAlignment="Center" Margin="3"/>
+                    </StackPanel>
+                </Border>
+            </Button.Content>
+        </Button>
+        
+        <!--<bedrockcontrols:CancelButton Grid.Row="7" />-->
 
-        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="7" Visibility="{Binding Path=WaitingCursorVisibility}"/>
+        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="8" Visibility="{Binding Path=WaitingCursorVisibility}" />
+        
     </Grid>
-
 
 </controls:ProWindow>
