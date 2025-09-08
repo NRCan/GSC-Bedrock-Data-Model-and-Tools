@@ -66,8 +66,18 @@
 
         <!--Select study area layer-->
         <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormLoadStudyAreaLayer}" Style="{DynamicResource BedrockButtonLabel}"/>
-        <ComboBox x:Name="StudyAreaLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" ItemsSource="{Binding Path=StudyAreaLayers, Mode=TwoWay}"/>
-        
+        <ComboBox x:Name="StudyAreaLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=StudyAreaLayers, Mode=TwoWay}" SelectedIndex="{Binding Path=StudyAreaSelectedLayerIndex, Mode=TwoWay}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Icon}" Width="15" Height="15" Margin="0,0,5,0" />
+                        <TextBlock Text="{Binding Text}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
         <!--Associate to a purpose (source, activity, sub activity, project)-->
         <Label Grid.Row="3" Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaPurpose}" Style="{DynamicResource BedrockButtonLabel}"/>
         <ComboBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"

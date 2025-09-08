@@ -43,6 +43,7 @@ namespace BedrockEditorPro.Utilities
             public const string FGeopoly = "GEO_POLYS";
             public const string FStation = "F_STATION";
             public const string FStudyArea = "P_STUDY_AREA";
+            public const string FStudyAreaAlias = "Study Areas"; //GIS display of feature class name
             public const string FCGMIndex = "P_CGM";
             public const string FGeopoint = "GEO_POINTS";
             public const string FCartoPoint = "CARTOGRAPHIC_POINTS";

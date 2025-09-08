@@ -1,4 +1,9 @@
-﻿using System;
+﻿using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Internal.Mapping;
+using ArcGIS.Desktop.Mapping;
+using BedrockEditorPro.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +25,13 @@ namespace BedrockEditorPro.ProWindows
     /// </summary>
     public partial class Form_Load_StudyArea : ArcGIS.Desktop.Framework.Controls.ProWindow
     {
+        public List<Layer> mapLayers = new List<Layer>();
+
         public Form_Load_StudyArea()
         {
             InitializeComponent();
             this.DataContext = new Form_Load_StudyAreaViewModel(this);
         }
+
     }
 }

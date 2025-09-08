@@ -27,20 +27,30 @@ namespace BedrockEditorPro.ProWindows
         #region INIT
         private Dialog dialogs = new Dialog();
         private WorkingEnvironment workingEnvironment = new WorkingEnvironment();
-        private System.Windows.Controls.ComboBox _studyAreaLayers = new System.Windows.Controls.ComboBox();
+        private List<ComboBoxItem> _studyAreaLayers = new List<ComboBoxItem>();
         private Visibility _waitingCursorVisibility = Visibility.Collapsed;
         private Form_Load_StudyArea _view = null;
-
+        private string _studyAreaName = "test";
+        private int _studyAreaSelectedLayerIndex = 0;
         #endregion
 
         #region PROPERTIES
 
-        public System.Windows.Controls.ComboBox StudyAreaLayers
+        public List<ComboBoxItem> StudyAreaLayers
         {
             get { return _studyAreaLayers; }
             set
             {
                 SetProperty(ref _studyAreaLayers, value, () => _studyAreaLayers);
+            }
+        }
+
+        public int StudyAreaSelectedLayerIndex
+        {
+            get { return _studyAreaSelectedLayerIndex; }
+            set
+            {
+                SetProperty(ref _studyAreaSelectedLayerIndex, value, () => _studyAreaSelectedLayerIndex);
             }
         }
 
@@ -50,6 +60,16 @@ namespace BedrockEditorPro.ProWindows
             set
             {
                 SetProperty(ref _waitingCursorVisibility, value, () => _waitingCursorVisibility);
+            }
+        }
+
+
+        public string StudyAreaName
+        {
+            get { return _studyAreaName; }
+            set
+            {
+                SetProperty(ref _studyAreaName, value, () => _studyAreaName);
             }
         }
         #endregion
@@ -83,31 +103,47 @@ namespace BedrockEditorPro.ProWindows
             
         }
 
-        public void UpdateLayerCombobox()
+        /// <summary>
+        /// Will fill the layer combobox with all feature layers in the map
+        /// Optionall i will pre-select the study area layer if it exists
+        /// </summary>
+        public async void UpdateLayerCombobox()
         {
+
             try
             {
-                IEnumerable<Layer> layerlist = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>();
-                StudyAreaLayers.Items.Clear();
-
-                QueuedTask.Run(() =>
+                await QueuedTask.Run(() =>
                 {
-                    foreach (var layer in layerlist)
+                    List<Layer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList<Layer>();
+                    if (layerEnum != null)
                     {
-                        CIMFeatureLayer cIMFeatureLayer = layer.GetDefinition() as CIMFeatureLayer;
-                        if (cIMFeatureLayer != null)
+                        foreach (Layer l in layerEnum)
                         {
-                            StudyAreaLayers.Items.Add(MakeComboBoxItem(layer.GetDefinition() as CIMFeatureLayer));
+                            CIMFeatureLayer cIMFeatureLayer = l.GetDefinition() as CIMFeatureLayer;
+                            if (cIMFeatureLayer != null)
+                            {
+                                ComboBoxItem layerItem = MakeComboBoxItemWithSymbolIcons(l.GetDefinition() as CIMFeatureLayer);
+                                //_mapLayers.Add(layerItem);
+                                _studyAreaLayers.Add(layerItem);
+
+                                //Validate name for auto-selection
+                                if (layerItem.Text == Constants.Database.FStudyAreaAlias)
+                                {
+                                    _studyAreaSelectedLayerIndex = layerEnum.IndexOf(l);
+                                    
+                                }
+                            }
                         }
                     }
                 });
 
-                NotifyPropertyChanged(nameof(StudyAreaLayers));
+                NotifyPropertyChanged(nameof(StudyAreaSelectedLayerIndex));
 
             }
             catch (Exception ex)
             {
                 new ErrorToLogFile(ex).WriteToFile();
+
             }
 
         }
@@ -117,22 +153,44 @@ namespace BedrockEditorPro.ProWindows
         /// </summary>
         /// <param name="cimFeatureLayer"></param>
         /// <returns></returns>
-        ComboBoxItem MakeComboBoxItem(CIMFeatureLayer cimFeatureLayer)
+        ComboBoxItem MakeComboBoxItemWithSymbolIcons(CIMFeatureLayer cimFeatureLayer)
         {
             string toolTip = $@"Select this feature layer: {cimFeatureLayer.Name}";
+            CIMSymbol sym = null;
+            SymbolStyleItem si = null;
+            BitmapSource bm = null;
+
+            //Check for single renderer first
             CIMSimpleRenderer cimRenderer = cimFeatureLayer.Renderer as CIMSimpleRenderer;
-            if (cimRenderer == null)
+            if (cimRenderer != null)
             {
-                return new ComboBoxItem(cimFeatureLayer.Name, null, toolTip);
+                sym = cimRenderer.Symbol.Symbol;
             }
-            SymbolStyleItem si = new SymbolStyleItem()
+            else
             {
-                Symbol = cimRenderer.Symbol.Symbol,
-                PatchHeight = 16,
-                PatchWidth = 16
-            };
-            BitmapSource bm = si.PreviewImage as BitmapSource;
-            bm.Freeze();
+                //Get first symbol of first class instead
+                CIMUniqueValueRenderer cimURenderer = cimFeatureLayer.Renderer as CIMUniqueValueRenderer;
+                if (cimURenderer != null && cimURenderer.Groups.Count() > 0 && cimURenderer.Groups[0].Classes.Count() > 0 &&
+                    cimURenderer.Groups[0].Classes[0].Symbol != null)
+                {
+                    sym = cimURenderer.Groups[0].Classes[0].Symbol.Symbol;
+                }
+            }
+
+            //Create a bitmap image for the icon in the combobox, if a symbol was detected
+            if (sym != null)
+            {
+                si = new SymbolStyleItem()
+                {
+                    Symbol = sym,
+                    PatchHeight = 15,
+                    PatchWidth = 15
+                };
+                bm = si.PreviewImage as BitmapSource;
+                bm.Freeze();
+            }
+
+
             return new ComboBoxItem(cimFeatureLayer.Name, bm, toolTip);
         }
 
