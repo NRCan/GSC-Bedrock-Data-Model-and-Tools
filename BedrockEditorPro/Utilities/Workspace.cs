@@ -3,11 +3,13 @@ using ArcGIS.Core.Data.DDL;
 using ArcGIS.Core.Data.Topology;
 using ArcGIS.Desktop.Core.Geoprocessing;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Mapping;
 using BedrockEditorPro.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Printing;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,32 +20,6 @@ namespace BedrockEditorPro.Utilities
     {
         #region GET METHODS
 
-        ///// <summary>
-        ///// Get project database path 
-        ///// ERROR PREVENT --> Do not use outside functions, crashes arc map at init.
-        ///// </summary>
-        ///// <returns></returns>
-        //public static string GetDBPath()
-        //{
-        //    //Variables
-        //    string DBPath = null;
-
-
-        //    try
-        //    {
-
-        //        //Build path to database
-        //        DBPath = GSC_ProjectEditor.Properties.Settings.Default.PROJECT_DATABASE_PATH;//getDBPath + "\\" + getDBName + ".gdb";
-
-        //    }
-        //    catch (Exception getDBPath)
-        //    {
-        //        MessageBox.Show("GetDBPath error: " + getDBPath.Message);
-        //    }
-
-        //    return DBPath;
-
-        //}
 
         ///// <summary>
         ///// Will return a workspace from a given feature layer name. Will iterate through arc map table of content to find correct layer.
@@ -256,46 +232,40 @@ namespace BedrockEditorPro.Utilities
         //    return validName;
         //}
 
+        /// <summary>
+        /// Will return the original database path of a feature layer
+        /// </summary>
+        /// <param name="inFL"></param>
+        /// <returns></returns>
+        public static Uri GetWorkspacePathFromFeatureLayer(FeatureLayer inFL)
+        {
+            Uri outputWorkspaceUri = null;
+            FeatureClass fc = inFL.GetFeatureClass();
+
+            if (fc != null)
+            {
+                Uri fcURI = fc.GetPath();
+
+                if (fcURI != null)
+                {
+                    string fcPath = fcURI.OriginalString;
+                    string outputWorkspacePath = Directory.GetParent(fcPath).FullName;
+                    if (outputWorkspacePath != null && outputWorkspacePath != string.Empty)
+                    {
+                        outputWorkspaceUri = new Uri(outputWorkspacePath);
+                    }
+                    
+                }
+            }
+            
+
+            return outputWorkspaceUri;
+        }
+
         #endregion
 
         #region ACCESS METHODS
 
-        ///// <summary>
-        ///// Create a workspace factory to access a file database
-        ///// </summary>
-        ///// <param name="inputWorkspacePath">Reference full path to wanted workspace, usually project main geodatabase</param>
-        ///// <returns></returns>
-        //public static dynamic AccessWorkspace_Depreciated(string inputWorkspacePath)
-        //{
-        //    //Make sure nothing exists
-        //    IWorkspaceFactory iWF = null;
-        //    IWorkspace iW = null;
-
-        //    //Create workspace factory for file geodatabase
-        //    iWF = new FileGDBWorkspaceFactory();
-
-        //    try
-        //    {
-        //        if (iWF.IsWorkspace(inputWorkspacePath) == true)
-        //        {
-        //            return iW = iWF.OpenFromFile(inputWorkspacePath, 0);
-        //        }
-        //        else
-        //        {
-        //            string error = Properties.Resources.Error_AccessDB;
-        //            throw new Exception(error);
-
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.ToString());
-        //        return ex;
-        //    }
-
-
-        //}
 
         ///// <summary>
         ///// Create a workspace factory to access a file database, personal database or shapefile

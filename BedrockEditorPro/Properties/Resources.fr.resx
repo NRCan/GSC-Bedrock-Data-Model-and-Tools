@@ -250,4 +250,7 @@
   <data name="FormLoadStudyAreaRemark" xml:space="preserve">
     <value>Remarques</value>
   </data>
+  <data name="GenericMessageErrorWrongDatabase" xml:space="preserve">
+    <value>La source de la couche sélectionnée n'est pas compatible.</value>
+  </data>
 </root>

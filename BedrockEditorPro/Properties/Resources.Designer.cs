@@ -304,6 +304,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selected layer data source does not meet needed requirements..
+        /// </summary>
+        public static string GenericMessageErrorWrongDatabase {
+            get {
+                return ResourceManager.GetString("GenericMessageErrorWrongDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BEDROCK.
         /// </summary>
         public static string GroupLayerBedrock {

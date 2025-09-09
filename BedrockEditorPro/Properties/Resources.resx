@@ -250,4 +250,7 @@
   <data name="FormLoadStudyAreaRemark" xml:space="preserve">
     <value>Remarks</value>
   </data>
+  <data name="GenericMessageErrorWrongDatabase" xml:space="preserve">
+    <value>Selected layer data source does not meet needed requirements.</value>
+  </data>
 </root>

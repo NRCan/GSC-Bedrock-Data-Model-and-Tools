@@ -3,6 +3,8 @@
 
     <!--Warning: Margin setting in here doesn't work-->
     <!--Warning: VertocalContentAlignment setting in here doesn't work-->
+    <!--Warning: Foreground color setting in here doesn't work-->
+    <!--Warning: Fontweight color setting in here doesn't work-->
     
     <!--TIP: ESRI left alignment of labels and controls needs margin="-5,0,0,0"-->
     <!--TIP: ESRI Controls height is 22-->
@@ -40,4 +42,12 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
+
+    <Style x:Key="BedrockWarningLabel" TargetType="Label">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Red"/>
+    </Style>
+    
 </ResourceDictionary>
