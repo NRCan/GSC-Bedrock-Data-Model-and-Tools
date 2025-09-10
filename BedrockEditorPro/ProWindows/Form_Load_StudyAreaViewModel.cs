@@ -1,7 +1,10 @@
 ﻿using ActiproSoftware.Windows.Extensions;
 using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
+using ArcGIS.Core.Data.Exceptions;
+using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Core.Geoprocessing;
+using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
@@ -28,20 +31,14 @@ namespace BedrockEditorPro.ProWindows
     public class Form_Load_StudyAreaViewModel: PropertyChangedBase
     {
         #region INIT
-        private Dialog dialogs = new Dialog();
+
         private WorkingEnvironment workingEnvironment = new WorkingEnvironment();
-        private ObservableCollection<LayerDisplay> _studyAreaLayers = new ();
-        private ObservableCollection<StudyAreaPurposeDisplay> _studyAreaPurposes = new ();
-        private Visibility _waitingCursorVisibility = Visibility.Collapsed;
         private Form_Load_StudyArea _view = null;
-        private string _studyAreaName = string.Empty;
-        private int _studyAreaSelectedLayerIndex = -1;
-        private StudyAreaPurposeDisplay _studyAreaSelectedPurpose = null;
-        private ObservableCollection<StudyAreaPurposeValueDisplay> _studyAreaPurposeValues = new();
-        private int _studyAreaPurposeValueSelection = -1;
-        private string _warningMessage = string.Empty;
+ 
         private object _lock = new(); //For obs. collection
         public enum StudyAreaPurposesEnum { Source, Project, Activity, Subactivity }
+
+        private Uri _areaLayerSourceUri = null;
 
         #endregion
 
@@ -72,11 +69,24 @@ namespace BedrockEditorPro.ProWindows
 
         #region PROPERTIES
 
+        //Models
+        private Models.PStudyArea _studyArea = new Models.PStudyArea();
+        public Models.PStudyArea StudyArea
+        {
+            get { return _studyArea; }
+            set
+            {
+                SetProperty(ref _studyArea, value, () => _studyArea);
+            }
+        }
+
+        //Layer controls
+        private ObservableCollection<LayerDisplay> _studyAreaLayers = new();
         public ObservableCollection<LayerDisplay> StudyAreaLayers
         {
             get { return _studyAreaLayers; }
         }
-
+        private int _studyAreaSelectedLayerIndex = -1;
         public int StudyAreaSelectedLayerIndex
         {
             get { return _studyAreaSelectedLayerIndex; }
@@ -86,11 +96,13 @@ namespace BedrockEditorPro.ProWindows
             }
         }
 
+        //Purpose controls
+        private ObservableCollection<StudyAreaPurposeDisplay> _studyAreaPurposes = new(); 
         public ObservableCollection<StudyAreaPurposeDisplay> StudyAreaPurposes
         {
             get { return _studyAreaPurposes; }
         }
-
+        private StudyAreaPurposeDisplay _studyAreaSelectedPurpose = null;
         public StudyAreaPurposeDisplay StudyAreaSelectedPurpose
         {
             get { return _studyAreaSelectedPurpose; }
@@ -104,20 +116,33 @@ namespace BedrockEditorPro.ProWindows
             }
         }
 
+        //Purpose value controls
+        private ObservableCollection<StudyAreaPurposeValueDisplay> _studyAreaPurposeValues = new();
         public ObservableCollection<StudyAreaPurposeValueDisplay> StudyAreaPurposeValues
         {
             get { return _studyAreaPurposeValues; }
         }
-
-        public int StudyAreaPurposeValueSelection
+        private StudyAreaPurposeValueDisplay _studyAreaSelectedPurposeValue = null;
+        public StudyAreaPurposeValueDisplay StudyAreaSelectedPurposeValue
         {
-            get { return _studyAreaPurposeValueSelection; }
+            get { return _studyAreaSelectedPurposeValue; }
             set
             {
-                SetProperty(ref _studyAreaPurposeValueSelection, value, () => _studyAreaPurposeValueSelection);
+                SetProperty(ref _studyAreaSelectedPurposeValue, value, () => _studyAreaSelectedPurposeValue);
+            }
+        }
+        private int _studyAreaSelectedPurposeValueIndex = -1;
+        public int StudyAreaSelectedPurposeValueIndex
+        {
+            get { return _studyAreaSelectedPurposeValueIndex; }
+            set
+            {
+                SetProperty(ref _studyAreaSelectedPurposeValueIndex, value, () => _studyAreaSelectedPurposeValueIndex);
             }
         }
 
+        //Other controls
+        private string _warningMessage = string.Empty;
         public string WarningMessage
         {
             get { return _warningMessage; }
@@ -127,7 +152,7 @@ namespace BedrockEditorPro.ProWindows
             }
         }
 
-
+        private Visibility _waitingCursorVisibility = Visibility.Collapsed;
         public Visibility WaitingCursorVisibility
         {
             get { return _waitingCursorVisibility; }
@@ -137,6 +162,8 @@ namespace BedrockEditorPro.ProWindows
             }
         }
 
+        //Metadata controls
+        private string _studyAreaName = string.Empty;
         public string StudyAreaName
         {
             get { return _studyAreaName; }
@@ -145,6 +172,17 @@ namespace BedrockEditorPro.ProWindows
                 SetProperty(ref _studyAreaName, value, () => _studyAreaName);
             }
         }
+
+        private string _studyAreaRemark = string.Empty;
+        public string StudyAreaRemark
+        {
+            get { return _studyAreaRemark; }
+            set
+            {
+                SetProperty(ref _studyAreaRemark, value, () => _studyAreaRemark);
+            }
+        }
+
 
         #endregion
 
@@ -306,16 +344,16 @@ namespace BedrockEditorPro.ProWindows
 
                 QueuedTask.Run(() =>
                 {
-                    
-                    _studyAreaPurposeValueSelection = -1;
-                    NotifyPropertyChanged(nameof(StudyAreaPurposeValueSelection));
+
+                    _studyAreaSelectedPurposeValueIndex = -1;
+                    NotifyPropertyChanged(nameof(StudyAreaSelectedPurposeValueIndex));
                     _studyAreaPurposeValues.Clear();
                     NotifyPropertyChanged(nameof(StudyAreaPurposeValues));
 
                     FeatureLayer areaLayer = StudyAreaLayers[StudyAreaSelectedLayerIndex].FLayer;
-                    Uri areaLayerSourceUri = Workspace.GetWorkspacePathFromFeatureLayer(areaLayer);
+                    _areaLayerSourceUri = Workspace.GetWorkspacePathFromFeatureLayer(areaLayer);
 
-                    if (areaLayerSourceUri != null && StudyAreaPurposeValues.Count() == 0 && Directory.Exists(areaLayerSourceUri.OriginalString))
+                    if (_areaLayerSourceUri != null && StudyAreaPurposeValues.Count() == 0 && Directory.Exists(_areaLayerSourceUri.OriginalString))
                     {
                         _warningMessage = string.Empty;
                         NotifyPropertyChanged(nameof(WarningMessage));
@@ -323,7 +361,7 @@ namespace BedrockEditorPro.ProWindows
                         try
                         {
                             //Get origin database
-                            using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(areaLayerSourceUri)))
+                            using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_areaLayerSourceUri)))
                             {
                                 StudyAreaPurposesEnum sap = StudyAreaSelectedPurpose.Value;
                                 Tuple<string, string, string> subFields = Tuple.Create(Constants.Database.TSource, Constants.DatabaseFields.TSourceAbbr,
@@ -372,7 +410,7 @@ namespace BedrockEditorPro.ProWindows
                                                     Value = row[subFields.Item3].ToString(),
                                                 };
                                                 _studyAreaPurposeValues.Add(disp);
-                                                NotifyPropertyChanged(nameof(StudyAreaPurposeValues));
+                                                //NotifyPropertyChanged(nameof(StudyAreaPurposeValues));
 
                                             }
                                         }
@@ -408,14 +446,90 @@ namespace BedrockEditorPro.ProWindows
         {
             try
             {
-                if (_studyAreaSelectedLayerIndex != -1 && _studyAreaSelectedPurpose != null && _studyAreaPurposeValueSelection != -1)
+                if (_studyAreaSelectedLayerIndex != -1 && _studyAreaSelectedPurpose != null && _studyAreaSelectedPurposeValue != null &&
+                    _areaLayerSourceUri != null && Directory.Exists(_areaLayerSourceUri.OriginalString))
                 {
                     WaitingCursorVisibility = Visibility.Visible;
-
                     _warningMessage = string.Empty;
                     NotifyPropertyChanged(nameof(WarningMessage));
 
+                    QueuedTask.Run(() =>
+                    {
+                        //Get origin database
+                        using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_areaLayerSourceUri)))
+                        {
+                            //Get feature class
+                            using (FeatureClass studyAreaFC = sourceGeodatabase.OpenDataset<FeatureClass>(Constants.Database.FStudyArea))
+                            {
+                                //Get the definition class in order to get the shapefield 
+                                FeatureClassDefinition fcDefinition = studyAreaFC.GetDefinition();
+
+                                //Prepare callback in case something happens
+                                EditOperation editOp = new EditOperation();
+                                editOp.Callback(context =>
+                                {
+                                    //Prepare a buffer to store information before insertion
+                                    using (RowBuffer rowBuffer = studyAreaFC.CreateRowBuffer())
+                                    {
+                                        //Fill in the buffer with field values
+                                        foreach (KeyValuePair<string, object> kv in StudyArea.getModelReadyForInsert)
+                                        {
+                                            rowBuffer[kv.Key] = kv.Value;
+
+                                            if (kv.Key == Constants.DatabaseFields.FStudyAreaRelatedID)
+                                            {
+                                                rowBuffer[kv.Key] = _studyAreaSelectedPurposeValue.Value;
+                                            }
+                                        }
+
+
+
+                                        //Add new geometry
+                                        List<Coordinate3D> newCoordinates = new List<Coordinate3D>
+                                        {
+                                            new Coordinate3D(1021570, 1880583,0),
+                                            new Coordinate3D(1028730, 1880994,0),
+                                            new Coordinate3D(1029718, 1875644, 0),
+                                            new Coordinate3D(1021405, 1875397, 0)
+                                        };
+
+                                        //Sync geometry field
+                                        rowBuffer[fcDefinition.GetShapeField()] = new PolygonBuilderEx(newCoordinates).ToGeometry();
+
+                                        //Create row with the buffer
+                                        using (Feature feature = studyAreaFC.CreateRow(rowBuffer))
+                                        {
+                                            context.Invalidate(feature);
+                                        }
+                                    }
+                                }, studyAreaFC);
+
+                                try
+                                {
+                                    editOp.Execute();
+                                }
+                                catch (GeodatabaseException gdbEx )
+                                {
+                                    new ErrorToLogFile(gdbEx).WriteToFile();
+                                    WaitingCursorVisibility = Visibility.Collapsed;
+                                    _view.Close();
+
+                                    FrameworkApplication.AddNotification(new Notification()
+                                    {
+                                        Title = Properties.Resources.FormLoadStudyAreaTitle,
+                                        Message = Properties.Resources.GenericMessageError,
+                                        ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                                    });
+                                }
+
+                            }
+                        }
+
+                    });
+
+
                     //Close window
+                    WaitingCursorVisibility = Visibility.Collapsed;
                     _view.Close();
 
                     //Show notication success

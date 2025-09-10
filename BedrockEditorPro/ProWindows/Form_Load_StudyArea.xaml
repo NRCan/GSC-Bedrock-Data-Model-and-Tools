@@ -89,16 +89,17 @@
         <Label Grid.Row="6" Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaPurposeValues}" Style="{DynamicResource BedrockButtonLabel}"/>
         <ComboBox Grid.Row="7" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
                   ItemsSource="{Binding Path=StudyAreaPurposeValues}" DisplayMemberPath="Name" SelectedValuePath="Value"
-                  SelectedIndex="{Binding StudyAreaPurposeValueSelection}"/>
+                  SelectedIndex="{Binding Path=StudyAreaSelectedPurposeValueIndex}"
+                  SelectedItem="{Binding Path=StudyAreaSelectedPurposeValue}"/>
 
         <!--Metadata section-->
         <Label Grid.Row="9" Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaName}" Style="{DynamicResource BedrockButtonLabel}" />
         <TextBox Grid.Row="10" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
-                 Text="{Binding Path=StudyAreaName}"/>
+                 Text="{Binding Path=StudyArea.Abbreviation, Mode=TwoWay}"/>
 
         <Label Grid.Row="12" Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaRemark}" Style="{DynamicResource BedrockButtonLabel}" />
         <TextBox Grid.Row="13" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="60" VerticalContentAlignment="Top" TextWrapping="Wrap"
-                 Text="{Binding Path=StudyAreaRemark}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                 Text="{Binding Path=StudyArea.Remarks, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         
         <!--Option 1 - Create from coordinates (bounding box)-->
 

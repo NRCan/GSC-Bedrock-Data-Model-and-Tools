@@ -9,6 +9,8 @@ namespace BedrockEditorPro.Utilities
         public class Database
         {
 
+            public const double CurrentDBVersion = 2.10; //Update this when DB schema is changed
+
             //Tables
             public const string TParticipant = "P_PARTICIPANT";
             public const string TPerson = "P_PERSON";
