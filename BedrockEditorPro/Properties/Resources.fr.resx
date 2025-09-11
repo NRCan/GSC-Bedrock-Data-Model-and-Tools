@@ -253,4 +253,25 @@
   <data name="GenericMessageErrorWrongDatabase" xml:space="preserve">
     <value>La source de la couche sélectionnée n'est pas compatible.</value>
   </data>
+  <data name="FormLoadStudyAreaOption1Title" xml:space="preserve">
+    <value>Option 1 - Coordonnées (Pareil que l'entité géographique)</value>
+  </data>
+  <data name="FormLoadStudyAreaNorth" xml:space="preserve">
+    <value>Nord</value>
+  </data>
+  <data name="FormLoadStudyAreaWest" xml:space="preserve">
+    <value>Ouest</value>
+  </data>
+  <data name="FormLoadStudyAreaEast" xml:space="preserve">
+    <value>Est</value>
+  </data>
+  <data name="FormLoadStudyAreaSouth" xml:space="preserve">
+    <value>Sud</value>
+  </data>
+  <data name="FormLoadStudyAreaOption2Title" xml:space="preserve">
+    <value>Option 2 - Sélection d'une ligne ou d'un polygone</value>
+  </data>
+  <data name="FormLoadStudyAreaOption2Layer" xml:space="preserve">
+    <value>Prendre la géométrie d'une entité sélectionnée</value>
+  </data>
 </root>

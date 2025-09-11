@@ -187,6 +187,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to East.
+        /// </summary>
+        public static string FormLoadStudyAreaEast {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaEast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input study area layer.
         /// </summary>
         public static string FormLoadStudyAreaLayer {
@@ -201,6 +210,42 @@ namespace BedrockEditorPro.Properties {
         public static string FormLoadStudyAreaName {
             get {
                 return ResourceManager.GetString("FormLoadStudyAreaName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to North.
+        /// </summary>
+        public static string FormLoadStudyAreaNorth {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaNorth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option 1 - Coordinates (Same as feature class).
+        /// </summary>
+        public static string FormLoadStudyAreaOption1Title {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaOption1Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use geometry from selected feature.
+        /// </summary>
+        public static string FormLoadStudyAreaOption2Layer {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaOption2Layer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option 2 - Line / Polygon selection from layer.
+        /// </summary>
+        public static string FormLoadStudyAreaOption2Title {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaOption2Title", resourceCulture);
             }
         }
         
@@ -232,11 +277,29 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to South.
+        /// </summary>
+        public static string FormLoadStudyAreaSouth {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaSouth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Study Areas.
         /// </summary>
         public static string FormLoadStudyAreaTitle {
             get {
                 return ResourceManager.GetString("FormLoadStudyAreaTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to West.
+        /// </summary>
+        public static string FormLoadStudyAreaWest {
+            get {
+                return ResourceManager.GetString("FormLoadStudyAreaWest", resourceCulture);
             }
         }
         

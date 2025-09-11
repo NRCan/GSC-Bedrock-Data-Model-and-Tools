@@ -253,4 +253,25 @@
   <data name="GenericMessageErrorWrongDatabase" xml:space="preserve">
     <value>Selected layer data source does not meet needed requirements.</value>
   </data>
+  <data name="FormLoadStudyAreaOption1Title" xml:space="preserve">
+    <value>Option 1 - Coordinates (Same as feature class)</value>
+  </data>
+  <data name="FormLoadStudyAreaNorth" xml:space="preserve">
+    <value>North</value>
+  </data>
+  <data name="FormLoadStudyAreaWest" xml:space="preserve">
+    <value>West</value>
+  </data>
+  <data name="FormLoadStudyAreaEast" xml:space="preserve">
+    <value>East</value>
+  </data>
+  <data name="FormLoadStudyAreaSouth" xml:space="preserve">
+    <value>South</value>
+  </data>
+  <data name="FormLoadStudyAreaOption2Title" xml:space="preserve">
+    <value>Option 2 - Line / Polygon selection from layer</value>
+  </data>
+  <data name="FormLoadStudyAreaOption2Layer" xml:space="preserve">
+    <value>Use geometry from selected feature</value>
+  </data>
 </root>

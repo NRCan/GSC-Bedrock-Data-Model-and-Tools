@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using ArcGIS.Core.Geometry;
 
 namespace BedrockEditorPro.Models
 {
@@ -15,11 +16,26 @@ namespace BedrockEditorPro.Models
         [Column(Constants.DatabaseFields.FStudyAreaRelatedID), PrimaryKey]
         public int RelatedID { get; set; }
 
-        [Column(Constants.DatabaseFields.FStudyAreaAbbr), PrimaryKey]
+        [Column(Constants.DatabaseFields.FStudyAreaEast)]
+        public double East { get; set; }
+
+        [Column(Constants.DatabaseFields.FStudyAreaWest)]
+        public double West { get; set; }
+
+        [Column(Constants.DatabaseFields.FStudyAreaNorth)]
+        public double North { get; set; }
+
+        [Column(Constants.DatabaseFields.FStudyAreaSouth)]
+        public double South { get; set; }
+
+        [Column(Constants.DatabaseFields.FStudyAreaAbbr)]
         public string Abbreviation { get; set; }
 
-        [Column(Constants.DatabaseFields.FStudyAreaRemarks), PrimaryKey]
+        [Column(Constants.DatabaseFields.FStudyAreaRemarks)]
         public string Remarks { get; set; }
+
+        [Ignore]
+        public Geometry Geometry { get; set; }
 
         /// <summary>
         /// A list of all possible fields
@@ -76,6 +92,30 @@ namespace BedrockEditorPro.Models
             }
             set { }
         }
+
+        /// <summary>
+        /// A list of all possible fields
+        /// </summary>
+        [Ignore]
+        public IEnumerable<Coordinate3D> getCoordinatesFromFields
+        {
+            get
+            {
+
+                IEnumerable <Coordinate3D> polygonCoordinates = new List<Coordinate3D>
+                {
+                    new Coordinate3D(West, South, 0),
+                    new Coordinate3D(West, North, 0),
+                    new Coordinate3D(East, North, 0),
+                    new Coordinate3D(East, South, 0),
+                    new Coordinate3D(West, South, 0)
+                };
+
+                return polygonCoordinates;
+            }
+            set { }
+        }
+
 
     }
 }

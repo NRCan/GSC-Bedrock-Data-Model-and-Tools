@@ -50,7 +50,15 @@
 
             <!--Metadata-->
             <RowDefinition Height="20"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="5"/>
+
+            <!--Option 1-->
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="5"/>
+
+            <!--Option 2-->
+            <RowDefinition Height="80"/>
             <RowDefinition Height="5"/>
 
             <!--Command buttons-->
@@ -102,14 +110,74 @@
                  Text="{Binding Path=StudyArea.Remarks, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         
         <!--Option 1 - Create from coordinates (bounding box)-->
+        <GroupBox Grid.Row="15" Header="{x:Static local:Resources.FormLoadStudyAreaOption1Title}" Margin="0,0,0,0">
+
+            <Grid>
+                <Grid.RowDefinitions>
+
+                    <!--Select study area layer-->
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="5"/>
+                    
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="1" Grid.ColumnSpan="2"  HorizontalAlignment="Center" Margin="0,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaNorth}" Style="{DynamicResource BedrockButtonLabel}" />
+                <TextBox Grid.Row="2" Grid.ColumnSpan="2" Width="120" Style="{DynamicResource BedrockTextboxInputs}" HorizontalAlignment="Center" Margin="0,0,0,-5" Height="22" 
+                 Text="{Binding Path=StudyArea.North}" />
+
+                <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaWest}" Style="{DynamicResource BedrockButtonLabel}" />
+                <TextBox Grid.Row="4" Grid.Column="0" Width="120" Style="{DynamicResource BedrockTextboxInputs}" HorizontalAlignment="Center" Margin="0,0,0,-5" Height="22" 
+                 Text="{Binding Path=StudyArea.West}" />
+
+                <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaEast}" Style="{DynamicResource BedrockButtonLabel}" />
+                <TextBox Grid.Row="4" Grid.Column="1" Width="120" Style="{DynamicResource BedrockTextboxInputs}" HorizontalAlignment="Center" Margin="0,0,0,-5" Height="22" 
+                 Text="{Binding Path=StudyArea.East}" />
+
+                <TextBox Grid.Row="5" Grid.ColumnSpan="2" Width="120" Style="{DynamicResource BedrockTextboxInputs}" HorizontalAlignment="Center" Margin="0,10,0,-5" Height="22" 
+                 Text="{Binding Path=StudyArea.South}" />
+                <Label Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,5,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaSouth}" Style="{DynamicResource BedrockButtonLabel}" />
+
+            </Grid>
+            
+        </GroupBox>
 
         <!--Option 2 - Load from existing feature class (must be a layer)-->
+        <GroupBox Grid.Row="17" Header="{x:Static local:Resources.FormLoadStudyAreaOption2Title}" Margin="0">
+            <StackPanel>
+                <Label Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormLoadStudyAreaOption2Layer}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox  Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=StudyAreaOption2Layers}" SelectedIndex="{Binding Path=StudyAreaSelectedOption2LayerIndex}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" Width="15" Height="15" Margin="0,0,5,0" />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
 
+        </GroupBox>
+        
+        
         <!--Warnings-->
-        <Label Grid.Row="15" Margin="-5,0,0,-5"  Grid.ColumnSpan="2" Foreground="Red" Content="{Binding Path=WarningMessage, Mode=TwoWay}" Style="{DynamicResource BedrockWarningLabel}"/>
+        <Label Grid.Row="19" Margin="-5,0,0,-5"  Grid.ColumnSpan="2" Foreground="Red" Content="{Binding Path=WarningMessage, Mode=TwoWay}" Style="{DynamicResource BedrockWarningLabel}"/>
 
         <!--Run-->
-        <Button Grid.Row="16" Margin="0"
+        <Button Grid.Row="20" Margin="0"
             Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
             Command="{Binding RunTool}">
             <Button.Content>
@@ -123,7 +191,7 @@
         </Button>
         <!--<bedrockcontrols:CancelButton Grid.Row="10" />-->
 
-        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="15" Visibility="{Binding Path=WaitingCursorVisibility}"/>
+        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="21" Visibility="{Binding Path=WaitingCursorVisibility}"/>
 
     </Grid>
 </controls:ProWindow>
