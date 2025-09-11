@@ -500,11 +500,12 @@ namespace BedrockEditorPro.ProWindows
                                     //Prepare a buffer to store information before insertion
                                     using (RowBuffer rowBuffer = studyAreaFC.CreateRowBuffer())
                                     {
+                                        bool validGeometry = false;
 
                                         //Set geometry from option 2 else create from option 1
                                         if (StudyAreaSelectedOption2LayerIndex != -1)
                                         {
-                                            bool imported = await ImportFeature();
+                                            validGeometry = await ImportFeature();
                                             rowBuffer[fcDefinition.GetShapeField()] = StudyArea.Geometry;
                                         }
                                         else
@@ -512,6 +513,13 @@ namespace BedrockEditorPro.ProWindows
                                             //Set geometry
                                             IEnumerable<Coordinate3D> coord = StudyArea.getCoordinatesFromFields;
                                             rowBuffer[fcDefinition.GetShapeField()] = new PolygonBuilderEx(coord).ToGeometry();
+
+                                            validGeometry = true;
+                                        }
+
+                                        if (!validGeometry)
+                                        {
+                                            throw new Exception(Properties.Resources.GenericMessageError);
                                         }
 
                                         //Fill in the buffer with other field values
@@ -550,12 +558,10 @@ namespace BedrockEditorPro.ProWindows
                                         ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
                                     });
                                 }
-
                             }
                         }
 
                     });
-
 
                     //Close window
                     WaitingCursorVisibility = Visibility.Collapsed;
@@ -606,49 +612,47 @@ namespace BedrockEditorPro.ProWindows
                     //Get selected feature layer
                     FeatureLayer flImport = StudyAreaOption2Layers[StudyAreaSelectedOption2LayerIndex].FLayer;
 
-                    //Find geometry type
-                    if (flImport.ShapeType == esriGeometryType.esriGeometryPolygon)
+                    using (FeatureClass fc = flImport.GetFeatureClass())
                     {
+                        //Get some definition (for shape and oid field)
+                        FeatureClassDefinition fcDefinition = fc.GetDefinition();
 
+                        //By default, will always process only the first selected object or the first polygon
+                        QueryFilter qf = new QueryFilter()
+                        {
+                            PostfixClause = string.Format("ORDER BY {0} LIMIT 1", fcDefinition.GetObjectIDField())
+                        };
 
-                        //Get feature class
-                        using (FeatureClass fc = flImport.GetFeatureClass())
-                        {   
-                            //Get some definition (for shape and oid field)
-                            FeatureClassDefinition fcDefinition = fc.GetDefinition();
+                        //Get first selected object if there is any
+                        if (flImport.SelectionCount > 0)
+                        {
+                            //We need to get all selected features from all layers
+                            SelectionSet selectionSet = MapView.Active.Map.GetSelection();
 
-                            //By default, will always process only the first selected object or the first polygon
-                            QueryFilter qf = new QueryFilter()
+                            //Find the needed layer and get the list of selected OIDs
+                            List<long> option2LayerSelectionSet = selectionSet.ToDictionary().Where(l => l.Key.Name == flImport.Name).FirstOrDefault().Value;
+
+                            if (option2LayerSelectionSet != null)
                             {
-                                PostfixClause = string.Format("ORDER BY {0} LIMIT 1", fcDefinition.GetObjectIDField())
-                            };
-
-                            //Get first selected object if there is any
-                            if (flImport.SelectionCount > 0)
-                            {
-                                //We need to get all selected features from all layers
-                                SelectionSet selectionSet = MapView.Active.Map.GetSelection();
-
-                                //Find the needed layer and get the list of selected OIDs
-                                List<long> option2LayerSelectionSet = selectionSet.ToDictionary().Where(l => l.Key.Name == flImport.Name).FirstOrDefault().Value;
-
-                                if (option2LayerSelectionSet != null)
+                                qf = new QueryFilter()
                                 {
-                                    qf = new QueryFilter()
-                                    {
-                                        WhereClause = string.Format("{0} = {1}", fcDefinition.GetObjectIDField(), option2LayerSelectionSet.First())
-                                    };
-                                }
+                                    WhereClause = string.Format("{0} = {1}", fcDefinition.GetObjectIDField(), option2LayerSelectionSet.First())
+                                };
                             }
+                        }
 
-                            //Get geometry extent along the original geometry
-                            using (RowCursor rowCursor = fc.Search(qf, false))
+                        //Get geometry extent along the original geometry
+                        using (RowCursor rowCursor = fc.Search(qf, false))
+                        {
+                            while (rowCursor.MoveNext())
                             {
-                                while (rowCursor.MoveNext())
+                                using (Row row = rowCursor.Current)
                                 {
-                                    using (Row row = rowCursor.Current)
+                                    Feature feat = row as Feature;
+
+                                    //Find geometry type
+                                    if (flImport.ShapeType == esriGeometryType.esriGeometryPolygon)
                                     {
-                                        Feature feat = row as Feature;
                                         Polygon polygon = feat.GetShape() as Polygon;
 
                                         StudyArea.West = polygon.Extent.XMax;
@@ -656,15 +660,30 @@ namespace BedrockEditorPro.ProWindows
                                         StudyArea.North = polygon.Extent.YMax;
                                         StudyArea.South = polygon.Extent.YMin;
                                         StudyArea.Geometry = polygon;
+
                                     }
+                                    else if (flImport.ShapeType == esriGeometryType.esriGeometryPolyline)
+                                    {
+                                        //If a line is selected, we'll need to convert it to a polygon
+                                        Polyline polyline = feat.GetShape() as Polyline;
+
+                                        IReadOnlyCollection<Coordinate3D> pointColl = polyline.Copy3DCoordinatesToList();
+
+                                        Polygon polygon = new PolygonBuilderEx(pointColl).ToGeometry();
+
+                                        StudyArea.West = polygon.Extent.XMax;
+                                        StudyArea.East = polygon.Extent.XMin;
+                                        StudyArea.North = polygon.Extent.YMax;
+                                        StudyArea.South = polygon.Extent.YMin;
+                                        StudyArea.Geometry = polygon;
+
+                                    }
+
+                                    imported = true;
+
                                 }
                             }
                         }
-
-                    }
-                    else if (flImport.ShapeType == esriGeometryType.esriGeometryPolyline)
-                    {
-                        //If a line is selected, we'll need to convert it to a polygon
                     }
                 }
             }

@@ -10,7 +10,7 @@
         xmlns:layerControls="clr-namespace:ArcGIS.Desktop.Internal.Mapping.CommonControls.LayerControls;assembly=ArcGIS.Desktop.Mapping"
         mc:Ignorable="d"
         ResizeMode="NoResize" 
-        Title="{x:Static local:Resources.FormLoadStudyAreaTitle}" Height="325" Width="505"
+        Title="{x:Static local:Resources.FormLoadStudyAreaTitle}" Height="325" Width="400"
         WindowStartupLocation="CenterOwner">
 
     <controls:ProWindow.Resources>
@@ -69,7 +69,7 @@
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="100"/>
+            <!--<ColumnDefinition Width="100"/>-->
         </Grid.ColumnDefinitions>
 
         <!--Select study area layer-->
