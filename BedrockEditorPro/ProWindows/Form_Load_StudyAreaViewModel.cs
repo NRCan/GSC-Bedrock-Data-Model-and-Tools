@@ -290,7 +290,7 @@ namespace BedrockEditorPro.ProWindows
             }
             catch (Exception ex)
             {
-                new ErrorToLogFile(ex).WriteToFile();
+                new ErrorService(ex).WriteToFile();
 
             }
 
@@ -450,7 +450,7 @@ namespace BedrockEditorPro.ProWindows
                         }
                         catch (Exception ex)
                         {
-                            new ErrorToLogFile(ex).WriteToFile();
+                            new ErrorService(ex).WriteToFile();
                             _warningMessage = ex.Message;
                             NotifyPropertyChanged(nameof(WarningMessage));
                         }
@@ -547,7 +547,7 @@ namespace BedrockEditorPro.ProWindows
                                 }
                                 catch (GeodatabaseException gdbEx )
                                 {
-                                    new ErrorToLogFile(gdbEx).WriteToFile();
+                                    new ErrorService(gdbEx).WriteToFile();
                                     WaitingCursorVisibility = Visibility.Collapsed;
                                     _view.Close();
 
@@ -590,7 +590,7 @@ namespace BedrockEditorPro.ProWindows
             }
             catch (Exception e)
             {
-                new ErrorToLogFile(e).WriteToFile();
+                new ErrorService(e).WriteToFile();
                 WaitingCursorVisibility = Visibility.Collapsed;
                 _view.Close();
             }
@@ -689,7 +689,7 @@ namespace BedrockEditorPro.ProWindows
             }
             catch (Exception ex)
             {
-                new ErrorToLogFile(ex).WriteToFile();
+                new ErrorService(ex).WriteToFile();
             }
 
             return imported;

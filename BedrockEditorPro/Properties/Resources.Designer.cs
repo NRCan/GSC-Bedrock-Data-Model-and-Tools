@@ -304,6 +304,24 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Refresh Symbols.
+        /// </summary>
+        public static string FormRefreshSymbolesTitle {
+            get {
+                return ResourceManager.GetString("FormRefreshSymbolesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select layers to refresh symbols.
+        /// </summary>
+        public static string FormRefreshSymbolLayers {
+            get {
+                return ResourceManager.GetString("FormRefreshSymbolLayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse.
         /// </summary>
         public static string GenericButtonBrowse {
@@ -528,6 +546,16 @@ namespace BedrockEditorPro.Properties {
         public static byte[] GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10 {
             get {
                 object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GSC_SymbolStandard {
+            get {
+                object obj = ResourceManager.GetObject("GSC_SymbolStandard", resourceCulture);
                 return ((byte[])(obj));
             }
         }

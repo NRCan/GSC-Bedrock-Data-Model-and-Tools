@@ -37,6 +37,7 @@
           <button refID="BedrockEditorPro_DockPanes_Dockablewindow_CreateEdit_GeolineTemplate_ShowButton" size="large" />
           <button refID="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeolineTemplate_ShowButton" size="large" />
           <button refID="BedrockEditorPro_ProWindows_Form_Load_StudyArea" size="large" />
+          <button refID="BedrockEditorPro_ProWindows_Form_RefreshSymbols" size="large" />
         </group>
         <!--Templates-->
         <group id="BedrockEditorPro_Templates" caption="Templates" appearsOnAddInTab="false" keytip="Other">
@@ -126,6 +127,9 @@
         </button>
         <button id="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.ProWindows.Show_Form_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
           <tooltip heading="Environment">Create a new project file geodatabase<disabledText /></tooltip>
+        </button>
+        <button id="BedrockEditorPro_ProWindows_Form_RefreshSymbols" caption="Form _RefreshSymbols" className="BedrockEditorPro.ProWindows.ShowForm_RefreshSymbols" loadOnClick="true" smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>

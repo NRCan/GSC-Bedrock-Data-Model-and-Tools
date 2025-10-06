@@ -1,0 +1,78 @@
+﻿<controls:ProWindow x:Class="BedrockEditorPro.ProWindows.Form_RefreshSymbols"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BedrockEditorPro.Properties"
+        xmlns:bedrockcontrols="clr-namespace:BedrockEditorPro.Controls"
+        xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+        xmlns:layerControls="clr-namespace:ArcGIS.Desktop.Internal.Mapping.CommonControls.LayerControls;assembly=ArcGIS.Desktop.Mapping"
+        mc:Ignorable="d"
+        Title="{x:Static local:Resources.FormRefreshSymbolesTitle}"  Height="300" Width="300"
+        WindowStartupLocation="CenterOwner"
+    >
+    <controls:ProWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="/BedrockEditorPro;component/BedrockStyle.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component/XamlImages.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </controls:ProWindow.Resources>
+    
+    <Grid Style="{DynamicResource BedrockGrid}" Margin="10" VerticalAlignment="Top">
+
+        <Grid.RowDefinitions>
+
+            <!--Select study area layer-->
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="5"/>
+
+            <!--Command buttons-->
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="100"/>-->
+        </Grid.ColumnDefinitions>
+
+        <!--Select layers to refresh-->
+        <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormRefreshSymbolLayers}" Style="{DynamicResource BedrockButtonLabel}"/>
+
+        <ListBox Grid.Row="1" ItemsSource="{Binding Path=RefreshLayers}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                        <Image Source="{Binding Icon}" Width="15" Height="15" Margin="10,0,5,0" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
+
+        <!--Run-->
+        <Button Grid.Row="20" Margin="0"
+            Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
+            Command="{Binding RunTool}">
+            <Button.Content>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource GenericRun16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonRun}" VerticalAlignment="Center" Margin="3"/>
+                    </StackPanel>
+                </Border>
+            </Button.Content>
+        </Button>
+
+        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="5" Visibility="{Binding Path=WaitingCursorVisibility}"/>
+
+    </Grid>
+</controls:ProWindow>

@@ -892,6 +892,11 @@ namespace BedrockEditorPro.Utilities
             public const string debugFileName = "DebugLog.txt";
         }
 
+        public static class Configuration
+        {
+            public const string userConfigFileName = "userconfig.json";
+        }
+
         public static class Seperator
         {
             public const string textFileLineSep = ";";

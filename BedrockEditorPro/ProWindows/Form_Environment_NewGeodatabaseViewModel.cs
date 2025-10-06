@@ -14,6 +14,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.KnowledgeGraph;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
+using BedrockEditorPro.Services;
 using BedrockEditorPro.Utilities;
 using System;
 using System.Collections.Generic;
@@ -334,7 +335,7 @@ namespace BedrockEditorPro.ProWindows
             }
             catch (Exception e)
             {
-                new ErrorToLogFile(e).WriteToFile();
+                new ErrorService(e).WriteToFile();
                 WaitingCursorVisibility = Visibility.Collapsed;
                 _view.Close();
             }
@@ -353,7 +354,7 @@ namespace BedrockEditorPro.ProWindows
                 //needs to be deleted to remove previously embeded projection in the text
                 File.Delete(JSONFilePath);
             }
-            WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10, JSONFilePath);
+            FileService.WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10, JSONFilePath);
 
             //Geoline symbol table needs to be reloaded, the json schema can't hold filled in tables and since this one has relationship classes
             //to other table we can't simply add them from an XML workspace with only the table in it else we need to rename everything linked
@@ -361,7 +362,7 @@ namespace BedrockEditorPro.ProWindows
             GeolineCSVFilePath = Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10) + ".csv");
             if (!File.Exists(GeolineCSVFilePath))
             {
-                WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10, GeolineCSVFilePath);
+                FileService.WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10, GeolineCSVFilePath);
             }
 
             //Geopoint symbol table needs to be reloaded, the json schema can't hold filled in tables and since this one has relationship classes
@@ -370,7 +371,7 @@ namespace BedrockEditorPro.ProWindows
             GeopointCSVFilePath = Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10) + ".csv");
             if (!File.Exists(GeopointCSVFilePath))
             {
-                WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10, GeopointCSVFilePath);
+                FileService.WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10, GeopointCSVFilePath);
             }
 
             //Organization table needs to be reloaded, the json schema can't hold filled in tables and since this one has relationship classes
@@ -379,33 +380,12 @@ namespace BedrockEditorPro.ProWindows
             OrgCSVFilePath = Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_P_ORGANIZATION_V2_10) + ".csv");
             if (!File.Exists(OrgCSVFilePath))
             {
-                WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_P_ORGANIZATION_V2_10, OrgCSVFilePath);
+                FileService.WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_P_ORGANIZATION_V2_10, OrgCSVFilePath);
             }
 
         }
 
-        /// <summary>
-        /// Will save an embedded resource in the working environment folder
-        /// </summary>
-        /// <param name="resourceBytes"></param>
-        /// <param name="outputPath"></param>
-        public void WriteStreamResource(byte[] resourceBytes, string outputPath)
-        {
-            try
-            {
-                Stream outputStream = new FileStream(outputPath, FileMode.Create, FileAccess.Write, FileShare.None);
-                using (BinaryWriter fileWriter = new BinaryWriter(outputStream))
-                {
-                    fileWriter.Write(resourceBytes);
-                    fileWriter.Close();
-                }
-            }
-            catch (Exception e)
-            {
-                new ErrorToLogFile(e).WriteToFile();
-            }
 
-        }
 
         #endregion
     }

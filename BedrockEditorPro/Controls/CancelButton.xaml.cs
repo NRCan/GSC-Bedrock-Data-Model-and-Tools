@@ -45,7 +45,7 @@ namespace BedrockEditorPro.Controls
                 }
                 else
                 {
-                    new ErrorToLogFile("Button Cancel: Parent window is null. Cannot close the window.").WriteToFile();
+                    new ErrorService("Button Cancel: Parent window is null. Cannot close the window.").WriteToFile();
                 }
             }
             

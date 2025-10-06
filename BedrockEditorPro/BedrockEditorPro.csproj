@@ -12,6 +12,7 @@
     <None Remove="Assets\GSC_BEDROCKGDB_SCHEMA_V2_10.json" />
     <None Remove="Assets\GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10.csv" />
     <None Remove="Assets\GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10.csv" />
+    <None Remove="Assets\GSC_SymbolStandard.stylx" />
     <None Remove="Assets\P_ORGANIZATION.csv" />
     <None Remove="Config.daml" />
   </ItemGroup>
@@ -27,6 +28,7 @@
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SCHEMA_V2_10.json" />
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10.csv" />
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10.csv" />
+    <EmbeddedResource Include="Assets\GSC_SymbolStandard.stylx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\launchSettings.json" />

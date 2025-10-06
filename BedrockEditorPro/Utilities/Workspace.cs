@@ -495,7 +495,7 @@ namespace BedrockEditorPro.Utilities
             }
             catch (Exception e)
             {
-                new ErrorToLogFile(e).WriteToFile();
+                new ErrorService(e).WriteToFile();
             }
 
 
@@ -628,7 +628,7 @@ namespace BedrockEditorPro.Utilities
             if (gpResult.IsFailed)
             {
                 // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
+                new ErrorService(gpResult).WriteToFile();
             }
 
             return gpResult;

@@ -35,7 +35,7 @@ namespace BedrockEditorPro.Utilities
             if (gpResult.IsFailed)
             {
                 // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
+                new ErrorService(gpResult).WriteToFile();
 
                 FrameworkApplication.AddNotification(new Notification()
                 {
@@ -71,7 +71,7 @@ namespace BedrockEditorPro.Utilities
             if (gpResult.IsFailed)
             {
                 // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
+                new ErrorService(gpResult).WriteToFile();
 
                 FrameworkApplication.AddNotification(new Notification()
                 {
@@ -107,7 +107,7 @@ namespace BedrockEditorPro.Utilities
             if (gpResult.IsFailed)
             {
                 // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
+                new ErrorService(gpResult).WriteToFile();
 
                 FrameworkApplication.AddNotification(new Notification()
                 {
@@ -143,7 +143,7 @@ namespace BedrockEditorPro.Utilities
             if (gpResult.IsFailed)
             {
                 // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
+                new ErrorService(gpResult).WriteToFile();
 
                 FrameworkApplication.AddNotification(new Notification()
                 {
@@ -179,7 +179,7 @@ namespace BedrockEditorPro.Utilities
             if (gpResult.IsFailed)
             {
                 // display error messages if the tool fails, otherwise shows the default messages
-                new ErrorToLogFile(gpResult).WriteToFile();
+                new ErrorService(gpResult).WriteToFile();
 
                 FrameworkApplication.AddNotification(new Notification()
                 {

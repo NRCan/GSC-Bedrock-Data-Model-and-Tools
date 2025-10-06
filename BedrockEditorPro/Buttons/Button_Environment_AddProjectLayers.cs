@@ -163,13 +163,13 @@ namespace BedrockEditorPro.Buttons
                                 }
                                 else
                                 {
-                                    new ErrorToLogFile($"{nameof(AddProjectLayers)}: Can't find one or many feature classes in selected database.").WriteToFile();
+                                    new ErrorService($"{nameof(AddProjectLayers)}: Can't find one or many feature classes in selected database.").WriteToFile();
                                     return false;
                                 }
                             }
                             else
                             {
-                                new ErrorToLogFile($"{nameof(AddProjectLayers)}: Geodatabase is null.").WriteToFile();
+                                new ErrorService($"{nameof(AddProjectLayers)}: Geodatabase is null.").WriteToFile();
                                 return false;
                             }
                         }
@@ -180,7 +180,7 @@ namespace BedrockEditorPro.Buttons
             }
             catch (Exception e)
             {
-                new ErrorToLogFile(e).WriteToFile();
+                new ErrorService(e).WriteToFile();
             }
 
             return isSuccess;
@@ -463,7 +463,7 @@ namespace BedrockEditorPro.Buttons
 
                 catch (Exception layerProcessingException) 
                 {
-                    new ErrorToLogFile(layerProcessingException).WriteToFile();
+                    new ErrorService(layerProcessingException).WriteToFile();
 
                     //Special case for topology, it is not mandatory so we can ignore this error
                     if (!layerProcessingException.Message.ToLower().Contains("topology"))

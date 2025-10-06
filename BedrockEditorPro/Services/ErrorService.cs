@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace BedrockEditorPro.Utilities
 {
-    internal class ErrorToLogFile
+    internal class ErrorService
     {
         private WorkingEnvironment WorkingEnvironment
         {
@@ -37,9 +37,9 @@ namespace BedrockEditorPro.Utilities
             }
         }
 
-        public ErrorToLogFile(string message) { Message = message; }
-        public ErrorToLogFile(Exception ex) { Exception = ex; }
-        public ErrorToLogFile(IGPResult gpResult) { GeoprocessingResult = gpResult; }
+        public ErrorService(string message) { Message = message; }
+        public ErrorService(Exception ex) { Exception = ex; }
+        public ErrorService(IGPResult gpResult) { GeoprocessingResult = gpResult; }
 
         public bool WriteToFile(string path = "")
         {
@@ -111,7 +111,7 @@ namespace BedrockEditorPro.Utilities
             }
             catch (Exception ex)
             {
-                new ErrorToLogFile(ex).WriteToFile();
+                new ErrorService(ex).WriteToFile();
                 return false;
             }
 

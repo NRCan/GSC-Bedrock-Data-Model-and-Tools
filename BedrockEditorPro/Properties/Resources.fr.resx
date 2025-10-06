@@ -274,4 +274,13 @@
   <data name="FormLoadStudyAreaOption2Layer" xml:space="preserve">
     <value>Prendre la géométrie d'une entité sélectionnée</value>
   </data>
+  <data name="FormRefreshSymbolesTitle" xml:space="preserve">
+    <value>Rafraîchir les symboles</value>
+  </data>
+  <data name="FormRefreshSymbolLayers" xml:space="preserve">
+    <value>Sélectionnez la couche à mettre-à-jour les symboles</value>
+  </data>
+  <data name="GSC_SymbolStandard" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
 </root>

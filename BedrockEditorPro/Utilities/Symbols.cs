@@ -1,11 +1,15 @@
 ﻿using ArcGIS.Core.CIM;
 using ArcGIS.Core.Internal.CIM;
+using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Mapping;
+using BedrockEditorPro.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xaml;
 
 namespace BedrockEditorPro.Utilities
 {
@@ -111,5 +115,58 @@ namespace BedrockEditorPro.Utilities
 
         //    //return uniqueRenderer;
         //}
+
+        /// <summary>
+        /// Will validate the existance of the default style file from
+        /// the embedded resource and will return it's path
+        /// </summary>
+        /// <returns></returns>
+        public static string ManageStyleFile()
+        {
+            WorkingEnvironment workingEnvironment = new WorkingEnvironment();
+            string StyleFilePath = System.IO.Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_SymbolStandard) + ".stylex");
+
+            if (!File.Exists(StyleFilePath))
+            {
+                try
+                {
+                    FileService.WriteStreamResource(Properties.Resources.GSC_SymbolStandard, StyleFilePath);
+                }
+                catch (Exception e)
+                {
+                    new ErrorService(e).WriteToFile();
+                }
+                
+            }
+            
+            return StyleFilePath;
+
+        }
+
+        /// <summary>
+        /// Will return a default arcGIS color ramp for layer symbolization fall back
+        /// </summary>
+        /// <returns></returns>
+        public static CIMColorRamp GetDefaultColorRamp(Project inProject)
+        {
+            StyleProjectItem style = inProject.GetItems<StyleProjectItem>().FirstOrDefault(x => x.Name == "ArcGIS Colors");
+            if (style != null)
+            {
+                List<ColorRampStyleItem> colorRampSI = style.SearchColorRamps("Viridis").ToList();
+
+                if (colorRampSI != null && colorRampSI.Count() != 0)
+                {
+                    return colorRampSI[0].ColorRamp;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

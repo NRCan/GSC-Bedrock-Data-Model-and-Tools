@@ -194,20 +194,20 @@ namespace BedrockEditorPro.Buttons
                                     }
                                     else
                                     {
-                                        new ErrorToLogFile($"{nameof(CreateAppllyTopologicalRules)}: Couldn't create a topology within {Constants.Database.FDGeo}.");
+                                        new ErrorService($"{nameof(CreateAppllyTopologicalRules)}: Couldn't create a topology within {Constants.Database.FDGeo}.");
                                         return false;
                                     }
 
                                 }
                                 catch (Exception buttonCreateTopoClickExcept)
                                 {
-                                    new ErrorToLogFile(buttonCreateTopoClickExcept).WriteToFile();
+                                    new ErrorService(buttonCreateTopoClickExcept).WriteToFile();
                                     return false;
                                 }
                             }
                             else
                             {
-                                new ErrorToLogFile($"{nameof(CreateAppllyTopologicalRules)}: Can't find one of these [{Constants.Database.FDGeo}, {Constants.Database.FGeopoly}, {Constants.Database.FGeoline}, {Constants.Database.FLabel}] in which to apply rules.");
+                                new ErrorService($"{nameof(CreateAppllyTopologicalRules)}: Can't find one of these [{Constants.Database.FDGeo}, {Constants.Database.FGeopoly}, {Constants.Database.FGeoline}, {Constants.Database.FLabel}] in which to apply rules.");
                                 return false;
                             }
                         }
