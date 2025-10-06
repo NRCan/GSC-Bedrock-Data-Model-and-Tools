@@ -206,7 +206,7 @@ namespace BedrockEditorPro.ProWindows
                                 {
                                     //Will need GSC_SYMBOL to work on
                                     bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
-
+                                    
                                     if (symbolFieldDescription)
                                     {
                                         //Prepare unique value renderer                
@@ -216,12 +216,27 @@ namespace BedrockEditorPro.ProWindows
                                             ColorRamp = ColorFactory.Instance.GetColorRamp("Default"),
                                         };
 
+                                        //Add label field to unique renderer, if any
+                                        List<FieldDescription> labelFieldDescription = flDescriptions.Where(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias).ToList();
+                                        if (labelFieldDescription != null && labelFieldDescription.Count() > 0)
+                                        {
+                                            uniqueValueRenderer.ValueFields.Add(labelFieldDescription[0].Name);
+                                        }
+
+                                        //Prepare label field for geolines
+                                        uniqueValueRenderer = PrepareGeolineLabelRenderer(flDescriptions, uniqueValueRenderer);
+
+                                        //Prepare label field for geopoints
+                                        uniqueValueRenderer = PrepareGeopointLabelRenderer(flDescriptions, uniqueValueRenderer);
+
+
+                                        //Create a default unique renderer, in case styling with the file doesn't work
                                         CIMRenderer renderer = l.FLayer.CreateRenderer(uniqueValueRenderer);
 
                                         //Sets the renderer to the feature layer
                                         l.FLayer.SetRenderer(renderer);
 
-                                        //Get geometry type
+                                        //Get geometry type in order to be able to search style file properly
                                         StyleItemType styleItemType = StyleItemType.Unknown;
                                         if (l.FLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
                                         {
@@ -236,27 +251,33 @@ namespace BedrockEditorPro.ProWindows
                                             styleItemType = StyleItemType.LineSymbol;
                                         }
 
+                                        //Get back the renderer and make a copy
                                         if (l.FLayer.GetRenderer() is CIMUniqueValueRenderer cIMUniqueValueRenderer)
                                         {
                                             CIMUniqueValueRenderer cloneRenderer = cIMUniqueValueRenderer.Clone();
+
+                                            //Go through all groups (headings)
                                             foreach (CIMUniqueValueGroup cimVG in cloneRenderer.Groups)
                                             {
+                                                //Go through all classes (symbols)
                                                 foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
                                                 {
+                                                    //Go through all field values
                                                     foreach (CIMUniqueValue cimV in cimVC.Values)
                                                     {
-                                                        //Find symbol in style file
+                                                        //Find symbol in style file from first field value
                                                         SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString())[0];
 
+                                                        //Set
                                                         CIMSymbolReference cimSR = cimVC.Symbol;
                                                         cimSR.Symbol = currentSymbol.Symbol;
 
-                                                        //cimVC.Label = "pouet";
                                                     }
 
                                                 }
                                             }
 
+                                            //Update layer with new renderer
                                             l.FLayer.SetRenderer(cloneRenderer);
                                         }
 
@@ -334,6 +355,97 @@ namespace BedrockEditorPro.ProWindows
                 _view.Close();
             }
         }
+
+        /// <summary>
+        /// Will add some fields to a unique value renderer, 
+        /// especially meant for geoline features
+        /// </summary>
+        /// <param name="fieldDescriptions"></param>
+        public UniqueValueRendererDefinition PrepareGeolineLabelRenderer(List<FieldDescription> fieldDescriptions, UniqueValueRendererDefinition uniqueValueRenderer)
+        {
+            List<FieldDescription> geolineSubDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeolineSubtype).ToList();
+            if (geolineSubDescription != null && geolineSubDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geolineSubDescription[0].Name);
+            }
+
+            List<FieldDescription> geolineQualDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeolineQualif).ToList();
+            if (geolineQualDescription != null && geolineQualDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geolineQualDescription[0].Name);
+            }
+
+            List<FieldDescription> geolineConfDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeolineConf).ToList();
+            if (geolineConfDescription != null && geolineConfDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geolineConfDescription[0].Name);
+            }
+
+            List<FieldDescription> geolineAttDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeolineAtt).ToList();
+            if (geolineAttDescription != null && geolineAttDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geolineAttDescription[0].Name);
+            }
+
+            List<FieldDescription> geolineGeneDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeolineGeneration).ToList();
+            if (geolineGeneDescription != null && geolineGeneDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geolineGeneDescription[0].Name);
+            }
+
+            return uniqueValueRenderer;
+        }
+
+
+        /// <summary>
+        /// Will add some fields to a unique value renderer, 
+        /// especially meant for geoline features
+        /// </summary>
+        /// <param name="fieldDescriptions"></param>
+        public UniqueValueRendererDefinition PrepareGeopointLabelRenderer(List<FieldDescription> fieldDescriptions, UniqueValueRendererDefinition uniqueValueRenderer)
+        {
+            List<FieldDescription> geopointTypeDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeopointType).ToList();
+            if (geopointTypeDescription != null && geopointTypeDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geopointTypeDescription[0].Name);
+            }
+
+            List<FieldDescription> geopointSubDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeopointSubset).ToList();
+            if (geopointSubDescription != null && geopointSubDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geopointSubDescription[0].Name);
+            }
+
+            List<FieldDescription> geopointAttDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeopointStrucAtt).ToList();
+            if (geopointAttDescription != null && geopointAttDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geopointAttDescription[0].Name);
+            }
+
+            List<FieldDescription> geopointGeneDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeopointStrucGene).ToList();
+            if (geopointGeneDescription != null && geopointGeneDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geopointGeneDescription[0].Name);
+            }
+
+            List<FieldDescription> geopointYoungDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeopointStrucYoung).ToList();
+            if (geopointYoungDescription != null && geopointYoungDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geopointYoungDescription[0].Name);
+            }
+
+            List<FieldDescription> geopointMethodDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeopointStrucMethod).ToList();
+            if (geopointMethodDescription != null && geopointMethodDescription.Count() > 0)
+            {
+                uniqueValueRenderer.ValueFields.Add(geopointMethodDescription[0].Name);
+            }
+
+            return uniqueValueRenderer;
+        }
+
+
         #endregion
     }
+
+
 }
