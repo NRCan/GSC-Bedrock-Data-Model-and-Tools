@@ -63,8 +63,8 @@
         </group>
         <!--Environment-->
         <group id="BedrockEditorPro_Environment" caption="Environment" appearsOnAddInTab="false" keytip="Enviromment">
-          <button refID="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" size="large" />
-          <!--<button refID="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" size="large" />-->
+          <!--<button refID="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" size="large" />-->
+          <button refID="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" size="large" />
           <button refID="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" size="large" />
           <button refID="BedrockEditorPro_Buttons_Button_Environment_AddProjectLayers" size="large" />
         </group>
@@ -125,7 +125,7 @@
         <button id="BedrockEditorPro_Buttons_Button_Load_StudyAreas" caption="Study Areas" keytip="Manage Project Study Areas" className="BedrockEditorPro.Buttons.Button_Load_StudyAreas" loadOnClick="true" smallImage="ReshapeMapFrameRectangle16" largeImage="ReshapeMapFrameRectangle32">
           <tooltip heading="Load">Prompts a form to add or modify project study areas.<disabledText /></tooltip>
         </button>
-        <button id="BedrockEditorPro_ProWindows_Form_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.ProWindows.Show_Form_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
+        <button id="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.Buttons.Button_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
           <tooltip heading="Environment">Create a new project file geodatabase<disabledText /></tooltip>
         </button>
       </controls>
