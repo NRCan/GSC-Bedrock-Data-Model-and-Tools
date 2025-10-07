@@ -10,6 +10,7 @@ using BedrockEditorPro.Models;
 using BedrockEditorPro.Services;
 using BedrockEditorPro.Utilities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -61,16 +62,6 @@ namespace BedrockEditorPro.ProWindows
             set
             {
                 SetProperty(ref _waitingCursorVisibility, value, () => _waitingCursorVisibility);
-            }
-        }
-
-        private string _warningMessage = string.Empty;
-        public string WarningMessage
-        {
-            get { return _warningMessage; }
-            set
-            {
-                SetProperty(ref _warningMessage, value, () => _warningMessage);
             }
         }
 
@@ -136,10 +127,11 @@ namespace BedrockEditorPro.ProWindows
 
                                 if (cIMFeatureLayer != null && flDescriptions != null && flDescriptions.Count() > 0)
                                 {
-                                    //Will need GSC_SYMBOL to work on
+                                    //Will need GSC_SYMBOL to work on or a label field
                                     bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
+                                    bool labelFieldDescription = flDescriptions.Exists(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias);
 
-                                    if (symbolFieldDescription)
+                                    if (symbolFieldDescription || labelFieldDescription)
                                     {
 
                                         LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
@@ -160,7 +152,6 @@ namespace BedrockEditorPro.ProWindows
             catch (Exception ex)
             {
                 new ErrorService(ex).WriteToFile();
-
             }
 
         }
@@ -173,11 +164,10 @@ namespace BedrockEditorPro.ProWindows
         {
             try
             {
+
                 if (_refreshLayers.Count() > 0 && _refreshLayers.Where(x=>x.IsChecked == true).Count() > 0)
                 {
                     WaitingCursorVisibility = Visibility.Visible;
-                    _warningMessage = string.Empty;
-                    NotifyPropertyChanged(nameof(WarningMessage));
 
                     //Initiate reading of style file
                     UserConfiguration userConfig = await UserConfigurationService.GetUserConfigurationAsync();
@@ -186,7 +176,6 @@ namespace BedrockEditorPro.ProWindows
                     {
                         if (userConfig != null)
                         {
-
                             //Make sure style file is loaded in project, else add it
                             List<StyleProjectItem> styleItems = Project.Current.GetItems<StyleProjectItem>().Where(x => x.Path == userConfig.StyleFilePath).ToList();
                             if (styleItems == null || styleItems.Count() == 0)
@@ -199,71 +188,80 @@ namespace BedrockEditorPro.ProWindows
                             List<LayerDisplay> layersToRefresh = _refreshLayers.Where(x => x.IsChecked == true).ToList();
                             foreach (LayerDisplay l in layersToRefresh)
                             {
-                                //Make sure the layer has the proper symbol field
-                                List<FieldDescription> flDescriptions = l.FLayer.GetFieldDescriptions().ToList();
 
+                                //Make sure the layer has the proper symbol and/or label fields
+                                List<FieldDescription> flDescriptions = l.FLayer.GetFieldDescriptions().ToList();
                                 if (flDescriptions != null && flDescriptions.Count() > 0)
                                 {
-                                    //Will need GSC_SYMBOL to work on
+                                    //Prepare unique value renderer                
+                                    UniqueValueRendererDefinition uniqueValueRenderer = new UniqueValueRendererDefinition()
+                                    {
+                                        ColorRamp = ColorFactory.Instance.GetColorRamp("Default"),
+                                        ValueFields = new List<string>()
+                                        {
+                                            //Constants.DatabaseFields.LegendSymbol
+                                        },
+                                    };
+
+                                    //GSC_SYMBOL is needed for proper styling, else default color ramp will be used
                                     bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
-                                    
                                     if (symbolFieldDescription)
                                     {
-                                        //Prepare unique value renderer                
-                                        UniqueValueRendererDefinition uniqueValueRenderer = new UniqueValueRendererDefinition()
+                                        uniqueValueRenderer.ValueFields.Add(Constants.DatabaseFields.LegendSymbol);
+                                    }
+
+                                    //Add label field to unique renderer, if any
+                                    List<FieldDescription> labelFieldDescription = flDescriptions.Where(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias).ToList();
+                                    if (labelFieldDescription != null && labelFieldDescription.Count() > 0)
+                                    {
+                                        uniqueValueRenderer.ValueFields.Add(labelFieldDescription[0].Name);
+                                    }
+
+                                    //Prepare label field for geolines
+                                    uniqueValueRenderer = PrepareGeolineLabelRenderer(flDescriptions, uniqueValueRenderer);
+
+                                    //Prepare label field for geopoints
+                                    uniqueValueRenderer = PrepareGeopointLabelRenderer(flDescriptions, uniqueValueRenderer);
+
+                                    //Build a list of symbols for labels only (missing symbol field)
+                                    Dictionary<string, string> labelSymbols = PrepareLabelColorRenderer(l.FLayer);
+
+                                    //Create a default unique renderer, in case styling with the file doesn't work
+                                    CIMRenderer renderer = l.FLayer.CreateRenderer(uniqueValueRenderer);
+
+                                    //Sets the renderer to the feature layer
+                                    l.FLayer.SetRenderer(renderer);
+
+                                    //Get geometry type in order to be able to search style file properly
+                                    StyleItemType styleItemType = StyleItemType.Unknown;
+                                    if (l.FLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
+                                    {
+                                        styleItemType = StyleItemType.PolygonSymbol;
+                                    }
+                                    else if (l.FLayer.ShapeType == esriGeometryType.esriGeometryPoint)
+                                    {
+                                        styleItemType = StyleItemType.PointSymbol;
+                                    }
+                                    else if (l.FLayer.ShapeType == esriGeometryType.esriGeometryLine || l.FLayer.ShapeType == esriGeometryType.esriGeometryPolyline)
+                                    {
+                                        styleItemType = StyleItemType.LineSymbol;
+                                    }
+
+                                    //Get back the renderer and make a copy
+                                    if (l.FLayer.GetRenderer() is CIMUniqueValueRenderer cIMUniqueValueRenderer)
+                                    {
+                                        CIMUniqueValueRenderer cloneRenderer = cIMUniqueValueRenderer.Clone();
+
+                                        //Go through all groups (headings)
+                                        foreach (CIMUniqueValueGroup cimVG in cloneRenderer.Groups)
                                         {
-                                            ValueFields = new List<string> { Constants.DatabaseFields.LegendSymbol }, //multiple fields in the array if needed.
-                                            ColorRamp = ColorFactory.Instance.GetColorRamp("Default"),
-                                        };
-
-                                        //Add label field to unique renderer, if any
-                                        List<FieldDescription> labelFieldDescription = flDescriptions.Where(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias).ToList();
-                                        if (labelFieldDescription != null && labelFieldDescription.Count() > 0)
-                                        {
-                                            uniqueValueRenderer.ValueFields.Add(labelFieldDescription[0].Name);
-                                        }
-
-                                        //Prepare label field for geolines
-                                        uniqueValueRenderer = PrepareGeolineLabelRenderer(flDescriptions, uniqueValueRenderer);
-
-                                        //Prepare label field for geopoints
-                                        uniqueValueRenderer = PrepareGeopointLabelRenderer(flDescriptions, uniqueValueRenderer);
-
-
-                                        //Create a default unique renderer, in case styling with the file doesn't work
-                                        CIMRenderer renderer = l.FLayer.CreateRenderer(uniqueValueRenderer);
-
-                                        //Sets the renderer to the feature layer
-                                        l.FLayer.SetRenderer(renderer);
-
-                                        //Get geometry type in order to be able to search style file properly
-                                        StyleItemType styleItemType = StyleItemType.Unknown;
-                                        if (l.FLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
-                                        {
-                                            styleItemType = StyleItemType.PolygonSymbol;
-                                        }
-                                        else if (l.FLayer.ShapeType == esriGeometryType.esriGeometryPoint)
-                                        {
-                                            styleItemType = StyleItemType.PointSymbol;
-                                        }
-                                        else if (l.FLayer.ShapeType == esriGeometryType.esriGeometryLine || l.FLayer.ShapeType == esriGeometryType.esriGeometryPolyline)
-                                        {
-                                            styleItemType = StyleItemType.LineSymbol;
-                                        }
-
-                                        //Get back the renderer and make a copy
-                                        if (l.FLayer.GetRenderer() is CIMUniqueValueRenderer cIMUniqueValueRenderer)
-                                        {
-                                            CIMUniqueValueRenderer cloneRenderer = cIMUniqueValueRenderer.Clone();
-
-                                            //Go through all groups (headings)
-                                            foreach (CIMUniqueValueGroup cimVG in cloneRenderer.Groups)
+                                            //Go through all classes (symbols)
+                                            foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
                                             {
-                                                //Go through all classes (symbols)
-                                                foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
+                                                //Go through all field values
+                                                foreach (CIMUniqueValue cimV in cimVC.Values)
                                                 {
-                                                    //Go through all field values
-                                                    foreach (CIMUniqueValue cimV in cimVC.Values)
+                                                    if (labelSymbols.Count() == 0)
                                                     {
                                                         //Find symbol in style file from first field value
                                                         SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString())[0];
@@ -271,74 +269,45 @@ namespace BedrockEditorPro.ProWindows
                                                         //Set
                                                         CIMSymbolReference cimSR = cimVC.Symbol;
                                                         cimSR.Symbol = currentSymbol.Symbol;
-
                                                     }
+                                                    else
+                                                    {
 
+                                                        if (labelSymbols.ContainsKey(cimV.FieldValues[0]))
+                                                        {
+                                                            //Get symbol code
+                                                            string symbolCode = labelSymbols[cimV.FieldValues[0]].ToString();
+
+                                                            //Find symbol in style file from first field value
+                                                            SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(StyleItemType.PolygonSymbol, symbolCode)[0];
+
+                                                            CIMPointSymbol currentPntSymbol = Symbols.GetLabelDefaultRenderer(currentSymbol.Symbol.GetColor());
+
+                                                            //Set
+                                                            CIMSymbolReference cimSR = cimVC.Symbol;
+                                                            cimSR.Symbol = currentPntSymbol;
+                                                        }
+                                                    }
                                                 }
                                             }
-
-                                            //Update layer with new renderer
-                                            l.FLayer.SetRenderer(cloneRenderer);
                                         }
 
-                                        //Prepare unique value renderer
-                                        //CIMUniqueValueRenderer uniqueRenderer = new CIMUniqueValueRenderer
-                                        //{
-                                        //    Fields = new string[] { Constants.DatabaseFields.LegendSymbol }
-                                        //};
-
-                                        ////Prepare groups
-                                        //CIMUniqueValueGroup mainGroup = new CIMUniqueValueGroup { Heading = "Legend Description" };
-                                        //CIMUniqueValueGroup otherGroup = new CIMUniqueValueGroup { Heading = "Unmatch items" };
-
-                                        //CIMBasicFeatureLayer lFeatureDef = l.FLayer.GetDefinition() as CIMBasicFeatureLayer;
-                                        //CIMFeatureTable lFeatureTable = lFeatureDef.FeatureTable;
-
-                                        ////Iterate through values and find their match in the style
-                                        //using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(lFeatureDef.SourceURI))))
-                                        //{
-                                        //    using (Table purposeTable = sourceGeodatabase.OpenDataset<Table>(lFeatureDef.Name))
-                                        //    {
-                                        //        QueryFilter queryFilter = new QueryFilter
-                                        //        {
-                                        //            SubFields = string.Format("{0}", Constants.DatabaseFields.LegendSymbol)
-                                        //        };
-
-                                        //        using (RowCursor rc = purposeTable.Search(queryFilter, false))
-                                        //        {
-                                        //            while (rc.MoveNext())
-                                        //            {
-                                        //                using (Row row = rc.Current)
-                                        //                {
-
-
-                                        //                }
-                                        //            }
-                                        //        }
-                                        //    }
-                                        //}
+                                        //Update layer with new renderer
+                                        l.FLayer.SetRenderer(cloneRenderer);
                                     }
-
-
                                 }
-
                             }
                         }
                         else
                         {
                             throw new Exception("User configuration is null");
                         }
-
                     });
-
                 }
 
                 //Close window
                 WaitingCursorVisibility = Visibility.Collapsed;
                 _view.Close();
-
-                //Save edits
-                //Project.Current.SaveEditsAsync();
 
                 //Show notication success
                 FrameworkApplication.AddNotification(new Notification()
@@ -396,6 +365,62 @@ namespace BedrockEditorPro.ProWindows
             return uniqueValueRenderer;
         }
 
+        /// <summary>
+        /// Will return a matchin value dictionary that holds bedrock map unit labels and their associated symbol
+        /// This is needed since label feature class doesn't have a symbol field, as opposed to geoline, geopoint and geopoly.
+        /// </summary>
+        /// <param name="inFeatureLayer"></param>
+        public Dictionary<string, string> PrepareLabelColorRenderer(FeatureLayer inFeatureLayer)
+        {
+            Dictionary<string, string> symbolDico = new Dictionary<string, string>();
+
+            CIMBasicFeatureLayer lFeatureDef = inFeatureLayer.GetDefinition() as CIMBasicFeatureLayer;
+            CIMFeatureTable lFeatureTable = lFeatureDef.FeatureTable;
+
+            //Make sure it's only label feature class being processed
+            if (lFeatureDef.Name.ToLower() == Constants.Database.FLabel.ToLower())
+            {
+
+                //Iterate through values and find their match in the style
+                CIMDataConnection dataConnection = lFeatureTable.DataConnection;
+                CIMFeatureDatasetDataConnection fdDataConnection = dataConnection as CIMFeatureDatasetDataConnection;
+                Uri uri = new Uri(fdDataConnection.WorkspaceConnectionString.Replace("DATABASE=", ""));
+                using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(uri)))
+                {
+                    try
+                    {
+                        using (Table purposeTable = sourceGeodatabase.OpenDataset<Table>(Constants.Database.TLegendGene))
+                        {
+                            QueryFilter queryFilter = new QueryFilter
+                            {
+                                SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol),
+                                PrefixClause = "DISTINCT",
+                                WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID)
+                            };
+
+                            using (RowCursor rc = purposeTable.Search(queryFilter, false))
+                            {
+                                while (rc.MoveNext())
+                                {
+                                    using (Row row = rc.Current)
+                                    {
+                                        symbolDico[row[Constants.DatabaseFields.LegendLabelID].ToString()] = row[Constants.DatabaseFields.LegendSymbol].ToString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        new ErrorService(e).WriteToFile();
+                    }
+
+                }
+
+            }
+
+            return symbolDico;
+        }
 
         /// <summary>
         /// Will add some fields to a unique value renderer, 
@@ -404,6 +429,7 @@ namespace BedrockEditorPro.ProWindows
         /// <param name="fieldDescriptions"></param>
         public UniqueValueRendererDefinition PrepareGeopointLabelRenderer(List<FieldDescription> fieldDescriptions, UniqueValueRendererDefinition uniqueValueRenderer)
         {
+
             List<FieldDescription> geopointTypeDescription = fieldDescriptions.Where(x => x.Name == Constants.DatabaseFields.FGeopointType).ToList();
             if (geopointTypeDescription != null && geopointTypeDescription.Count() > 0)
             {

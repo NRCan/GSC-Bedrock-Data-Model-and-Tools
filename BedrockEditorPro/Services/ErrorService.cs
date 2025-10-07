@@ -41,13 +41,26 @@ namespace BedrockEditorPro.Utilities
         public ErrorService(Exception ex) { Exception = ex; }
         public ErrorService(IGPResult gpResult) { GeoprocessingResult = gpResult; }
 
-        public bool WriteToFile(string path = "")
+        public bool WriteToFile(string path = "", bool showToast = true)
         {
 
             if (string.IsNullOrEmpty(path))
             {
                 path = DefaultPath;
             }
+
+            //Show toast
+            if (showToast)
+            {
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.FormRefreshSymbolesTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Error_Toast48"] as ImageSource,
+                    Severity = Notification.SeverityLevel.High
+                });
+            }
+
 
             try
             {
