@@ -725,23 +725,6 @@ namespace BedrockEditorPro.Utilities
             public const string styleEmbeddedFolder = "Styles";
         }
 
-        public static class Templates
-        {
-            //Relative path, inside Tools4Project, to the mxd template
-            public const string MXDTemplateRelPath = "\\" + Folders.mxdFolder + "\\MXDTemplate.mxd";
-            public const string MXDCGMTemplateRelPath = Folders.mxdFolder + "\\" + mxdCGMEmbeddedFile;
-
-            //Embedded ressource
-            public const string mxdEmbeddedFolder = "MXDs";
-            public const string mxdEmbeddedFile = "MXDTemplate.mxd";
-            public const string mxdCGMEmbeddedFile = "CGMTemplate.mxd";
-
-            //Embedded ressource
-            public const string reportEmbeddedFolder = "ReportTemplates";
-            public const string qcNumDataReport = "QCReport_NumericalData.rlf";
-
-        }
-
         public static class Environment
         {
 
@@ -849,24 +832,6 @@ namespace BedrockEditorPro.Utilities
         #endregion
 
         #region Other (Prog, math, etc.) related constants
-
-        public static class GUIDs
-        {
-            //Source --> http://resources.arcgis.com/en/help/arcobjects-net/componenthelp/index.html#//00490000005w000000
-
-            //Usefull ESRI GUIDs
-            //public const string UIDFeatureLayer = "{40A9E885-5533-11D0-98BE-00805F7CED21}";
-            //public const string UIDGroupLayer = "{EDAD6644-1810-11D1-86AE-0000F8751720}";
-            //public const string UIDLayer = "{34C20002-4D3C-11D0-92D8-00805F7C28B0}";
-            //public const string UIDSymbolUniqueValuesSingleField = "{683C994E-A17B-11D1-8816-080009EC732A}";
-            //public const string UIDSymbolUniqueValuesMultipleField = "{68E95091-E60D-11D2-9F31-00C04F6BC709}";
-            //public const string UIDSaveEditCommand = "{59D2AFD2-9EA2-11D1-9165-0080C718DF97}";
-            //public const string UIDRasterLayer = "{D02371C7-35F7-11D2-B1F2-00C04F8EDEFF}";
-            //public const string UIDCadLayer = "{E299ADBC-A5C3-11D2-9B10-00C04FA33299}";
-            //public const string UIDAnnotationLayer = "{4AEDC069-B599-424B-A374-49602ABAD308}";
-            //public const string UIDRasterCatalogLayer = "{AF9930F0-F61E-11D3-8D6C-00C04F5B87B2}";
-
-        }
 
         public static class ValueKeywords
         {

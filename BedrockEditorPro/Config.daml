@@ -31,8 +31,8 @@
         <!--Roots-->
         <group id="BedrockEditorPro_Root" caption="" appearsOnAddInTab="false" keytip="Other">
           <button refID="BedrockEditorPro_Buttons_Button_RefreshSymbols" size="large" />
-          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" />
-          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" />
+          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" size="middle"/>
+          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" size="middle"/>
           <button refID="BedrockEditorPro_Controls_CoordSysDialog" size="large" />
           <button refID="BedrockEditorPro_DockPanes_Dockablewindow_CreateEdit_GeolineTemplate_ShowButton" size="large" />
           <button refID="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeolineTemplate_ShowButton" size="large" />

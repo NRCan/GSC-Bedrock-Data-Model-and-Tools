@@ -54,7 +54,7 @@ namespace BedrockEditorPro.Utilities
             {
                 FrameworkApplication.AddNotification(new Notification()
                 {
-                    Title = Properties.Resources.FormRefreshSymbolesTitle,
+                    Title = Properties.Resources.GenericMessageErrorTitle,
                     Message = Properties.Resources.GenericMessageError,
                     ImageSource = System.Windows.Application.Current.Resources["Error_Toast48"] as ImageSource,
                     Severity = Notification.SeverityLevel.High
