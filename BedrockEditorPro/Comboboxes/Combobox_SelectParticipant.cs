@@ -12,6 +12,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Internal.Editing;
 using ArcGIS.Desktop.KnowledgeGraph;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
@@ -37,7 +38,9 @@ namespace BedrockEditorPro.Comboboxes
 
         //For the events
         private Dictionary<string, List<SubscriptionToken>> _rowevents = new Dictionary<string, List<SubscriptionToken>>();
-        private List<SubscriptionToken> _editevents = new List<SubscriptionToken>();
+        private List<long> _createdOIDList = new List<long>(); //Will hold the list of OIDs created during an edit session to prevent them from firing modify events 
+        private Guid _editSessionID = Guid.Empty; //Will hold the edit session ID to identify when a new edit session starts
+        private List<SubscriptionToken> _tokens = new List<SubscriptionToken>();
 
         /// <summary>
         /// Combo Box constructor
@@ -53,7 +56,11 @@ namespace BedrockEditorPro.Comboboxes
  
         private async void UpdateCombo()
         {
-            // TODO – customize this method to populate the combobox with your desired items  
+            if (_isInitialized)
+            {
+                SelectedItem = null;
+            }
+                
 
             if (!_isInitialized)
             {
@@ -90,21 +97,18 @@ namespace BedrockEditorPro.Comboboxes
                                                     //Add new participant in the combobox
                                                     string participantName = kvp.Value;
                                                     string participantCode = kvp.Key.ToString();
-                                                    ComboBoxItem participantItem = new ComboBoxItem(participantName, participantCode);
+                                                    ComboBoxItem participantItem = new ComboBoxItem(participantName, "", participantCode);
                                                     if (!this.ItemCollection.Contains(participantItem))
                                                     {
                                                         Add(participantItem);
                                                     }
                                                 }
-
+                                                SelectedItem = null;
                                                 break; //exit the loop if we found the bedrock gdb and added the particpants
                                             }
-
-
                                         }
                                     }
                                 }
-
                             }
                         }
                     });
@@ -121,10 +125,11 @@ namespace BedrockEditorPro.Comboboxes
             }
   
             Enabled = true; //enables the ComboBox
-            SelectedItem = ItemCollection.FirstOrDefault(); //set the default item in the comboBox
+            SelectedItem = null;
 
-          }
+        }
        
+
         /// <summary>
         /// The on comboBox selection change event. 
         /// </summary>
@@ -133,10 +138,17 @@ namespace BedrockEditorPro.Comboboxes
         {
 
             if (item == null)
+            {
+                Unregister();
                 return;
+            }
+
 
             if (string.IsNullOrEmpty(item.Text))
+            {
+                Unregister();
                 return;
+            }
 
             // Start listening to editing events on features classes that can track participants
             try
@@ -150,15 +162,16 @@ namespace BedrockEditorPro.Comboboxes
                         {
 
                             FeatureClass fClass = fl.GetFeatureClass();
-                            if (fClass != null && EditionTracker.ETListOfFeatureClasses.Contains(fClass.GetName()))
+                            if (fClass != null && EditionTracker.ETListOfFeatureClasses.Contains(fClass.GetName()) && !_rowevents.ContainsKey(fl.Name))
                             {
                                 var tokens = new List<SubscriptionToken>();
 
                                 //These events are fired once ~per feature~,
                                 //per table
-                                tokens.Add(RowCreatedEvent.Subscribe((rc) => PunchPersonInTable(), fClass));
-                                tokens.Add(RowChangedEvent.Subscribe((rc) => PunchPersonInTable(), fClass));
-                                _rowevents[fl.Name] = tokens;
+                                _tokens.Add(RowCreatedEvent.Subscribe((rc) => PunchPersonInTable(rc, fl), fClass));
+                                _tokens.Add(RowChangedEvent.Subscribe((re) => PunchPersonInTable(re, fl), fClass));
+
+                                _rowevents[fl.Name] = _tokens;
 
                             }
 
@@ -172,11 +185,16 @@ namespace BedrockEditorPro.Comboboxes
             catch (Exception ex)
             {
                 new ErrorService(ex).WriteToFile("", false);
+                Unregister();
             }
 
 
         }
 
+        /// <summary>
+        /// Make sure to unregister from all events
+        /// </summary>
+        /// <returns></returns>
         private bool Unregister()
         {
             //Careful here - events have to be unregistered on the same
@@ -184,20 +202,24 @@ namespace BedrockEditorPro.Comboboxes
             //Queued Task
             QueuedTask.Run(() =>
             {
-                //One kvp per layer....of which there is only one in the sample
-                //out of the box but you can add others and register for events
-                foreach (var kvp in _rowevents)
+                try
                 {
-                    RowCreatedEvent.Unsubscribe(kvp.Value[0]);
-                    RowChangedEvent.Unsubscribe(kvp.Value[1]);
-                    kvp.Value.Clear();
-                }
-                _rowevents.Clear();
+                    //One kvp per layer....of which there is only one in the sample
+                    //out of the box but you can add others and register for events
+                    foreach (var kvp in _rowevents)
+                    {
+                        RowCreatedEvent.Unsubscribe(kvp.Value[0]);
+                        RowChangedEvent.Unsubscribe(kvp.Value[1]);
+                        kvp.Value.Clear();
+                    }
+                    _rowevents.Clear();
 
-                //Editing and Edit Completed.
-                EditCompletingEvent.Unsubscribe(_editevents[0]);
-                EditCompletedEvent.Unsubscribe(_editevents[1]);
-                _editevents.Clear();
+                }
+                catch (Exception)
+                {
+
+                }
+
             });
 
             return false;
@@ -208,37 +230,38 @@ namespace BedrockEditorPro.Comboboxes
         /// </summary>
         /// <param name="inObject">The object that is being edited by the user</param>
         /// <param name="fieldName">The field name to update with the new value</param>
-        public void PunchPersonInTable()
+        public void PunchPersonInTable(RowChangedEventArgs rc, FeatureLayer fl)
         {
-            MessageBox.Show("Participant created new row");
+            if (!_createdOIDList.Contains(rc.Row.GetObjectID()))
+            {
+                //Make sure key fieldsexists
+                int creatorIndex = rc.Row.FindField(Constants.DatabaseFields.ETCreatorID);
+                int createdDateIndex = rc.Row.FindField(Constants.DatabaseFields.ETCreateDate);
+                int editorIndex = rc.Row.FindField(Constants.DatabaseFields.ETEditorID);
+                int editedDateIndex = rc.Row.FindField(Constants.DatabaseFields.ETEditDate);
+                if (creatorIndex != -1 && createdDateIndex != -1 && editorIndex != -1 && editedDateIndex != -1)
+                {
+                    ComboBoxItem selectedPerson = this.SelectedItem as ComboBoxItem;
+                    Dictionary<string, object> attributes = new Dictionary<string, object>();
 
-            ////If user is within GSC Editor
-            //if (GSC_ProjectEditor.Properties.Settings.Default.dwEnabling == true)
-            //{
-            //    //If user has selected a proper source of data
-            //    if (this.Selected != -1)
-            //    {
-            //        //Validate if source field exists within feature
-            //        int fieldIndex = inObject.Fields.FindField(fieldName);
+                    //Punch creator in the table
+                    if (rc.EditType == EditType.Create)
+                    {
+                        attributes[Constants.DatabaseFields.ETCreatorID] = selectedPerson.Tooltip;
+                        rc.Operation.Modify(fl, rc.Row.GetObjectID(), attributes);
+                        _createdOIDList.Add(rc.Row.GetObjectID()); //Add the OID to the list so we don't process it again
+                    }
+                    else if (rc.EditType == EditType.Change && rc.Guid != _editSessionID)
+                    {
+                        attributes[Constants.DatabaseFields.ETEditorID] = selectedPerson.Tooltip;
+                        rc.Operation.Modify(fl, rc.Row.GetObjectID(), attributes);
+                        _editSessionID = rc.Guid; //Set the edit session ID so we don't process again
+                    }
 
-            //        if (fieldIndex != -1)
-            //        {
-            //            //Get current source code (for domain)
-            //            //string selectedPerson = this.GetItem(this.Selected).Tag as String;
-            //            string selectedPerson = Properties.Settings.Default.ParticipantID;
+                    
+                }
+            }
 
-            //            //Write new code within field
-            //            if (inObject.get_Value(fieldIndex).ToString() != selectedPerson)
-            //            {
-            //                inObject.set_Value(fieldIndex, selectedPerson);
-            //                inObject.Store();
-            //            }
-
-
-            //        }
-
-            //    }
-            //}
         }
 
     }
