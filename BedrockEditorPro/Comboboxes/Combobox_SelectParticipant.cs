@@ -129,7 +129,6 @@ namespace BedrockEditorPro.Comboboxes
 
         }
        
-
         /// <summary>
         /// The on comboBox selection change event. 
         /// </summary>
