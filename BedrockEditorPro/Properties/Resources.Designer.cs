@@ -187,6 +187,87 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Database version.
+        /// </summary>
+        public static string FormHelpDatabaseVersion {
+            get {
+                return ResourceManager.GetString("FormHelpDatabaseVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add-in information.
+        /// </summary>
+        public static string FormHelpFirstSection {
+            get {
+                return ResourceManager.GetString("FormHelpFirstSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online Guide.
+        /// </summary>
+        public static string FormHelpOpenGuide {
+            get {
+                return ResourceManager.GetString("FormHelpOpenGuide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report an issue.
+        /// </summary>
+        public static string FormHelpOpenIssue {
+            get {
+                return ResourceManager.GetString("FormHelpOpenIssue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Model.
+        /// </summary>
+        public static string FormHelpOpenModel {
+            get {
+                return ResourceManager.GetString("FormHelpOpenModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest release.
+        /// </summary>
+        public static string FormHelpOpenProject {
+            get {
+                return ResourceManager.GetString("FormHelpOpenProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string FormHelpSecondSection {
+            get {
+                return ResourceManager.GetString("FormHelpSecondSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More About.
+        /// </summary>
+        public static string FormHelpThirdSection {
+            get {
+                return ResourceManager.GetString("FormHelpThirdSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string FormHelpTitle {
+            get {
+                return ResourceManager.GetString("FormHelpTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to East.
         /// </summary>
         public static string FormLoadStudyAreaEast {
@@ -557,6 +638,15 @@ namespace BedrockEditorPro.Properties {
             get {
                 object obj = ResourceManager.GetObject("GSC_SymbolStandard", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select database source to build layers from.
+        /// </summary>
+        public static string Guide {
+            get {
+                return ResourceManager.GetString("Guide", resourceCulture);
             }
         }
     }

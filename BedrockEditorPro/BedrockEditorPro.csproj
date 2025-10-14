@@ -15,13 +15,17 @@
     <None Remove="Assets\GSC_SymbolStandard.stylx" />
     <None Remove="Assets\P_ORGANIZATION.csv" />
     <None Remove="Config.daml" />
+    <None Remove="Images\Hammer16.png" />
+    <None Remove="Images\Hammer32.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config.daml" />    
     <Content Include="Images\AddInDesktop16.png" />
     <Content Include="Images\AddInDesktop32.png" />
     <Content Include="DarkImages\AddInDesktop16.png" />
-    <Content Include="DarkImages\AddInDesktop32.png" />    
+    <Content Include="DarkImages\AddInDesktop32.png" />
+    <Content Include="Images\Hammer16.png" />
+    <Content Include="Images\Hammer32.png" />    
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_P_ORGANIZATION_V2_10.csv" />

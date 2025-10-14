@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ButtonEnvironmentAddProjectLayersPromptTitle" xml:space="preserve">
+  <data name="Guide" xml:space="preserve">
     <value>Sélectionnez une File Geodatabase comme sources des couches</value>
   </data>
   <data name="ButtonEnvironmentAddProjectLayersTitle" xml:space="preserve">
@@ -282,5 +282,32 @@
   </data>
   <data name="GSC_SymbolStandard" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
+  </data>
+  <data name="FormHelpTitle" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="FormHelpFirstSection" xml:space="preserve">
+    <value>Information sur le add-in</value>
+  </data>
+  <data name="FormHelpSecondSection" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="FormHelpThirdSection" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="FormHelpDatabaseVersion" xml:space="preserve">
+    <value>Version de la base de données</value>
+  </data>
+  <data name="FormHelpOpenGuide" xml:space="preserve">
+    <value>Guide en ligne</value>
+  </data>
+  <data name="FormHelpOpenModel" xml:space="preserve">
+    <value>Modèle de données</value>
+  </data>
+  <data name="FormHelpOpenProject" xml:space="preserve">
+    <value>Dernière version</value>
+  </data>
+  <data name="FormHelpOpenIssue" xml:space="preserve">
+    <value>Rapporter un problème</value>
   </data>
 </root>

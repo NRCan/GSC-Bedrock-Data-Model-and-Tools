@@ -2,9 +2,9 @@
   <AddInInfo id="{c4ac06a4-3afa-4bf5-ad80-8080d10b68f3}" version="4.0.0" desktopVersion="3.5.57366" product="ArcGISPro">
     <Name>GSC Bedrock Project</Name>
     <Description>Bedrock Data Management Tools</Description>
-    <Image>Images\AddinDesktop32.png</Image>
+    <Image>Images\Hammer32.png</Image>
     <Author>Geological Survey Canada</Author>
-    <Company>Government of Canada - Gouvernement du Canada</Company>
+    <Company>Government of Canada - Gouvernement du Canada; Natural Resources Canada - Ressources naturelles Canada</Company>
     <Date>5/27/2025 9:40:03 AM</Date>
     <Subject>Framework, Editing, Geodatabase, Geometry, Geology, Bedrock</Subject>
     <!-- Note subject can be one or more of these topics:
@@ -25,19 +25,21 @@
           <group refID="BedrockEditorPro_Environment" />
           <group refID="BedrockEditorPro_Metadata" />
           <group refID="BedrockEditorPro_Load" />
+          <group refID="BedrockEditorPro_Help" />
         </tab>
       </tabs>
       <groups>
         <!--Roots-->
         <group id="BedrockEditorPro_Root" caption="" appearsOnAddInTab="false" keytip="Other">
           <button refID="BedrockEditorPro_Buttons_Button_RefreshSymbols" size="large" />
-          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" size="middle"/>
-          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" size="middle"/>
+          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" size="middle" />
+          <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" size="middle" />
           <button refID="BedrockEditorPro_Controls_CoordSysDialog" size="large" />
           <button refID="BedrockEditorPro_DockPanes_Dockablewindow_CreateEdit_GeolineTemplate_ShowButton" size="large" />
           <button refID="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeolineTemplate_ShowButton" size="large" />
           <button refID="BedrockEditorPro_ProWindows_Form_Load_StudyArea" size="large" />
           <button refID="BedrockEditorPro_ProWindows_Form_RefreshSymbols" size="large" />
+          <button refID="BedrockEditorPro_ProWindows_Form_Help" size="large" />
         </group>
         <!--Templates-->
         <group id="BedrockEditorPro_Templates" caption="Templates" appearsOnAddInTab="false" keytip="Other">
@@ -75,6 +77,10 @@
         <!--Load-->
         <group id="BedrockEditorPro_Load" caption="Load" appearsOnAddInTab="false" keytip="Load">
           <button refID="BedrockEditorPro_Buttons_Button_Load_StudyAreas" size="large" />
+        </group>
+        <!--Help-->
+        <group id="BedrockEditorPro_Help" caption="Help" appearsOnAddInTab="false" keytip="Help">
+          <button refID="BedrockEditorPro_Buttons_Button_Help" size="large" />
         </group>
       </groups>
       <controls>
@@ -127,6 +133,12 @@
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.Buttons.Button_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
           <tooltip heading="Environment">Create a new project file geodatabase<disabledText /></tooltip>
+        </button>
+        <button id="BedrockEditorPro_Buttons_Button_Help" caption="About" keytip="Help, about and more online resources" className="BedrockEditorPro.Buttons.Button_Help" loadOnClick="true" smallImage="Images\Hammer16.png" largeImage="Images\Hammer32.png">
+          <tooltip heading="Help">Help, about and more online resources<disabledText /></tooltip>
+        </button>
+        <button id="BedrockEditorPro_ProWindows_Form_Help" caption="Form _Help" className="BedrockEditorPro.ProWindows.ShowForm_Help" loadOnClick="true" smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>
       <dockPanes>
