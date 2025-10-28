@@ -251,45 +251,48 @@ namespace BedrockEditorPro.ProWindows
                                     if (l.FLayer.GetRenderer() is CIMUniqueValueRenderer cIMUniqueValueRenderer)
                                     {
                                         CIMUniqueValueRenderer cloneRenderer = cIMUniqueValueRenderer.Clone();
-
                                         //Go through all groups (headings)
                                         foreach (CIMUniqueValueGroup cimVG in cloneRenderer.Groups)
                                         {
                                             //Go through all classes (symbols)
-                                            foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
+                                            if (cimVG.Classes != null)
                                             {
-                                                //Go through all field values
-                                                foreach (CIMUniqueValue cimV in cimVC.Values)
+                                                foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
                                                 {
-                                                    if (labelSymbols.Count() == 0)
+                                                    //Go through all field values
+                                                    foreach (CIMUniqueValue cimV in cimVC.Values)
                                                     {
-                                                        //Find symbol in style file from first field value
-                                                        SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString())[0];
-
-                                                        //Set
-                                                        CIMSymbolReference cimSR = cimVC.Symbol;
-                                                        cimSR.Symbol = currentSymbol.Symbol;
-                                                    }
-                                                    else
-                                                    {
-
-                                                        if (labelSymbols.ContainsKey(cimV.FieldValues[0]))
+                                                        if (labelSymbols.Count() == 0)
                                                         {
-                                                            //Get symbol code
-                                                            string symbolCode = labelSymbols[cimV.FieldValues[0]].ToString();
-
                                                             //Find symbol in style file from first field value
-                                                            SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(StyleItemType.PolygonSymbol, symbolCode)[0];
-
-                                                            CIMPointSymbol currentPntSymbol = Symbols.GetLabelDefaultRenderer(currentSymbol.Symbol.GetColor());
+                                                            SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString())[0];
 
                                                             //Set
                                                             CIMSymbolReference cimSR = cimVC.Symbol;
-                                                            cimSR.Symbol = currentPntSymbol;
+                                                            cimSR.Symbol = currentSymbol.Symbol;
+                                                        }
+                                                        else
+                                                        {
+
+                                                            if (labelSymbols.ContainsKey(cimV.FieldValues[0]))
+                                                            {
+                                                                //Get symbol code
+                                                                string symbolCode = labelSymbols[cimV.FieldValues[0]].ToString();
+
+                                                                //Find symbol in style file from first field value
+                                                                SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(StyleItemType.PolygonSymbol, symbolCode)[0];
+
+                                                                CIMPointSymbol currentPntSymbol = Symbols.GetLabelDefaultRenderer(currentSymbol.Symbol.GetColor());
+
+                                                                //Set
+                                                                CIMSymbolReference cimSR = cimVC.Symbol;
+                                                                cimSR.Symbol = currentPntSymbol;
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
+
                                         }
 
                                         //Update layer with new renderer
