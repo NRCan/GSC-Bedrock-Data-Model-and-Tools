@@ -45,10 +45,14 @@ namespace BedrockEditorPro.Utilities
             {
                 //Get first symbol of first class instead
                 CIMUniqueValueRenderer cimURenderer = cimFeatureLayer.Renderer as CIMUniqueValueRenderer;
-                if (cimURenderer != null && cimURenderer.Groups.Count() > 0 && cimURenderer.Groups[0].Classes.Count() > 0 &&
-                    cimURenderer.Groups[0].Classes[0].Symbol != null)
+                if (cimURenderer != null && cimURenderer.Groups != null && cimURenderer.Groups.Count() > 0)
                 {
-                    sym = cimURenderer.Groups[0].Classes[0].Symbol.Symbol;
+                    if (cimURenderer.Groups[0].Classes != null && cimURenderer.Groups[0].Classes.Count() > 0 &&
+                    cimURenderer.Groups[0].Classes[0].Symbol != null)
+                    {
+                        sym = cimURenderer.Groups[0].Classes[0].Symbol.Symbol;
+                    }
+                    
                 }
             }
 
@@ -58,6 +62,18 @@ namespace BedrockEditorPro.Utilities
                 si = new SymbolStyleItem()
                 {
                     Symbol = sym,
+                    PatchHeight = 15,
+                    PatchWidth = 15
+                };
+                bm = si.PreviewImage as BitmapSource;
+                bm.Freeze();
+            }
+            else
+            {
+                //Default value if nothing was found
+                si = new SymbolStyleItem()
+                {
+                    Symbol = Symbols.GetDefaultPolygonSymbol() as CIMSymbol,
                     PatchHeight = 15,
                     PatchWidth = 15
                 };
