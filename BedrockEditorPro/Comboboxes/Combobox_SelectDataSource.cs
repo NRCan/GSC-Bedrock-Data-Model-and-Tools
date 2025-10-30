@@ -68,46 +68,50 @@ namespace BedrockEditorPro.Comboboxes
                 {
                     await QueuedTask.Run(() =>
                     {
-                        List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                        if (layerEnum != null)
+                        if (MapView.Active != null && MapView.Active.Map != null)
                         {
-                            foreach (FeatureLayer fl in layerEnum)
+                            List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
+                            if (layerEnum != null)
                             {
-
-                                Uri flWorkspace = Workspace.GetWorkspacePathFromFeatureLayer(fl);
-                                if (flWorkspace.ToString().Contains(".gdb"))
+                                foreach (FeatureLayer fl in layerEnum)
                                 {
-                                    using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(flWorkspace)))
+
+                                    Uri flWorkspace = Workspace.GetWorkspacePathFromFeatureLayer(fl);
+                                    if (flWorkspace.ToString().Contains(".gdb"))
                                     {
-                                        //Quick check to see if the geodatabase contains the bedrock tables
-                                        bool containsLegend = Workspace.TableExists(sourceGeodatabase, Constants.Database.TLegendGene);
-
-                                        if (containsLegend)
+                                        using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(flWorkspace)))
                                         {
-                                            //Get the domain dictionary for the participant domain
-                                            SortedList<object, string> sourceDico = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.Source);
+                                            //Quick check to see if the geodatabase contains the bedrock tables
+                                            bool containsLegend = Workspace.TableExists(sourceGeodatabase, Constants.Database.TLegendGene);
 
-                                            if (sourceDico != null && sourceDico.Count() > 0)
+                                            if (containsLegend)
                                             {
-                                                foreach (KeyValuePair<object, string> kvp in sourceDico)
+                                                //Get the domain dictionary for the participant domain
+                                                SortedList<object, string> sourceDico = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.Source);
+
+                                                if (sourceDico != null && sourceDico.Count() > 0)
                                                 {
-                                                    //Add new participant in the combobox
-                                                    string sourceName = kvp.Value;
-                                                    string sourceCode = kvp.Key.ToString();
-                                                    ComboBoxItem sourceItem = new ComboBoxItem(sourceName, "", sourceCode);
-                                                    if (!this.ItemCollection.Contains(sourceItem))
+                                                    foreach (KeyValuePair<object, string> kvp in sourceDico)
                                                     {
-                                                        Add(sourceItem);
+                                                        //Add new participant in the combobox
+                                                        string sourceName = kvp.Value;
+                                                        string sourceCode = kvp.Key.ToString();
+                                                        ComboBoxItem sourceItem = new ComboBoxItem(sourceName, "", sourceCode);
+                                                        if (!this.ItemCollection.Contains(sourceItem))
+                                                        {
+                                                            Add(sourceItem);
+                                                        }
                                                     }
+                                                    SelectedItem = null;
+                                                    break; //exit the loop if we found the bedrock gdb and added the particpants
                                                 }
-                                                SelectedItem = null;
-                                                break; //exit the loop if we found the bedrock gdb and added the particpants
                                             }
                                         }
                                     }
                                 }
                             }
                         }
+
                     });
 
                 }

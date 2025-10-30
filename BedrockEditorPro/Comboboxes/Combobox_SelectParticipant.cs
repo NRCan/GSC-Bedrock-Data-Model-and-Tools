@@ -71,46 +71,53 @@ namespace BedrockEditorPro.Comboboxes
                 {
                     await QueuedTask.Run(() =>
                     {
-                        List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                        if (layerEnum != null)
+                        if (MapView.Active != null && MapView.Active.Map != null)
                         {
-                            foreach (FeatureLayer fl in layerEnum)
+                            List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
+                            if (layerEnum != null)
                             {
-
-                                Uri flWorkspace = Workspace.GetWorkspacePathFromFeatureLayer(fl);
-                                if (flWorkspace.ToString().Contains(".gdb"))
+                                foreach (FeatureLayer fl in layerEnum)
                                 {
-                                    using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(flWorkspace)))
+                                    if (fl != null)
                                     {
-                                        //Quick check to see if the geodatabase contains the bedrock tables
-                                        bool containsLegend = Workspace.TableExists(sourceGeodatabase, Constants.Database.TLegendGene);
-
-                                        if (containsLegend)
+                                        Uri flWorkspace = Workspace.GetWorkspacePathFromFeatureLayer(fl);
+                                        if (flWorkspace != null && flWorkspace.ToString().Contains(".gdb"))
                                         {
-                                            //Get the domain dictionary for the participant domain
-                                            SortedList<object, string> participantDico = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.participant);
-
-                                            if (participantDico != null && participantDico.Count() > 0)
+                                            using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(flWorkspace)))
                                             {
-                                                foreach (KeyValuePair<object, string> kvp in participantDico)
+                                                //Quick check to see if the geodatabase contains the bedrock tables
+                                                bool containsLegend = Workspace.TableExists(sourceGeodatabase, Constants.Database.TLegendGene);
+
+                                                if (containsLegend)
                                                 {
-                                                    //Add new participant in the combobox
-                                                    string participantName = kvp.Value;
-                                                    string participantCode = kvp.Key.ToString();
-                                                    ComboBoxItem participantItem = new ComboBoxItem(participantName, "", participantCode);
-                                                    if (!this.ItemCollection.Contains(participantItem))
+                                                    //Get the domain dictionary for the participant domain
+                                                    SortedList<object, string> participantDico = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.participant);
+
+                                                    if (participantDico != null && participantDico.Count() > 0)
                                                     {
-                                                        Add(participantItem);
+                                                        foreach (KeyValuePair<object, string> kvp in participantDico)
+                                                        {
+                                                            //Add new participant in the combobox
+                                                            string participantName = kvp.Value;
+                                                            string participantCode = kvp.Key.ToString();
+                                                            ComboBoxItem participantItem = new ComboBoxItem(participantName, "", participantCode);
+                                                            if (!this.ItemCollection.Contains(participantItem))
+                                                            {
+                                                                Add(participantItem);
+                                                            }
+                                                        }
+                                                        SelectedItem = null;
+                                                        break; //exit the loop if we found the bedrock gdb and added the particpants
                                                     }
                                                 }
-                                                SelectedItem = null;
-                                                break; //exit the loop if we found the bedrock gdb and added the particpants
                                             }
                                         }
                                     }
+
                                 }
                             }
                         }
+
                     });
 
                 }
