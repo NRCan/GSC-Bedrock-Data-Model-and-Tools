@@ -310,4 +310,22 @@
   <data name="FormHelpOpenIssue" xml:space="preserve">
     <value>Report an issue</value>
   </data>
+  <data name="FormCreateEditCreateMapUnitTitle" xml:space="preserve">
+    <value>Create Map Units</value>
+  </data>
+  <data name="FormCreateEditCreateMapUnitLayers" xml:space="preserve">
+    <value>Select map unit layer</value>
+  </data>
+  <data name="ErrorMissingFeatureClass" xml:space="preserve">
+    <value>{0} feature class is missing from geodatabase.</value>
+  </data>
+  <data name="LayerNamingGeolineNoOverprint" xml:space="preserve">
+    <value>No Overprints Geoline</value>
+  </data>
+  <data name="LayerNamingLabelNoOverprint" xml:space="preserve">
+    <value>No Overprint Labels</value>
+  </data>
+  <data name="LayerNameGeopolyNoOverprint" xml:space="preserve">
+    <value>NoOverprintsGeopoly</value>
+  </data>
 </root>

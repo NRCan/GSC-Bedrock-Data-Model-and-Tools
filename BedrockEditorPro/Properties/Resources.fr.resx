@@ -310,4 +310,22 @@
   <data name="FormHelpOpenIssue" xml:space="preserve">
     <value>Rapporter un problème</value>
   </data>
+  <data name="FormCreateEditCreateMapUnitTitle" xml:space="preserve">
+    <value>Créer les unités</value>
+  </data>
+  <data name="FormCreateEditCreateMapUnitLayers" xml:space="preserve">
+    <value>Choisir la couche géo. des unités</value>
+  </data>
+  <data name="ErrorMissingFeatureClass" xml:space="preserve">
+    <value>{0} l'entité géographique est manquante de la base de données source.</value>
+  </data>
+  <data name="LayerNamingGeolineNoOverprint" xml:space="preserve">
+    <value>Geolignes sans unités superposées</value>
+  </data>
+  <data name="LayerNamingLabelNoOverprint" xml:space="preserve">
+    <value>Étiquettes sans unités superposées</value>
+  </data>
+  <data name="LayerNameGeopolyNoOverprint" xml:space="preserve">
+    <value>GeopolySansUniteesSuperposees</value>
+  </data>
 </root>

@@ -1,6 +1,8 @@
-﻿using ArcGIS.Desktop.Core.Geoprocessing;
+﻿using ArcGIS.Core.Data;
+using ArcGIS.Desktop.Core.Geoprocessing;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +19,14 @@ namespace BedrockEditorPro.Utilities
         /// </summary>
         /// <param name="inputWorkspace">The input database object</param>
         /// <param name="importPath">The input path to XML</param>
-        public static async Task<IGPResult> AppendInEmptyTables(string inputTablePath, string targetTablePath)
+        public static async Task<IGPResult> AppendInEmptyTables(object inputTable, object targetTable)
         {
 
             //Build an array of parameters
             IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
             {
 
-                var valueArray = Geoprocessing.MakeValueArray(inputTablePath, targetTablePath, "NO_TEST");
+                var valueArray = Geoprocessing.MakeValueArray(inputTable, targetTable, "NO_TEST");
                 return valueArray;
             });
 
@@ -191,6 +193,72 @@ namespace BedrockEditorPro.Utilities
 
             return gpResult;
 
+        }
+
+        /// <summary>
+        /// Will create polygons out of a line layer and a given label one. By default the attributes will be kept
+        /// </summary>
+        /// <param name="featureDatasetPath">The input feature dataset path</param>
+        /// <param name="topologyName">The output topology name</param>
+        public static async Task<IGPResult> FeaturesToPolygon(FeatureLayer lineLayer, FeatureLayer labelLayer, string outputFeatureClass, bool keepAttributes = true)
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(lineLayer, outputFeatureClass, null, keepAttributes, labelLayer);
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.FeatureToPolygon", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorService(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
+
+        }
+
+        public static async Task<IGPResult> Dissolve(object inputFeature, object outputFeature, string dissolveField)
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(inputFeature, outputFeature, dissolveField, null, false);
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.Dissolve", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorService(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
         }
     }
 }

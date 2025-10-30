@@ -70,6 +70,7 @@ namespace BedrockEditorPro.Utilities
             }
             else
             {
+                //TODO make this different if a line or a point is an input
                 //Default value if nothing was found
                 si = new SymbolStyleItem()
                 {

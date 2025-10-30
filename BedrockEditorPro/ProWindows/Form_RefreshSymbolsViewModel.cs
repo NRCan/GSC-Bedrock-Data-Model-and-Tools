@@ -176,129 +176,14 @@ namespace BedrockEditorPro.ProWindows
                     {
                         if (userConfig != null)
                         {
-                            //Make sure style file is loaded in project, else add it
-                            List<StyleProjectItem> styleItems = Project.Current.GetItems<StyleProjectItem>().Where(x => x.Path == userConfig.StyleFilePath).ToList();
-                            if (styleItems == null || styleItems.Count() == 0)
-                            {
-                                Project.Current.AddStyle(userConfig.StyleFilePath);
-                            }
-                            StyleProjectItem workingStyle = Project.Current.GetItems<StyleProjectItem>().FirstOrDefault(x => x.Path == userConfig.StyleFilePath);
+                            //Get styling
+                            StyleProjectItem workingStyle = Symbols.GetStyleItemProject(userConfig.StyleFilePath);
 
                             //Iterate through all selected layers
                             List<LayerDisplay> layersToRefresh = _refreshLayers.Where(x => x.IsChecked == true).ToList();
                             foreach (LayerDisplay l in layersToRefresh)
                             {
-
-                                //Make sure the layer has the proper symbol and/or label fields
-                                List<FieldDescription> flDescriptions = l.FLayer.GetFieldDescriptions().ToList();
-                                if (flDescriptions != null && flDescriptions.Count() > 0)
-                                {
-                                    //Prepare unique value renderer                
-                                    UniqueValueRendererDefinition uniqueValueRenderer = new UniqueValueRendererDefinition()
-                                    {
-                                        ColorRamp = ColorFactory.Instance.GetColorRamp("Default"),
-                                        ValueFields = new List<string>()
-                                        {
-                                            //Constants.DatabaseFields.LegendSymbol
-                                        },
-                                    };
-
-                                    //GSC_SYMBOL is needed for proper styling, else default color ramp will be used
-                                    bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
-                                    if (symbolFieldDescription)
-                                    {
-                                        uniqueValueRenderer.ValueFields.Add(Constants.DatabaseFields.LegendSymbol);
-                                    }
-
-                                    //Add label field to unique renderer, if any
-                                    List<FieldDescription> labelFieldDescription = flDescriptions.Where(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias).ToList();
-                                    if (labelFieldDescription != null && labelFieldDescription.Count() > 0)
-                                    {
-                                        uniqueValueRenderer.ValueFields.Add(labelFieldDescription[0].Name);
-                                    }
-
-                                    //Prepare label field for geolines
-                                    uniqueValueRenderer = PrepareGeolineLabelRenderer(flDescriptions, uniqueValueRenderer);
-
-                                    //Prepare label field for geopoints
-                                    uniqueValueRenderer = PrepareGeopointLabelRenderer(flDescriptions, uniqueValueRenderer);
-
-                                    //Build a list of symbols for labels only (missing symbol field)
-                                    Dictionary<string, string> labelSymbols = PrepareLabelColorRenderer(l.FLayer);
-
-                                    //Create a default unique renderer, in case styling with the file doesn't work
-                                    CIMRenderer renderer = l.FLayer.CreateRenderer(uniqueValueRenderer);
-
-                                    //Sets the renderer to the feature layer
-                                    l.FLayer.SetRenderer(renderer);
-
-                                    //Get geometry type in order to be able to search style file properly
-                                    StyleItemType styleItemType = StyleItemType.Unknown;
-                                    if (l.FLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
-                                    {
-                                        styleItemType = StyleItemType.PolygonSymbol;
-                                    }
-                                    else if (l.FLayer.ShapeType == esriGeometryType.esriGeometryPoint)
-                                    {
-                                        styleItemType = StyleItemType.PointSymbol;
-                                    }
-                                    else if (l.FLayer.ShapeType == esriGeometryType.esriGeometryLine || l.FLayer.ShapeType == esriGeometryType.esriGeometryPolyline)
-                                    {
-                                        styleItemType = StyleItemType.LineSymbol;
-                                    }
-
-                                    //Get back the renderer and make a copy
-                                    if (l.FLayer.GetRenderer() is CIMUniqueValueRenderer cIMUniqueValueRenderer)
-                                    {
-                                        CIMUniqueValueRenderer cloneRenderer = cIMUniqueValueRenderer.Clone();
-                                        //Go through all groups (headings)
-                                        foreach (CIMUniqueValueGroup cimVG in cloneRenderer.Groups)
-                                        {
-                                            //Go through all classes (symbols)
-                                            if (cimVG.Classes != null)
-                                            {
-                                                foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
-                                                {
-                                                    //Go through all field values
-                                                    foreach (CIMUniqueValue cimV in cimVC.Values)
-                                                    {
-                                                        if (labelSymbols.Count() == 0)
-                                                        {
-                                                            //Find symbol in style file from first field value
-                                                            SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString())[0];
-
-                                                            //Set
-                                                            CIMSymbolReference cimSR = cimVC.Symbol;
-                                                            cimSR.Symbol = currentSymbol.Symbol;
-                                                        }
-                                                        else
-                                                        {
-
-                                                            if (labelSymbols.ContainsKey(cimV.FieldValues[0]))
-                                                            {
-                                                                //Get symbol code
-                                                                string symbolCode = labelSymbols[cimV.FieldValues[0]].ToString();
-
-                                                                //Find symbol in style file from first field value
-                                                                SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(StyleItemType.PolygonSymbol, symbolCode)[0];
-
-                                                                CIMPointSymbol currentPntSymbol = Symbols.GetLabelDefaultRenderer(currentSymbol.Symbol.GetColor());
-
-                                                                //Set
-                                                                CIMSymbolReference cimSR = cimVC.Symbol;
-                                                                cimSR.Symbol = currentPntSymbol;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-
-                                        }
-
-                                        //Update layer with new renderer
-                                        l.FLayer.SetRenderer(cloneRenderer);
-                                    }
-                                }
+                                RefreshLayerSymbols(l.FLayer, workingStyle);
                             }
                         }
                         else
@@ -472,7 +357,123 @@ namespace BedrockEditorPro.ProWindows
             return uniqueValueRenderer;
         }
 
+        /// <summary>
+        /// Will refresh the incoming layer symbols base on the custom/default style file used by the tools
+        /// </summary>
+        /// <param name="inLayer"></param>
+        public void RefreshLayerSymbols(FeatureLayer inLayer, StyleProjectItem workingStyle)
+        {
+            //Make sure the layer has the proper symbol and/or label fields
+            List<FieldDescription> flDescriptions = inLayer.GetFieldDescriptions().ToList();
+            if (flDescriptions != null && flDescriptions.Count() > 0)
+            {
+                //Prepare unique value renderer                
+                UniqueValueRendererDefinition uniqueValueRenderer = new UniqueValueRendererDefinition()
+                {
+                    ColorRamp = ColorFactory.Instance.GetColorRamp("Default"),
+                    ValueFields = new List<string>()
+                    {
+                        //Constants.DatabaseFields.LegendSymbol
+                    },
+                };
 
+                //GSC_SYMBOL is needed for proper styling, else default color ramp will be used
+                bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
+                if (symbolFieldDescription)
+                {
+                    uniqueValueRenderer.ValueFields.Add(Constants.DatabaseFields.LegendSymbol);
+                }
+
+                //Add label field to unique renderer, if any
+                List<FieldDescription> labelFieldDescription = flDescriptions.Where(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias).ToList();
+                if (labelFieldDescription != null && labelFieldDescription.Count() > 0)
+                {
+                    uniqueValueRenderer.ValueFields.Add(labelFieldDescription[0].Name);
+                }
+
+                //Prepare label field for geolines
+                uniqueValueRenderer = PrepareGeolineLabelRenderer(flDescriptions, uniqueValueRenderer);
+
+                //Prepare label field for geopoints
+                uniqueValueRenderer = PrepareGeopointLabelRenderer(flDescriptions, uniqueValueRenderer);
+
+                //Build a list of symbols for labels only (missing symbol field)
+                Dictionary<string, string> labelSymbols = PrepareLabelColorRenderer(inLayer);
+
+                //Create a default unique renderer, in case styling with the file doesn't work
+                CIMRenderer renderer = inLayer.CreateRenderer(uniqueValueRenderer);
+
+                //Sets the renderer to the feature layer
+                inLayer.SetRenderer(renderer);
+
+                //Get geometry type in order to be able to search style file properly
+                StyleItemType styleItemType = StyleItemType.Unknown;
+                if (inLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
+                {
+                    styleItemType = StyleItemType.PolygonSymbol;
+                }
+                else if (inLayer.ShapeType == esriGeometryType.esriGeometryPoint)
+                {
+                    styleItemType = StyleItemType.PointSymbol;
+                }
+                else if (inLayer.ShapeType == esriGeometryType.esriGeometryLine || inLayer.ShapeType == esriGeometryType.esriGeometryPolyline)
+                {
+                    styleItemType = StyleItemType.LineSymbol;
+                }
+
+                //Get back the renderer and make a copy
+                if (inLayer.GetRenderer() is CIMUniqueValueRenderer cIMUniqueValueRenderer)
+                {
+                    CIMUniqueValueRenderer cloneRenderer = cIMUniqueValueRenderer.Clone();
+                    //Go through all groups (headings)
+                    foreach (CIMUniqueValueGroup cimVG in cloneRenderer.Groups)
+                    {
+                        //Go through all classes (symbols)
+                        if (cimVG.Classes != null)
+                        {
+                            foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
+                            {
+                                //Go through all field values
+                                foreach (CIMUniqueValue cimV in cimVC.Values)
+                                {
+                                    if (labelSymbols.Count() == 0)
+                                    {
+                                        //Find symbol in style file from first field value
+                                        SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString())[0];
+
+                                        //Set
+                                        CIMSymbolReference cimSR = cimVC.Symbol;
+                                        cimSR.Symbol = currentSymbol.Symbol;
+                                    }
+                                    else
+                                    {
+
+                                        if (labelSymbols.ContainsKey(cimV.FieldValues[0]))
+                                        {
+                                            //Get symbol code
+                                            string symbolCode = labelSymbols[cimV.FieldValues[0]].ToString();
+
+                                            //Find symbol in style file from first field value
+                                            SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(StyleItemType.PolygonSymbol, symbolCode)[0];
+
+                                            CIMPointSymbol currentPntSymbol = Symbols.GetLabelDefaultRenderer(currentSymbol.Symbol.GetColor());
+
+                                            //Set
+                                            CIMSymbolReference cimSR = cimVC.Symbol;
+                                            cimSR.Symbol = currentPntSymbol;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    //Update layer with new renderer
+                    inLayer.SetRenderer(cloneRenderer);
+                }
+            }
+        }
         #endregion
     }
 

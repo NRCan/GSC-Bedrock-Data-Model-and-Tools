@@ -133,6 +133,33 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} feature class is missing from geodatabase..
+        /// </summary>
+        public static string ErrorMissingFeatureClass {
+            get {
+                return ResourceManager.GetString("ErrorMissingFeatureClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select map unit layer.
+        /// </summary>
+        public static string FormCreateEditCreateMapUnitLayers {
+            get {
+                return ResourceManager.GetString("FormCreateEditCreateMapUnitLayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Map Units.
+        /// </summary>
+        public static string FormCreateEditCreateMapUnitTitle {
+            get {
+                return ResourceManager.GetString("FormCreateEditCreateMapUnitTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default Embedded Model (XML Version 10.2).
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseCheckbox {
@@ -647,6 +674,33 @@ namespace BedrockEditorPro.Properties {
         public static string Guide {
             get {
                 return ResourceManager.GetString("Guide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NoOverprintsGeopoly.
+        /// </summary>
+        public static string LayerNameGeopolyNoOverprint {
+            get {
+                return ResourceManager.GetString("LayerNameGeopolyNoOverprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Overprints Geoline.
+        /// </summary>
+        public static string LayerNamingGeolineNoOverprint {
+            get {
+                return ResourceManager.GetString("LayerNamingGeolineNoOverprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Overprint Labels.
+        /// </summary>
+        public static string LayerNamingLabelNoOverprint {
+            get {
+                return ResourceManager.GetString("LayerNamingLabelNoOverprint", resourceCulture);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using ArcGIS.Core.CIM;
 using ArcGIS.Core.Internal.CIM;
 using ArcGIS.Desktop.Core;
+using ArcGIS.Desktop.Internal.Mapping;
 using ArcGIS.Desktop.Mapping;
 using BedrockEditorPro.Services;
 using ESRI.ArcGIS.Carto;
@@ -116,6 +117,23 @@ namespace BedrockEditorPro.Utilities
             {
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Will return the style object and even add it to the current project if it's not already there.
+        /// </summary>
+        /// <param name="stylePath"></param>
+        /// <returns></returns>
+        public static StyleProjectItem GetStyleItemProject(string stylePath)
+        {
+            List<StyleProjectItem> styleItems = Project.Current.GetItems<StyleProjectItem>().Where(x => x.Path == stylePath).ToList();
+            if (styleItems == null || styleItems.Count() == 0)
+            {
+                Project.Current.AddStyle(stylePath);
+            }
+            StyleProjectItem workingStyle = Project.Current.GetItems<StyleProjectItem>().FirstOrDefault(x => x.Path == stylePath);
+
+            return workingStyle;
         }
     }
 }

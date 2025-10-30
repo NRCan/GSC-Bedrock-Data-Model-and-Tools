@@ -87,6 +87,19 @@ namespace BedrockEditorPro.Utilities
             return getWorkspace;
         }
 
+        /// <summary>
+        /// Will create and return an in_memory workspace to be used in scratchWorkspaces
+        /// </summary>
+        /// <returns></returns>
+        public static MemoryConnectionProperties CreateInMemoryWorkspace()
+        {
+
+            //Create a work name
+            MemoryConnectionProperties memoryConnectionProperties = new MemoryConnectionProperties("IMeMineWorkspace");
+
+
+            return memoryConnectionProperties;
+        }
 
         #endregion
 
