@@ -140,7 +140,7 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeolineTemplate" caption="Dock _CreateEdit_GeolineTemplate" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeolineTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
+        <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeolineTemplate" caption="Geoline Template" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeolineTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeolineTemplateView" />
         </dockPane>
       </dockPanes>

@@ -61,7 +61,7 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select database source to build layers from.
+        ///   Looks up a localized string similar to Project layers.
         /// </summary>
         public static string ButtonEnvironmentAddProjectLayersPromptTitle {
             get {
@@ -156,6 +156,96 @@ namespace BedrockEditorPro.Properties {
         public static string FormCreateEditCreateMapUnitTitle {
             get {
                 return ResourceManager.GetString("FormCreateEditCreateMapUnitTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attitude.
+        /// </summary>
+        public static string FormCreateEditGeolineAttitude {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineAttitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confidence.
+        /// </summary>
+        public static string FormCreateEditGeolineConfidence {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineConfidence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Geoline Symbol Definition.
+        /// </summary>
+        public static string FormCreateEditGeolineDefinition {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generation.
+        /// </summary>
+        public static string FormCreateEditGeolineGeneration {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineGeneration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a Geoline Layer.
+        /// </summary>
+        public static string FormCreateEditGeolineLayer {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineLayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qualifier.
+        /// </summary>
+        public static string FormCreateEditGeolineQualifier {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineQualifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected lines will be added as templates.
+        /// </summary>
+        public static string FormCreateEditGeolineTemplate {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Template List.
+        /// </summary>
+        public static string FormCreateEditGeolineTemplateList {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineTemplateList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geoline Template.
+        /// </summary>
+        public static string FormCreateEditGeolineTitle {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string FormCreateEditGeolineType {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineType", resourceCulture);
             }
         }
         

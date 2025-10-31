@@ -328,4 +328,37 @@
   <data name="LayerNameGeopolyNoOverprint" xml:space="preserve">
     <value>NoOverprintsGeopoly</value>
   </data>
+  <data name="FormCreateEditGeolineTitle" xml:space="preserve">
+    <value>Geoline Template</value>
+  </data>
+  <data name="FormCreateEditGeolineDefinition" xml:space="preserve">
+    <value>Select Geoline Symbol Definition</value>
+  </data>
+  <data name="FormCreateEditGeolineTemplate" xml:space="preserve">
+    <value>Selected lines will be added as templates</value>
+  </data>
+  <data name="ButtonEnvironmentAddProjectLayersPromptTitle" xml:space="preserve">
+    <value>Project layers</value>
+  </data>
+  <data name="FormCreateEditGeolineType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FormCreateEditGeolineQualifier" xml:space="preserve">
+    <value>Qualifier</value>
+  </data>
+  <data name="FormCreateEditGeolineConfidence" xml:space="preserve">
+    <value>Confidence</value>
+  </data>
+  <data name="FormCreateEditGeolineAttitude" xml:space="preserve">
+    <value>Attitude</value>
+  </data>
+  <data name="FormCreateEditGeolineGeneration" xml:space="preserve">
+    <value>Generation</value>
+  </data>
+  <data name="FormCreateEditGeolineTemplateList" xml:space="preserve">
+    <value>Template List</value>
+  </data>
+  <data name="FormCreateEditGeolineLayer" xml:space="preserve">
+    <value>Select a Geoline Layer</value>
+  </data>
 </root>

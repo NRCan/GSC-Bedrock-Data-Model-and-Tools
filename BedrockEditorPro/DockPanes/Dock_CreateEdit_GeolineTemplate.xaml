@@ -4,31 +4,96 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
              xmlns:ui="clr-namespace:BedrockEditorPro.DockPanes"
+             xmlns:local="clr-namespace:BedrockEditorPro.Properties"
              xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:bedrockcontrols="clr-namespace:BedrockEditorPro.Controls"
+             xmlns:layerControls="clr-namespace:ArcGIS.Desktop.Internal.Mapping.CommonControls.LayerControls;assembly=ArcGIS.Desktop.Mapping"
              xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"                       
              mc:Ignorable="d" 
              d:DesignHeight="660" d:DesignWidth="350"
              d:DataContext="{Binding Path=ui.Dock_CreateEdit_GeolineTemplateViewModel}">
   <UserControl.Resources>
     <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary.MergedDictionaries>
+            <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+            <extensions:DesignOnlyResourceDictionary Source="/BedrockEditorPro;component/BedrockStyle.xaml"/>
+            <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component/XamlImages.xaml"/>
+        </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </UserControl.Resources>
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-    <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
-      <TextBlock Text="{Binding Heading}" Style="{DynamicResource Esri_TextBlockDockPaneHeader}">
-        <TextBlock.ToolTip>
-          <WrapPanel Orientation="Vertical" MaxWidth="300">
-            <TextBlock Text="{Binding Heading}" TextWrapping="Wrap"/>
-          </WrapPanel>
-        </TextBlock.ToolTip>
-      </TextBlock>
-    </DockPanel>
-  </Grid>
+    <Grid Style="{DynamicResource BedrockGrid}" Margin="10" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="Auto">
+            <StackPanel>
+
+                <!--Layer selection-->
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineLayer}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+                <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=GeolineLayers}" SelectedIndex="{Binding Path=GeolineSelectedLayerIndex}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" Width="15" Height="15" Margin="0,0,5,0" />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                
+                <!--Header-->
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineDefinition}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+
+                <!--Geoline type-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineType}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="GeolineTypeCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=GeolineType}" SelectedIndex="{Binding Path=GeolineTypeSelectedIndex}"/>
+
+                <!--Geoline qualifier-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineQualifier}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="GeolineQualifierCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=GeolineQualifier}" SelectedIndex="{Binding Path=GeolineQualifierSelectedIndex}"/>
+                
+                <!--Geoline confidence-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineConfidence}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="GeolineConfidenceCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=GeolineConfidence}" SelectedIndex="{Binding Path=GeolineConfidenceSelectedIndex}"/>
+                
+                <!--Geoline attitude-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineAttitude}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="GeolineAttitudeCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=GeolineAttitude}" SelectedIndex="{Binding Path=GeolineAttitudeSelectedIndex}"/>
+                
+                <!--Geoline generation-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineGeneration}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="GeolineGenerationCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=GeolineGeneration}" SelectedIndex="{Binding Path=GeolineGenerationSelectedIndex}"/>
+                
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineTemplate}" Margin="0,10,0,0" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+
+                <ListBox Grid.Row="1" ItemsSource="{Binding Path=GeolineTemplateList}" Height="120"/>
+
+            </StackPanel>
+            
+        </DockPanel>
+
+        <Button Grid.Row="1" Margin="0,10,0,0"
+            Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
+            Command="{Binding RunTool}">
+            <Button.Content>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource GenericRun16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonRun}" VerticalAlignment="Center" Margin="3"/>
+                    </StackPanel>
+                </Border>
+            </Button.Content>
+        </Button>
+        
+        <!--<DockPanel Grid.Row="1" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="Auto">
+            <TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineTemplate}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+        </DockPanel>-->
+    </Grid>
 </UserControl>

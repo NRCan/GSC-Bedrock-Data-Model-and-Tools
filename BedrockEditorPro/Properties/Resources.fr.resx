@@ -328,4 +328,37 @@
   <data name="LayerNameGeopolyNoOverprint" xml:space="preserve">
     <value>GeopolySansUniteesSuperposees</value>
   </data>
+  <data name="FormCreateEditGeolineTitle" xml:space="preserve">
+    <value>Gabarit de géoligne</value>
+  </data>
+  <data name="FormCreateEditGeolineDefinition" xml:space="preserve">
+    <value>Sélectionner la définition de géoligne</value>
+  </data>
+  <data name="FormCreateEditGeolineTemplate" xml:space="preserve">
+    <value>Les lignes sélectionnées seront ajoutés comme gabarit</value>
+  </data>
+  <data name="ButtonEnvironmentAddProjectLayersPromptTitle" xml:space="preserve">
+    <value>Couches de projet</value>
+  </data>
+  <data name="FormCreateEditGeolineType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FormCreateEditGeolineQualifier" xml:space="preserve">
+    <value>Qualificatif</value>
+  </data>
+  <data name="FormCreateEditGeolineConfidence" xml:space="preserve">
+    <value>Confidence</value>
+  </data>
+  <data name="FormCreateEditGeolineAttitude" xml:space="preserve">
+    <value>Attitude</value>
+  </data>
+  <data name="FormCreateEditGeolineGeneration" xml:space="preserve">
+    <value>Génération</value>
+  </data>
+  <data name="FormCreateEditGeolineTemplateList" xml:space="preserve">
+    <value>Liste de gabarit</value>
+  </data>
+  <data name="FormCreateEditGeolineLayer" xml:space="preserve">
+    <value>Choisir une couche de géoligne</value>
+  </data>
 </root>
