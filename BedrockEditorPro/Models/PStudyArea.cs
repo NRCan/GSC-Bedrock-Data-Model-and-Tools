@@ -68,7 +68,7 @@ namespace BedrockEditorPro.Models
         }
 
         /// <summary>
-        /// A list of all possible fields
+        ///Will prepare the model so it can be ready for inserting
         /// </summary>
         [Ignore]
         public Dictionary<string, object> getModelReadyForInsert
@@ -94,7 +94,7 @@ namespace BedrockEditorPro.Models
         }
 
         /// <summary>
-        /// A list of all possible fields
+        /// Will create coordinate object from field values
         /// </summary>
         [Ignore]
         public IEnumerable<Coordinate3D> getCoordinatesFromFields
@@ -116,6 +116,7 @@ namespace BedrockEditorPro.Models
             set { }
         }
 
-
     }
+
+
 }
