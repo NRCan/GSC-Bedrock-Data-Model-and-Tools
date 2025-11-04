@@ -373,4 +373,13 @@
   <data name="FormCreateEditGeolineUndefined" xml:space="preserve">
     <value>Selected geoline hasn't been defined by Legend Committee, please select another one.</value>
   </data>
+  <data name="FormCreateEditGeolineNoSubtypes" xml:space="preserve">
+    <value>Could no retrieve any subtypes from selected geoline layer.</value>
+  </data>
+  <data name="FormCreateEditGeolineNoSource" xml:space="preserve">
+    <value>Could not retrieve the source geodatabase for the selected geoline layer.</value>
+  </data>
+  <data name="FormCreateEditGeolineNoSubtypesDomains" xml:space="preserve">
+    <value>Could no retrieve subtypes or domains from selected geoline layer.</value>
+  </data>
 </root>

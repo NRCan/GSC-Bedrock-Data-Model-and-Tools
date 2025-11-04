@@ -4,6 +4,7 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -115,6 +116,32 @@ namespace BedrockEditorPro.Models
                 return fieldList;
             }
             set { }
+
+
         }
+
+        /// <summary>
+        /// Will output the database field name associated with the given property name
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="nameOfProperty"></param>
+        /// <returns></returns>
+        public string GetPropertyAttributeName(string nameOfProperty)
+        {
+            string propertyFieldName = string.Empty;
+
+            System.Reflection.PropertyInfo item = this.GetType().GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ColumnAttribute))
+            && prop.Name == nameOfProperty).First();
+
+
+            if (item != null)
+            {
+                propertyFieldName = item.CustomAttributes.First().ConstructorArguments[0].ToString().Replace("\\", "").Replace("\"", "");
+            }
+
+
+            return propertyFieldName;
+        }
+
     }
 }

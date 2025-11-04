@@ -223,6 +223,33 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not retrieve the source geodatabase for the selected geoline layer..
+        /// </summary>
+        public static string FormCreateEditGeolineNoSource {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineNoSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could no retrieve any subtypes from selected geoline layer..
+        /// </summary>
+        public static string FormCreateEditGeolineNoSubtypes {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineNoSubtypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could no retrieve subtypes or domains from selected geoline layer..
+        /// </summary>
+        public static string FormCreateEditGeolineNoSubtypesDomains {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineNoSubtypesDomains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Qualifier.
         /// </summary>
         public static string FormCreateEditGeolineQualifier {

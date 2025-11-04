@@ -373,4 +373,13 @@
   <data name="FormCreateEditGeolineUndefined" xml:space="preserve">
     <value>La géoligne sélectionnée n'a pas été définie par le comité de légende, veuillez en sélectionner un différent.</value>
   </data>
+  <data name="FormCreateEditGeolineNoSubtypes" xml:space="preserve">
+    <value>Impossible d'accéder aux Subtypes de la couche sélectionnée.</value>
+  </data>
+  <data name="FormCreateEditGeolineNoSource" xml:space="preserve">
+    <value>Impossible de lire la source de la couche sélectionnée.</value>
+  </data>
+  <data name="FormCreateEditGeolineNoSubtypesDomains" xml:space="preserve">
+    <value>Impossible de lire les domaines ou les subtype de la couche sélectionnée.</value>
+  </data>
 </root>

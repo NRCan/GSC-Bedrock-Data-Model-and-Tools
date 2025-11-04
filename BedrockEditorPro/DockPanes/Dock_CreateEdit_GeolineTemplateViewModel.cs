@@ -283,7 +283,7 @@ namespace BedrockEditorPro.DockPanes
 
                     _geolineTypeSelectedIndex = -1;
                     NotifyPropertyChanged(nameof(GeolineTypeSelectedIndex));
-                    _geolineType.Clear();
+                    GeolineType.Clear();
                     NotifyPropertyChanged(nameof(GeolineType));
 
                     GeolineQualifierSelectedIndex = -1;
@@ -331,7 +331,7 @@ namespace BedrockEditorPro.DockPanes
                                 }
                                 else
                                 {
-                                    new ErrorService("Could no retrieve any subtypes from selected geoline layer.").WriteToFile();
+                                    new ErrorService(Properties.Resources.FormCreateEditGeolineNoSubtypes).WriteToFile();
                                 }
 
                             }
@@ -345,7 +345,7 @@ namespace BedrockEditorPro.DockPanes
                     }
                     else
                     {
-                        new ErrorService("Could not retrieve the source geodatabase for the selected geoline layer.").WriteToFile();
+                        new ErrorService(Properties.Resources.FormCreateEditGeolineNoSource).WriteToFile();
                     }
 
                 });
@@ -433,6 +433,12 @@ namespace BedrockEditorPro.DockPanes
                 //Get origin database
                 using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_uriGeodatabase)))
                 {
+                    //Clean
+                    collectionIndex = -1;
+                    NotifyPropertyChanged(nameof(collectionIndexPropertyName));
+                    collection.Clear();
+                    NotifyPropertyChanged(nameof(collectionPropertyName));
+
                     SortedList<object, string> qualifDico = Utilities.Domains.GetDomDicoFromSubtype(sourceGeodatabase,
                         lineLayer.GetFeatureClass().GetName(), GeolineType[GeolineTypeSelectedIndex].Tooltip, fieldName);
                     if (qualifDico != null)
@@ -454,7 +460,7 @@ namespace BedrockEditorPro.DockPanes
                     }
                     else
                     {
-                        new ErrorService("Could no retrieve subtypes or domains from selected geoline layer.").WriteToFile();
+                        new ErrorService(Properties.Resources.FormCreateEditGeolineNoSubtypesDomains).WriteToFile();
                     }
 
                 }
@@ -491,7 +497,18 @@ namespace BedrockEditorPro.DockPanes
                                     GeolineConfidence[GeolineConfidenceSelectedIndex].Tooltip,
                                     GeolineAttitude[GeolineAttitudeSelectedIndex].Tooltip,
                                     GeolineGeneration[GeolineGenerationSelectedIndex].Tooltip);
+                                _geoline.GeolineType = int.Parse(GeolineType[GeolineTypeSelectedIndex].Tooltip);
+                                _geoline.Qualifier = GeolineQualifier[GeolineQualifierSelectedIndex].Tooltip;
+                                _geoline.Confidence = GeolineConfidence[GeolineConfidenceSelectedIndex].Tooltip;
+                                _geoline.Attitude = GeolineAttitude[GeolineAttitudeSelectedIndex].Tooltip;
+                                _geoline.Generation = GeolineGeneration[GeolineGenerationSelectedIndex].Tooltip;
 
+                                //Set Creator field (by default first participant), else the new template won't work because Geoline 2.10 has CreatorID not nullable
+                                SortedList<object, string> firstPart = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.participant);
+                                if (firstPart != null)
+                                {
+                                    _geoline.CreatorID = firstPart.Keys.First().ToString();
+                                }
                                 //Validate if geoline exists within symbol tables
                                 QueryFilter symbolTableFilter = new QueryFilter()
                                 {
@@ -561,8 +578,8 @@ namespace BedrockEditorPro.DockPanes
                                             editOp.Execute();
 
                                             //Create and or update template
-                                            //Utilities.ProjectSymbols uLineSymbols = new Utilities.ProjectSymbols();
-                                            //uLineSymbols.CreateLineTemplate(ArcMap.Application.Document as IMxDocument);
+                                            Symbols.CreateLineTemplate(GeolineLayers[GeolineSelectedLayerIndex].FLayer, _geoline);
+
                                         }
                                         else
                                         {

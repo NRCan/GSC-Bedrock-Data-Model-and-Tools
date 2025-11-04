@@ -3,9 +3,8 @@ using ArcGIS.Core.Internal.CIM;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Internal.Mapping;
 using ArcGIS.Desktop.Mapping;
+using BedrockEditorPro.Models;
 using BedrockEditorPro.Services;
-using ESRI.ArcGIS.Carto;
-using ESRI.ArcGIS.Display;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -135,5 +134,77 @@ namespace BedrockEditorPro.Utilities
 
             return workingStyle;
         }
+
+        /// <summary>
+        /// Creates templates of geoline
+        /// </summary>
+        /// <param name="m_doc"></param>
+        public static void CreateLineTemplate(FeatureLayer featureLayer, GeoLines geoLines)
+        {
+            try
+            {
+                //get the CIM layer definition
+                var layerDef = featureLayer.GetDefinition() as CIMFeatureLayer;
+
+                //set new template values
+                var geolineTemplateDef = new CIMRowTemplate();
+                geolineTemplateDef.Name = string.Format("{0},{1}", geoLines.GSCSymbol, geoLines.Name);
+                geolineTemplateDef.Description = geoLines.Name;
+
+                // set some default attributes
+                geolineTemplateDef.DefaultValues = new Dictionary<string, object>();
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.GeolineID)),geoLines.GeolineID);
+
+                //Manage subtype
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.GeolineType)), geoLines.GeolineType);
+
+                //Manage Qualifier
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.Qualifier)), geoLines.Qualifier);
+
+                //Manage Confidence
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.Confidence)), geoLines.Confidence);
+
+                //Manage Attitude
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.Attitude)), geoLines.Attitude);
+
+                //Manage Generation
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.Generation)), geoLines.Generation);
+
+                //Manage FGDC Symbol
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.GSCSymbol)), geoLines.GSCSymbol);
+
+                //Manage CreatorID
+                geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.CreatorID)), geoLines.CreatorID);
+
+
+                //get all templates on this layer
+                // NOTE - layerDef.FeatureTemplates could be null 
+                //    if Create Features window hasn't been opened
+                var layerTemplates = layerDef.FeatureTemplates?.ToList();
+                if (layerTemplates == null)
+                    layerTemplates = new List<CIMEditingTemplate>();
+
+                //add the new template to the layer template list
+                layerTemplates.Add(geolineTemplateDef);
+
+                //update the layerdefinition with the templates
+                layerDef.FeatureTemplates = layerTemplates.ToArray();
+
+                // check the AutoGenerateFeatureTemplates flag, 
+                //     set to false so our changes will stick
+                if (layerDef.AutoGenerateFeatureTemplates)
+                    layerDef.AutoGenerateFeatureTemplates = false;
+
+                //and commit
+                featureLayer.SetDefinition(layerDef);
+
+            }
+            catch (Exception CreateTemplateError)
+            {
+                new ErrorService(CreateTemplateError).WriteToFile();
+            }
+
+        }
+
     }
 }
