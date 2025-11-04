@@ -863,7 +863,7 @@ namespace BedrockEditorPro.Utilities
 
         public static class Configuration
         {
-            public const string userConfigFileName = "userconfig.json";
+            public const string userConfigFileName = "UserConfiguration.json";
         }
 
         public static class Seperator

@@ -302,12 +302,21 @@ namespace BedrockEditorPro.ProWindows
                                 await GeoprocessingBedrock.AppendInEmptyTables(OrgCSVFilePath, org);
                                 await GeoprocessingBedrock.AppendInEmptyTables(GeolineCSVFilePath, symGeoline);
                                 await GeoprocessingBedrock.AppendInEmptyTables(GeopointCSVFilePath, symGeopoint);
+
+                                //Clean up
+                                File.Delete(XMLFilePath);
+                                File.Delete(JSONFilePath);
+                                File.Delete(GeolineCSVFilePath);
+                                File.Delete(GeopointCSVFilePath);
+                                File.Delete(OrgCSVFilePath);
                             }
 
                         }
                     }
 
                     GC.Collect();
+
+
 
                     //Close window
                     _view.Close();
