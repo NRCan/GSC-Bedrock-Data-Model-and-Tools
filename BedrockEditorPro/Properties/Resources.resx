@@ -361,4 +361,16 @@
   <data name="FormCreateEditGeolineLayer" xml:space="preserve">
     <value>Select a Geoline Layer</value>
   </data>
+  <data name="GenericWarningTitle" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="FormCreateEditGeolineExists" xml:space="preserve">
+    <value>Selected geoline already exists in legend table.</value>
+  </data>
+  <data name="FormCreateEditGeolineMissingSelection" xml:space="preserve">
+    <value>Must select a value in all attributes.</value>
+  </data>
+  <data name="FormCreateEditGeolineUndefined" xml:space="preserve">
+    <value>Selected geoline hasn't been defined by Legend Committee, please select another one.</value>
+  </data>
 </root>

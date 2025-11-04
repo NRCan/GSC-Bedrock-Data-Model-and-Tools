@@ -187,6 +187,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selected geoline already exists in legend table..
+        /// </summary>
+        public static string FormCreateEditGeolineExists {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generation.
         /// </summary>
         public static string FormCreateEditGeolineGeneration {
@@ -201,6 +210,15 @@ namespace BedrockEditorPro.Properties {
         public static string FormCreateEditGeolineLayer {
             get {
                 return ResourceManager.GetString("FormCreateEditGeolineLayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must select a value in all attributes..
+        /// </summary>
+        public static string FormCreateEditGeolineMissingSelection {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineMissingSelection", resourceCulture);
             }
         }
         
@@ -246,6 +264,15 @@ namespace BedrockEditorPro.Properties {
         public static string FormCreateEditGeolineType {
             get {
                 return ResourceManager.GetString("FormCreateEditGeolineType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected geoline hasn&apos;t been defined by Legend Committee, please select another one..
+        /// </summary>
+        public static string FormCreateEditGeolineUndefined {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeolineUndefined", resourceCulture);
             }
         }
         
@@ -588,6 +615,15 @@ namespace BedrockEditorPro.Properties {
         public static string GenericMessageErrorWrongDatabase {
             get {
                 return ResourceManager.GetString("GenericMessageErrorWrongDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        public static string GenericWarningTitle {
+            get {
+                return ResourceManager.GetString("GenericWarningTitle", resourceCulture);
             }
         }
         

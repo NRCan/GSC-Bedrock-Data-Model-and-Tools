@@ -1,0 +1,120 @@
+﻿using ArcGIS.Core.Geometry;
+using BedrockEditorPro.Utilities;
+using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BedrockEditorPro.Models
+{
+    [Table(Constants.Database.FGeoline)]
+    public class GeoLines
+    {
+        [Column(Constants.DatabaseFields.FGeolineID), PrimaryKey]
+        public string GeolineID { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineSubtype)]
+        public int GeolineType { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineQualif)]
+        public string Qualifier { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineConf)]
+        public string Confidence { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineAtt)]
+        public string Attitude { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineGeneration)]
+        public string Generation { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineName)]
+        public string Name { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineMovement)]
+        public string Movement { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineHangwall)]
+        public string HangingWallDirection { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineFoldTrend)]
+        public string FoldTrend { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeopointDipPlunge)]
+        public string FoldPlunge { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineArrowDir)]
+        public string ArrowDirection { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineBoundary)]
+        public string IsBoundary { get; set; }
+
+        [Column(Constants.DatabaseFields.ETCreatorID)]
+        public string CreatorID { get; set; }
+
+        [Column(Constants.DatabaseFields.ETEditorID)]
+        public string EditorID { get; set; }
+
+        [Column(Constants.DatabaseFields.ETCreateDate)]
+        public string CreateDate { get; set; }
+
+        [Column(Constants.DatabaseFields.ETEditDate)]
+        public string EditDate { get; set; }
+
+        [Column(Constants.DatabaseFields.LegendSymbol)]
+        public string GSCSymbol { get; set; }
+
+        [Column(Constants.DatabaseFields.SourceID)]
+        public string SourceID { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineGeoEventID)]
+        public int EventID { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineOriginalCode)]
+        public string OriginalCode { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineRemarks)]
+        public string Remarks { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineRemarksEdit)]
+        public string EditRemarks { get; set; }
+
+        [Column(Constants.DatabaseFields.FGeolineDisplayPub)]
+        public int DisplayPub { get; set; }
+
+        [Ignore]
+        public Geometry Geometry { get; set; }
+
+        /// <summary>
+        /// A list of all possible fields
+        /// </summary>
+        [Ignore]
+        public Dictionary<double, List<string>> getFieldList
+        {
+            get
+            {
+
+                //Create a new list of all current columns in current class. This will act as the most recent
+                //version of the class
+                Dictionary<double, List<string>> fieldList = new Dictionary<double, List<string>>();
+                List<string> defaultFieldList = new List<string>();
+
+                foreach (System.Reflection.PropertyInfo item in this.GetType().GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ColumnAttribute))).ToList())
+                {
+                    if (item.CustomAttributes.First().ConstructorArguments.Count() > 0)
+                    {
+                        defaultFieldList.Add(item.CustomAttributes.First().ConstructorArguments[0].ToString().Replace("\\", "").Replace("\"", ""));
+                    }
+
+                }
+
+                fieldList[Constants.Database.CurrentDBVersion] = defaultFieldList;
+
+                return fieldList;
+            }
+            set { }
+        }
+    }
+}

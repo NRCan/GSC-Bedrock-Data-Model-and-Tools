@@ -361,4 +361,16 @@
   <data name="FormCreateEditGeolineLayer" xml:space="preserve">
     <value>Choisir une couche de géoligne</value>
   </data>
+  <data name="GenericWarningTitle" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="FormCreateEditGeolineExists" xml:space="preserve">
+    <value>La geoligne sélectionnée existe déjà dans la légende.</value>
+  </data>
+  <data name="FormCreateEditGeolineMissingSelection" xml:space="preserve">
+    <value>Une sélection doit être faite pour chacun des attributs.</value>
+  </data>
+  <data name="FormCreateEditGeolineUndefined" xml:space="preserve">
+    <value>La géoligne sélectionnée n'a pas été définie par le comité de légende, veuillez en sélectionner un différent.</value>
+  </data>
 </root>

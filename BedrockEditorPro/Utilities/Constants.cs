@@ -285,6 +285,10 @@ namespace BedrockEditorPro.Utilities
             public const string FGeolineArrowDir = "ARROWDIR";
             public const string FGeolineDisplayPub = "DISPLAYPUB";
             public const string FGeolineGeoEventID = "GEOEVENT_ID";
+            public const string FGeolineName = "NAME";
+            public const string FGeolineOriginalCode = "ORIGCODE";
+            public const string FGeolineRemarks = "REMARKS";
+            public const string FGeolineRemarksEdit = "EDITREMARKS";
             #endregion
 
             #region Feature Geopolys

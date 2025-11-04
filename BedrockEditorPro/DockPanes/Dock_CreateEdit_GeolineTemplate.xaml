@@ -71,15 +71,15 @@
                 <ComboBox x:Name="GeolineGenerationCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeolineGeneration}" SelectedIndex="{Binding Path=GeolineGenerationSelectedIndex}"/>
                 
-                <TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineTemplate}" Margin="0,10,0,0" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+                <!--<TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineTemplate}" Margin="0,10,0,0" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
 
-                <ListBox Grid.Row="1" ItemsSource="{Binding Path=GeolineTemplateList}" Height="120"/>
+                <ListBox Grid.Row="1" ItemsSource="{Binding Path=GeolineTemplateList}" Height="120"/>-->
 
             </StackPanel>
             
         </DockPanel>
 
-        <Button Grid.Row="1" Margin="0,10,0,0"
+        <Button Grid.Row="1" Margin="0,20,0,0"
             Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
             Command="{Binding RunTool}">
             <Button.Content>
