@@ -56,10 +56,6 @@ namespace BedrockEditorPro.Comboboxes
             if (_isInitialized)
             {
                 SelectedItem = null;
-
-                //Keep selected value in memory
-                Properties.Settings.Default.SelectedSourceCode = string.Empty;
-                Properties.Settings.Default.Save();
             }
 
 
@@ -106,6 +102,17 @@ namespace BedrockEditorPro.Comboboxes
                                                             Add(sourceItem);
                                                         }
                                                     }
+
+                                                    //Select last selected item if any
+                                                    if (!string.IsNullOrEmpty(Properties.Settings.Default.SelectedSourceCode))
+                                                    {
+                                                        ComboBoxItem toSelect = this.ItemCollection.FirstOrDefault(i => (i as ComboBoxItem).Tooltip == Properties.Settings.Default.SelectedSourceCode) as ComboBoxItem;
+                                                        if (toSelect != null)
+                                                        {
+                                                            SelectedItem = toSelect;
+                                                        }
+                                                    }
+
                                                     SelectedItem = null;
                                                     break; //exit the loop if we found the bedrock gdb and added the particpants
                                                 }
@@ -210,10 +217,6 @@ namespace BedrockEditorPro.Comboboxes
             {
                 try
                 {
-                    //Keep selected value in memory
-                    Properties.Settings.Default.SelectedSourceCode = string.Empty;
-                    Properties.Settings.Default.Save();
-
 
                     //One kvp per layer....of which there is only one in the sample
                     //out of the box but you can add others and register for events
