@@ -427,4 +427,25 @@
   <data name="FormCreateEditGeopointTitle" xml:space="preserve">
     <value>Geopoint Template</value>
   </data>
+  <data name="FormCreateEditLabelLayer" xml:space="preserve">
+    <value>Select a Label Layer</value>
+  </data>
+  <data name="FormCreateEditLabelName" xml:space="preserve">
+    <value>Label (e.g. NFg, Tv, R, ...)</value>
+  </data>
+  <data name="FormCreateEditLabelMapUnitOptions" xml:space="preserve">
+    <value>Map Unit Options</value>
+  </data>
+  <data name="FormCreateEditLabelSymbol" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="FormCreateEditLabelAgePrefix" xml:space="preserve">
+    <value>Age Prefix</value>
+  </data>
+  <data name="FormCreateEditLabelOveprintLevel" xml:space="preserve">
+    <value>Overprint</value>
+  </data>
+  <data name="FormCreateEditLabelNameOption" xml:space="preserve">
+    <value>Label Unit</value>
+  </data>
 </root>

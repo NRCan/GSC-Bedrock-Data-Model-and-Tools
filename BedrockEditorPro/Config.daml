@@ -35,7 +35,6 @@
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" size="middle" />
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" size="middle" />
           <button refID="BedrockEditorPro_Controls_CoordSysDialog" size="large" />
-
         </group>
         <!--Templates-->
         <group id="BedrockEditorPro_Templates" caption="Templates" appearsOnAddInTab="false" keytip="template">
@@ -95,47 +94,47 @@
 			  Create a customized template for attributing and symbolizing linear features.<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_CreateEdit_GeopointTemplate" caption="Geopoint Templates" keytip="Create Geopoint Template" className="BedrockEditorPro.Buttons.Button_CreateEdit_GeopointTemplate" loadOnClick="true" smallImage="PointOnTheMap16" largeImage="PointOnTheMap32">
-			<tooltip heading="Template">
+          <tooltip heading="Template">
 				Create a customized template for attributing and symbolizing point features.<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_CreateEdit_LabelTemplate" caption="Label Templates" keytip="Create Label Template" className="BedrockEditorPro.Buttons.Button_CreateEdit_LabelTemplate" loadOnClick="true" smallImage="ElementPolygonText16" largeImage="ElementPolygonText32">
-			<tooltip heading="Templates">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Templates">Tooltip text<disabledText /></tooltip>
         </button>
-		  <!-- Create edit menu -->
+        <!-- Create edit menu -->
         <button id="BedrockEditorPro_Buttons_Button_CreateEdit_CreateMapUnits" caption="Create Map Units" keytip="Create Map Unit Polygons" className="BedrockEditorPro.Buttons.Button_CreateEdit_CreateMapUnits" loadOnClick="true" smallImage="EditingReplaceGeometry16" largeImage="EditingReplaceGeometry32">
-			<tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_CreateEdit_ValidateGeolineIntegrity" caption="Validate Geoline Integrity" keytip="Geoline validation tool." className="BedrockEditorPro.Buttons.Button_CreateEdit_ValidateGeolineIntegrity" loadOnClick="true" smallImage="EditingExplode16" largeImage="EditingExplode32">
-			<tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_CreateEdit_QualityControl" caption="Quality Control Tools" keytip="Quality Control Tools" className="BedrockEditorPro.Buttons.Button_CreateEdit_QualityControl.cs" loadOnClick="true" smallImage="ValidateAll16" largeImage="ValidateAll32">
-			<tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
-		  <!--legend menu-->
+        <!--legend menu-->
         <button id="BedrockEditorPro_Buttons_Button_Legend_ItemsModification" caption="Items Modification" keytip="Manage Legend Items" className="BedrockEditorPro.Buttons.Button_Legend_ItemsModification" loadOnClick="true" smallImage="ItemThumbnailCreate16" largeImage="ItemThumbnailCreate32">
-			<tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Legend_IntersectItemsWithStudyArea" caption="Intersect with Study Areas" keytip="Intersect Legend Items with Study Areas" className="BedrockEditorPro.Buttons.Button_Legend_IntersectItemsWithStudyArea" loadOnClick="true" smallImage="Layer_Intersect16" largeImage="Layer_Intersect32">
-			<tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Legend_ItemDescription" caption="Items Description" keytip="Manage Legend Item Descriptions" className="BedrockEditorPro.Buttons.Button_Legend_ItemDescription" loadOnClick="true" smallImage="Grouping16" largeImage="Grouping32">
-			<tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
+          <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
-		  <!--environment menu-->
+        <!--environment menu-->
         <button id="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" caption="Create and Apply Topological Rules" keytip="Create Topology Layer" className="BedrockEditorPro.Buttons.Button_Environment_CreateApplyTopologicalRules" loadOnClick="true" smallImage="EditingReshapeTopologyEdgeTool16" largeImage="EditingReshapeTopologyEdgeTool32">
           <tooltip heading="Environment">Creates a topological dataset (GEO_TOPO) inside the project geodatabase.<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Environment_AddProjectLayers" caption="Add Project Layers" keytip="Add project related layers" className="BedrockEditorPro.Buttons.Button_Environment_AddProjectLayers" loadOnClick="true" smallImage="LayerImportSymbology16" largeImage="LayerImportSymbology32">
           <tooltip heading="Environment">Adds project layers with preloaded and symbolized data.<disabledText /></tooltip>
         </button>
-		  <!--Load menu-->
+        <!--Load menu-->
         <button id="BedrockEditorPro_Buttons_Button_Load_StudyAreas" caption="Study Areas" keytip="Manage Project Study Areas" className="BedrockEditorPro.Buttons.Button_Load_StudyAreas" loadOnClick="true" smallImage="ReshapeMapFrameRectangle16" largeImage="ReshapeMapFrameRectangle32">
           <tooltip heading="Load">Prompts a form to add or modify project study areas.<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Environment_NewGeodatabase" caption="New Geodatabase" keytip="Create New Project Geodatabase." className="BedrockEditorPro.Buttons.Button_Environment_NewGeodatabase" loadOnClick="true" smallImage="GeodatabaseAdd16" largeImage="GeodatabaseAdd32">
           <tooltip heading="Environment">Create a new project file geodatabase<disabledText /></tooltip>
         </button>
-		  <!--help menu-->
+        <!--help menu-->
         <button id="BedrockEditorPro_Buttons_Button_Help" caption="About" keytip="Help, about and more online resources" className="BedrockEditorPro.Buttons.Button_Help" loadOnClick="true" smallImage="Images\Hammer16.png" largeImage="Images\Hammer32.png">
           <tooltip heading="Help">Help, about and more online resources<disabledText /></tooltip>
         </button>
@@ -146,6 +145,9 @@
         </dockPane>
         <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeopointTemplate" caption="Geopoint Template" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeopointTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeopointTemplateView" />
+        </dockPane>
+        <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_LabelTemplate" caption="Dock _CreateEdit_LabelTemplate" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_LabelTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="BedrockEditorPro.DockPanes.Dock_CreateEdit_LabelTemplateView" />
         </dockPane>
       </dockPanes>
     </insertModule>

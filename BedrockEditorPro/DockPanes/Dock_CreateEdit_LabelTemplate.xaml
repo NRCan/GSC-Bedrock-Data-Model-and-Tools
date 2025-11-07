@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="BedrockEditorPro.DockPanes.Dock_CreateEdit_LabelTemplateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:BedrockEditorPro.DockPanes"
+             xmlns:local="clr-namespace:BedrockEditorPro.Properties"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:bedrockcontrols="clr-namespace:BedrockEditorPro.Controls"
+             xmlns:layerControls="clr-namespace:ArcGIS.Desktop.Internal.Mapping.CommonControls.LayerControls;assembly=ArcGIS.Desktop.Mapping"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"                       
+             mc:Ignorable="d" 
+             d:DesignHeight="660" d:DesignWidth="350"
+             d:DataContext="{Binding Path=ui.Dock_CreateEdit_LabelTemplateViewModel}">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="/BedrockEditorPro;component/BedrockStyle.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component/XamlImages.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid Style="{DynamicResource BedrockGrid}" Margin="10" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="Auto">
+            <StackPanel>
+
+                <!--Label layer-->
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditLabelLayer}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+                <ComboBox x:Name="LabelLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=LabelLayers}" SelectedIndex="{Binding Path=LabelSelectedLayerIndex}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" Width="15" Height="15" Margin="0,0,5,0" />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <!--Label name/string-->
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditLabelNameOption}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+                
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelName}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,10" Height="22" VerticalContentAlignment="Center"
+                    Text="{Binding Path=LabelName}"/>
+                
+                <!--Map Unit Options-->
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditLabelMapUnitOptions}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+
+                <!--Symbol-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelSymbol}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+                    Text="{Binding Path=LabelSymbol}"/>
+
+                <!--Age-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelAgePrefix}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditGeopointSubset" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                            ItemsSource="{Binding Path=LabelAgePrefix}" SelectedIndex="{Binding Path=LabelAgePrefixSelectedIndex}"/>
+
+                <!--Overprint-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelOveprintLevel}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditLabelOveprintLevel" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                            ItemsSource="{Binding Path=LabelOverprintLevel}" SelectedIndex="{Binding Path=LabelOverprintLevelSelectedIndex}"/>
+                
+            </StackPanel>
+
+        </DockPanel>
+
+        <Button Grid.Row="1" Margin="0,20,0,0"
+            Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
+            Command="{Binding RunTool}">
+            <Button.Content>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource GenericRun16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonRun}" VerticalAlignment="Center" Margin="3"/>
+                    </StackPanel>
+                </Border>
+            </Button.Content>
+        </Button>
+    </Grid>
+</UserControl>

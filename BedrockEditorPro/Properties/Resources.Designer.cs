@@ -439,6 +439,69 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Age Prefix.
+        /// </summary>
+        public static string FormCreateEditLabelAgePrefix {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelAgePrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a Label Layer.
+        /// </summary>
+        public static string FormCreateEditLabelLayer {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelLayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map Unit Options.
+        /// </summary>
+        public static string FormCreateEditLabelMapUnitOptions {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelMapUnitOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label (e.g. NFg, Tv, R, ...).
+        /// </summary>
+        public static string FormCreateEditLabelName {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label Unit.
+        /// </summary>
+        public static string FormCreateEditLabelNameOption {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelNameOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overprint.
+        /// </summary>
+        public static string FormCreateEditLabelOveprintLevel {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelOveprintLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.
+        /// </summary>
+        public static string FormCreateEditLabelSymbol {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default Embedded Model (XML Version 10.2).
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseCheckbox {

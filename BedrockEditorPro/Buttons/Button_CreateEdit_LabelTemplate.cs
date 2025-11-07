@@ -24,6 +24,7 @@ namespace BedrockEditorPro.Buttons
 	{
         protected override void OnClick()
         {
+            DockPanes.Dock_CreateEdit_LabelTemplateViewModel.Show();
         }
 	}
 }

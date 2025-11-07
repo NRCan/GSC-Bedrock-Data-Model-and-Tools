@@ -427,4 +427,25 @@
   <data name="FormCreateEditGeopointTitle" xml:space="preserve">
     <value>Gabarit de géopoint</value>
   </data>
+  <data name="FormCreateEditLabelLayer" xml:space="preserve">
+    <value>Choisir une couche d'étiquette d'unité géologique.</value>
+  </data>
+  <data name="FormCreateEditLabelName" xml:space="preserve">
+    <value>Étiquette (ex: NFg, Tv, R, ...)</value>
+  </data>
+  <data name="FormCreateEditLabelMapUnitOptions" xml:space="preserve">
+    <value>Options d'unité cartographique</value>
+  </data>
+  <data name="FormCreateEditLabelSymbol" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
+  <data name="FormCreateEditLabelAgePrefix" xml:space="preserve">
+    <value>Préfix d'âge</value>
+  </data>
+  <data name="FormCreateEditLabelOveprintLevel" xml:space="preserve">
+    <value>Unité surimprimée</value>
+  </data>
+  <data name="FormCreateEditLabelNameOption" xml:space="preserve">
+    <value>Unité d'étiquette</value>
+  </data>
 </root>
