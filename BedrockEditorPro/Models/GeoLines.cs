@@ -120,6 +120,115 @@ namespace BedrockEditorPro.Models
 
         }
 
+        [Ignore]
+        public string GetGeolineIDFromProperties
+        {
+            get
+            {
+                if (GeolineType != -1 && Qualifier != string.Empty && Confidence != string.Empty && Attitude != string.Empty &&
+                    Generation != string.Empty)
+                {
+                    return string.Format("{0}{1}{2}{3}{4}", GeolineType.ToString(), Qualifier, Confidence, Attitude, Generation);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+
+            }
+            set { }
+        }
+
+        [Ignore]
+        public string GetGeolineSubtypeFromID
+        {
+            get
+            {
+                if (GeolineID != string.Empty && GeolineID.Length == 12)
+                {
+                    return GeolineID.Substring(0, 2);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+
+            }
+            set { }
+        }
+
+        [Ignore]
+        public string GetGeolineQualifierFromID
+        {
+            get
+            {
+                if (GeolineID != string.Empty && GeolineID.Length == 12)
+                {
+                    return GeolineID.Substring(2, 4);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+
+            }
+            set { }
+        }
+
+        [Ignore]
+        public string GetGeolineConfidenceFromID
+        {
+            get
+            {
+                if (GeolineID != string.Empty && GeolineID.Length == 12)
+                {
+                    return GeolineID.Substring(6, 2);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+
+            }
+            set { }
+        }
+
+        [Ignore]
+        public string GetGeolineAttitudeFromID
+        {
+            get
+            {
+                if (GeolineID != string.Empty && GeolineID.Length == 12)
+                {
+                    return GeolineID.Substring(8, 2);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+
+            }
+            set { }
+        }
+
+        [Ignore]
+        public string GetGeolineGenerationFromID
+        {
+            get
+            {
+                if (GeolineID != string.Empty && GeolineID.Length == 12)
+                {
+                    return GeolineID.Substring(10, 2);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+
+            }
+            set { }
+        }
+
         /// <summary>
         /// Will output the database field name associated with the given property name
         /// </summary>

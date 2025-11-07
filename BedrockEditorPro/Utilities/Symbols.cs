@@ -139,17 +139,17 @@ namespace BedrockEditorPro.Utilities
         /// Creates templates of geoline
         /// </summary>
         /// <param name="m_doc"></param>
-        public static void CreateLineTemplate(FeatureLayer featureLayer, GeoLines geoLines)
+        public static void CreateLineTemplate(FeatureLayer featureLayer, GeoLines geoLines, bool forceUpdate = false)
         {
             try
             {
                 //get the CIM layer definition
-                var layerDef = featureLayer.GetDefinition() as CIMFeatureLayer;
+                CIMFeatureLayer layerDef = featureLayer.GetDefinition() as CIMFeatureLayer;
 
                 //set new template values
-                var geolineTemplateDef = new CIMRowTemplate();
+                CIMRowTemplate geolineTemplateDef = new CIMRowTemplate();
                 geolineTemplateDef.Name = string.Format("{0},{1}", geoLines.GSCSymbol, geoLines.Name);
-                geolineTemplateDef.Description = geoLines.Name;
+                geolineTemplateDef.Description = geoLines.GeolineID;
 
                 // set some default attributes
                 geolineTemplateDef.DefaultValues = new Dictionary<string, object>();
@@ -176,13 +176,30 @@ namespace BedrockEditorPro.Utilities
                 //Manage CreatorID
                 geolineTemplateDef.DefaultValues.Add(geoLines.GetPropertyAttributeName(nameof(geoLines.CreatorID)), geoLines.CreatorID);
 
-
                 //get all templates on this layer
                 // NOTE - layerDef.FeatureTemplates could be null 
                 //    if Create Features window hasn't been opened
                 var layerTemplates = layerDef.FeatureTemplates?.ToList();
                 if (layerTemplates == null)
                     layerTemplates = new List<CIMEditingTemplate>();
+
+                //check if the template already exists and remplace it if so
+                if (forceUpdate)
+                {
+                    CIMEditingTemplate templateToUpdate = null;
+                    foreach (CIMEditingTemplate templates in layerTemplates)
+                    {
+                        if (templates.Name.Contains(geoLines.GeolineID))
+                        {
+                            templateToUpdate = templates;
+                            break;
+                        }
+                    }
+                    if (templateToUpdate != null)
+                    {
+                        layerTemplates.Remove(templateToUpdate);
+                    }
+                }
 
                 //add the new template to the layer template list
                 layerTemplates.Add(geolineTemplateDef);

@@ -34,5 +34,41 @@ namespace BedrockEditorPro.Properties {
                 this["WorkingEnvironmentPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AddinVersion {
+            get {
+                return ((string)(this["AddinVersion"]));
+            }
+            set {
+                this["AddinVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedParticipantCode {
+            get {
+                return ((string)(this["SelectedParticipantCode"]));
+            }
+            set {
+                this["SelectedParticipantCode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedSourceCode {
+            get {
+                return ((string)(this["SelectedSourceCode"]));
+            }
+            set {
+                this["SelectedSourceCode"] = value;
+            }
+        }
     }
 }

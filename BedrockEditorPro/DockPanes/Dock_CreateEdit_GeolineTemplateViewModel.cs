@@ -489,7 +489,7 @@ namespace BedrockEditorPro.DockPanes
                         {
                             using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_uriGeodatabase)))
                             {
-                                //Build geoline id to validate with actual legend table
+                                //Build geoline model (will be used for validation and template creation)
                                 GeoLines _geoline = new GeoLines();
                                 _geoline.GeolineID = string.Format("{0}{1}{2}{3}{4}",
                                     GeolineType[GeolineTypeSelectedIndex].Tooltip,
@@ -502,13 +502,18 @@ namespace BedrockEditorPro.DockPanes
                                 _geoline.Confidence = GeolineConfidence[GeolineConfidenceSelectedIndex].Tooltip;
                                 _geoline.Attitude = GeolineAttitude[GeolineAttitudeSelectedIndex].Tooltip;
                                 _geoline.Generation = GeolineGeneration[GeolineGenerationSelectedIndex].Tooltip;
+                                _geoline.CreatorID = Properties.Settings.Default.SelectedParticipantCode;
 
                                 //Set Creator field (by default first participant), else the new template won't work because Geoline 2.10 has CreatorID not nullable
-                                SortedList<object, string> firstPart = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.participant);
-                                if (firstPart != null)
+                                if (_geoline.CreatorID == string.Empty)
                                 {
-                                    _geoline.CreatorID = firstPart.Keys.First().ToString();
+                                    SortedList<object, string> firstPart = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.participant);
+                                    if (firstPart != null)
+                                    {
+                                        _geoline.CreatorID = firstPart.Keys.First().ToString();
+                                    }
                                 }
+
                                 //Validate if geoline exists within symbol tables
                                 QueryFilter symbolTableFilter = new QueryFilter()
                                 {
@@ -552,7 +557,7 @@ namespace BedrockEditorPro.DockPanes
                                             }
                                         }
 
-                                        //Insert new record in legend
+                                        //Insert new record in legend if it's not already there
                                         if (!geolineIDExists)
                                         {
                                             //Prepare callback in case something happens
@@ -592,8 +597,6 @@ namespace BedrockEditorPro.DockPanes
                                 {
                                     MessageBox.Show(Properties.Resources.FormCreateEditGeolineUndefined, Properties.Resources.GenericWarningTitle, System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                                 }
-
-
                             }
                         });
 
@@ -603,8 +606,6 @@ namespace BedrockEditorPro.DockPanes
                 {
                     MessageBox.Show(Properties.Resources.FormCreateEditGeolineMissingSelection, Properties.Resources.GenericWarningTitle, System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
                 }
-
-
             }
             catch (Exception ex)
             {

@@ -56,6 +56,10 @@ namespace BedrockEditorPro.Comboboxes
             if (_isInitialized)
             {
                 SelectedItem = null;
+
+                //Keep selected value in memory
+                Properties.Settings.Default.SelectedSourceCode = string.Empty;
+                Properties.Settings.Default.Save();
             }
 
 
@@ -154,6 +158,10 @@ namespace BedrockEditorPro.Comboboxes
             {
                 await QueuedTask.Run(() =>
                 {
+                    //Keep selected value in memory
+                    Properties.Settings.Default.SelectedSourceCode = item.Tooltip;
+                    Properties.Settings.Default.Save();
+
                     List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
                     if (layerEnum != null)
                     {
@@ -202,6 +210,11 @@ namespace BedrockEditorPro.Comboboxes
             {
                 try
                 {
+                    //Keep selected value in memory
+                    Properties.Settings.Default.SelectedSourceCode = string.Empty;
+                    Properties.Settings.Default.Save();
+
+
                     //One kvp per layer....of which there is only one in the sample
                     //out of the box but you can add others and register for events
                     foreach (var kvp in _rowevents)
