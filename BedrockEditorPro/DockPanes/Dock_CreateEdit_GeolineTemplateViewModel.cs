@@ -584,6 +584,14 @@ namespace BedrockEditorPro.DockPanes
                                             //Create and or update template
                                             Symbols.CreateLineTemplate(GeolineLayers[GeolineSelectedLayerIndex].FLayer, _geoline);
 
+                                            //Show notication success
+                                            FrameworkApplication.AddNotification(new Notification()
+                                            {
+                                                Title = Properties.Resources.FormCreateEditGeolineTitle,
+                                                Message = Properties.Resources.GenericMessageCompleted,
+                                                ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
+                                            });
+
                                         }
                                         else
                                         {
