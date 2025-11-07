@@ -489,8 +489,18 @@ namespace BedrockEditorPro.ProWindows
                 {
                     using (Table legendTable = layerGeodatabase.OpenDataset<Table>(Constants.Database.TLegendGene))
                     {
+                        //Get list of all templates associated with feature layer
+                        CIMFeatureLayer layerDefinition = inLayer.GetDefinition() as CIMFeatureLayer;
+                        List<CIMEditingTemplate> templates = layerDefinition.FeatureTemplates?.ToList();
+
+                        if (templates == null)
+                        {
+                            templates = new List<CIMEditingTemplate>();
+                        }
+
                         if (inLayer.ShapeType == esriGeometryType.esriGeometryLine || inLayer.ShapeType == esriGeometryType.esriGeometryPolyline)
                         {
+                            #region Geolines
                             QueryFilter legendFilter = new QueryFilter
                             {
                                 SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
@@ -522,68 +532,66 @@ namespace BedrockEditorPro.ProWindows
 
                             if (legendGeolines.Count() > 0)
                             {
-                                //Get list of all templates associated with feature layer
-                                CIMFeatureLayer geolineLayerDefinition = inLayer.GetDefinition() as CIMFeatureLayer;
-                                List<CIMEditingTemplate> geolineTemplates = geolineLayerDefinition.FeatureTemplates?.ToList();
-
-                                if (geolineTemplates == null)
-                                {
-                                    geolineTemplates = new List<CIMEditingTemplate>();
-                                }
 
                                 //Iterate through all legend geolines and see if a template exists, else add it
                                 foreach (GeoLines gl in legendGeolines)
                                 {
-                                    if (!geolineTemplates.Exists(x => x.Description == gl.GeolineID))
+                                    if (!templates.Exists(x => x.Description == gl.GeolineID))
                                     {
-                                        //set new template values
-                                        CIMRowTemplate geolineTemplateDef = new CIMRowTemplate();
-                                        geolineTemplateDef.Name = string.Format("{0},{1}", gl.GSCSymbol, gl.Name);
-                                        geolineTemplateDef.Description = gl.GeolineID;
+                                        Symbols.CreateLineTemplate(inLayer,gl);
+                                    }
+                                }
+                            }
 
-                                        // set some default attributes
-                                        geolineTemplateDef.DefaultValues = new Dictionary<string, object>();
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.GeolineID)), gl.GeolineID);
+                            #endregion
+                        }
+                        else if (inLayer.ShapeType == esriGeometryType.esriGeometryMultipoint || inLayer.ShapeType == esriGeometryType.esriGeometryPoint)
+                        {
+                            #region Geopoints
 
-                                        //Manage subtype
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.GeolineType)), gl.GetGeolineSubtypeFromID);
+                            QueryFilter legendFilter = new QueryFilter
+                            {
+                                SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
+                                Constants.DatabaseFields.LegendGISDisplay),
+                                WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
+                                Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType,
+                                Constants.DatabaseDomainsValues.legendItemGeopoint)
+                            };
 
-                                        //Manage Qualifier
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.Qualifier)), gl.GetGeolineQualifierFromID);
+                            List<GeoPoints> legendGeopoints = new List<GeoPoints>();
 
-                                        //Manage Confidence
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.Confidence)), gl.GetGeolineConfidenceFromID);
-
-                                        //Manage Attitude
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.Attitude)), gl.GetGeolineAttitudeFromID);
-
-                                        //Manage Generation
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.Generation)), gl.GetGeolineGenerationFromID);
-
-                                        //Manage FGDC Symbol
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.GSCSymbol)), gl.GSCSymbol);
-
-                                        //Manage CreatorID
-                                        geolineTemplateDef.DefaultValues.Add(gl.GetPropertyAttributeName(nameof(gl.CreatorID)), gl.CreatorID);
-
-                                        //add the new template to the layer template list
-                                        geolineTemplates.Add(geolineTemplateDef);
+                            using (RowCursor pointCursor = legendTable.Search(legendFilter))
+                            {
+                                while (pointCursor.MoveNext())
+                                {
+                                    using (Row pointRow = pointCursor.Current)
+                                    {
+                                        legendGeopoints.Add(new GeoPoints
+                                        {
+                                            GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
+                                            GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                            Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                            CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                        });
 
                                     }
                                 }
-
-                                //update the layerdefinition with the templates
-                                geolineLayerDefinition.FeatureTemplates = geolineTemplates.ToArray();
-
-                                // check the AutoGenerateFeatureTemplates flag, 
-                                //     set to false so our changes will stick
-                                if (geolineLayerDefinition.AutoGenerateFeatureTemplates)
-                                    geolineLayerDefinition.AutoGenerateFeatureTemplates = false;
-
-                                //and commit
-                                inLayer.SetDefinition(geolineLayerDefinition);
-
                             }
+
+                            if (legendGeopoints.Count() > 0)
+                            {
+
+                                //Iterate through all legend geolines and see if a template exists, else add it
+                                foreach (GeoPoints gp in legendGeopoints)
+                                {
+                                    if (!templates.Exists(x => x.Description == gp.GeopointID))
+                                    {
+                                        Symbols.CreatePointTemplate(inLayer, gp);
+                                    }
+                                }
+                            }
+
+                            #endregion
                         }
                     }
                 }

@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeopointTemplateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"   
+             xmlns:ui="clr-namespace:BedrockEditorPro.DockPanes"
+             xmlns:local="clr-namespace:BedrockEditorPro.Properties"
+             xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
+             xmlns:bedrockcontrols="clr-namespace:BedrockEditorPro.Controls"
+             xmlns:layerControls="clr-namespace:ArcGIS.Desktop.Internal.Mapping.CommonControls.LayerControls;assembly=ArcGIS.Desktop.Mapping"
+             xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"                       
+             mc:Ignorable="d" 
+             d:DesignHeight="660" d:DesignWidth="350"
+             d:DataContext="{Binding Path=ui.Dock_CreateEdit_GeopointTemplateViewModel}">
+  <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="/BedrockEditorPro;component/BedrockStyle.xaml"/>
+                <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component/XamlImages.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Style="{DynamicResource BedrockGrid}" Margin="10" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="Auto">
+            <StackPanel>
+
+                <!--Layer selection-->
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditGeopointLayer}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+                <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=GeopointLayers}" SelectedIndex="{Binding Path=GeopointSelectedLayerIndex}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" Width="15" Height="15" Margin="0,0,5,0" />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <!--Header-->
+                <TextBlock Text="{x:Static local:Resources.FormCreateEditGeopointDefinition}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+
+                <!--Geopoint type-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointType}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditGeopointType" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                            ItemsSource="{Binding Path=GeopointType}" SelectedIndex="{Binding Path=GeopointTypeSelectedIndex}"/>
+
+                <!--Geopoint subset-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointSubset}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditGeopointSubset" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                            ItemsSource="{Binding Path=GeopointSubset}" SelectedIndex="{Binding Path=GeopointSubsetSelectedIndex}"/>
+
+                <!--Geopoint attitude-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointAttitude}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditGeopointAttitude" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                           ItemsSource="{Binding Path=GeopointAttitude}" SelectedIndex="{Binding Path=GeopointAttitudeSelectedIndex}"/>
+
+                <!--Geopoint generation-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointGeneration}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditGeopointGeneration" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                          ItemsSource="{Binding Path=GeopointGeneration}" SelectedIndex="{Binding Path=GeopointGenerationSelectedIndex}"/>
+
+                <!--Geopoint younging-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointYounging}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditGeopointYounging" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                          ItemsSource="{Binding Path=GeopointYounging}" SelectedIndex="{Binding Path=GeopointYoungingSelectedIndex}"/>
+
+                <!--Geopoint method-->
+                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointMethod}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <ComboBox x:Name="FormCreateEditGeopointMethod" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                          ItemsSource="{Binding Path=GeopointMethod}" SelectedIndex="{Binding Path=GeopointMethodSelectedIndex}"/>
+
+            </StackPanel>
+
+        </DockPanel>
+
+        <Button Grid.Row="1" Margin="0,20,0,0"
+            Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
+            Command="{Binding RunTool}">
+            <Button.Content>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource GenericRun16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonRun}" VerticalAlignment="Center" Margin="3"/>
+                    </StackPanel>
+                </Border>
+            </Button.Content>
+        </Button>
+    </Grid>
+</UserControl>

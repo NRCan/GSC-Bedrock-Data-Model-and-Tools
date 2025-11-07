@@ -348,7 +348,13 @@ namespace BedrockEditorPro.Utilities
             public const string FGeopointStrucID = "F_STRUCID";
             public const string FGeopointSenseEvid = "SENSE_EVID";
             public const string FGeopointRemark = "REMARKS";
-            
+            public const string FGeopointDipDescription = "DIPDESC";
+            public const string FGeopointOriginalCode = "ORIGCODE";
+            public const string FGeopointEditRemarks = "EDITREMARKS";
+            public const string FGeopointDisplayFrom = "DISPLAY_FROM";
+            public const string FGeopointDisplayTo = "DISPLAY_TO";
+            public const string FGeopointDisplayPub= "DISPLAYPUB";
+
             #endregion
 
             #region Carto Points

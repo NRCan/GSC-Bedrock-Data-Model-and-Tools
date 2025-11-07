@@ -374,12 +374,54 @@
     <value>Selected geoline hasn't been defined by Legend Committee, please select another one.</value>
   </data>
   <data name="FormCreateEditGeolineNoSubtypes" xml:space="preserve">
-    <value>Could no retrieve any subtypes from selected geoline layer.</value>
+    <value>Could not retrieve any subtypes from selected geoline layer.</value>
   </data>
   <data name="FormCreateEditGeolineNoSource" xml:space="preserve">
     <value>Could not retrieve the source geodatabase for the selected geoline layer.</value>
   </data>
   <data name="FormCreateEditGeolineNoSubtypesDomains" xml:space="preserve">
-    <value>Could no retrieve subtypes or domains from selected geoline layer.</value>
+    <value>Could not retrieve subtypes or domains from selected geoline layer.</value>
+  </data>
+  <data name="FormCreateEditGeopointLayer" xml:space="preserve">
+    <value>Select a Geopoint Layer</value>
+  </data>
+  <data name="FormCreateEditGeopointDefinition" xml:space="preserve">
+    <value>Select Geopoint Symbol Definition</value>
+  </data>
+  <data name="FormCreateEditGeopointType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FormCreateEditGeopointSubset" xml:space="preserve">
+    <value>Subset</value>
+  </data>
+  <data name="FormCreateEditGeopointAttitude" xml:space="preserve">
+    <value>Attitude</value>
+  </data>
+  <data name="FormCreateEditGeopointGeneration" xml:space="preserve">
+    <value>Generation</value>
+  </data>
+  <data name="FormCreateEditGeopointYounging" xml:space="preserve">
+    <value>Younging</value>
+  </data>
+  <data name="FormCreateEditGeopointMethod" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="FormCreateEditGeopointNoSubtypes" xml:space="preserve">
+    <value>Could not retrieve any substypes from selected geopoint layer.</value>
+  </data>
+  <data name="FormCreateEditGeopointNoSource" xml:space="preserve">
+    <value>Could not retrieve the source geodatabase for the selected geopoint layer.</value>
+  </data>
+  <data name="FormCreateEditGeopointNoSubtypesDomains" xml:space="preserve">
+    <value>Could not retrieve substypes or domains from selected geopoint layer.</value>
+  </data>
+  <data name="FormCreateEditGeopointExists" xml:space="preserve">
+    <value>Selected geopoint already exists in legend table.</value>
+  </data>
+  <data name="FormCreateEditGeopointUndefined" xml:space="preserve">
+    <value>Selected geopoint hasn't been defined by Legend Committee, please select another one.</value>
+  </data>
+  <data name="FormCreateEditGeopointMissingSelection" xml:space="preserve">
+    <value>Must select a value in all attributes.</value>
   </data>
 </root>

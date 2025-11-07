@@ -365,7 +365,7 @@
     <value>Attention</value>
   </data>
   <data name="FormCreateEditGeolineExists" xml:space="preserve">
-    <value>La geoligne sélectionnée existe déjà dans la légende.</value>
+    <value>La géoligne sélectionnée existe déjà dans la légende.</value>
   </data>
   <data name="FormCreateEditGeolineMissingSelection" xml:space="preserve">
     <value>Une sélection doit être faite pour chacun des attributs.</value>
@@ -381,5 +381,47 @@
   </data>
   <data name="FormCreateEditGeolineNoSubtypesDomains" xml:space="preserve">
     <value>Impossible de lire les domaines ou les subtype de la couche sélectionnée.</value>
+  </data>
+  <data name="FormCreateEditGeopointLayer" xml:space="preserve">
+    <value>Choisir une couche de géopoint</value>
+  </data>
+  <data name="FormCreateEditGeopointDefinition" xml:space="preserve">
+    <value>Sélectionner la définition de géopoint</value>
+  </data>
+  <data name="FormCreateEditGeopointType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FormCreateEditGeopointSubset" xml:space="preserve">
+    <value>Sous-type</value>
+  </data>
+  <data name="FormCreateEditGeopointAttitude" xml:space="preserve">
+    <value>Attitude</value>
+  </data>
+  <data name="FormCreateEditGeopointGeneration" xml:space="preserve">
+    <value>Génération</value>
+  </data>
+  <data name="FormCreateEditGeopointYounging" xml:space="preserve">
+    <value>Polarité</value>
+  </data>
+  <data name="FormCreateEditGeopointMethod" xml:space="preserve">
+    <value>Méthode</value>
+  </data>
+  <data name="FormCreateEditGeopointNoSubtypes" xml:space="preserve">
+    <value>Impossible d'accéder aux Subtypes de la couche sélectionnée.</value>
+  </data>
+  <data name="FormCreateEditGeopointNoSource" xml:space="preserve">
+    <value>Impossible de lire la source de la couche sélectionnée.</value>
+  </data>
+  <data name="FormCreateEditGeopointNoSubtypesDomains" xml:space="preserve">
+    <value>Impossible de lire les domaines ou les subtype de la couche sélectionnée.</value>
+  </data>
+  <data name="FormCreateEditGeopointExists" xml:space="preserve">
+    <value>Le géopoint sélectionné existe déjà dans la légende.</value>
+  </data>
+  <data name="FormCreateEditGeopointUndefined" xml:space="preserve">
+    <value>Le géopoint sélectionné n'a pas été définie par le comité de légende, veuillez en sélectionner un différent.</value>
+  </data>
+  <data name="FormCreateEditGeopointMissingSelection" xml:space="preserve">
+    <value>Une sélection doit être faite pour chacun des attributs.</value>
   </data>
 </root>

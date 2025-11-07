@@ -176,20 +176,6 @@ namespace BedrockEditorPro.DockPanes
 
         #endregion
 
-        #region METHODS
-        /// <summary>
-        /// Show the DockPane.
-        /// </summary>
-        internal static void Show()
-        {
-            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
-            if (pane == null)
-                return;
-
-            pane.Activate();
-        }
-        #endregion
-
         protected override void OnShow(bool isVisible)
         {
             base.OnShow(isVisible);
@@ -214,6 +200,19 @@ namespace BedrockEditorPro.DockPanes
             //Init some components
             //UpdateLayerComboboxAsync();
 
+        }
+
+        #region METHODS
+        /// <summary>
+        /// Show the DockPane.
+        /// </summary>
+        internal static void Show()
+        {
+            DockPane pane = FrameworkApplication.DockPaneManager.Find(_dockPaneID);
+            if (pane == null)
+                return;
+
+            pane.Activate();
         }
 
         /// <summary>
@@ -612,6 +611,8 @@ namespace BedrockEditorPro.DockPanes
                 new ErrorService(ex).WriteToFile();
             }
         }
+
+        #endregion
     }
 
     /// <summary>

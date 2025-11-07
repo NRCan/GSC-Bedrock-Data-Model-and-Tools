@@ -223,5 +223,96 @@ namespace BedrockEditorPro.Utilities
 
         }
 
+        /// <summary>
+        /// Creates templates of geoline
+        /// </summary>
+        /// <param name="m_doc"></param>
+        public static void CreatePointTemplate(FeatureLayer featureLayer, GeoPoints geoPoints, bool forceUpdate = false)
+        {
+            try
+            {
+                //get the CIM layer definition
+                CIMFeatureLayer layerDef = featureLayer.GetDefinition() as CIMFeatureLayer;
+
+                //set new template values
+                CIMRowTemplate geopointTemplateDef = new CIMRowTemplate();
+                geopointTemplateDef.Name = string.Format("{0},{1}", geoPoints.GSCSymbol, geoPoints.Name);
+                geopointTemplateDef.Description = geoPoints.GeopointID;
+
+                // set some default attributes
+                geopointTemplateDef.DefaultValues = new Dictionary<string, object>();
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.GeopointID)), geoPoints.GeopointID);
+
+                //Manage type
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.GeopointType)), geoPoints.GeopointType);
+
+                //Manage subset
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.Subset)), geoPoints.Subset);
+
+                //Manage attitude
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.Attitude)), geoPoints.Attitude);
+
+                //Manage generation
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.Generation)), geoPoints.Generation);
+
+                //Manage youging
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.Younging)), geoPoints.Younging);
+
+                //Manage method
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.Method)), geoPoints.Method);
+
+                //Manage FGDC Symbol
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.GSCSymbol)), geoPoints.GSCSymbol);
+
+                //Manage CreatorID
+                geopointTemplateDef.DefaultValues.Add(geoPoints.GetPropertyAttributeName(nameof(geoPoints.CreatorID)), geoPoints.CreatorID);
+
+                //get all templates on this layer
+                // NOTE - layerDef.FeatureTemplates could be null 
+                //    if Create Features window hasn't been opened
+                var layerTemplates = layerDef.FeatureTemplates?.ToList();
+                if (layerTemplates == null)
+                    layerTemplates = new List<CIMEditingTemplate>();
+
+                //check if the template already exists and remplace it if so
+                if (forceUpdate)
+                {
+                    CIMEditingTemplate templateToUpdate = null;
+                    foreach (CIMEditingTemplate templates in layerTemplates)
+                    {
+                        if (templates.Name.Contains(geoPoints.GeopointID))
+                        {
+                            templateToUpdate = templates;
+                            break;
+                        }
+                    }
+                    if (templateToUpdate != null)
+                    {
+                        layerTemplates.Remove(templateToUpdate);
+                    }
+                }
+
+                //add the new template to the layer template list
+                layerTemplates.Add(geopointTemplateDef);
+
+                //update the layerdefinition with the templates
+                layerDef.FeatureTemplates = layerTemplates.ToArray();
+
+                // check the AutoGenerateFeatureTemplates flag, 
+                //     set to false so our changes will stick
+                if (layerDef.AutoGenerateFeatureTemplates)
+                    layerDef.AutoGenerateFeatureTemplates = false;
+
+                //and commit
+                featureLayer.SetDefinition(layerDef);
+
+            }
+            catch (Exception CreateTemplateError)
+            {
+                new ErrorService(CreateTemplateError).WriteToFile();
+            }
+
+        }
+
     }
 }

@@ -232,7 +232,7 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could no retrieve any subtypes from selected geoline layer..
+        ///   Looks up a localized string similar to Could not retrieve any subtypes from selected geoline layer..
         /// </summary>
         public static string FormCreateEditGeolineNoSubtypes {
             get {
@@ -241,7 +241,7 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could no retrieve subtypes or domains from selected geoline layer..
+        ///   Looks up a localized string similar to Could not retrieve subtypes or domains from selected geoline layer..
         /// </summary>
         public static string FormCreateEditGeolineNoSubtypesDomains {
             get {
@@ -300,6 +300,132 @@ namespace BedrockEditorPro.Properties {
         public static string FormCreateEditGeolineUndefined {
             get {
                 return ResourceManager.GetString("FormCreateEditGeolineUndefined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attitude.
+        /// </summary>
+        public static string FormCreateEditGeopointAttitude {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointAttitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Geopoint Symbol Definition.
+        /// </summary>
+        public static string FormCreateEditGeopointDefinition {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected geopoint already exists in legend table..
+        /// </summary>
+        public static string FormCreateEditGeopointExists {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generation.
+        /// </summary>
+        public static string FormCreateEditGeopointGeneration {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointGeneration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a Geopoint Layer.
+        /// </summary>
+        public static string FormCreateEditGeopointLayer {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointLayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Method.
+        /// </summary>
+        public static string FormCreateEditGeopointMethod {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must select a value in all attributes..
+        /// </summary>
+        public static string FormCreateEditGeopointMissingSelection {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointMissingSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not retrieve the source geodatabase for the selected geopoint layer..
+        /// </summary>
+        public static string FormCreateEditGeopointNoSource {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointNoSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not retrieve any substypes from selected geopoint layer..
+        /// </summary>
+        public static string FormCreateEditGeopointNoSubtypes {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointNoSubtypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not retrieve substypes or domains from selected geopoint layer..
+        /// </summary>
+        public static string FormCreateEditGeopointNoSubtypesDomains {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointNoSubtypesDomains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subset.
+        /// </summary>
+        public static string FormCreateEditGeopointSubset {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointSubset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string FormCreateEditGeopointType {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected geopoint hasn&apos;t been defined by Legend Committee, please select another one..
+        /// </summary>
+        public static string FormCreateEditGeopointUndefined {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointUndefined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Younging.
+        /// </summary>
+        public static string FormCreateEditGeopointYounging {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointYounging", resourceCulture);
             }
         }
         
