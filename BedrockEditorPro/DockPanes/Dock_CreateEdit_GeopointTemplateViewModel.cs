@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Media;
 using static BedrockEditorPro.Utilities.Layers;
 
 namespace BedrockEditorPro.DockPanes
@@ -305,6 +306,11 @@ namespace BedrockEditorPro.DockPanes
                     GeopointYounging.Clear();
                     NotifyPropertyChanged(nameof(GeopointYounging));
 
+                    GeopointMethodSelectedIndex = -1;
+                    NotifyPropertyChanged(nameof(GeopointMethodSelectedIndex));
+                    GeopointMethod.Clear();
+                    NotifyPropertyChanged(nameof(GeopointMethod));
+
                     FeatureLayer pointLayer = GeopointLayers[GeopointSelectedLayerIndex].FLayer;
                     _uriGeodatabase = Workspace.GetWorkspacePathFromFeatureLayer(pointLayer);
 
@@ -521,16 +527,6 @@ namespace BedrockEditorPro.DockPanes
                                 _geopoint.Method = GeopointMethod[GeopointMethodSelectedIndex].Tooltip;
                                 _geopoint.CreatorID = Properties.Settings.Default.SelectedParticipantCode;
 
-                                ////Set Creator field (by default first participant), else the new template won't work because Geoline 2.10 has CreatorID not nullable
-                                //if (_geopoint.CreatorID == string.Empty)
-                                //{
-                                //    SortedList<object, string> firstPart = Domains.GetDomDicoFromWorkspace(sourceGeodatabase, Constants.DatabaseDomains.participant);
-                                //    if (firstPart != null)
-                                //    {
-                                //        _geoline.CreatorID = firstPart.Keys.First().ToString();
-                                //    }
-                                //}
-
                                 //Validate if geopoint exists within symbol tables
                                 QueryFilter symbolTableFilter = new QueryFilter()
                                 {
@@ -601,6 +597,13 @@ namespace BedrockEditorPro.DockPanes
                                             //Create and or update template
                                             Symbols.CreatePointTemplate(GeopointLayers[GeopointSelectedLayerIndex].FLayer, _geopoint);
 
+                                            //Show notication success
+                                            FrameworkApplication.AddNotification(new Notification()
+                                            {
+                                                Title = Properties.Resources.FormCreateEditGeopointTitle,
+                                                Message = Properties.Resources.GenericMessageCompleted,
+                                                ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
+                                            });
                                         }
                                         else
                                         {

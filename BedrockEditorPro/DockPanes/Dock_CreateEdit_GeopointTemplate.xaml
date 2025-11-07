@@ -31,7 +31,7 @@
 
                 <!--Layer selection-->
                 <TextBlock Text="{x:Static local:Resources.FormCreateEditGeopointLayer}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-                <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeopointLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeopointLayers}" SelectedIndex="{Binding Path=GeopointSelectedLayerIndex}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>

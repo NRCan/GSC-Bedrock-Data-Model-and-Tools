@@ -94,7 +94,7 @@
           <tooltip heading="Templates">
 			  Create a customized template for attributing and symbolizing linear features.<disabledText /></tooltip>
         </button>
-        <button id="BedrockEditorPro_Buttons_Button_CreateEdit_GeopointTemplate" caption="Geopoint Templates" keytip="Create Geopoint Template" className="BedrockEditorPro.Buttons.Button_CreateEdit_GeopointTemplateZ.cs" loadOnClick="true" smallImage="PointOnTheMap16" largeImage="PointOnTheMap32">
+        <button id="BedrockEditorPro_Buttons_Button_CreateEdit_GeopointTemplate" caption="Geopoint Templates" keytip="Create Geopoint Template" className="BedrockEditorPro.Buttons.Button_CreateEdit_GeopointTemplate" loadOnClick="true" smallImage="PointOnTheMap16" largeImage="PointOnTheMap32">
 			<tooltip heading="Template">
 				Create a customized template for attributing and symbolizing point features.<disabledText /></tooltip>
         </button>

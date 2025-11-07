@@ -403,6 +403,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Geopoint Template.
+        /// </summary>
+        public static string FormCreateEditGeopointTitle {
+            get {
+                return ResourceManager.GetString("FormCreateEditGeopointTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
         public static string FormCreateEditGeopointType {

@@ -424,4 +424,7 @@
   <data name="FormCreateEditGeopointMissingSelection" xml:space="preserve">
     <value>Must select a value in all attributes.</value>
   </data>
+  <data name="FormCreateEditGeopointTitle" xml:space="preserve">
+    <value>Geopoint Template</value>
+  </data>
 </root>
