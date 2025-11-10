@@ -448,4 +448,7 @@
   <data name="FormCreateEditLabelNameOption" xml:space="preserve">
     <value>Label Unit</value>
   </data>
+  <data name="DialogSymbolStyleTitle" xml:space="preserve">
+    <value>Symbol Styles</value>
+  </data>
 </root>

@@ -49,25 +49,38 @@
                 <!--Label name/string-->
                 <TextBlock Text="{x:Static local:Resources.FormCreateEditLabelNameOption}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
                 
-                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelName}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,10" Height="22" VerticalContentAlignment="Center"
+                <Label Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelName}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <TextBox Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,10" Height="22" VerticalContentAlignment="Center"
                     Text="{Binding Path=LabelName}"/>
                 
                 <!--Map Unit Options-->
                 <TextBlock Text="{x:Static local:Resources.FormCreateEditLabelMapUnitOptions}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
 
                 <!--Symbol-->
-                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelSymbol}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
-                    Text="{Binding Path=LabelSymbol}"/>
+                <Label  Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelSymbol}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                    <TextBox Style="{DynamicResource BedrockTextboxInputs}" Width="120" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+                        Text="{Binding Path=LabelSymbol}"/>
+                    <Button Grid.Column="1" Style="{DynamicResource Esri_Button}"  Margin="10,-5,5,-10" VerticalAlignment="Center" HorizontalContentAlignment="Right"
+                         Command="{Binding OpenSymbolBrowse}">
+                        <Button.Content>
+                            <Border>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Image Source="{DynamicResource ColorSelector16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                                    <TextBlock Text="{x:Static local:Resources.GenericButtonBrowse}" VerticalAlignment="Center" Margin="3"/>
+                                </StackPanel>
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
 
                 <!--Age-->
-                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelAgePrefix}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <Label  Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelAgePrefix}" Style="{DynamicResource BedrockButtonLabel}"/>
                 <ComboBox x:Name="FormCreateEditGeopointSubset" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
                             ItemsSource="{Binding Path=LabelAgePrefix}" SelectedIndex="{Binding Path=LabelAgePrefixSelectedIndex}"/>
 
                 <!--Overprint-->
-                <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelOveprintLevel}" Style="{DynamicResource BedrockButtonLabel}"/>
+                <Label  Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelOveprintLevel}" Style="{DynamicResource BedrockButtonLabel}"/>
                 <ComboBox x:Name="FormCreateEditLabelOveprintLevel" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
                             ItemsSource="{Binding Path=LabelOverprintLevel}" SelectedIndex="{Binding Path=LabelOverprintLevelSelectedIndex}"/>
                 

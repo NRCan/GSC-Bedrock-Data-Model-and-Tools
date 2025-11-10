@@ -124,6 +124,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Symbol Styles.
+        /// </summary>
+        public static string DialogSymbolStyleTitle {
+            get {
+                return ResourceManager.GetString("DialogSymbolStyleTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to XML File.
         /// </summary>
         public static string DialogXMLPromptTitle {

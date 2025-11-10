@@ -19,8 +19,8 @@ namespace BedrockEditorPro.Utilities
         //https://github.com/Esri/arcgis-pro-sdk-community-samples/blob/master/Content/OpenItemDialogBrowseFilter/CustomFilters.cs#L41
 
         //Events
-        public static EventHandler<SpatialReference> spatialReferenceSelected; //This event is triggered when a different fb is selected so field notes and map pages forces a refresh.  
-
+        public static EventHandler<SpatialReference> spatialReferenceSelected; //This event is triggered when a different a spatial reference is selected from sr dialog
+        public static EventHandler<string> colorSymbolReferenceSelected; //This event is triggered when a symbol/color value is selected within the symbol dialog
 
         public Dialog() { }
 
@@ -183,5 +183,36 @@ namespace BedrockEditorPro.Utilities
             return fgdbPath;
         }
 
+        /// <summary>
+        /// Will prompt the symbol style selection dialog from ESRI
+        /// </summary>
+        /// <returns></returns>
+        public static void GetSymbolPrompt()
+        {
+            //Create a new dialog instance
+            SymbolStyleDialog _symbolDialog = new SymbolStyleDialog();
+            _symbolDialog.Closing += _symbolDialog_Closing;
+            _symbolDialog.ShowDialog();
+        }
+
+        /// <summary>
+        /// Upon closing send an event stating the selected symbol name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void _symbolDialog_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SymbolStyleDialog senderDialog = sender as SymbolStyleDialog;
+            if (senderDialog != null && senderDialog.SelectedSymbolItem != null)
+            {
+                //Send call to refresh other pages
+                EventHandler<string> colorSymbolReferenceRequest = colorSymbolReferenceSelected;
+                if (colorSymbolReferenceRequest != null)
+                {
+                    colorSymbolReferenceRequest(sender, senderDialog.SelectedSymbolItem.Name);
+                }
+
+            }
+        }
     }
 }

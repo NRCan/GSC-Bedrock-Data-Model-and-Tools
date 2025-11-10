@@ -138,6 +138,9 @@
         <button id="BedrockEditorPro_Buttons_Button_Help" caption="About" keytip="Help, about and more online resources" className="BedrockEditorPro.Buttons.Button_Help" loadOnClick="true" smallImage="Images\Hammer16.png" largeImage="Images\Hammer32.png">
           <tooltip heading="Help">Help, about and more online resources<disabledText /></tooltip>
         </button>
+        <button id="BedrockEditorPro_UI_SymbolStyleDialog" caption="SymbolStyleDialog" className="BedrockEditorPro.UI.ShowSymbolStyleDialog" loadOnClick="true" smallImage="GenericButtonPurple16" largeImage="GenericButtonPurple32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
       </controls>
       <dockPanes>
         <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeolineTemplate" caption="Geoline Template" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeolineTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
@@ -146,7 +149,7 @@
         <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_GeopointTemplate" caption="Geopoint Template" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeopointTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="BedrockEditorPro.DockPanes.Dock_CreateEdit_GeopointTemplateView" />
         </dockPane>
-        <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_LabelTemplate" caption="Dock _CreateEdit_LabelTemplate" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_LabelTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
+        <dockPane id="BedrockEditorPro_DockPanes_Dock_CreateEdit_LabelTemplate" caption="Label Template" className="BedrockEditorPro.DockPanes.Dock_CreateEdit_LabelTemplateViewModel" dock="group" dockWith="esri_core_projectDockPane">
           <content className="BedrockEditorPro.DockPanes.Dock_CreateEdit_LabelTemplateView" />
         </dockPane>
       </dockPanes>

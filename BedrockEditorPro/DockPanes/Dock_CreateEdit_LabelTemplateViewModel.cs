@@ -19,6 +19,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using static BedrockEditorPro.Utilities.Layers;
 
 namespace BedrockEditorPro.DockPanes
@@ -113,10 +114,40 @@ namespace BedrockEditorPro.DockPanes
 
         #region RELAYS
 
+        private ICommand _openSymbolBrowse = null;
+        public ICommand OpenSymbolBrowse
+        {
+            get
+            {
+                if (_openSymbolBrowse == null)
+                {
+                    _openSymbolBrowse = new RelayCommand(() => OpenSymbolDialog(), () => true);
+                }
+                return _openSymbolBrowse;
+            }
+        }
+
+        private ICommand _runTool = null;
+        public ICommand RunTool
+        {
+            get
+            {
+                if (_runTool == null)
+                {
+                    _runTool = new RelayCommand(() => AddLabelTemplate(), () => true);
+                }
+                return _runTool;
+            }
+        }
+
         #endregion
 
 
-        protected Dock_CreateEdit_LabelTemplateViewModel() { }
+        protected Dock_CreateEdit_LabelTemplateViewModel() 
+        {
+            //Subscribe to symbol dialog events
+            Dialog.colorSymbolReferenceSelected += SelectedSymbolReferenceFromPrompt;
+        }
 
         #region METHODS
 
@@ -131,6 +162,52 @@ namespace BedrockEditorPro.DockPanes
 
             pane.Activate();
         }
+
+        /// <summary>
+        /// Will add a new label template in the legend table and the editing templates
+        /// </summary>
+        private void AddLabelTemplate()
+        { 
+        
+        }
+
+        /// <summary>
+        /// Will open the symbol browse dialog to select a symbol for the label template
+        /// </summary>
+        public async void OpenSymbolDialog()
+        {
+            try
+            {
+                await QueuedTask.Run(() =>
+                {
+                    Dialog.GetSymbolPrompt();
+                });
+            }
+            catch (Exception ex)
+            {
+                new ErrorService(ex).WriteToFile();
+            }
+        }
+
+        #endregion
+
+        #region EVENTS
+
+        /// <summary>
+        /// Evend detect when user does select a spatial reference from the prompt dialog.
+        /// Will update the textbox in the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="sr"></param>
+        public void SelectedSymbolReferenceFromPrompt(object sender, string symbolName)
+        {
+            if (symbolName != null)
+            {
+                _labelSymbol = symbolName;
+                NotifyPropertyChanged(nameof(LabelSymbol));
+            }
+        }
+
         #endregion
 
     }
@@ -145,4 +222,6 @@ namespace BedrockEditorPro.DockPanes
             Dock_CreateEdit_LabelTemplateViewModel.Show();
         }
     }
+
+
 }
