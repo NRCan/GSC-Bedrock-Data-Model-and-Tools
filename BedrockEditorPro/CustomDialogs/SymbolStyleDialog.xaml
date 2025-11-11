@@ -1,11 +1,11 @@
-﻿<controls:ProWindow x:Class="BedrockEditorPro.UI.SymbolStyleDialog"
+﻿<controls:ProWindow x:Class="BedrockEditorPro.CustomDialogs.SymbolStyleDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
-        xmlns:ui="clr-namespace:BedrockEditorPro.UI"
+        xmlns:ui="clr-namespace:BedrockEditorPro.CustomDialogs"
         xmlns:local="clr-namespace:BedrockEditorPro.Properties"
         xmlns:mapping="clr-namespace:ArcGIS.Desktop.Mapping.Controls;assembly=ArcGIS.Desktop.Mapping"
         xmlns:common="clr-namespace:BedrockEditorPro.Utilities"
@@ -17,7 +17,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
-                <ResourceDictionary Source="/BedrockEditorPro;component/UI/SymbolItemStyles.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/BedrockEditorPro;component/CustomDialogs/SymbolItemStyles.xaml"></ResourceDictionary>
                 <extensions:DesignOnlyResourceDictionary Source="/BedrockEditorPro;component/BedrockStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 

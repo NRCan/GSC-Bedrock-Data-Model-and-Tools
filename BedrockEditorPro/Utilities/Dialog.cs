@@ -4,7 +4,7 @@ using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Internal.Mapping.Table.QueryTable;
 using BedrockEditorPro.Controls;
-using BedrockEditorPro.UI;
+using BedrockEditorPro.CustomDialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

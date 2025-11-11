@@ -41,7 +41,7 @@ using System.Windows;
 using System.Windows.Controls;
 using ArcGIS.Desktop.Core;
 
-namespace BedrockEditorPro.UI
+namespace BedrockEditorPro.CustomDialogs
 {
   /// <summary>
   /// Represents a custom object that holds the SymbolStyle Item in the dockpane

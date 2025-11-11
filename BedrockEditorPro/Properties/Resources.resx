@@ -123,9 +123,6 @@
   <data name="ButtonEnvironmentAddProjectLayersTitle" xml:space="preserve">
     <value>Project layers</value>
   </data>
-  <data name="ButtonEnvironmentTopologicalRulesPromptTitle" xml:space="preserve">
-    <value>Select File Geodatabase to add Topology to:</value>
-  </data>
   <data name="ButtonEnvironmentTopologicalRulesTitle" xml:space="preserve">
     <value>Topological rules</value>
   </data>
@@ -450,5 +447,23 @@
   </data>
   <data name="DialogSymbolStyleTitle" xml:space="preserve">
     <value>Symbol Styles</value>
+  </data>
+  <data name="FormCreateEditLabelNoDomain" xml:space="preserve">
+    <value>Could not retrieve the age prefix domain from source geodatabase.</value>
+  </data>
+  <data name="FormCreateEditLabelNoSource" xml:space="preserve">
+    <value>Could not retrieve the source geodatabase for the selected label layer.</value>
+  </data>
+  <data name="FormCreateEditLabelMissingSelection" xml:space="preserve">
+    <value>Must write down a label name.</value>
+  </data>
+  <data name="FormCreateEditLabelExists" xml:space="preserve">
+    <value>Desire map unit label already exists in legend table.</value>
+  </data>
+  <data name="ButtonEnvironmentTopologicalRulesPromptTitle" xml:space="preserve">
+    <value>Select File Geodatabase to add Topology to:</value>
+  </data>
+  <data name="FormCreateEditLabelTitle" xml:space="preserve">
+    <value>Label Template</value>
   </data>
 </root>

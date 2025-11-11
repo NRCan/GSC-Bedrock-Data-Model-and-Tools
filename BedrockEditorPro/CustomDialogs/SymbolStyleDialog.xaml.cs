@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BedrockEditorPro.UI
+namespace BedrockEditorPro.CustomDialogs
 {
     /// <summary>
     /// Interaction logic for SymbolStyleDialog.xaml

@@ -28,7 +28,8 @@ using System.Windows.Input;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
-namespace BedrockEditorPro.UI
+
+namespace BedrockEditorPro.CustomDialogs
 {
     public class SymbolStyleDialogViewModel : PropertyChangedBase
     {

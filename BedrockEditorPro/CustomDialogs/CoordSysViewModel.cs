@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BedrockEditorPro.UI
+namespace BedrockEditorPro.CustomDialogs
 {
     /// <summary>
     /// Source: https://github.com/Esri/arcgis-pro-sdk-community-samples/blob/master/Geometry/CoordinateSystemDialog/UI/CoordSysViewModel.cs

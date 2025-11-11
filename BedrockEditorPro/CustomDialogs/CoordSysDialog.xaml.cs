@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Desktop.Framework.Controls;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
-using BedrockEditorPro.UI;
+using BedrockEditorPro.CustomDialogs;
 
-namespace BedrockEditorPro.Controls
+namespace BedrockEditorPro.CustomDialogs
 {
     /// <summary>
     /// Interaction logic for CoordSysDialog.xaml

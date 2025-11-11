@@ -25,7 +25,8 @@ using System.Windows;
 using System.Windows.Controls;
 using ArcGIS.Desktop.Mapping;
 
-namespace BedrockEditorPro.UI {
+namespace BedrockEditorPro.CustomDialogs
+{
   public class SymbolStyleItemTemplateSelector : DataTemplateSelector {
 
 

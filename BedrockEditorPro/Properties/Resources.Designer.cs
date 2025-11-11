@@ -457,6 +457,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Desire map unit label already exists in legend table..
+        /// </summary>
+        public static string FormCreateEditLabelExists {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select a Label Layer.
         /// </summary>
         public static string FormCreateEditLabelLayer {
@@ -471,6 +480,15 @@ namespace BedrockEditorPro.Properties {
         public static string FormCreateEditLabelMapUnitOptions {
             get {
                 return ResourceManager.GetString("FormCreateEditLabelMapUnitOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must write down a label name..
+        /// </summary>
+        public static string FormCreateEditLabelMissingSelection {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelMissingSelection", resourceCulture);
             }
         }
         
@@ -493,6 +511,24 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not retrieve the age prefix domain from source geodatabase..
+        /// </summary>
+        public static string FormCreateEditLabelNoDomain {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelNoDomain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not retrieve the source geodatabase for the selected label layer..
+        /// </summary>
+        public static string FormCreateEditLabelNoSource {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelNoSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overprint.
         /// </summary>
         public static string FormCreateEditLabelOveprintLevel {
@@ -507,6 +543,15 @@ namespace BedrockEditorPro.Properties {
         public static string FormCreateEditLabelSymbol {
             get {
                 return ResourceManager.GetString("FormCreateEditLabelSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label Template.
+        /// </summary>
+        public static string FormCreateEditLabelTitle {
+            get {
+                return ResourceManager.GetString("FormCreateEditLabelTitle", resourceCulture);
             }
         }
         

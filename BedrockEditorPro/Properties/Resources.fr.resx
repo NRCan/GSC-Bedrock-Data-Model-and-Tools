@@ -123,9 +123,6 @@
   <data name="ButtonEnvironmentAddProjectLayersTitle" xml:space="preserve">
     <value>Couches de projet</value>
   </data>
-  <data name="ButtonEnvironmentTopologicalRulesPromptTitle" xml:space="preserve">
-    <value>Sélectionnez une File Geodatabase à laquelle ajouter les règles topologiques.</value>
-  </data>
   <data name="ButtonEnvironmentTopologicalRulesTitle" xml:space="preserve">
     <value>Règle topologique</value>
   </data>
@@ -450,5 +447,23 @@
   </data>
   <data name="DialogSymbolStyleTitle" xml:space="preserve">
     <value>Styles et symboles</value>
+  </data>
+  <data name="FormCreateEditLabelNoDomain" xml:space="preserve">
+    <value>Impossible de lire le domaine de valeur des âges à partir de la geodatabase source.</value>
+  </data>
+  <data name="FormCreateEditLabelNoSource" xml:space="preserve">
+    <value>Impossible de lire la source de la couche sélectionnée.</value>
+  </data>
+  <data name="FormCreateEditLabelMissingSelection" xml:space="preserve">
+    <value>Veuillez écrire un nom d'étiquette.</value>
+  </data>
+  <data name="FormCreateEditLabelExists" xml:space="preserve">
+    <value>L'étiquette désirée est déjà présente dans la table de légende.</value>
+  </data>
+  <data name="ButtonEnvironmentTopologicalRulesPromptTitle" xml:space="preserve">
+    <value>Sélectionnez une File Geodatabase à laquelle ajouter les règles topologiques.</value>
+  </data>
+  <data name="FormCreateEditLabelTitle" xml:space="preserve">
+    <value>Gabarit d'étiquette des unités géologiques</value>
   </data>
 </root>

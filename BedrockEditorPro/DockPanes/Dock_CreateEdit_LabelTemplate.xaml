@@ -82,7 +82,7 @@
                 <!--Overprint-->
                 <Label  Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelOveprintLevel}" Style="{DynamicResource BedrockButtonLabel}"/>
                 <ComboBox x:Name="FormCreateEditLabelOveprintLevel" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
-                            ItemsSource="{Binding Path=LabelOverprintLevel}" SelectedIndex="{Binding Path=LabelOverprintLevelSelectedIndex}"/>
+                          IsEnabled="False"  ItemsSource="{Binding Path=LabelOverprintLevel}" SelectedIndex="{Binding Path=LabelOverprintLevelSelectedIndex}"/>
                 
             </StackPanel>
 
