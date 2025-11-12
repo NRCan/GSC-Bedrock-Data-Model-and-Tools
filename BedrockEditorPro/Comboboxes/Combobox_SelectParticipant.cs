@@ -263,8 +263,14 @@ namespace BedrockEditorPro.Comboboxes
                     ComboBoxItem selectedPerson = this.SelectedItem as ComboBoxItem;
                     Dictionary<string, object> attributes = new Dictionary<string, object>();
 
+                    if (selectedPerson == null)
+                    {
+                        selectedPerson = new ComboBoxItem(); //Empty person
+                        selectedPerson.Tooltip = Properties.Settings.Default.SelectedParticipantCode;
+                    }
+
                     //Punch creator in the table
-                    if (rc.EditType == EditType.Create)
+                    if (rc.EditType == EditType.Create && selectedPerson != null)
                     {
                         attributes[Constants.DatabaseFields.ETCreatorID] = selectedPerson.Tooltip;
                         rc.Operation.Modify(fl, rc.Row.GetObjectID(), attributes);

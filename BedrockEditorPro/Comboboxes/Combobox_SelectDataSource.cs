@@ -254,8 +254,14 @@ namespace BedrockEditorPro.Comboboxes
                     ComboBoxItem selectedSource = this.SelectedItem as ComboBoxItem;
                     Dictionary<string, object> attributes = new Dictionary<string, object>();
 
+                    if (selectedSource == null)
+                    {
+                        selectedSource = new ComboBoxItem(); //Empty person
+                        selectedSource.Tooltip = Properties.Settings.Default.SelectedSourceCode;
+                    }
+
                     //Punch creator in the table
-                    if (rc.EditType == EditType.Create)
+                    if (rc.EditType == EditType.Create && selectedSource != null)
                     {
                         attributes[Constants.DatabaseFields.SourceID] = selectedSource.Tooltip;
                         rc.Operation.Modify(fl, rc.Row.GetObjectID(), attributes);
