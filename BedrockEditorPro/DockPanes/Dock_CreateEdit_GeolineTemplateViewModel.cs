@@ -484,7 +484,7 @@ namespace BedrockEditorPro.DockPanes
                 {
                     if (_uriGeodatabase != null)
                     {
-                        QueuedTask.Run(() =>
+                        QueuedTask.Run(async () =>
                         {
                             using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_uriGeodatabase)))
                             {
@@ -580,6 +580,9 @@ namespace BedrockEditorPro.DockPanes
                                             }, legendTable);
 
                                             editOp.Execute();
+
+                                            //Save edits
+                                            await Project.Current.SaveEditsAsync();
 
                                             //Create and or update template
                                             Symbols.CreateLineTemplate(GeolineLayers[GeolineSelectedLayerIndex].FLayer, _geoline);

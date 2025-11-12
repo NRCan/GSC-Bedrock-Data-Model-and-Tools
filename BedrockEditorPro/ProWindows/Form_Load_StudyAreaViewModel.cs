@@ -544,6 +544,9 @@ namespace BedrockEditorPro.ProWindows
                                 try
                                 {
                                     editOp.Execute();
+
+                                    //Save edits
+                                    await Project.Current.SaveEditsAsync();
                                 }
                                 catch (GeodatabaseException gdbEx )
                                 {

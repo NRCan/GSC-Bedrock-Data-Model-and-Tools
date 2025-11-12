@@ -314,5 +314,79 @@ namespace BedrockEditorPro.Utilities
 
         }
 
+        /// <summary>
+        /// Creates templates of geoline
+        /// </summary>
+        /// <param name="m_doc"></param>
+        public static void CreateLabelTemplate(FeatureLayer featureLayer, Labels labels, bool forceUpdate = false)
+        {
+            try
+            {
+                //get the CIM layer definition
+                CIMFeatureLayer layerDef = featureLayer.GetDefinition() as CIMFeatureLayer;
+
+                //set new template values
+                CIMRowTemplate labelTemplateDef = new CIMRowTemplate();
+                labelTemplateDef.Name = labels.Name;
+                labelTemplateDef.Description = labels.LabelID;
+
+                // set some default attributes
+                labelTemplateDef.DefaultValues = new Dictionary<string, object>();
+                labelTemplateDef.DefaultValues.Add(labels.GetPropertyAttributeName(nameof(labels.LabelID)), labels.LabelID);
+
+                //Manage FGDC Symbol
+                labelTemplateDef.DefaultValues.Add(labels.GetPropertyAttributeName(nameof(labels.GSCSymbol)), labels.GSCSymbol);
+
+                //Manage CreatorID
+                labelTemplateDef.DefaultValues.Add(labels.GetPropertyAttributeName(nameof(labels.CreatorID)), labels.CreatorID);
+
+                //get all templates on this layer
+                // NOTE - layerDef.FeatureTemplates could be null 
+                //    if Create Features window hasn't been opened
+                var layerTemplates = layerDef.FeatureTemplates?.ToList();
+                if (layerTemplates == null)
+                    layerTemplates = new List<CIMEditingTemplate>();
+
+                //check if the template already exists and remplace it if so
+                if (forceUpdate)
+                {
+                    CIMEditingTemplate templateToUpdate = null;
+                    foreach (CIMEditingTemplate templates in layerTemplates)
+                    {
+                        if (templates.Name.Contains(labels.LabelID))
+                        {
+                            templateToUpdate = templates;
+                            break;
+                        }
+                    }
+                    if (templateToUpdate != null)
+                    {
+                        layerTemplates.Remove(templateToUpdate);
+                    }
+                }
+
+                //add the new template to the layer template list
+                layerTemplates.Add(labelTemplateDef);
+
+                //update the layerdefinition with the templates
+                layerDef.FeatureTemplates = layerTemplates.ToArray();
+
+                // check the AutoGenerateFeatureTemplates flag, 
+                //     set to false so our changes will stick
+                if (layerDef.AutoGenerateFeatureTemplates)
+                    layerDef.AutoGenerateFeatureTemplates = false;
+
+                //and commit
+                featureLayer.SetDefinition(layerDef);
+
+            }
+            catch (Exception CreateTemplateError)
+            {
+                new ErrorService(CreateTemplateError).WriteToFile();
+            }
+
+        }
+
+
     }
 }

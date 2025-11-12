@@ -37,6 +37,7 @@ namespace BedrockEditorPro.DockPanes
         private object _lock = new(); //For obs. collection
         private WorkingEnvironment workingEnvironment = new WorkingEnvironment();
         private Uri _uriGeodatabase = null; //Selected geoline layer uri
+        private int _maxLabelID = 0; //Max label id found in domain
         #endregion
 
         #region PROPERTIES
@@ -81,6 +82,7 @@ namespace BedrockEditorPro.DockPanes
             {
                 SetProperty(ref _labelAgePrefixSelectedIndex, value, () => _labelAgePrefixSelectedIndex);
                 _labelName = _labelAgePrefix[_labelAgePrefixSelectedIndex].Tooltip + _labelName;
+                NotifyPropertyChanged(nameof(LabelName));
             }
         }
 
@@ -174,6 +176,7 @@ namespace BedrockEditorPro.DockPanes
 
         /// <summary>
         /// Will add a new label template in the legend table and the editing templates
+        /// To get a unique integer value for map unit label id, we will check the domain and the legend table for max value
         /// </summary>
         private void AddLabelTemplate()
         {
@@ -183,24 +186,34 @@ namespace BedrockEditorPro.DockPanes
                 {
                     if (_uriGeodatabase != null)
                     {
-                        QueuedTask.Run(() =>
+                        QueuedTask.Run(async () =>
                         {
                             using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_uriGeodatabase)))
                             {
                                 //Get a label id from map unit domain
-                                int maxID = 1;
+                                _maxLabelID = _maxLabelID + 1;
                                 SortedList<object, string> muDico = Utilities.Domains.GetDomDicoFromWorkspace(sourceGeodatabase,
                                     Utilities.Constants.DatabaseDomains.MapUnit);
                                 if (muDico != null && muDico.Count() > 0)
                                 {
-                                    maxID = muDico.Keys.Cast<int>().Max() + 1;
+                                    foreach (KeyValuePair<object, string> kv in muDico)
+                                    {
+                                        int keyAsInt = 0;
+                                        int.TryParse(kv.Key.ToString(), out keyAsInt);
+                                        if (keyAsInt > _maxLabelID)
+                                        {
+                                            _maxLabelID = keyAsInt + 1; //Add one to possible max value
+                                        }
+                                    }
+
                                 }
 
                                 //Build label model (will be used for validation and template creation)
                                 Labels _labels = new Labels();
-                                _labels.LabelID = maxID.ToString();
+                                _labels.LabelID = _maxLabelID.ToString();
                                 _labels.GSCSymbol = _labelSymbol;
                                 _labels.Name = _labelName;
+                                _labels.CreatorID = Properties.Settings.Default.SelectedParticipantCode;
                                 if (LabelOverprintLevelSelectedIndex != -1)
                                 {
                                     _labels.OverprintLevel = int.Parse(LabelOverprintLevel[LabelOverprintLevelSelectedIndex].Tooltip);
@@ -209,37 +222,43 @@ namespace BedrockEditorPro.DockPanes
                                 {
                                     _labels.OverprintLevel = 0;
                                 }
-                                //if (_labelAgePrefixSelectedIndex != -1 && _labelAgePrefix[_labelAgePrefixSelectedIndex].Tooltip != string.Empty)
-                                //{
-                                //    _labelName = _labelAgePrefix[_labelAgePrefixSelectedIndex].Tooltip + _labelName;
-                                //}
 
-                                _labels.CreatorID = Properties.Settings.Default.SelectedParticipantCode;
 
+                                //Add value to legend table and domain
                                 using (Table legendTable = sourceGeodatabase.OpenDataset<Table>(Utilities.Constants.Database.TLegendGene))
                                 {
-                                    bool labelIDExists = false;
+                                    bool labelNameExists = false;
 
                                     //Query filter for geopoint only
                                     QueryFilter labelFilter = new QueryFilter()
                                     {
-                                        WhereClause = string.Format("{0} = '{1}'", Utilities.Constants.DatabaseFields.LegendLabelID, _labels.LabelID)
+                                        SubFields = string.Format("{0}, {1}", Utilities.Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendGISDisplay),
+                                        WhereClause = string.Format("{0} = '{1}'", Utilities.Constants.DatabaseFields.LegendItemType, Constants.DatabaseDomainsValues.legendItemMapUnit),
                                     };
 
                                     RowCursor rowCursor = legendTable.Search(labelFilter);
                                     while (rowCursor.MoveNext())
                                     {
                                         Row currentRow = rowCursor.Current;
-
-                                        if (currentRow != null)
+                                        int rowID = 0;
+                                        int.TryParse(currentRow[Constants.DatabaseFields.LegendLabelID].ToString(), out rowID);
+                                        if (rowID > _maxLabelID)
                                         {
-                                            labelIDExists = true;
-                                            break;
+                                            _maxLabelID = rowID + 1; //Add one to possible max value
+                                        }
+
+                                        //Same label already exists
+                                        if (currentRow[Constants.DatabaseFields.LegendGISDisplay].ToString() == _labels.Name)
+                                        {
+                                            labelNameExists = true;
                                         }
                                     }
 
-                                    //Insert new record in legend if it's not already there
-                                    if (!labelIDExists)
+                                    //Add values to domain
+                                    bool domainValueAdded = await Utilities.Domains.AddDomainValue(sourceGeodatabase, Constants.DatabaseDomains.MapUnit,
+                                        _labels.LabelID.ToString(), _labels.Name);
+
+                                    if (domainValueAdded && !labelNameExists)
                                     {
                                         //Prepare callback in case something happens
                                         EditOperation editOp = new EditOperation();
@@ -263,8 +282,11 @@ namespace BedrockEditorPro.DockPanes
 
                                         editOp.Execute();
 
+                                        //Save edits
+                                        await Project.Current.SaveEditsAsync();
+
                                         //Create and or update template
-                                        //Symbols.CreateLabelTemplate(LabelLayers[LabelSelectedLayerIndex].FLayer, _labels);
+                                        Symbols.CreateLabelTemplate(LabelLayers[LabelSelectedLayerIndex].FLayer, _labels);
 
                                         //Show notication success
                                         FrameworkApplication.AddNotification(new Notification()
@@ -319,7 +341,7 @@ namespace BedrockEditorPro.DockPanes
         /// Will fill the layer combobox with valid point layers from current map
         /// </summary>
         /// <returns></returns>
-        private async void UpdateLayerComboboxAsync()
+        public async void UpdateLayerComboboxAsync()
         {
             try
             {
@@ -339,9 +361,8 @@ namespace BedrockEditorPro.DockPanes
                                     //Get some definition to valide field and move with getting first symbol
                                     CIMFeatureLayer cIMFeatureLayer = fl.GetDefinition() as CIMFeatureLayer;
                                     FeatureClass featureClass = fl.GetFeatureClass();
-                                    featureClass.GetName();
 
-                                    if (cIMFeatureLayer != null && featureClass != null && featureClass.GetName().Contains(Utilities.Constants.Database.FGeopoint))
+                                    if (cIMFeatureLayer != null && featureClass != null && featureClass.GetName().Contains(Utilities.Constants.Database.FLabel))
                                     {
                                         LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
                                         _labelLayers.Add(layerItem);
@@ -385,43 +406,39 @@ namespace BedrockEditorPro.DockPanes
 
                     if (_uriGeodatabase != null && _labelAgePrefix.Count() == 0 && Directory.Exists(_uriGeodatabase.OriginalString))
                     {
-                            //Get origin database
-                            using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_uriGeodatabase)))
+                        //Get origin database
+                        using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_uriGeodatabase)))
+                        {
+                            //Clean
+                            _labelAgePrefixSelectedIndex = -1;
+                            NotifyPropertyChanged(nameof(LabelAgePrefixSelectedIndex));
+                            _labelAgePrefix.Clear();
+                            NotifyPropertyChanged(nameof(LabelAgePrefix));
+
+                            SortedList<object, string> ageDico = Utilities.Domains.GetDomDicoFromWorkspace(sourceGeodatabase,
+                                Utilities.Constants.DatabaseDomains.ageDesignator);
+                            if (ageDico != null)
                             {
-                                //Clean
-                                _labelAgePrefixSelectedIndex = -1;
-                                NotifyPropertyChanged(nameof(LabelAgePrefixSelectedIndex));
-                                _labelAgePrefix.Clear();
-                                NotifyPropertyChanged(nameof(LabelAgePrefix));
-
-                                SortedList<object, string> ageDico = Utilities.Domains.GetDomDicoFromWorkspace(sourceGeodatabase,
-                                    Utilities.Constants.DatabaseDomains.agePrefix);
-                                if (ageDico != null)
+                                foreach (KeyValuePair<object, string> types in ageDico)
                                 {
-                                    foreach (KeyValuePair<object, string> types in ageDico)
-                                    {
-                                        ComboBoxItem boxItem = new ComboBoxItem();
-                                        boxItem.Text = types.Value;
-                                        boxItem.Tooltip = types.Key.ToString();
-                                        _labelAgePrefix.Add(boxItem);
-                                        NotifyPropertyChanged(nameof(LabelAgePrefix));
-                                    }
-
-                                    if (_labelAgePrefix.Count() == 1)
-                                    {
-                                        _labelAgePrefixSelectedIndex = 0;
-                                        NotifyPropertyChanged(nameof(LabelAgePrefixSelectedIndex));
-                                    }
+                                    ComboBoxItem boxItem = new ComboBoxItem();
+                                    boxItem.Text = types.Value;
+                                    boxItem.Tooltip = types.Key.ToString();
+                                    _labelAgePrefix.Add(boxItem);
+                                    NotifyPropertyChanged(nameof(LabelAgePrefix));
                                 }
-                                else
+
+                                if (_labelAgePrefix.Count() == 1)
                                 {
-                                    new ErrorService(Properties.Resources.FormCreateEditLabelNoDomain).WriteToFile();
+                                    _labelAgePrefixSelectedIndex = 0;
+                                    NotifyPropertyChanged(nameof(LabelAgePrefixSelectedIndex));
                                 }
                             }
-                    }
-                    else
-                    {
-                        new ErrorService(Properties.Resources.FormCreateEditLabelNoSource).WriteToFile();
+                            else
+                            {
+                                new ErrorService(Properties.Resources.FormCreateEditLabelNoDomain).WriteToFile();
+                            }
+                        }
                     }
                 });
             }
@@ -457,6 +474,7 @@ namespace BedrockEditorPro.DockPanes
 
             //Init some components
             UpdateLayerComboboxAsync();
+
 
         }
 

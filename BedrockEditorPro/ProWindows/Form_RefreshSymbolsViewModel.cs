@@ -547,51 +547,106 @@ namespace BedrockEditorPro.ProWindows
                         }
                         else if (inLayer.ShapeType == esriGeometryType.esriGeometryMultipoint || inLayer.ShapeType == esriGeometryType.esriGeometryPoint)
                         {
-                            #region Geopoints
+                            FeatureClass layerClass = inLayer.GetFeatureClass();
 
-                            QueryFilter legendFilter = new QueryFilter
+                            if (layerClass.GetName().Contains(Constants.Database.FGeopoint))
                             {
-                                SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
-                                Constants.DatabaseFields.LegendGISDisplay),
-                                WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
-                                Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType,
-                                Constants.DatabaseDomainsValues.legendItemGeopoint)
-                            };
+                                #region Geopoints
 
-                            List<GeoPoints> legendGeopoints = new List<GeoPoints>();
-
-                            using (RowCursor pointCursor = legendTable.Search(legendFilter))
-                            {
-                                while (pointCursor.MoveNext())
+                                QueryFilter legendFilter = new QueryFilter
                                 {
-                                    using (Row pointRow = pointCursor.Current)
+                                    SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
+                                    Constants.DatabaseFields.LegendGISDisplay),
+                                    WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
+                                    Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType,
+                                    Constants.DatabaseDomainsValues.legendItemGeopoint)
+                                };
+
+                                List<GeoPoints> legendGeopoints = new List<GeoPoints>();
+
+                                using (RowCursor pointCursor = legendTable.Search(legendFilter))
+                                {
+                                    while (pointCursor.MoveNext())
                                     {
-                                        legendGeopoints.Add(new GeoPoints
+                                        using (Row pointRow = pointCursor.Current)
                                         {
-                                            GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
-                                            GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                            Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                            CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                        });
+                                            legendGeopoints.Add(new GeoPoints
+                                            {
+                                                GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
+                                                GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                            });
 
+                                        }
                                     }
                                 }
-                            }
 
-                            if (legendGeopoints.Count() > 0)
-                            {
-
-                                //Iterate through all legend geolines and see if a template exists, else add it
-                                foreach (GeoPoints gp in legendGeopoints)
+                                if (legendGeopoints.Count() > 0)
                                 {
-                                    if (!templates.Exists(x => x.Description == gp.GeopointID))
+
+                                    //Iterate through all legend geolines and see if a template exists, else add it
+                                    foreach (GeoPoints gp in legendGeopoints)
                                     {
-                                        Symbols.CreatePointTemplate(inLayer, gp);
+                                        if (!templates.Exists(x => x.Description == gp.GeopointID))
+                                        {
+                                            Symbols.CreatePointTemplate(inLayer, gp);
+                                        }
                                     }
                                 }
+
+                                #endregion
+                            }
+                            else if (layerClass.GetName().Contains(Constants.Database.FLabel))
+                            {
+                                #region Labels
+
+                                QueryFilter legendFilter = new QueryFilter
+                                {
+                                    SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
+                                        Constants.DatabaseFields.LegendGISDisplay),
+                                    WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
+                                        Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType,
+                                        Constants.DatabaseDomainsValues.legendItemMapUnit)
+                                };
+
+                                List<Labels> legendLabels = new List<Labels>();
+
+                                using (RowCursor pointCursor = legendTable.Search(legendFilter))
+                                {
+                                    while (pointCursor.MoveNext())
+                                    {
+                                        using (Row pointRow = pointCursor.Current)
+                                        {
+                                            legendLabels.Add(new Labels
+                                            {
+                                                GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
+                                                LabelID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                            });
+
+                                        }
+                                    }
+                                }
+
+                                if (legendLabels.Count() > 0)
+                                {
+
+                                    //Iterate through all legend geolines and see if a template exists, else add it
+                                    foreach (Labels gp in legendLabels)
+                                    {
+                                        if (!templates.Exists(x => x.Description == gp.LabelID))
+                                        {
+                                            Symbols.CreateLabelTemplate(inLayer, gp);
+                                        }
+                                    }
+                                }
+
+
+                                #endregion
                             }
 
-                            #endregion
                         }
                     }
                 }

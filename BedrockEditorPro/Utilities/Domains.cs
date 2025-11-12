@@ -1,5 +1,6 @@
 ﻿using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.DDL;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,6 +103,42 @@ namespace BedrockEditorPro.Utilities
             }
 
             return domDico;
+
+        }
+
+        /// <summary>
+        /// Will add a new value to an existing domain
+        /// </summary>
+        /// <param name="sourceGeodatabase"></param>
+        /// <param name="domainName"></param>
+        /// <param name="domainCode"></param>
+        /// <param name="domainDescription"></param>
+        public static async Task<bool> AddDomainValue(Geodatabase sourceGeodatabase, string domainName, string domainCode, string domainDescription)
+        {
+            bool valueAdded = false;
+
+            try
+            {
+                //Get current domain
+                SchemaBuilder domBuilder = new SchemaBuilder(sourceGeodatabase);
+                CodedValueDomain domain = sourceGeodatabase.GetDomains().First(d => d.GetName() == domainName) as CodedValueDomain;
+                if (domain != null)
+                {
+                    //Add and update current domain
+                    CodedValueDomainDescription domDescription = new CodedValueDomainDescription(domain);
+                    domDescription.CodedValuePairs.Add(domainCode, domainDescription);
+                    domBuilder.Modify(domDescription);
+                    domBuilder.Build();
+
+                    valueAdded = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                new ErrorService(ex).WriteToFile();
+            }
+
+            return valueAdded;
 
         }
     }
