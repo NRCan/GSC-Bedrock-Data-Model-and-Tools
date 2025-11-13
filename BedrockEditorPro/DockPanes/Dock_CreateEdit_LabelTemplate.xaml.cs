@@ -1,4 +1,8 @@
-﻿using ArcGIS.Desktop.Mapping;
+﻿using ArcGIS.Desktop.Framework.Events;
+using ArcGIS.Desktop.Framework.Threading.Tasks;
+using ArcGIS.Desktop.Mapping;
+using ArcGIS.Desktop.Mapping.Events;
+using BedrockEditorPro.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

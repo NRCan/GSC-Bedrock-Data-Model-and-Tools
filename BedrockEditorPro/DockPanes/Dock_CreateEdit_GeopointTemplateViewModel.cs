@@ -8,10 +8,12 @@ using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
+using ArcGIS.Desktop.Framework.Events;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.KnowledgeGraph;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
+using ArcGIS.Desktop.Mapping.Events;
 using BedrockEditorPro.Models;
 using BedrockEditorPro.Utilities;
 using System;
@@ -183,9 +185,18 @@ namespace BedrockEditorPro.DockPanes
 
         #endregion
 
+        #region EVENTS
         protected override void OnShow(bool isVisible)
         {
             base.OnShow(isVisible);
+
+            //Subscribe to some events, in order to refil the layer combobox with latest values
+            //Unsubscribe first else they accumulate each time the pane is showed
+            ArcGIS.Desktop.Mapping.Events.LayersAddedEvent.Unsubscribe(OnLayersAdded);
+            ArcGIS.Desktop.Mapping.Events.LayersAddedEvent.Subscribe(OnLayersAdded);
+            ArcGIS.Desktop.Framework.Events.ActivePaneChangedEvent.Unsubscribe(OnActivePaneChanged);
+            ArcGIS.Desktop.Framework.Events.ActivePaneChangedEvent.Subscribe(OnActivePaneChanged);
+
 
             //Init as obs. collection the comboboxes
             BindingOperations.EnableCollectionSynchronization(_geopointLayers, _lock);
@@ -199,6 +210,26 @@ namespace BedrockEditorPro.DockPanes
             //Init some components
             UpdateLayerComboboxAsync();
         }
+
+        /// <summary>
+        /// Make sure to refresh layer list if users changes map panes
+        /// </summary>
+        /// <param name="args"></param>
+        private void OnActivePaneChanged(PaneEventArgs args)
+        {
+            UpdateLayerComboboxAsync();
+        }
+
+        /// <summary>
+        /// Make sure to refresh layer list of user adds any new layers
+        /// </summary>
+        /// <param name="args"></param>
+        private void OnLayersAdded(LayerEventsArgs args)
+        {
+            UpdateLayerComboboxAsync();
+        }
+
+        #endregion
 
         protected Dock_CreateEdit_GeopointTemplateViewModel() { }
 
@@ -220,7 +251,7 @@ namespace BedrockEditorPro.DockPanes
         /// Will fill the layer combobox with valid geopoint layers from current map
         /// </summary>
         /// <returns></returns>
-        private async void UpdateLayerComboboxAsync()
+        public async void UpdateLayerComboboxAsync()
         {
             try
             {

@@ -6,6 +6,7 @@ using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
+using ArcGIS.Desktop.Framework.Events;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
@@ -27,6 +28,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using static BedrockEditorPro.Utilities.Layers;
 using Constants = BedrockEditorPro.Utilities.Constants;
+using ArcGIS.Desktop.Mapping.Events;
 
 namespace BedrockEditorPro.DockPanes
 {
@@ -467,6 +469,13 @@ namespace BedrockEditorPro.DockPanes
         {
             base.OnShow(isVisible);
 
+            //Subscribe to some events, in order to refil the layer combobox with latest values
+            //Unsubscribe first else they accumulate each time the pane is showed
+            ArcGIS.Desktop.Mapping.Events.LayersAddedEvent.Unsubscribe(OnLayersAdded);
+            ArcGIS.Desktop.Mapping.Events.LayersAddedEvent.Subscribe(OnLayersAdded);
+            ArcGIS.Desktop.Framework.Events.ActivePaneChangedEvent.Unsubscribe(OnActivePaneChanged);
+            ArcGIS.Desktop.Framework.Events.ActivePaneChangedEvent.Subscribe(OnActivePaneChanged);
+
             //Init as obs. collection the comboboxes
             BindingOperations.EnableCollectionSynchronization(_labelLayers, _lock);
             BindingOperations.EnableCollectionSynchronization(_labelAgePrefix, _lock);
@@ -474,8 +483,24 @@ namespace BedrockEditorPro.DockPanes
 
             //Init some components
             UpdateLayerComboboxAsync();
+        }
 
+        /// <summary>
+        /// Make sure to refresh layer list if users changes map panes
+        /// </summary>
+        /// <param name="args"></param>
+        private void OnActivePaneChanged(PaneEventArgs args)
+        {
+            UpdateLayerComboboxAsync();
+        }
 
+        /// <summary>
+        /// Make sure to refresh layer list of user adds any new layers
+        /// </summary>
+        /// <param name="args"></param>
+        private void OnLayersAdded(LayerEventsArgs args)
+        {
+            UpdateLayerComboboxAsync();
         }
 
         #endregion
