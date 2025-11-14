@@ -412,7 +412,7 @@
   <data name="FormCreateEditGeopointNoSubtypesDomains" xml:space="preserve">
     <value>Impossible de lire les domaines ou les subtype de la couche sélectionnée.</value>
   </data>
-  <data name="FormCreateEditGeopointExists" xml:space="preserve">
+  <data name="Supp" xml:space="preserve">
     <value>Le géopoint sélectionné existe déjà dans la légende.</value>
   </data>
   <data name="FormCreateEditGeopointUndefined" xml:space="preserve">
@@ -465,5 +465,23 @@
   </data>
   <data name="FormCreateEditLabelTitle" xml:space="preserve">
     <value>Gabarit d'étiquette des unités géologiques</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineTitle" xml:space="preserve">
+    <value>Validation de l'intégrité des géolignes</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineLayers" xml:space="preserve">
+    <value>Choisir une couche de géoligne</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption1" xml:space="preserve">
+    <value>Supprimer les géométries nulles et vides</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption2" xml:space="preserve">
+    <value>Séparer les lignes en plusieurs parties</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption3" xml:space="preserve">
+    <value>Supprimer les courbes Bézier et densifications des vertex.</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption3Parameter" xml:space="preserve">
+    <value>Échelle de projet (pour calcul de la densité de vertex)</value>
   </data>
 </root>

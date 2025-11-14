@@ -36,7 +36,6 @@ namespace BedrockEditorPro.ProWindows
 
         #endregion
 
-
         #region PROPERTIES
 
         //Layer controls
@@ -84,7 +83,7 @@ namespace BedrockEditorPro.ProWindows
 
         #endregion
 
-        #region mETHODS
+        #region METHODS
 
         public Form_RefreshSymbolsViewModel(Form_RefreshSymbols view)
         {
@@ -105,54 +104,12 @@ namespace BedrockEditorPro.ProWindows
         /// </summary>
         public async void UpdateLayerCombobox()
         {
-
-            try
-            {
-                await QueuedTask.Run(() =>
-                {
-                    List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                    if (layerEnum != null)
-                    {
-                        foreach (FeatureLayer fl in layerEnum)
-                        {
-                            //System.Threading.Thread.Sleep(1);
-                            if (fl.ShapeType == esriGeometryType.esriGeometryPolygon ||
-                                fl.ShapeType == esriGeometryType.esriGeometryPolyline ||
-                                fl.ShapeType == esriGeometryType.esriGeometryLine || 
-                                fl.ShapeType == esriGeometryType.esriGeometryPoint)
-                            {
-                                //Get some definition to valide field and move with getting first symbol
-                                CIMFeatureLayer cIMFeatureLayer = fl.GetDefinition() as CIMFeatureLayer;
-                                List<FieldDescription> flDescriptions = fl.GetFieldDescriptions().ToList();
-
-                                if (cIMFeatureLayer != null && flDescriptions != null && flDescriptions.Count() > 0)
-                                {
-                                    //Will need GSC_SYMBOL to work on or a label field
-                                    bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
-                                    bool labelFieldDescription = flDescriptions.Exists(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias);
-
-                                    if (symbolFieldDescription || labelFieldDescription)
-                                    {
-
-                                        LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
-
-                                        _refreshLayers.Add(layerItem);
-                                    }
-
-                                    
-                                }
-                            }
-                        }
-                    }
-
-                });
-
-
-            }
-            catch (Exception ex)
-            {
-                new ErrorService(ex).WriteToFile();
-            }
+            //Init some components
+            _refreshLayers.Clear();
+            List<esriGeometryType> geomTypes = new List<esriGeometryType>() { esriGeometryType.esriGeometryPolygon, esriGeometryType.esriGeometryPolyline, 
+                esriGeometryType.esriGeometryLine, esriGeometryType.esriGeometryPoint };
+            Layers layerService = new Layers();
+            await layerService.UpdateLayerCombobox(geomTypes, _refreshLayers, nameof(RefreshLayers), _refreshSelectedLayerIndex, nameof(RefreshSelectedLayerIndex));
 
         }
 

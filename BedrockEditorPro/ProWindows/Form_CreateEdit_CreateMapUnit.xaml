@@ -12,6 +12,7 @@
         ResizeMode="NoResize" 
         Title="{x:Static local:Resources.FormCreateEditCreateMapUnitTitle}" Height="150" Width="350"
         WindowStartupLocation="CenterOwner">
+    
     <controls:ProWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,6 +20,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </controls:ProWindow.Resources>
+    
     <Grid Style="{DynamicResource BedrockGrid}" Margin="10" VerticalAlignment="Top">
 
         <Grid.RowDefinitions>

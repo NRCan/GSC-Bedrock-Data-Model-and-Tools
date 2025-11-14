@@ -412,7 +412,7 @@
   <data name="FormCreateEditGeopointNoSubtypesDomains" xml:space="preserve">
     <value>Could not retrieve substypes or domains from selected geopoint layer.</value>
   </data>
-  <data name="FormCreateEditGeopointExists" xml:space="preserve">
+  <data name="Supp" xml:space="preserve">
     <value>Selected geopoint already exists in legend table.</value>
   </data>
   <data name="FormCreateEditGeopointUndefined" xml:space="preserve">
@@ -465,5 +465,23 @@
   </data>
   <data name="FormCreateEditLabelTitle" xml:space="preserve">
     <value>Label Template</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineTitle" xml:space="preserve">
+    <value>Validate Geoline Integrity</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineLayers" xml:space="preserve">
+    <value>Select a Geoline Layer</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption1" xml:space="preserve">
+    <value>Remove null and empty geometries</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption2" xml:space="preserve">
+    <value>Explode multiparts to singleparts</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption3" xml:space="preserve">
+    <value>Remove Bezier curves and densify</value>
+  </data>
+  <data name="FormCreateEditValidateGeolineOption3Parameter" xml:space="preserve">
+    <value>Project Scale (to calculate vertices density)</value>
   </data>
 </root>

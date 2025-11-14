@@ -572,7 +572,7 @@ namespace BedrockEditorPro.Utilities
 
         #region Project related constants
 
-        public static class Layers
+        public static class ProjectLayers
         {
             //Relative paths
             public const string MapUnitLayerRelPath = "\\Data\\LYR\\BEDROCK\\INTERPRETATION_MapUnits.lyr";

@@ -1,18 +1,20 @@
 ﻿using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
+using ArcGIS.Core.Internal.Threading.Tasks;
 using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Extensions;
 using ArcGIS.Desktop.Framework;
-using ArcGIS.Desktop.Framework.Events;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
+using ArcGIS.Desktop.Framework.Events;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.KnowledgeGraph;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
+using ArcGIS.Desktop.Mapping.Events;
 using BedrockEditorPro.Models;
 using BedrockEditorPro.Utilities;
 using Microsoft.VisualBasic;
@@ -28,7 +30,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using static BedrockEditorPro.Utilities.Layers;
 using Constants = BedrockEditorPro.Utilities.Constants;
-using ArcGIS.Desktop.Mapping.Events;
 
 namespace BedrockEditorPro.DockPanes
 {
@@ -345,50 +346,23 @@ namespace BedrockEditorPro.DockPanes
         /// <returns></returns>
         public async void UpdateLayerComboboxAsync()
         {
-            try
+            //Init some components
+            _labelLayers.Clear();
+            List<esriGeometryType> geomTypes = new List<esriGeometryType>() { esriGeometryType.esriGeometryPoint, esriGeometryType.esriGeometryMultipoint };
+            Layers layerService = new Layers();
+
+            bool updated = await layerService.UpdateLayerCombobox(geomTypes, _labelLayers, nameof(LabelLayers), _labelSelectedLayerIndex, nameof(LabelSelectedLayerIndex));
+
+            if (updated)
             {
-                await QueuedTask.Run(() =>
+                NotifyPropertyChanged(nameof(LabelLayers));
+
+                if (_labelLayers.Count() == 1)
                 {
-                    if (MapView.Active != null && MapView.Active.Map != null)
-                    {
-                        List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                        if (layerEnum != null)
-                        {
-                            _labelLayers.Clear();
-                            foreach (FeatureLayer fl in layerEnum)
-                            {
-
-                                if (fl.ShapeType == esriGeometryType.esriGeometryPoint || fl.ShapeType == esriGeometryType.esriGeometryMultipoint)
-                                {
-                                    //Get some definition to valide field and move with getting first symbol
-                                    CIMFeatureLayer cIMFeatureLayer = fl.GetDefinition() as CIMFeatureLayer;
-                                    FeatureClass featureClass = fl.GetFeatureClass();
-
-                                    if (cIMFeatureLayer != null && featureClass != null && featureClass.GetName().Contains(Utilities.Constants.Database.FLabel))
-                                    {
-                                        LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
-                                        _labelLayers.Add(layerItem);
-                                    }
-                                }
-                            }
-
-                            if (_labelLayers.Count == 1)
-                            {
-                                LabelSelectedLayerIndex = 0;
-                            }
-
-                            NotifyPropertyChanged(nameof(LabelSelectedLayerIndex));
-                        }
-                    }
-                });
-
-
+                    _labelSelectedLayerIndex = 0;
+                    NotifyPropertyChanged(nameof(LabelSelectedLayerIndex));
+                }
             }
-            catch (Exception ex)
-            {
-                new ErrorService(ex).WriteToFile();
-            }
-
         }
 
         /// <summary>

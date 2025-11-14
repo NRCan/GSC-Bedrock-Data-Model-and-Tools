@@ -3,6 +3,7 @@ using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Data.Exceptions;
 using ArcGIS.Core.Geometry;
+using ArcGIS.Core.Internal.Threading.Tasks;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Core.Geoprocessing;
 using ArcGIS.Desktop.Editing;
@@ -29,7 +30,7 @@ using System.Windows.Media.Imaging;
 
 namespace BedrockEditorPro.ProWindows
 {
-    public class Form_Load_StudyAreaViewModel: PropertyChangedBase
+    public class Form_Load_StudyAreaViewModel: Layers
     {
         #region INIT
 
@@ -57,13 +58,6 @@ namespace BedrockEditorPro.ProWindows
         {
             public string Name { get; set; }
             public string Value { get; set; }
-        }
-
-        public class LayerDisplay
-        { 
-            public string Name { get; set; }
-            public FeatureLayer FLayer { get; set; }
-            public BitmapSource Icon { get; set; }
         }
 
         #endregion
@@ -244,54 +238,32 @@ namespace BedrockEditorPro.ProWindows
         /// </summary>
         public async void UpdateLayerCombobox()
         {
+            //Init some components
+            _studyAreaLayers.Clear();
+            List<esriGeometryType> geomTypes = new List<esriGeometryType>() { esriGeometryType.esriGeometryPolygon};
+            Layers layerService = new Layers();
+            bool updated = await layerService.UpdateLayerCombobox(geomTypes, _studyAreaLayers, nameof(StudyAreaLayers), _studyAreaSelectedLayerIndex, nameof(StudyAreaSelectedLayerIndex), Constants.DatabaseFields.FCGM_East);
 
-            try
+            _studyAreaOption2Layers.Clear();
+            List<esriGeometryType> geomTypesOption2 = new List<esriGeometryType>() { esriGeometryType.esriGeometryPolygon, esriGeometryType.esriGeometryPolyline, esriGeometryType.esriGeometryLine };
+            bool updatedOption2 = await layerService.UpdateLayerCombobox(geomTypesOption2, _studyAreaOption2Layers, nameof(StudyAreaOption2Layers), _studyAreaSelectedOption2LayerIndex, nameof(StudyAreaSelectedOption2LayerIndex));
+
+            if (updated && updatedOption2)
             {
-                await QueuedTask.Run(() =>
+                NotifyPropertyChanged(nameof(StudyAreaLayers));
+                NotifyPropertyChanged(nameof(StudyAreaOption2Layers));
+
+                if (_studyAreaLayers.Count() == 1)
                 {
-                    List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                    if (layerEnum != null)
-                    {
-                        foreach (FeatureLayer fl in layerEnum)
-                        {
-                            if (fl.ShapeType == esriGeometryType.esriGeometryPolygon || 
-                                fl.ShapeType == esriGeometryType.esriGeometryPolyline || 
-                                fl.ShapeType == esriGeometryType.esriGeometryLine)
-                            {
-                                //Layer layer = fl as Layer;
-                                CIMFeatureLayer cIMFeatureLayer = fl.GetDefinition() as CIMFeatureLayer;
+                    _studyAreaSelectedLayerIndex = 0;
+                    NotifyPropertyChanged(nameof(StudyAreaSelectedLayerIndex));
+                }
 
-                                if (cIMFeatureLayer != null)
-                                {
-                                    LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
-
-                                    //Special case for study area only
-                                    if (fl.ShapeType == esriGeometryType.esriGeometryPolygon)
-                                    {
-                                        _studyAreaLayers.Add(layerItem);
-
-                                        //Validate name for auto-selection
-                                        if (layerItem.Name == Constants.Database.FStudyAreaAlias)
-                                        {
-                                            _studyAreaSelectedLayerIndex = _studyAreaLayers.Count() - 1;
-                                        }
-                                    }
-
-                                    _studyAreaOption2Layers.Add(layerItem);
-
-                                }
-                            }
-                        }
-                    }
-                });
-
-                NotifyPropertyChanged(nameof(StudyAreaSelectedLayerIndex));
-
-            }
-            catch (Exception ex)
-            {
-                new ErrorService(ex).WriteToFile();
-
+                if (_studyAreaOption2Layers.Count() == 1)
+                {
+                    _studyAreaSelectedOption2LayerIndex = 0;
+                    NotifyPropertyChanged(nameof(StudyAreaSelectedOption2LayerIndex));
+                }
             }
 
         }

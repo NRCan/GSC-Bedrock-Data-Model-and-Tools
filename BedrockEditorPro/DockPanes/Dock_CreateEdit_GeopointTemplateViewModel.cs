@@ -253,50 +253,25 @@ namespace BedrockEditorPro.DockPanes
         /// <returns></returns>
         public async void UpdateLayerComboboxAsync()
         {
-            try
+            //Init some components
+            _geopointLayers.Clear();
+            List<esriGeometryType> geomTypes = new List<esriGeometryType>() { esriGeometryType.esriGeometryPoint, esriGeometryType.esriGeometryMultipoint };
+            Layers layerService = new Layers();
+
+            bool updated = await layerService.UpdateLayerCombobox(geomTypes, _geopointLayers, nameof(GeopointLayers), _geopointSelectedLayerIndex, nameof(GeopointSelectedLayerIndex));
+
+            if (updated)
             {
-                await QueuedTask.Run(() =>
+                NotifyPropertyChanged(nameof(GeopointLayers));
+
+                if (_geopointLayers.Count() == 1)
                 {
-                    if (MapView.Active != null && MapView.Active.Map != null)
-                    {
-                        List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                        if (layerEnum != null)
-                        {
-                            _geopointLayers.Clear();
-                            foreach (FeatureLayer fl in layerEnum)
-                            {
+                    _geopointSelectedLayerIndex = 0;
+                    NotifyPropertyChanged(nameof(GeopointSelectedLayerIndex));
 
-                                if (fl.ShapeType == esriGeometryType.esriGeometryPoint || fl.ShapeType == esriGeometryType.esriGeometryMultipoint)
-                                {
-                                    //Get some definition to valide field and move with getting first symbol
-                                    CIMFeatureLayer cIMFeatureLayer = fl.GetDefinition() as CIMFeatureLayer;
-                                    FeatureClass featureClass = fl.GetFeatureClass();
-                                    featureClass.GetName();
-
-                                    if (cIMFeatureLayer != null && featureClass != null && featureClass.GetName().Contains(Utilities.Constants.Database.FGeopoint))
-                                    {
-                                        LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
-                                        _geopointLayers.Add(layerItem);
-                                    }
-                                }
-                            }
-
-                            if (_geopointLayers.Count == 1)
-                            {
-                                _geopointSelectedLayerIndex = 0;
-                                FillGeopointType();
-                            }
-
-                            NotifyPropertyChanged(nameof(GeopointSelectedLayerIndex));
-                        }
-                    }
-                });
-
-
-            }
-            catch (Exception ex)
-            {
-                new ErrorService(ex).WriteToFile();
+                    //Continue to fill other comboboxes
+                    FillGeopointType();
+                }
             }
 
         }

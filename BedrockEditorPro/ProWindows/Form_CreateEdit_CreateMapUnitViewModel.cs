@@ -4,6 +4,7 @@ using ArcGIS.Core.Data.Exceptions;
 using ArcGIS.Core.Data.LinearReferencing;
 using ArcGIS.Core.Geometry;
 using ArcGIS.Core.Internal.CIM;
+using ArcGIS.Core.Internal.Threading.Tasks;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Framework;
@@ -26,12 +27,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using static BedrockEditorPro.Utilities.Constants;
 using static BedrockEditorPro.Utilities.Layers;
+using Layers = BedrockEditorPro.Utilities.Layers;
 using QueryFilter = ArcGIS.Core.Data.QueryFilter;
 using Workspace = BedrockEditorPro.Utilities.Workspace;
 
 namespace BedrockEditorPro.ProWindows
 {
-    public class Form_CreateEdit_CreateMapUnitViewModel: PropertyChangedBase
+    public class Form_CreateEdit_CreateMapUnitViewModel: Layers
     {
 
         #region INIT
@@ -319,47 +321,22 @@ namespace BedrockEditorPro.ProWindows
         /// </summary>
         public async void UpdateLayerCombobox()
         {
+            //Init some components
+            _mapUnitsLayers.Clear();
+            List<esriGeometryType> geomTypes = new List<esriGeometryType>() { esriGeometryType.esriGeometryPolygon};
+            Layers layerService = new Layers();
 
-            try
+            bool updated = await layerService.UpdateLayerCombobox(geomTypes, _mapUnitsLayers, nameof(MapUnitsLayers), _mapUnitsSelectedLayerIndex, nameof(MapUnitsSelectedLayerIndex));
+
+            if (updated)
             {
-                await QueuedTask.Run(() =>
+                NotifyPropertyChanged(nameof(MapUnitsLayers));
+
+                if (_mapUnitsLayers.Count() == 1)
                 {
-                    List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                    if (layerEnum != null)
-                    {
-                        foreach (FeatureLayer fl in layerEnum)
-                        {
-
-                            if (fl.ShapeType == esriGeometryType.esriGeometryPolygon)
-                            {
-                                //Get some definition to valide field and move with getting first symbol
-                                CIMFeatureLayer cIMFeatureLayer = fl.GetDefinition() as CIMFeatureLayer;
-                                FeatureClass featureClass = fl.GetFeatureClass();
-                                featureClass.GetName(); 
-
-                                if (cIMFeatureLayer != null && featureClass != null && featureClass.GetName().Contains(Utilities.Constants.Database.FGeopoly))
-                                {
-                                    LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
-                                    _mapUnitsLayers.Add(layerItem);
-                                }
-                            }
-                        }
-
-                        if (_mapUnitsLayers.Count == 1)
-                        {
-                            _mapUnitsSelectedLayerIndex = 0;
-                        }
-
-                        NotifyPropertyChanged(nameof(MapUnitsSelectedLayerIndex));
-                    }
-
-                });
-
-
-            }
-            catch (Exception ex)
-            {
-                new ErrorService(ex).WriteToFile();
+                    _mapUnitsSelectedLayerIndex = 0;
+                    NotifyPropertyChanged(nameof(MapUnitsSelectedLayerIndex));
+                }
             }
 
         }

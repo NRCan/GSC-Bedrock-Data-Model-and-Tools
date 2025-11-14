@@ -556,6 +556,60 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select a Geoline Layer.
+        /// </summary>
+        public static string FormCreateEditValidateGeolineLayers {
+            get {
+                return ResourceManager.GetString("FormCreateEditValidateGeolineLayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove null and empty geometries.
+        /// </summary>
+        public static string FormCreateEditValidateGeolineOption1 {
+            get {
+                return ResourceManager.GetString("FormCreateEditValidateGeolineOption1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explode multiparts to singleparts.
+        /// </summary>
+        public static string FormCreateEditValidateGeolineOption2 {
+            get {
+                return ResourceManager.GetString("FormCreateEditValidateGeolineOption2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Bezier curves and densify.
+        /// </summary>
+        public static string FormCreateEditValidateGeolineOption3 {
+            get {
+                return ResourceManager.GetString("FormCreateEditValidateGeolineOption3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project Scale (to calculate vertices density).
+        /// </summary>
+        public static string FormCreateEditValidateGeolineOption3Parameter {
+            get {
+                return ResourceManager.GetString("FormCreateEditValidateGeolineOption3Parameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate Geoline Integrity.
+        /// </summary>
+        public static string FormCreateEditValidateGeolineTitle {
+            get {
+                return ResourceManager.GetString("FormCreateEditValidateGeolineTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default Embedded Model (XML Version 10.2).
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseCheckbox {

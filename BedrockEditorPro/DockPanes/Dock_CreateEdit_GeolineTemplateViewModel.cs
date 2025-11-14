@@ -243,50 +243,25 @@ namespace BedrockEditorPro.DockPanes
         /// <returns></returns>
         public async void UpdateLayerComboboxAsync()
         {
-            try
+            //Init some components
+            List<esriGeometryType> geomTypes = new List<esriGeometryType>() { esriGeometryType.esriGeometryPolyline, esriGeometryType.esriGeometryLine};
+            Layers layerService = new Layers();
+            _geolineLayers.Clear();
+
+            bool updated = await layerService.UpdateLayerCombobox(geomTypes, _geolineLayers, nameof(GeolineLayers), _geolineSelectedLayerIndex, nameof(GeolineSelectedLayerIndex));
+
+            if (updated)
             {
-                await QueuedTask.Run(() =>
+                NotifyPropertyChanged(nameof(GeolineLayers));
+
+                if (_geolineLayers.Count() == 1)
                 {
-                    if (MapView.Active != null && MapView.Active.Map != null)
-                    {
-                        List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
-                        if (layerEnum != null)
-                        {
-                            _geolineLayers.Clear();
-                            foreach (FeatureLayer fl in layerEnum)
-                            {
+                    _geolineSelectedLayerIndex = 0;
+                    NotifyPropertyChanged(nameof(GeolineSelectedLayerIndex));
 
-                                if (fl.ShapeType == esriGeometryType.esriGeometryLine || fl.ShapeType == esriGeometryType.esriGeometryPolyline)
-                                {
-                                    //Get some definition to valide field and move with getting first symbol
-                                    CIMFeatureLayer cIMFeatureLayer = fl.GetDefinition() as CIMFeatureLayer;
-                                    FeatureClass featureClass = fl.GetFeatureClass();
-                                    featureClass.GetName();
-
-                                    if (cIMFeatureLayer != null && featureClass != null && featureClass.GetName().Contains(Utilities.Constants.Database.FGeoline))
-                                    {
-                                        LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
-                                        _geolineLayers.Add(layerItem);
-                                    }
-                                }
-                            }
-
-                            if (_geolineLayers.Count == 1)
-                            {
-                                _geolineSelectedLayerIndex = 0;
-                                FillGeolineType();
-                            }
-
-                            NotifyPropertyChanged(nameof(GeolineSelectedLayerIndex));
-                        }
-                    }
-                });
-
-
-            }
-            catch (Exception ex)
-            {
-                new ErrorService(ex).WriteToFile();
+                    //Continue to fill other comboboxes
+                    FillGeolineType();
+                }
             }
 
         }
