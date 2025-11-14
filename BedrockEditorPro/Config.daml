@@ -34,7 +34,6 @@
           <button refID="BedrockEditorPro_Buttons_Button_RefreshSymbols" size="large" />
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectDataSource" size="middle" />
           <comboBox refID="BedrockEditorPro_Comboboxes_Combobox_SelectParticipant" size="middle" />
-          <button refID="BedrockEditorPro_Controls_CoordSysDialog" size="large" />
         </group>
         <!--Templates-->
         <group id="BedrockEditorPro_Templates" caption="Templates" appearsOnAddInTab="false" keytip="template">

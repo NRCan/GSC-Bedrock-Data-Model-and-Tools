@@ -17,6 +17,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
 using ArcGIS.Desktop.KnowledgeGraph;
+using BedrockEditorPro.ProWindows;
 
 namespace BedrockEditorPro.Buttons
 {
@@ -24,6 +25,8 @@ namespace BedrockEditorPro.Buttons
 	{
         protected override void OnClick()
         {
+            Form_CreateEdit_ValidateGeolineIntegrity validateGeolineForm = new Form_CreateEdit_ValidateGeolineIntegrity();
+            validateGeolineForm.ShowDialog();
         }
-	}
+    }
 }
