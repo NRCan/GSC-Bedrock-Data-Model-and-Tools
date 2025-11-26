@@ -3,6 +3,7 @@ using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
+using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Internal.Core;
 using ArcGIS.Desktop.Mapping;
@@ -22,6 +23,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using static BedrockEditorPro.ProWindows.Form_Load_StudyAreaViewModel;
+using MessageBox = ArcGIS.Desktop.Framework.Dialogs.MessageBox;
 
 namespace BedrockEditorPro.ProWindows
 {
@@ -224,7 +226,7 @@ namespace BedrockEditorPro.ProWindows
             CIMFeatureTable lFeatureTable = lFeatureDef.FeatureTable;
 
             //Make sure it's only label feature class being processed
-            if (lFeatureDef.Name.ToLower() == Constants.Database.FLabel.ToLower())
+            if (lFeatureDef.Description.ToLower() == Constants.Database.FLabel.ToLower())
             {
 
                 //Iterate through values and find their match in the style
@@ -241,7 +243,9 @@ namespace BedrockEditorPro.ProWindows
                             {
                                 SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol),
                                 PrefixClause = "DISTINCT",
-                                WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID)
+                                WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} = '{3}'", 
+                                Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
+                                Constants.DatabaseFields.LegendItemType, Constants.DatabaseDomainsValues.legendItemMapUnit)
                             };
 
                             using (RowCursor rc = purposeTable.Search(queryFilter, false))
@@ -382,6 +386,9 @@ namespace BedrockEditorPro.ProWindows
                 //Get back the renderer and make a copy
                 if (inLayer.GetRenderer() is CIMUniqueValueRenderer cIMUniqueValueRenderer)
                 {
+                    //Keep list of possible missing symbols
+                    List<string> missingSymbols = new List<string>();
+
                     CIMUniqueValueRenderer cloneRenderer = cIMUniqueValueRenderer.Clone();
                     //Go through all groups (headings)
                     foreach (CIMUniqueValueGroup cimVG in cloneRenderer.Groups)
@@ -391,17 +398,28 @@ namespace BedrockEditorPro.ProWindows
                         {
                             foreach (CIMUniqueValueClass cimVC in cimVG.Classes)
                             {
+
+
                                 //Go through all field values
                                 foreach (CIMUniqueValue cimV in cimVC.Values)
                                 {
                                     if (labelSymbols.Count() == 0)
                                     {
                                         //Find symbol in style file from first field value
-                                        SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString())[0];
+                                        IList<SymbolStyleItem> symbols = workingStyle.SearchSymbols(styleItemType, cimV.FieldValues[0].ToString());
+                                        if (symbols != null && symbols.Count() > 0)
+                                        {
+                                            SymbolStyleItem currentSymbol = symbols[0];
 
-                                        //Set
-                                        CIMSymbolReference cimSR = cimVC.Symbol;
-                                        cimSR.Symbol = currentSymbol.Symbol;
+                                            //Set
+                                            CIMSymbolReference cimSR = cimVC.Symbol;
+                                            cimSR.Symbol = currentSymbol.Symbol;
+                                        }
+                                        else
+                                        {
+                                            missingSymbols.Add(cimV.FieldValues[0].ToString());
+                                        }
+
                                     }
                                     else
                                     {
@@ -422,6 +440,7 @@ namespace BedrockEditorPro.ProWindows
                                         }
                                     }
                                 }
+
                             }
                         }
 
@@ -429,6 +448,13 @@ namespace BedrockEditorPro.ProWindows
 
                     //Update layer with new renderer
                     inLayer.SetRenderer(cloneRenderer);
+
+                    //Show warning if missing symbols were found for some reasons.
+                    if (missingSymbols.Count() > 0)
+                    {
+                        MessageBox.Show(String.Format(Properties.Resources.FormRefreshSymbolsMissingCode, string.Join(", ", missingSymbols), inLayer.Name), Properties.Resources.GenericWarningTitle, System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+
+                    }
                 }
             }
         }

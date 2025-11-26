@@ -496,4 +496,7 @@
   <data name="FormCreateEditGeopointExists" xml:space="preserve">
     <value>Geopoint already exists</value>
   </data>
+  <data name="FormRefreshSymbolsMissingCode" xml:space="preserve">
+    <value>Couldn't find symbol {0} in working style file for layer {1}.</value>
+  </data>
 </root>
