@@ -59,15 +59,15 @@
         <StackPanel Grid.Row="1">
             <!--Options 1 : Delete Null Geometries -->
             <TextBlock Text="Options" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-            <CheckBox Margin="0,10,0,0" Height="22" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption1}" IsChecked="True"></CheckBox>
+            <CheckBox Margin="0,10,0,0" Height="22" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption1}" IsChecked="{Binding Path=Option1Checkbox}"></CheckBox>
             
             <!--Option 2 : Multi-Part to single Part-->
-            <CheckBox  Height="22" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption2}" IsChecked="True"></CheckBox>
+            <CheckBox  Height="22" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption2}" IsChecked="{Binding Path=Option2Checkbox}"></CheckBox>
 
             <!--Option 3 : Remove bezier curves and density-->
-            <CheckBox Height="22" Margin="0,0,0,5" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption3}" IsChecked="True"></CheckBox>
+            <CheckBox Height="22" Margin="0,0,0,5" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption3}" IsChecked="{Binding Path=Option3Checkbox}"></CheckBox>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                <TextBox Width="75" VerticalAlignment="Top">50000</TextBox>
+                <TextBox Width="75" VerticalAlignment="Top" Text="{Binding Path=ProjectScale}"></TextBox>
                 <Label Height="27" VerticalAlignment="Top" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption3Parameter}" Style="{DynamicResource BedrockButtonLabel}"/>
             </StackPanel>
         </StackPanel>

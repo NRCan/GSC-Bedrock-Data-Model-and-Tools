@@ -484,4 +484,16 @@
   <data name="FormCreateEditValidateGeolineOption3Parameter" xml:space="preserve">
     <value>Project Scale (to calculate vertices density)</value>
   </data>
+  <data name="LayerNameGeolineValidateOption1" xml:space="preserve">
+    <value>ValidateGeolineOption1</value>
+  </data>
+  <data name="LayerNameGeolineValidateOption2" xml:space="preserve">
+    <value>ValidateGeolineOption2</value>
+  </data>
+  <data name="LayerNameGeolineValidateOption3" xml:space="preserve">
+    <value>ValidateGeolineOption3</value>
+  </data>
+  <data name="FormCreateEditGeopointExists" xml:space="preserve">
+    <value>Geopoint already exists</value>
+  </data>
 </root>

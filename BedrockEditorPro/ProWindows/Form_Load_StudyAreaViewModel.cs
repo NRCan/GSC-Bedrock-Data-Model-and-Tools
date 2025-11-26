@@ -557,8 +557,8 @@ namespace BedrockEditorPro.ProWindows
                 {
                     FrameworkApplication.AddNotification(new Notification()
                     {
-                        Title = Properties.Resources.FormEnvironmentNewGeodatabaseTitle,
-                        Message = Properties.Resources.FormEnvironmentNewGeodatabaseWarningDBExist,
+                        Title = Properties.Resources.FormLoadStudyAreaTitle,
+                        Message = Properties.Resources.GenericMessageError,
                         ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
                     });
                 }

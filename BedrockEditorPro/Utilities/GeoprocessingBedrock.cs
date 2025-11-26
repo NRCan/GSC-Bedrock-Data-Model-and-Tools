@@ -231,6 +231,13 @@ namespace BedrockEditorPro.Utilities
 
         }
 
+        /// <summary>
+        /// Will dissolve the incoming features based on a given field, usually only the shape one
+        /// </summary>
+        /// <param name="inputFeature"></param>
+        /// <param name="outputFeature"></param>
+        /// <param name="dissolveField"></param>
+        /// <returns></returns>
         public static async Task<IGPResult> Dissolve(object inputFeature, object outputFeature, string dissolveField)
         {
             //Build an array of parameters
@@ -260,5 +267,114 @@ namespace BedrockEditorPro.Utilities
 
             return gpResult;
         }
+
+        /// <summary>
+        /// Will remove empty and null geometries from a given feature class or feature layer
+        /// List of all repairs https://pro.arcgis.com/en/pro-app/3.5/tool-reference/data-management/repair-geometry.htm
+        /// </summary>
+        /// <param name="inputFeature"></param>
+        /// <param name="outputFeature"></param>
+        /// <returns></returns>
+        public static async Task<IGPResult> RepairGeometry(object inputFeature)
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(inputFeature, true, "ESRI");
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.RepairGeometry", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorService(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
+        }
+
+        /// <summary>
+        /// Will explode in single parts, any multipart features from the given layer/feature class
+        /// </summary>
+        /// <param name="inputFeature"></param>
+        /// <param name="outputFeature"></param>
+        /// <returns></returns>
+        public static async Task<IGPResult> MultipartToSinglepart(object inputFeature, object outputFeature)
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(inputFeature, outputFeature);
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("management.MultipartToSinglepart", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorService(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
+        }
+
+        /// <summary>
+        /// Will densify a given feature class based on the project scale input for XY tolerance
+        /// </summary>
+        /// <param name="inputFeature"></param>
+        /// <returns></returns>
+        public static async Task<IGPResult> Densify(object inputFeature, int xyTolerance)
+        {
+            //Build an array of parameters
+            IEnumerable<string> valueArray = await QueuedTask.Run<IReadOnlyList<string>>(() =>
+            {
+
+                var valueArray = Geoprocessing.MakeValueArray(inputFeature, "DISTANCE", string.Format("{0} meter",xyTolerance.ToString()));
+                return valueArray;
+            });
+
+            //Launch
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("edit.Densify", valueArray, null, CancelableProgressor.None, GPExecuteToolFlags.Default);
+
+            // Check if the tool was successful
+            if (gpResult.IsFailed)
+            {
+                // display error messages if the tool fails, otherwise shows the default messages
+                new ErrorService(gpResult).WriteToFile();
+
+                FrameworkApplication.AddNotification(new Notification()
+                {
+                    Title = Properties.Resources.GenericMessageErrorTitle,
+                    Message = Properties.Resources.GenericMessageError,
+                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                });
+            }
+
+            return gpResult;
+        }
+
     }
 }

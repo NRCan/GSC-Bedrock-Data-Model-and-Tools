@@ -331,7 +331,7 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selected geopoint already exists in legend table..
+        ///   Looks up a localized string similar to Geopoint already exists.
         /// </summary>
         public static string FormCreateEditGeopointExists {
             get {
@@ -1137,6 +1137,33 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ValidateGeolineOption1.
+        /// </summary>
+        public static string LayerNameGeolineValidateOption1 {
+            get {
+                return ResourceManager.GetString("LayerNameGeolineValidateOption1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ValidateGeolineOption2.
+        /// </summary>
+        public static string LayerNameGeolineValidateOption2 {
+            get {
+                return ResourceManager.GetString("LayerNameGeolineValidateOption2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ValidateGeolineOption3.
+        /// </summary>
+        public static string LayerNameGeolineValidateOption3 {
+            get {
+                return ResourceManager.GetString("LayerNameGeolineValidateOption3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NoOverprintsGeopoly.
         /// </summary>
         public static string LayerNameGeopolyNoOverprint {
@@ -1160,6 +1187,15 @@ namespace BedrockEditorPro.Properties {
         public static string LayerNamingLabelNoOverprint {
             get {
                 return ResourceManager.GetString("LayerNamingLabelNoOverprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected geopoint already exists in legend table..
+        /// </summary>
+        public static string Supp {
+            get {
+                return ResourceManager.GetString("Supp", resourceCulture);
             }
         }
     }
