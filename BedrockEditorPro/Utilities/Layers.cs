@@ -25,6 +25,7 @@ namespace BedrockEditorPro.Utilities
             public FeatureLayer FLayer { get; set; }
             public BitmapSource Icon { get; set; }
             public bool IsChecked { get; set; }
+            public StandaloneTable STable { get; set; }
         }
 
         /// <summary>
@@ -158,6 +159,83 @@ namespace BedrockEditorPro.Utilities
 
                                     }
                                 }
+                            }
+
+                            updated = true;
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                new ErrorService(ex).WriteToFile();
+            }
+
+            return updated;
+
+        }
+
+        /// <summary>
+        /// Will fill the layer combobox with all feature layers in the map. By default, it will filter out layers
+        /// that have GSC_SYMBOL or Label fields. You can add an extra field name to filter out more layers.
+        /// </summary>
+        /// <param name="geometryTypes">esriGeometryType to filter out layers</param>
+        /// <param name="layerList">the observable collection list of layer to fill out</param>
+        /// <param name="layerListName">the property name to notify of changes</param>
+        /// <param name="selectedLayerIndex">the selected index for the list of layers</param>
+        /// <param name="selectedLayerIndexName">the property name of the selected index</param>
+        /// <param name="extraFieldFiltering">some extra field name to filter out possible layers</param>
+        /// <returns></returns>
+        public async Task<bool> UpdateTableViewCombobox(ObservableCollection<LayerDisplay> layerList,
+            string layerListName, int selectedLayerIndex, string selectedLayerIndexName, string extraFieldFiltering = "")
+        {
+            bool updated = false;
+
+            try
+            {
+                await QueuedTask.Run(() =>
+                {
+                    if (MapView.Active != null && MapView.Active.Map != null)
+                    {
+                        List<StandaloneTable> tableEnum = MapView.Active.Map.GetStandaloneTablesAsFlattenedList().OfType<StandaloneTable>().ToList();
+                        if (tableEnum != null)
+                        {
+
+                            foreach (StandaloneTable st in tableEnum)
+                            {
+                                //Get some definition to validate fields
+                                CIMStandaloneTable cIMTable= st.GetDefinition() as CIMStandaloneTable;
+                                List<FieldDescription> flDescriptions = st.GetFieldDescriptions().ToList();
+
+                                if (cIMTable != null && flDescriptions != null && flDescriptions.Count() > 0)
+                                {
+                                    LayerDisplay layerDisplay = new LayerDisplay()
+                                    {
+                                        Name = st.Name,
+                                        FLayer = null,
+                                        Icon = null,
+                                        IsChecked = false,
+                                        STable = st
+                                    };
+
+                                    //If some extra filtering is needed
+                                    if (extraFieldFiltering != string.Empty)
+                                    {
+                                        if (flDescriptions.Exists(x => x.Name == extraFieldFiltering))
+                                        {
+                                            layerList.Add(layerDisplay);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        layerList.Add(layerDisplay);
+                                    }
+
+
+                                    NotifyPropertyChanged(nameof(layerListName));
+
+                                }
+                                
                             }
 
                             updated = true;

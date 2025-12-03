@@ -1,4 +1,4 @@
-﻿<controls:ProWindow x:Class="BedrockEditorPro.ProWindows.Form_CreateEdit_ValidateGeolineIntegrity"
+﻿<controls:ProWindow x:Class="BedrockEditorPro.ProWindows.Form_Legend_ItemsModification"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:controls="clr-namespace:ArcGIS.Desktop.Framework.Controls;assembly=ArcGIS.Desktop.Framework"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,7 +10,7 @@
         xmlns:layerControls="clr-namespace:ArcGIS.Desktop.Internal.Mapping.CommonControls.LayerControls;assembly=ArcGIS.Desktop.Mapping"
         mc:Ignorable="d"
         ResizeMode="NoResize" 
-        Title="{x:Static local:Resources.FormCreateEditValidateGeolineTitle}" Height="300" Width="350"
+        Title="{x:Static local:Resources.FormLegendItemsModificationTitle}" Height="800" Width="1200"
         WindowStartupLocation="CenterOwner">
     
     <controls:ProWindow.Resources>
@@ -25,51 +25,40 @@
 
     <Grid Style="{DynamicResource BedrockGrid}" Margin="10" VerticalAlignment="Top">
 
-        
         <Grid.RowDefinitions>
-            <!--Select validate geoline layer-->
+
+            <!--Select legend table layer-->
             <RowDefinition Height="65"/>
 
-            <!--Options-->
-            <RowDefinition Height="150"/>
+            <!--Select legend item-->
+            <RowDefinition Height="65"/>
 
             <!--Command buttons-->
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
-            
+
         </Grid.RowDefinitions>
-        
-        <!--Geoline layers-->
-        <StackPanel Grid.Row="0">
-            <TextBlock Text="{x:Static local:Resources.FormCreateEditValidateGeolineLayers}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-            <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
-                                     ItemsSource="{Binding Path=ValidateLayers}" SelectedIndex="{Binding Path=ValidateSelectedLayerIndex}">
+
+        <!--Legend table view-->
+        <StackPanel Grid.Row="0" >
+            <TextBlock Text="{x:Static local:Resources.FormLegendTableView}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+            <ComboBox x:Name="LegendViewCombobox" Width="200" HorizontalAlignment="Left" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,0" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=LegendTables}" SelectedIndex="{Binding Path=LegendSelectedTableIndex}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding Icon}" Width="15" Height="15" Margin="0,0,5,0" />
                             <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
-        
-        <!--Options-->
-        <StackPanel Grid.Row="1">
-            <!--Options 1 : Delete Null Geometries -->
-            <TextBlock Text="Options" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-            <CheckBox Margin="0,10,0,0" Height="22" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption1}" IsChecked="{Binding Path=Option1Checkbox}"></CheckBox>
-            
-            <!--Option 2 : Multi-Part to single Part-->
-            <CheckBox  Height="22" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption2}" IsChecked="{Binding Path=Option2Checkbox}"></CheckBox>
 
-            <!--Option 3 : Remove bezier curves and density-->
-            <CheckBox Height="22" Margin="0,0,0,5" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption3}" IsChecked="{Binding Path=Option3Checkbox}"></CheckBox>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                <TextBox Width="75" VerticalAlignment="Top" Text="{Binding Path=ProjectScale}"></TextBox>
-                <Label Height="27" VerticalAlignment="Top" Content="{x:Static local:Resources.FormCreateEditValidateGeolineOption3Parameter}" Style="{DynamicResource BedrockButtonLabel}"/>
-            </StackPanel>
+        <!--Legend items-->
+        <StackPanel Grid.Row="1" >
+            <Label Content="{x:Static local:Resources.FormLegendItems}" HorizontalAlignment="Left" Margin="-5,0,0,-5" Style="{DynamicResource BedrockButtonLabel}"/>
+            <ComboBox x:Name="LegendItemCombobox" Width="200" HorizontalAlignment="Left" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,10" Height="22" VerticalContentAlignment="Center" 
+                                     ItemsSource="{Binding Path=LegendItems}" SelectedIndex="{Binding Path=LegendSelectedItemIndex}"/>
         </StackPanel>
 
         <!--Run-->
@@ -85,7 +74,6 @@
                 </Border>
             </Button.Content>
         </Button>
-        
-        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="4" Visibility="{Binding Path=WaitingCursorVisibility}"/>
+
     </Grid>
 </controls:ProWindow>
