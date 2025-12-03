@@ -610,11 +610,11 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default Embedded Model (XML Version 10.2).
+        ///   Looks up a localized string similar to Choose a model version.
         /// </summary>
-        public static string FormEnvironmentNewGeodatabaseCheckbox {
+        public static string FormEnvironmentNewGeodatabaseBetaOptions {
             get {
-                return ResourceManager.GetString("FormEnvironmentNewGeodatabaseCheckbox", resourceCulture);
+                return ResourceManager.GetString("FormEnvironmentNewGeodatabaseBetaOptions", resourceCulture);
             }
         }
         
@@ -646,11 +646,38 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By default, model is embedded in tool..
+        /// </summary>
+        public static string FormEnvironmentNewGeodatabaseNote {
+            get {
+                return ResourceManager.GetString("FormEnvironmentNewGeodatabaseNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create Project Geodatabase.
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseTitle {
             get {
                 return ResourceManager.GetString("FormEnvironmentNewGeodatabaseTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version 2.10.
+        /// </summary>
+        public static string FormEnvironmentNewGeodatabaseV210 {
+            get {
+                return ResourceManager.GetString("FormEnvironmentNewGeodatabaseV210", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version 3.0.
+        /// </summary>
+        public static string FormEnvironmentNewGeodatabaseV300 {
+            get {
+                return ResourceManager.GetString("FormEnvironmentNewGeodatabaseV300", resourceCulture);
             }
         }
         
@@ -741,6 +768,33 @@ namespace BedrockEditorPro.Properties {
         public static string FormHelpTitle {
             get {
                 return ResourceManager.GetString("FormHelpTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select an Item.
+        /// </summary>
+        public static string FormLegendItems {
+            get {
+                return ResourceManager.GetString("FormLegendItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items Modifications.
+        /// </summary>
+        public static string FormLegendItemsModificationTitle {
+            get {
+                return ResourceManager.GetString("FormLegendItemsModificationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Legend Table .
+        /// </summary>
+        public static string FormLegendTableView {
+            get {
+                return ResourceManager.GetString("FormLegendTableView", resourceCulture);
             }
         }
         
@@ -1102,6 +1156,16 @@ namespace BedrockEditorPro.Properties {
         public static byte[] GSC_BEDROCKGDB_SCHEMA_V2_10 {
             get {
                 object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SCHEMA_V2_10", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GSC_BEDROCKGDB_SCHEMA_V3_0 {
+            get {
+                object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SCHEMA_V3_0", resourceCulture);
                 return ((byte[])(obj));
             }
         }

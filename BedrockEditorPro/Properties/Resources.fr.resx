@@ -138,8 +138,8 @@
   <data name="DialogXMLPromptTitle" xml:space="preserve">
     <value>Fichier XML</value>
   </data>
-  <data name="FormEnvironmentNewGeodatabaseCheckbox" xml:space="preserve">
-    <value>Modèle intégré par défaut (XML Version 10.2)</value>
+  <data name="FormEnvironmentNewGeodatabaseNote" xml:space="preserve">
+    <value>Modèle intégré dans l'outil, par défaut.</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseInput1" xml:space="preserve">
     <value>Gabarit de projet (.xml)</value>
@@ -498,5 +498,23 @@
   </data>
   <data name="FormRefreshSymbolsMissingCode" xml:space="preserve">
     <value>Aucun symbol {0} n'a été trouvé dans la couche {1}.</value>
+  </data>
+  <data name="FormLegendTableView" xml:space="preserve">
+    <value>Choisir une vue de la table de légende</value>
+  </data>
+  <data name="FormLegendItemsModificationTitle" xml:space="preserve">
+    <value>Modifier un élément de légende</value>
+  </data>
+  <data name="FormLegendItems" xml:space="preserve">
+    <value>Choisir un élément</value>
+  </data>
+  <data name="FormEnvironmentNewGeodatabaseV210" xml:space="preserve">
+    <value>Version 2.10</value>
+  </data>
+  <data name="FormEnvironmentNewGeodatabaseV300" xml:space="preserve">
+    <value>Version 3.0</value>
+  </data>
+  <data name="FormEnvironmentNewGeodatabaseBetaOptions" xml:space="preserve">
+    <value>Choisir une version de modèle.</value>
   </data>
 </root>

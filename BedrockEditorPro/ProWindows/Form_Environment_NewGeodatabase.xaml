@@ -9,7 +9,7 @@
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions" 
         mc:Ignorable="d"
         ResizeMode="NoResize" 
-        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="210" Width="500"
+        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="285" Width="500"
         WindowStartupLocation="CenterOwner">
     
     <controls:ProWindow.Resources>
@@ -27,17 +27,24 @@
         <!--Create Project GDB from Master Schema-->
         <Grid.RowDefinitions>
             <!--Label italic for warning-->
-            <RowDefinition Height="20"/> 
+            <RowDefinition Height="25"/>
+
+            <!--beta testing-->
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="10"/>
+            
             <!--output-->
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="5"/>
+            
             <!--Projection-->
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
             <!--Command buttons-->
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="35"/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -46,20 +53,32 @@
         </Grid.ColumnDefinitions>
 
         <Label x:Name="NewGeodatabaseVersionLabel" Grid.Row="0" FontStyle="Italic" Margin="-5,0,0,-5"
-           Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseCheckbox}" 
+           Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseNote}" 
            Style="{DynamicResource BedrockButtonLabel}" />
-  
+
+        <!--For beta testing-->
+        <Label x:Name="NewGeodatabaseVersionLabelBetaTesting" Grid.Row="1" Margin="-5,0,0,-5"
+           Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseBetaOptions}" 
+           Style="{DynamicResource BedrockButtonLabel}" />
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            
+            <RadioButton GroupName="BetaTesting" Margin="0,5,10,0" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseV300}" IsChecked="{Binding Path=Version300Checkbox}"></RadioButton>
+            <RadioButton GroupName="BetaTesting" Margin="0,5,0,0" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseV210}" IsChecked="{Binding Path=Version210Checkbox}"></RadioButton>
+        </StackPanel>
+
+
         <!--Output-->
-        <Label Grid.Row="1" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" Margin="-5,0,0,-5" />
-        <TextBox Grid.Row="2" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+        <Label Grid.Row="4" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput2}" Style="{DynamicResource BedrockButtonLabel}" Margin="-5,0,0,-5" />
+        <TextBox Grid.Row="5" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
                 Text="{Binding Path=OutputGDBPath}"/>
-        <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseOutputGDBBrowse" Grid.Row="2" Grid.Column="1"  />
+        <bedrockcontrols:BrowseButton x:Name="NewGeodatabaseOutputGDBBrowse" Grid.Row="5" Grid.Column="1"  />
 
         <!--Projection-->
-        <Label Grid.Row="4" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" Margin="-5,0,0,-5" />
-        <TextBox Grid.Row="5" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+        <Label Grid.Row="7" Content="{x:Static local:Resources.FormEnvironmentNewGeodatabaseInput3}" Style="{DynamicResource BedrockButtonLabel}" Margin="-5,0,0,-5" />
+        <TextBox Grid.Row="8" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
                 Text="{Binding Path=OutputSRName}"/>
-        <Button Grid.Row="5" Grid.Column="1" Style="{DynamicResource Esri_Button}"  Margin="10,-5,5,-10" VerticalAlignment="Center" HorizontalContentAlignment="Right"
+        <Button Grid.Row="8" Grid.Column="1" Style="{DynamicResource Esri_Button}"  Margin="10,-5,5,-10" VerticalAlignment="Center" HorizontalContentAlignment="Right"
             Command="{Binding OpenProjectionBrowse}">
             <Button.Content>
                 <Border>
@@ -72,7 +91,7 @@
         </Button>
 
         <!--Save/Cancel-->
-        <Button Grid.Row="7" Margin="0"
+        <Button Grid.Row="10" Margin="0,10,0,0"
             Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
             Command="{Binding RunTool}">
             <Button.Content>
@@ -87,7 +106,7 @@
         
         <!--<bedrockcontrols:CancelButton Grid.Row="7" />-->
 
-        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="8" Visibility="{Binding Path=WaitingCursorVisibility}" />
+        <controls:WaitingCursorControl Grid.ColumnSpan="2" Grid.RowSpan="10" Visibility="{Binding Path=WaitingCursorVisibility}" />
         
     </Grid>
 

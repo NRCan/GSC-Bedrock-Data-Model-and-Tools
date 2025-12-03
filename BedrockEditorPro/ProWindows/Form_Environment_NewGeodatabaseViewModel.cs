@@ -159,6 +159,27 @@ namespace BedrockEditorPro.ProWindows
                 SetProperty(ref _isControlEnabled, value, () => IsControlEnabled);
             }
         }
+
+        private bool _version210Checkbox = false;
+        public bool Version210Checkbox
+        {
+            get { return _version210Checkbox; }
+            set
+            {
+                SetProperty(ref _version210Checkbox, value, () => _version210Checkbox);
+            }
+        }
+
+        private bool _version300Checkbox = true;
+        public bool Version300Checkbox
+        {
+            get { return _version300Checkbox; }
+            set
+            {
+                SetProperty(ref _version300Checkbox, value, () => _version300Checkbox);
+            }
+        }
+
         #endregion
 
         #region RELAYS
@@ -280,12 +301,18 @@ namespace BedrockEditorPro.ProWindows
                         File.WriteAllText(JSONFilePath, replacedSchemaString);
 
                         //Convert schema from json to xml
-                        XMLFilePath = Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10) + ".xml");
+                        string assetFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V3_0);
+                        if (_version210Checkbox)
+                        {
+                            assetFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10);
+                        }
+
+                        XMLFilePath = Path.Combine(workingEnvironment.WorkingEnvironmentPath, assetFileName + ".xml");
                         if (File.Exists(XMLFilePath))
                         {
                             File.Delete(XMLFilePath); // Delete existing XML file if it exists so it can take the latest spatial reference
                         }
-                        await GeoprocessingBedrock.ConvertJSONToXML(JSONFilePath, workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10) + ".xml");
+                        await GeoprocessingBedrock.ConvertJSONToXML(JSONFilePath, workingEnvironment.WorkingEnvironmentPath, assetFileName + ".xml");
 
                         //Import the xml file into the new database
                         if (File.Exists(XMLFilePath))
@@ -357,13 +384,24 @@ namespace BedrockEditorPro.ProWindows
         public void ManageSchemaResources()
         {
             //Whole database is in json so feature datasets can have their spatial reference set see issue #5
-            JSONFilePath = Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10) + ".json");
+            string jsonfFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V3_0);
+            byte[] jsonBytes = Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V3_0;
+
+            if (_version210Checkbox)
+            {
+                jsonfFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10);
+                jsonBytes = Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10;
+            }
+
+            JSONFilePath = Path.Combine(workingEnvironment.WorkingEnvironmentPath, jsonfFileName + ".json");
+
+
             if (File.Exists(JSONFilePath))
             {
                 //needs to be deleted to remove previously embeded projection in the text
                 File.Delete(JSONFilePath);
             }
-            FileService.WriteStreamResource(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10, JSONFilePath);
+            FileService.WriteStreamResource(jsonBytes, JSONFilePath);
 
             //Geoline symbol table needs to be reloaded, the json schema can't hold filled in tables and since this one has relationship classes
             //to other table we can't simply add them from an XML workspace with only the table in it else we need to rename everything linked

@@ -9,17 +9,18 @@ namespace BedrockEditorPro.Utilities
         public class Database
         {
 
-            public const double CurrentDBVersion = 2.10; //Update this when DB schema is changed
+            public const double CurrentDBVersion = 3.0; //Update this when DB schema is changed
+            public const double DBVersion_210 = 2.10; 
 
             //Tables
             public const string TParticipant = "P_PARTICIPANT";
             public const string TPerson = "P_PERSON";
-            public const string TLegendDescription = "P_LEGEND_DESCRIPTION";
-            public const string TStudyAreaIndex = "P_STUDY_AREA_INDEX";
+            public const string TLegendDescription = "P_LEGEND_DESCRIPTION"; //Deprecated table
+            public const string TStudyAreaIndex = "P_STUDY_AREA_INDEX"; //Deprecated table
             public const string TSource = "P_SOURCE";
             public const string TOrganisation = "P_ORGANIZATION";
             public const string TLegendGene = "P_LEGEND";
-            public const string TLegendTree = "P_LEGEND_INDEX";
+            public const string TLegendTree = "P_LEGEND_INDEX"; //Deprecated table
 
             public const string TProject = "M_PROJECT";
             public const string TMActivity = "M_ACTIVITY";
@@ -31,11 +32,11 @@ namespace BedrockEditorPro.Utilities
 
             public const string TExtenAttrb = "CARTOGRAPHIC_";//Last part will depend on user choice of theme name
 
-            public const string TDomainAssigned = "DOMAINS_ASSIGNED";
-            public const string TDomainDID = "DOMAINS_DID";
-            public const string TDomainPID = "DOMAINS_PID";
-            public const string TDomainSID = "DOMAINS_SID";
-            public const string TSubtypes = "M_SUBTYPES";
+            public const string TDomainAssigned = "DOMAINS_ASSIGNED";//Deprecated table
+            public const string TDomainDID = "DOMAINS_DID"; //Deprecated table
+            public const string TDomainPID = "DOMAINS_PID";//Deprecated table
+            public const string TDomainSID = "DOMAINS_SID";//Deprecated table
+            public const string TSubtypes = "M_SUBTYPES";//Deprecated table
 
             public const string TGeoEvent = "P_GEO_EVENT";
 
@@ -43,7 +44,7 @@ namespace BedrockEditorPro.Utilities
             public const string FGeoline = "GEO_LINES";
             public const string FLabel = "LABELS";
             public const string FGeopoly = "GEO_POLYS";
-            public const string FStation = "F_STATION";
+            public const string FStation = "F_STATION";//Deprecated table
             public const string FStudyArea = "P_STUDY_AREA";
             public const string FStudyAreaAlias = "Study Areas"; //GIS display of feature class name
             public const string FCGMIndex = "P_CGM";
@@ -58,23 +59,23 @@ namespace BedrockEditorPro.Utilities
             public const string topoDBName = "Project_Elements";
 
             //Ganfeld tables
-            public const string gEarthMath = "F_EARTHMAT";
-            public const string gMA = "F_MA";
-            public const string gMetadata = "F_METADATA";
-            public const string gMineral = "F_MINERAL";
-            public const string gSample = "F_SAMPLE";
-            public const string gStruc = "F_STRUC";
-            public const string gPhoto = "F_PHOTO";
-            public const string gEnviron = "F_ENVIRON";
-            public const string gPFlow = "F_PFLOW";
-            public const string gSoil = "F_SOILPRO";
-            public const string gBiogeo = "F_BIOGEO";
+            public const string gEarthMath = "F_EARTHMAT";//Deprecated table
+            public const string gMA = "F_MA";//Deprecated table
+            public const string gMetadata = "F_METADATA";//Deprecated table
+            public const string gMineral = "F_MINERAL";//Deprecated table
+            public const string gSample = "F_SAMPLE";//Deprecated table
+            public const string gStruc = "F_STRUC";//Deprecated table
+            public const string gPhoto = "F_PHOTO";//Deprecated table
+            public const string gEnviron = "F_ENVIRON";//Deprecated table
+            public const string gPFlow = "F_PFLOW";//Deprecated table
+            public const string gSoil = "F_SOILPRO";//Deprecated table
+            public const string gBiogeo = "F_BIOGEO";//Deprecated table
 
             //Ganfeld feature
-            public const string gFCLinework = "F_LINEWORK";
-            public const string gFCStation = "F_STATION";
-            public const string gFCTraverses = "F_TRAVERSE";
-            
+            public const string gFCLinework = "F_LINEWORK";//Deprecated table
+            public const string gFCStation = "F_STATION";//Deprecated table
+            public const string gFCTraverses = "F_TRAVERSE";//Deprecated table
+
             //Old names (to be kept for legacy between DB versions)
             public const string TOrganisation_160915 = "P_ORGANISATION";
             public const string TGeoEvent_160915 = "GEO_EVENT";
@@ -188,23 +189,34 @@ namespace BedrockEditorPro.Utilities
             #endregion
 
             #region Legend generator table
-            public const string LegendSymbol = "GSC_SYMBOL";
-            public const string LegendSymType = "SYM_TYPE";
-            public const string LegendLabelName = "NAME";
-            public const string LegendMapUnit = "MAPUNIT";
-            public const string LegendAnnotation = "ANNOTATION";
+            public const string LegendLabelID = "LEGENDITEMID";
+            public const string LegendGISDisplay = "GIS_DISPLAY_NAME";
+            public const string LegendItemType = "ELEMENT"; //Version 3.0
+            public const string LegendSymbol = "STYLE1"; //Version 3.0
+            public const string LegendSymbol2 = "STYLE2"; //Version 3.0
+            public const string LegendLabel1 = "LABEL1"; //Version 3.0
+            public const string LegendLabel1Style = "LABSTYLE1"; //Version 3.0
+            public const string LegendLabel2 = "LABEL2"; //Version 3.0
+            public const string LegendLabel2Style = "LABSTYLE2"; //Version 3.0
+            public const string LegendHeading = "HEADING"; //Version 3.0
+            public const string LegendColumn = "ELEMENT_COLUMN"; //Version 3.0
+            public const string LegendOrder = "ELEMENT_ORDER"; //Version 3.0
+            public const string LegendDescription = "DESCRIPTION"; //Version 3.0
             public const string LegendGeolRank = "GEOLRANK";
 
-            public const string LegendOrder = "LEGEND_ORD";
-            public const string LegendLabelID = "LEGENDITEMID";
-            public const string LegendIndentation = "INDENT";
-            public const string LegendGISDisplay = "GIS_DISPLAY_NAME";
-            public const string LegendItemType = "LEGEND_ITEMTYPE";
+            public const string LegendSymbol_190101 = "GSC_SYMBOL"; //Version 2.10
+            public const string LegendSymType_190101 = "SYM_TYPE"; //Version 2.10
+            public const string LegendLabelName_190101 = "NAME"; //Version 2.10
+            public const string LegendMapUnit_190101 = "MAPUNIT"; //Version 2.10
+            public const string LegendAnnotation_190101 = "ANNOTATION"; //Version 2.10
+            public const string LegendOrder_190101 = "LEGEND_ORD"; //Version 2.10
+            public const string LegendIndentation_190101 = "INDENT"; //Version 2.10
+            public const string LegendItemType_190101 = "LEGEND_ITEMTYPE"; //Version 2.10
             #endregion
 
             #region Legend description table
-            public const string LegendDescription = "DESCRIPTION";
-            public const string LegendDescriptionID = "LEGDESCRIPTIONID";
+            public const string LegendDescription_190101 = "DESCRIPTION"; //Version 2.10
+            public const string LegendDescriptionID_190101 = "LEGDESCRIPTIONID"; //Version 2.10
             #endregion
 
             #region Legend tree table

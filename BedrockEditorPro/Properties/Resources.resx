@@ -138,8 +138,8 @@
   <data name="DialogXMLPromptTitle" xml:space="preserve">
     <value>XML File</value>
   </data>
-  <data name="FormEnvironmentNewGeodatabaseCheckbox" xml:space="preserve">
-    <value>Default Embedded Model (XML Version 10.2)</value>
+  <data name="FormEnvironmentNewGeodatabaseNote" xml:space="preserve">
+    <value>By default, model is embedded in tool.</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseInput1" xml:space="preserve">
     <value>Input Project Template (.xml)</value>
@@ -498,5 +498,26 @@
   </data>
   <data name="FormRefreshSymbolsMissingCode" xml:space="preserve">
     <value>Couldn't find symbol {0} in working style file for layer {1}.</value>
+  </data>
+  <data name="FormLegendTableView" xml:space="preserve">
+    <value>Select Legend Table </value>
+  </data>
+  <data name="FormLegendItemsModificationTitle" xml:space="preserve">
+    <value>Items Modifications</value>
+  </data>
+  <data name="FormLegendItems" xml:space="preserve">
+    <value>Select an Item</value>
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\GSC_BEDROCKGDB_SCHEMA_V3_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FormEnvironmentNewGeodatabaseV210" xml:space="preserve">
+    <value>Version 2.10</value>
+  </data>
+  <data name="FormEnvironmentNewGeodatabaseV300" xml:space="preserve">
+    <value>Version 3.0</value>
+  </data>
+  <data name="FormEnvironmentNewGeodatabaseBetaOptions" xml:space="preserve">
+    <value>Choose a model version</value>
   </data>
 </root>

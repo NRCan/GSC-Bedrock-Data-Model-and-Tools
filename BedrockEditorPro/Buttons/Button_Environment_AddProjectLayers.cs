@@ -26,6 +26,7 @@ namespace BedrockEditorPro.Buttons
 {
 	internal class Button_Environment_AddProjectLayers : Button
 	{
+        private bool _version210Features = false; //Will be used to detect old schema features to add or not
 
         protected override async void OnClick()
         {
@@ -75,12 +76,16 @@ namespace BedrockEditorPro.Buttons
                         {
                             if (currentWorkspace != null)
                             {
+                                if (Workspace.FeatureClassExists(currentWorkspace, Constants.Database.FCGMIndex))
+                                {
+                                    _version210Features = true;
+                                }
+
                                 if (Workspace.FeatureDatasetExists(currentWorkspace, Constants.Database.FDGeo) &&
                                     Workspace.FeatureClassExists(currentWorkspace, Constants.Database.FGeopoly) &&
                                     Workspace.FeatureClassExists(currentWorkspace, Constants.Database.FLabel) &&
                                     Workspace.FeatureClassExists(currentWorkspace, Constants.Database.FGeoline) &&
                                     Workspace.FeatureClassExists(currentWorkspace, Constants.Database.FGeopoint) &&
-                                    Workspace.FeatureClassExists(currentWorkspace, Constants.Database.FCGMIndex) && 
                                     Workspace.FeatureClassExists(currentWorkspace, Constants.Database.FStudyArea))
                                 {
 
@@ -217,7 +222,12 @@ namespace BedrockEditorPro.Buttons
             projectFL.Add(Constants.Database.FLabel);
             projectFL.Add(Constants.Database.FGeoline);
             projectFL.Add(Constants.Database.FGeopoly);
-            projectFL.Add(Constants.Database.FCGMIndex);
+
+            if (_version210Features)
+            {
+                projectFL.Add(Constants.Database.FCGMIndex);
+            }
+            
 
             return projectFL;
 
