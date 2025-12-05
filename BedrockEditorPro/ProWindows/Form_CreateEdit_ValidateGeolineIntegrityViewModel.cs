@@ -182,7 +182,7 @@ namespace BedrockEditorPro.ProWindows
                 await QueuedTask.Run(async () =>
                 {
                     FeatureLayer validateLayer = ValidateLayers[ValidateSelectedLayerIndex].FLayer;
-                    Uri _validateLayerSourceUri = Workspace.GetWorkspacePathFromFeatureLayer(validateLayer);
+                    Uri _validateLayerSourceUri = Workspace.GetWorkspacePath(validateLayer);
 
                     if (_validateSelectedLayerIndex != -1 && _validateLayerSourceUri != null && Directory.Exists(_validateLayerSourceUri.OriginalString))
                     {

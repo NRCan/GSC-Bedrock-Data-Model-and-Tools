@@ -1,5 +1,5 @@
 {
-	"dateExported": "2025-12-02T21:31:10",
+	"dateExported": "2025-12-05T13:01:15",
 	"datasetType": "DEWorkspace",
 	"catalogPath": "D:\\DUMP\\ArcProDev\\Schema_300_251202.gdb",
 	"name": "Schema_300_251202.gdb",
@@ -2538,24 +2538,136 @@
 			"description": "",
 			"codedValues": [
 				{
-					"name": "Map Unit",
-					"code": "mapUnit"
+					"name": "Heading 1",
+					"code": "HEADING1"
 				},
 				{
-					"name": "Geoline",
-					"code": "geoline"
+					"name": "Heading 2",
+					"code": "HEADING2"
 				},
 				{
-					"name": "Geopoint",
-					"code": "geopoint"
+					"name": "Heading 3",
+					"code": "HEADING3"
 				},
 				{
-					"name": "Headers",
-					"code": "header"
+					"name": "Heading 4",
+					"code": "HEADING4"
 				},
 				{
-					"name": "Field Stations",
-					"code": "fieldPoint"
+					"name": "Heading 5",
+					"code": "HEADING5"
+				},
+				{
+					"name": "Note",
+					"code": "NOTE"
+				},
+				{
+					"name": "Top Note",
+					"code": "TOP_NOTE"
+				},
+				{
+					"name": "Unit Box",
+					"code": "UNIT_BOX"
+				},
+				{
+					"name": "Unit Line",
+					"code": "UNIT_LINE"
+				},
+				{
+					"name": "Unit Parent",
+					"code": "UNIT_PARENT"
+				},
+				{
+					"name": "Unit Child",
+					"code": "UNIT_CHILD"
+				},
+				{
+					"name": "Unit Child Line",
+					"code": "UNIT_CHILD_LINE"
+				},
+				{
+					"name": "Unit Split",
+					"code": "UNIT_SPLIT"
+				},
+				{
+					"name": "Overlay",
+					"code": "OVERLAY"
+				},
+				{
+					"name": "Line",
+					"code": "LINE"
+				},
+				{
+					"name": "Two Sided Line",
+					"code": "TWOSIDE"
+				},
+				{
+					"name": "Two Sided Flow Line",
+					"code": "TWOSIDE_FLOW"
+				},
+				{
+					"name": "Wave Line",
+					"code": "WAVE"
+				},
+				{
+					"name": "Point Anchor Center-Center",
+					"code": "POINT_CC"
+				},
+				{
+					"name": "Point 45 deg. Anchor Center-Center",
+					"code": "POINT_CC_45"
+				},
+				{
+					"name": "Point 45 deg. Anchor Lower-Center",
+					"code": "POINT_LC_45"
+				},
+				{
+					"name": "Left Bracket Upper Part",
+					"code": "L_BRACKET_U"
+				},
+				{
+					"name": "Left Bracket Lower Part",
+					"code": "L_BRACKET_L"
+				},
+				{
+					"name": "Right Bracket Upper Part",
+					"code": "R_BRACKET_U"
+				},
+				{
+					"name": "Right Bracket Lower Part",
+					"code": "R_BRACKET_L"
+				},
+				{
+					"name": "Annotation Bracket",
+					"code": "ANNO_BRACKET"
+				},
+				{
+					"name": "Break Line",
+					"code": "BREAK"
+				},
+				{
+					"name": "Break Line Annotation",
+					"code": "ANNO_BREAK"
+				},
+				{
+					"name": "Beach",
+					"code": "BEACH"
+				},
+				{
+					"name": "Blob",
+					"code": "BLOB"
+				},
+				{
+					"name": "Dunes",
+					"code": "DUNES"
+				},
+				{
+					"name": "Landslide",
+					"code": "LANDSLIDE"
+				},
+				{
+					"name": "Moraine",
+					"code": "MORAINE"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -3021,6 +3133,148 @@
 			"fieldType": "esriFieldTypeString",
 			"mergePolicy": "esriMPTDefaultValue",
 			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "CODE",
+			"description": "DESCRIPTION",
+			"codedValues": [
+				{
+					"name": "Heading 1",
+					"code": "HEADING1"
+				},
+				{
+					"name": "Heading 2",
+					"code": "HEADING2"
+				},
+				{
+					"name": "Heading 3",
+					"code": "HEADING3"
+				},
+				{
+					"name": "Heading 4",
+					"code": "HEADING4"
+				},
+				{
+					"name": "Heading 5",
+					"code": "HEADING5"
+				},
+				{
+					"name": "Note",
+					"code": "NOTE"
+				},
+				{
+					"name": "Top Note",
+					"code": "TOP_NOTE"
+				},
+				{
+					"name": "Unit Box",
+					"code": "UNIT_BOX"
+				},
+				{
+					"name": "Unit Line",
+					"code": "UNIT_LINE"
+				},
+				{
+					"name": "Unit Parent",
+					"code": "UNIT_PARENT"
+				},
+				{
+					"name": "Unit Child",
+					"code": "UNIT_CHILD"
+				},
+				{
+					"name": "Unit Child Line",
+					"code": "UNIT_CHILD_LINE"
+				},
+				{
+					"name": "Unit Split",
+					"code": "UNIT_SPLIT"
+				},
+				{
+					"name": "Overlay",
+					"code": "OVERLAY"
+				},
+				{
+					"name": "Line",
+					"code": "LINE"
+				},
+				{
+					"name": "Two Sided Line",
+					"code": "TWOSIDE"
+				},
+				{
+					"name": "Tow Sided Flow Line",
+					"code": "TWOSIDE_FLOW"
+				},
+				{
+					"name": "Wave Line",
+					"code": "WAVE"
+				},
+				{
+					"name": "Point Anchor Center-Center",
+					"code": "POINT_CC"
+				},
+				{
+					"name": "Point 45 deg. Anchor Center-Center",
+					"code": "POINT_CC_45"
+				},
+				{
+					"name": "Point 45 deg. Anchor Lower-Center",
+					"code": "POINT_LC_45"
+				},
+				{
+					"name": "Left Bracket Upper Part",
+					"code": "L_BRACKET_U"
+				},
+				{
+					"name": "Left Bracket Lower Part",
+					"code": "L_BRACKET_L"
+				},
+				{
+					"name": "Right Bracket Upper Part",
+					"code": "R_BRACKET_U"
+				},
+				{
+					"name": "Right Bracket Lower Part",
+					"code": "R_BRACKET_L"
+				},
+				{
+					"name": "Annotation Bracket",
+					"code": "ANNO_BRACKET"
+				},
+				{
+					"name": "Break line",
+					"code": "BREAK"
+				},
+				{
+					"name": "Break line annotation",
+					"code": "ANNO_BREAK"
+				},
+				{
+					"name": "Beach",
+					"code": "BEACH"
+				},
+				{
+					"name": "Blob",
+					"code": "BLOB"
+				},
+				{
+					"name": "Dunes",
+					"code": "DUNES"
+				},
+				{
+					"name": "Landslide",
+					"code": "LANDSLIDE"
+				},
+				{
+					"name": "Moraine",
+					"code": "MORAINE"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDefaultValue"
 		},
 		{
 			"type": "codedValue",
@@ -6005,7 +6259,7 @@
 						"name": "ELEMENT",
 						"type": "esriFieldTypeString",
 						"isNullable": true,
-						"length": 50,
+						"length": 254,
 						"precision": 0,
 						"scale": 0,
 						"aliasName": "Legend Element",
@@ -6018,24 +6272,136 @@
 							"description": "",
 							"codedValues": [
 								{
-									"name": "Map Unit",
-									"code": "mapUnit"
+									"name": "Heading 1",
+									"code": "HEADING1"
 								},
 								{
-									"name": "Geoline",
-									"code": "geoline"
+									"name": "Heading 2",
+									"code": "HEADING2"
 								},
 								{
-									"name": "Geopoint",
-									"code": "geopoint"
+									"name": "Heading 3",
+									"code": "HEADING3"
 								},
 								{
-									"name": "Headers",
-									"code": "header"
+									"name": "Heading 4",
+									"code": "HEADING4"
 								},
 								{
-									"name": "Field Stations",
-									"code": "fieldPoint"
+									"name": "Heading 5",
+									"code": "HEADING5"
+								},
+								{
+									"name": "Note",
+									"code": "NOTE"
+								},
+								{
+									"name": "Top Note",
+									"code": "TOP_NOTE"
+								},
+								{
+									"name": "Unit Box",
+									"code": "UNIT_BOX"
+								},
+								{
+									"name": "Unit Line",
+									"code": "UNIT_LINE"
+								},
+								{
+									"name": "Unit Parent",
+									"code": "UNIT_PARENT"
+								},
+								{
+									"name": "Unit Child",
+									"code": "UNIT_CHILD"
+								},
+								{
+									"name": "Unit Child Line",
+									"code": "UNIT_CHILD_LINE"
+								},
+								{
+									"name": "Unit Split",
+									"code": "UNIT_SPLIT"
+								},
+								{
+									"name": "Overlay",
+									"code": "OVERLAY"
+								},
+								{
+									"name": "Line",
+									"code": "LINE"
+								},
+								{
+									"name": "Two Sided Line",
+									"code": "TWOSIDE"
+								},
+								{
+									"name": "Two Sided Flow Line",
+									"code": "TWOSIDE_FLOW"
+								},
+								{
+									"name": "Wave Line",
+									"code": "WAVE"
+								},
+								{
+									"name": "Point Anchor Center-Center",
+									"code": "POINT_CC"
+								},
+								{
+									"name": "Point 45 deg. Anchor Center-Center",
+									"code": "POINT_CC_45"
+								},
+								{
+									"name": "Point 45 deg. Anchor Lower-Center",
+									"code": "POINT_LC_45"
+								},
+								{
+									"name": "Left Bracket Upper Part",
+									"code": "L_BRACKET_U"
+								},
+								{
+									"name": "Left Bracket Lower Part",
+									"code": "L_BRACKET_L"
+								},
+								{
+									"name": "Right Bracket Upper Part",
+									"code": "R_BRACKET_U"
+								},
+								{
+									"name": "Right Bracket Lower Part",
+									"code": "R_BRACKET_L"
+								},
+								{
+									"name": "Annotation Bracket",
+									"code": "ANNO_BRACKET"
+								},
+								{
+									"name": "Break Line",
+									"code": "BREAK"
+								},
+								{
+									"name": "Break Line Annotation",
+									"code": "ANNO_BREAK"
+								},
+								{
+									"name": "Beach",
+									"code": "BEACH"
+								},
+								{
+									"name": "Blob",
+									"code": "BLOB"
+								},
+								{
+									"name": "Dunes",
+									"code": "DUNES"
+								},
+								{
+									"name": "Landslide",
+									"code": "LANDSLIDE"
+								},
+								{
+									"name": "Moraine",
+									"code": "MORAINE"
 								}
 							]
 						}
@@ -6044,7 +6410,7 @@
 						"name": "STYLE1",
 						"type": "esriFieldTypeString",
 						"isNullable": true,
-						"length": 15,
+						"length": 254,
 						"precision": 0,
 						"scale": 0,
 						"aliasName": "Style 1",
@@ -6053,8 +6419,8 @@
 					{
 						"name": "STYLE2",
 						"type": "esriFieldTypeString",
-						"isNullable": false,
-						"length": 2,
+						"isNullable": true,
+						"length": 254,
 						"precision": 0,
 						"scale": 0,
 						"aliasName": "Style 2",
@@ -6064,7 +6430,7 @@
 						"name": "LABEL1",
 						"type": "esriFieldTypeString",
 						"isNullable": true,
-						"length": 2,
+						"length": 254,
 						"precision": 0,
 						"scale": 0,
 						"aliasName": "Label 1",
@@ -6104,7 +6470,7 @@
 						"name": "HEADING",
 						"type": "esriFieldTypeString",
 						"isNullable": true,
-						"length": 50,
+						"length": 1000,
 						"precision": 0,
 						"scale": 0,
 						"aliasName": "Heading"
@@ -6132,7 +6498,7 @@
 						"name": "DESCRIPTION",
 						"type": "esriFieldTypeString",
 						"isNullable": true,
-						"length": 50,
+						"length": 2000,
 						"precision": 0,
 						"scale": 0,
 						"aliasName": "Legend Description"

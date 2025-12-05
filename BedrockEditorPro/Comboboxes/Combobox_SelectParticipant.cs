@@ -80,7 +80,7 @@ namespace BedrockEditorPro.Comboboxes
                                 {
                                     if (fl != null)
                                     {
-                                        Uri flWorkspace = Workspace.GetWorkspacePathFromFeatureLayer(fl);
+                                        Uri flWorkspace = Workspace.GetWorkspacePath(fl);
                                         if (flWorkspace != null && flWorkspace.ToString().Contains(".gdb"))
                                         {
                                             using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(flWorkspace)))

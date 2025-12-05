@@ -303,7 +303,7 @@ namespace BedrockEditorPro.DockPanes
                     NotifyPropertyChanged(nameof(GeolineGeneration));
 
                     FeatureLayer lineLayer = GeolineLayers[GeolineSelectedLayerIndex].FLayer;
-                    _uriGeodatabase = Workspace.GetWorkspacePathFromFeatureLayer(lineLayer);
+                    _uriGeodatabase = Workspace.GetWorkspacePath(lineLayer);
 
                     if (_uriGeodatabase != null && _geolineType.Count() == 0 && Directory.Exists(_uriGeodatabase.OriginalString))
                     {

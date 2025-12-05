@@ -318,7 +318,7 @@ namespace BedrockEditorPro.DockPanes
                     NotifyPropertyChanged(nameof(GeopointMethod));
 
                     FeatureLayer pointLayer = GeopointLayers[GeopointSelectedLayerIndex].FLayer;
-                    _uriGeodatabase = Workspace.GetWorkspacePathFromFeatureLayer(pointLayer);
+                    _uriGeodatabase = Workspace.GetWorkspacePath(pointLayer);
 
                     if (_uriGeodatabase != null && _geopointType.Count() == 0 && Directory.Exists(_uriGeodatabase.OriginalString))
                     {

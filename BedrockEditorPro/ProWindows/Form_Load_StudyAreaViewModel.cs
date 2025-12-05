@@ -352,7 +352,7 @@ namespace BedrockEditorPro.ProWindows
                     NotifyPropertyChanged(nameof(StudyAreaPurposeValues));
 
                     FeatureLayer areaLayer = StudyAreaLayers[StudyAreaSelectedLayerIndex].FLayer;
-                    _areaLayerSourceUri = Workspace.GetWorkspacePathFromFeatureLayer(areaLayer);
+                    _areaLayerSourceUri = Workspace.GetWorkspacePath(areaLayer);
 
                     if (_areaLayerSourceUri != null && StudyAreaPurposeValues.Count() == 0 && Directory.Exists(_areaLayerSourceUri.OriginalString))
                     {

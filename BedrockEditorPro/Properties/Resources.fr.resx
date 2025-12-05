@@ -517,4 +517,127 @@
   <data name="FormEnvironmentNewGeodatabaseBetaOptions" xml:space="preserve">
     <value>Choisir une version de modèle.</value>
   </data>
+  <data name="FormLegendElementTypeGroup" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FormLegendSymbolStyleGroup" xml:space="preserve">
+    <value>Style et Symbole</value>
+  </data>
+  <data name="FormLegendDescritiveGroup" xml:space="preserve">
+    <value>Descriptif</value>
+  </data>
+  <data name="FormLegendPlacementGroup" xml:space="preserve">
+    <value>Placement</value>
+  </data>
+  <data name="FormLegendOtherDetailGroup" xml:space="preserve">
+    <value>Autres détails</value>
+  </data>
+  <data name="FormLegendItemTypeUnitBox" xml:space="preserve">
+    <value>Boîte d'unité</value>
+  </data>
+  <data name="FormLegendItemTypeUnitParent" xml:space="preserve">
+    <value>Boîte unité parent</value>
+  </data>
+  <data name="FormLegendItemTypeUnitChild" xml:space="preserve">
+    <value>Boîte unité enfant</value>
+  </data>
+  <data name="FormLegendItemTypeUnitSplit" xml:space="preserve">
+    <value>Boîte unité séparée</value>
+  </data>
+  <data name="FormLegendItemTypeUnitLine" xml:space="preserve">
+    <value>Unité linéaire</value>
+  </data>
+  <data name="FormLegendItemTypeOverlay" xml:space="preserve">
+    <value>Trame</value>
+  </data>
+  <data name="FormLegendItemTypeBlob" xml:space="preserve">
+    <value>Blob</value>
+  </data>
+  <data name="FormLegendItemTypeUnitIndent1" xml:space="preserve">
+    <value>Unité avec indentation</value>
+  </data>
+  <data name="FormLegendItemTypeUnitIndent2" xml:space="preserve">
+    <value>Unité avec double indentation</value>
+  </data>
+  <data name="FormLegendItemTypeUnitLineChild" xml:space="preserve">
+    <value>Unité linéaire enfant</value>
+  </data>
+  <data name="FormLegendItemTypeLine" xml:space="preserve">
+    <value>Ligne</value>
+  </data>
+  <data name="FormLegendItemTypeWave" xml:space="preserve">
+    <value>Vague</value>
+  </data>
+  <data name="FormLegendItemTypeTwoSidedLine" xml:space="preserve">
+    <value>Ligne double</value>
+  </data>
+  <data name="FormLegendItemTypeTwoSidedFlow" xml:space="preserve">
+    <value>Ligne double d'écoulement</value>
+  </data>
+  <data name="FormLegendItemTypeBeach" xml:space="preserve">
+    <value>Plage</value>
+  </data>
+  <data name="FormLegendItemTypeMoraine" xml:space="preserve">
+    <value>Moraine</value>
+  </data>
+  <data name="FormLegendItemTypeLandslide" xml:space="preserve">
+    <value>Glissement de terrain</value>
+  </data>
+  <data name="FormLegendItemTypeDunes" xml:space="preserve">
+    <value>Dunes</value>
+  </data>
+  <data name="FormLegendItemTypeTwoSidedFlip" xml:space="preserve">
+    <value>Ligne double inverse</value>
+  </data>
+  <data name="FormLegendItemTypePoint" xml:space="preserve">
+    <value>Point</value>
+  </data>
+  <data name="FormLegendItemTypePointCC45" xml:space="preserve">
+    <value>Point centre-centre 45</value>
+  </data>
+  <data name="FormLegendItemTypePointLC45" xml:space="preserve">
+    <value>Point en bas à gauche-centre 45</value>
+  </data>
+  <data name="FormLegendItemTypeHeader1" xml:space="preserve">
+    <value>En-tête 1</value>
+  </data>
+  <data name="FormLegendItemTypeHeader2" xml:space="preserve">
+    <value>En-tête 2</value>
+  </data>
+  <data name="FormLegendItemTypeHeader3" xml:space="preserve">
+    <value>En-tête 3</value>
+  </data>
+  <data name="FormLegendItemTypeHeader4" xml:space="preserve">
+    <value>En-tête 4</value>
+  </data>
+  <data name="FormLegendItemTypeHeader5" xml:space="preserve">
+    <value>En-tête 5</value>
+  </data>
+  <data name="FormLegendItemTypeNote" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="FormLegendItemTypeTopnote" xml:space="preserve">
+    <value>Note de haut de page</value>
+  </data>
+  <data name="FormLegendItemTypeLeftBracketStart" xml:space="preserve">
+    <value>Branche gauche, début</value>
+  </data>
+  <data name="FormLegendItemTypeLeftBracketEnd" xml:space="preserve">
+    <value>Branche gauche, fin</value>
+  </data>
+  <data name="FormLegendItemTypeLeftBracketText" xml:space="preserve">
+    <value>Branche gauche, texte</value>
+  </data>
+  <data name="FormLegendItemTypeRightBracketStart" xml:space="preserve">
+    <value>Branche droite, début</value>
+  </data>
+  <data name="FormLegendItemTypeRightBracketEnd" xml:space="preserve">
+    <value>Branche droite, fin</value>
+  </data>
+  <data name="FormLegendItemTypeBreak" xml:space="preserve">
+    <value>Séparateur</value>
+  </data>
+  <data name="FormLegendItemTypeBreakText" xml:space="preserve">
+    <value>Séparateur, texte</value>
+  </data>
 </root>

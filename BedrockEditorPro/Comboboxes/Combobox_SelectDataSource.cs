@@ -76,8 +76,8 @@ namespace BedrockEditorPro.Comboboxes
                                 foreach (FeatureLayer fl in layerEnum)
                                 {
 
-                                    Uri flWorkspace = Workspace.GetWorkspacePathFromFeatureLayer(fl);
-                                    if (flWorkspace.ToString().Contains(".gdb"))
+                                    Uri flWorkspace = Workspace.GetWorkspacePath(fl);
+                                    if (flWorkspace != null && flWorkspace.ToString().Contains(".gdb"))
                                     {
                                         using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(flWorkspace)))
                                         {

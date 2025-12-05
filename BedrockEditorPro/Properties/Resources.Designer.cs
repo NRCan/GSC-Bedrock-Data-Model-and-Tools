@@ -772,6 +772,24 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Descriptive.
+        /// </summary>
+        public static string FormLegendDescritiveGroup {
+            get {
+                return ResourceManager.GetString("FormLegendDescritiveGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string FormLegendElementTypeGroup {
+            get {
+                return ResourceManager.GetString("FormLegendElementTypeGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select an Item.
         /// </summary>
         public static string FormLegendItems {
@@ -786,6 +804,357 @@ namespace BedrockEditorPro.Properties {
         public static string FormLegendItemsModificationTitle {
             get {
                 return ResourceManager.GetString("FormLegendItemsModificationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beach.
+        /// </summary>
+        public static string FormLegendItemTypeBeach {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeBeach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blob.
+        /// </summary>
+        public static string FormLegendItemTypeBlob {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeBlob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Break.
+        /// </summary>
+        public static string FormLegendItemTypeBreak {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeBreak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Break Text.
+        /// </summary>
+        public static string FormLegendItemTypeBreakText {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeBreakText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dunes.
+        /// </summary>
+        public static string FormLegendItemTypeDunes {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeDunes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Header 1.
+        /// </summary>
+        public static string FormLegendItemTypeHeader1 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeHeader1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Header 2.
+        /// </summary>
+        public static string FormLegendItemTypeHeader2 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeHeader2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Header 3.
+        /// </summary>
+        public static string FormLegendItemTypeHeader3 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeHeader3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Header 4.
+        /// </summary>
+        public static string FormLegendItemTypeHeader4 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeHeader4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Header 5.
+        /// </summary>
+        public static string FormLegendItemTypeHeader5 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeHeader5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Landslide.
+        /// </summary>
+        public static string FormLegendItemTypeLandslide {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeLandslide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Bracket End.
+        /// </summary>
+        public static string FormLegendItemTypeLeftBracketEnd {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeLeftBracketEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Bracket Start.
+        /// </summary>
+        public static string FormLegendItemTypeLeftBracketStart {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeLeftBracketStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Bracket Text.
+        /// </summary>
+        public static string FormLegendItemTypeLeftBracketText {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeLeftBracketText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Line.
+        /// </summary>
+        public static string FormLegendItemTypeLine {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moraine.
+        /// </summary>
+        public static string FormLegendItemTypeMoraine {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeMoraine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note.
+        /// </summary>
+        public static string FormLegendItemTypeNote {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overlay.
+        /// </summary>
+        public static string FormLegendItemTypeOverlay {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeOverlay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Point.
+        /// </summary>
+        public static string FormLegendItemTypePoint {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypePoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Point Center Center 45.
+        /// </summary>
+        public static string FormLegendItemTypePointCC45 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypePointCC45", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Point Lower Left-Center 45.
+        /// </summary>
+        public static string FormLegendItemTypePointLC45 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypePointLC45", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Bracket End.
+        /// </summary>
+        public static string FormLegendItemTypeRightBracketEnd {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeRightBracketEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Bracket Start.
+        /// </summary>
+        public static string FormLegendItemTypeRightBracketStart {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeRightBracketStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Note.
+        /// </summary>
+        public static string FormLegendItemTypeTopnote {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeTopnote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two Sided Flip.
+        /// </summary>
+        public static string FormLegendItemTypeTwoSidedFlip {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeTwoSidedFlip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two Sided Flow.
+        /// </summary>
+        public static string FormLegendItemTypeTwoSidedFlow {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeTwoSidedFlow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two Sided Line.
+        /// </summary>
+        public static string FormLegendItemTypeTwoSidedLine {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeTwoSidedLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Box.
+        /// </summary>
+        public static string FormLegendItemTypeUnitBox {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Child.
+        /// </summary>
+        public static string FormLegendItemTypeUnitChild {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitChild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Indent 1.
+        /// </summary>
+        public static string FormLegendItemTypeUnitIndent1 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitIndent1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Indent 2.
+        /// </summary>
+        public static string FormLegendItemTypeUnitIndent2 {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitIndent2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Line.
+        /// </summary>
+        public static string FormLegendItemTypeUnitLine {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Child Line.
+        /// </summary>
+        public static string FormLegendItemTypeUnitLineChild {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitLineChild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Parent.
+        /// </summary>
+        public static string FormLegendItemTypeUnitParent {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Split.
+        /// </summary>
+        public static string FormLegendItemTypeUnitSplit {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeUnitSplit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wave.
+        /// </summary>
+        public static string FormLegendItemTypeWave {
+            get {
+                return ResourceManager.GetString("FormLegendItemTypeWave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other Details.
+        /// </summary>
+        public static string FormLegendOtherDetailGroup {
+            get {
+                return ResourceManager.GetString("FormLegendOtherDetailGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Placement.
+        /// </summary>
+        public static string FormLegendPlacementGroup {
+            get {
+                return ResourceManager.GetString("FormLegendPlacementGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Symbol and Style.
+        /// </summary>
+        public static string FormLegendSymbolStyleGroup {
+            get {
+                return ResourceManager.GetString("FormLegendSymbolStyleGroup", resourceCulture);
             }
         }
         

@@ -21,37 +21,56 @@ namespace BedrockEditorPro.Utilities
         #region GET METHODS
 
         /// <summary>
-        /// Will return the original database path of a feature layer
+        /// Will return the original database path of a feature layer or standalone table
         /// </summary>
-        /// <param name="inFL"></param>
+        /// <param name="inObject">A feature layer object or a standalone table one</param>
         /// <returns></returns>
-        public static Uri GetWorkspacePathFromFeatureLayer(FeatureLayer inFL)
+        public static Uri GetWorkspacePath(object inObject)
         {
             Uri outputWorkspaceUri = null;
-            FeatureClass fc = inFL.GetFeatureClass();
+            Uri objectUri = null;
 
-            if (fc != null)
+            //Case - feature layer
+            FeatureLayer fl = inObject as FeatureLayer;
+            if (fl != null)
             {
-                Uri fcURI = fc.GetPath();
+                FeatureClass fc = fl.GetFeatureClass();
 
-                if (fcURI != null)
+                if (fc != null)
                 {
-                    string fcPath = fcURI.OriginalString;
-                    string outputWorkspacePath = Directory.GetParent(fcPath).FullName;
-                    if (outputWorkspacePath != null && outputWorkspacePath != string.Empty)
-                    {
-                        //Remove any feature dataset name at the end of the workspace path
-                        if (outputWorkspacePath.Contains(".gdb") && (outputWorkspacePath.Contains(".gdb\\") || outputWorkspacePath.Contains(".gdb/")))
-                        {
-                            outputWorkspacePath = outputWorkspacePath.Substring(0, outputWorkspacePath.IndexOf(".gdb") + 4);
-                        }
-
-                        outputWorkspaceUri = new Uri(outputWorkspacePath);
-                    }
-                    
+                    objectUri = fc.GetPath();
                 }
             }
-            
+
+            //Case - standalone table
+            StandaloneTable st = inObject as StandaloneTable;
+            if (st != null)
+            {
+                Table t = st.GetTable();
+
+                if (t != null)
+                {
+                    objectUri = t.GetPath();
+                }
+            }
+
+            //Get workspace path 
+            if (objectUri != null)
+            {
+                string path = objectUri.OriginalString;
+                string outputWorkspacePath = Directory.GetParent(path).FullName;
+                if (outputWorkspacePath != null && outputWorkspacePath != string.Empty)
+                {
+                    //Remove any feature dataset name at the end of the workspace path
+                    if (outputWorkspacePath.Contains(".gdb") && (outputWorkspacePath.Contains(".gdb\\") || outputWorkspacePath.Contains(".gdb/")))
+                    {
+                        outputWorkspacePath = outputWorkspacePath.Substring(0, outputWorkspacePath.IndexOf(".gdb") + 4);
+                    }
+
+                    outputWorkspaceUri = new Uri(outputWorkspacePath);
+                }
+
+            }
 
             return outputWorkspaceUri;
         }

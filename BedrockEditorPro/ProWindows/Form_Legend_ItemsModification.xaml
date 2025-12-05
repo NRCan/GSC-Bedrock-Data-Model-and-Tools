@@ -33,6 +33,18 @@
             <!--Select legend item-->
             <RowDefinition Height="65"/>
 
+            <!--Element type selection group-->
+            <RowDefinition Height="*"/>
+            
+            <!-- Symbol and style group-->
+            <RowDefinition Height="*"/>
+            
+            <!--Descriptive, placement and other groups-->
+            <RowDefinition Height="*"/>
+            
+            <!--Warning messages-->
+            <RowDefinition Height="25"/>
+
             <!--Command buttons-->
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
@@ -42,7 +54,8 @@
         <!--Legend table view-->
         <StackPanel Grid.Row="0" >
             <TextBlock Text="{x:Static local:Resources.FormLegendTableView}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-            <ComboBox x:Name="LegendViewCombobox" Width="200" HorizontalAlignment="Left" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,0" Height="22" VerticalContentAlignment="Center" 
+            <ComboBox x:Name="LegendViewCombobox" Width="200" HorizontalAlignment="Left" Style="{DynamicResource BedrockTextboxInputs}" 
+                      Margin="0,10,0,0" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=LegendTables}" SelectedIndex="{Binding Path=LegendSelectedTableIndex}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -57,12 +70,173 @@
         <!--Legend items-->
         <StackPanel Grid.Row="1" >
             <Label Content="{x:Static local:Resources.FormLegendItems}" HorizontalAlignment="Left" Margin="-5,0,0,-5" Style="{DynamicResource BedrockButtonLabel}"/>
-            <ComboBox x:Name="LegendItemCombobox" Width="200" HorizontalAlignment="Left" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,10" Height="22" VerticalContentAlignment="Center" 
-                                     ItemsSource="{Binding Path=LegendItems}" SelectedIndex="{Binding Path=LegendSelectedItemIndex}"/>
+            <ComboBox x:Name="LegendItemCombobox" Width="200" HorizontalAlignment="Left" Style="{DynamicResource BedrockTextboxInputs}" 
+                      Margin="0,0,0,10" Height="22" VerticalContentAlignment="Center" 
+                      DisplayMemberPath="Name" SelectedValuePath="Value"
+                      ItemsSource="{Binding Path=LegendItems}" SelectedIndex="{Binding Path=LegendSelectedItemIndex}"/>
         </StackPanel>
 
+        <!--Element type group-->
+        <GroupBox Header="{x:Static local:Resources.FormLegendElementTypeGroup}" Grid.Row="2">
+            
+            <StackPanel Orientation="Vertical">
+
+                <!--Map units-->
+                <StackPanel Orientation="Horizontal">
+
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitBox}" 
+                        Style="{DynamicResource Esri_Button}" Background="{Binding Path=LegendButtonBackground}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                        Command="{Binding ElementTypeButtonCommand}" />
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitParent}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitChild}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitLineChild}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitSplit}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitLine}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeOverlay}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeBlob}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitIndent1}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitIndent2}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+
+                <!--Lines-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeLine}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeWave}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeTwoSidedLine}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeTwoSidedFlow}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeTwoSidedFlip}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeBeach}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeMoraine}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeLandslide}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeDunes}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+                
+                <!--Marker points-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypePoint}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypePointCC45}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypePointLC45}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+
+                <!--Headers-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeHeader1}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeHeader2}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeHeader3}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeHeader4}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeHeader5}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeNote}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeTopnote}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+                
+                <!--Other graphics-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeLeftBracketStart}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeLeftBracketEnd}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeLeftBracketText}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeRightBracketStart}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeRightBracketEnd}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeBreak}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeBreakText}" Style="{DynamicResource Esri_Button}"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            
+
+        </GroupBox>
+
+        <!--Symbol and style group-->
+        <GroupBox Header="{x:Static local:Resources.FormLegendSymbolStyleGroup}" Grid.Row="3"/>
+
+        <!--Lower part groups-->
+        <StackPanel Orientation="Horizontal" Grid.Row="4">
+
+            <GroupBox Header="{x:Static local:Resources.FormLegendDescritiveGroup}"/>
+
+            <StackPanel Orientation="Vertical" Margin="10,0,10,0">
+
+                <GroupBox Header="{x:Static local:Resources.FormLegendPlacementGroup}" Margin="0,0,0,10"/>
+                <GroupBox Header="{x:Static local:Resources.FormLegendOtherDetailGroup}"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+        <!--Warnings-->
+        <Label Grid.Row="6" Margin="-5,0,0,-5"  Grid.ColumnSpan="2" Foreground="Red" Content="{Binding Path=WarningMessage, Mode=TwoWay}" Style="{DynamicResource BedrockWarningLabel}"/>
+
         <!--Run-->
-        <Button Grid.Row="2" Margin="0"
+        <Button Grid.Row="7" Margin="0"
             Style="{DynamicResource Esri_Button}" HorizontalAlignment="Left" Width="75"
             Command="{Binding RunTool}">
             <Button.Content>

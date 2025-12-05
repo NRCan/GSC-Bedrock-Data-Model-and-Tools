@@ -128,7 +128,7 @@ namespace BedrockEditorPro.ProWindows
                         {
                             //Get origin database
                             FeatureLayer geopolyFL = MapUnitsLayers[MapUnitsSelectedLayerIndex].FLayer;
-                            Uri _muLayerSourceUri = Workspace.GetWorkspacePathFromFeatureLayer(geopolyFL);
+                            Uri _muLayerSourceUri = Workspace.GetWorkspacePath(geopolyFL);
                             using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_muLayerSourceUri)))
                             {
                                 //Empty geopoly feature from it's content

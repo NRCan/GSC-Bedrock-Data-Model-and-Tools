@@ -378,7 +378,7 @@ namespace BedrockEditorPro.DockPanes
                 {
                     FeatureLayer labelLayer = LabelLayers[LabelSelectedLayerIndex].FLayer;
 
-                    _uriGeodatabase = Workspace.GetWorkspacePathFromFeatureLayer(labelLayer);
+                    _uriGeodatabase = Workspace.GetWorkspacePath(labelLayer);
 
                     if (_uriGeodatabase != null && _labelAgePrefix.Count() == 0 && Directory.Exists(_uriGeodatabase.OriginalString))
                     {

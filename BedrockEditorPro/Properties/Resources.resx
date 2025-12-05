@@ -508,9 +508,6 @@
   <data name="FormLegendItems" xml:space="preserve">
     <value>Select an Item</value>
   </data>
-  <data name="GSC_BEDROCKGDB_SCHEMA_V3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\GSC_BEDROCKGDB_SCHEMA_V3_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="FormEnvironmentNewGeodatabaseV210" xml:space="preserve">
     <value>Version 2.10</value>
   </data>
@@ -519,5 +516,131 @@
   </data>
   <data name="FormEnvironmentNewGeodatabaseBetaOptions" xml:space="preserve">
     <value>Choose a model version</value>
+  </data>
+  <data name="FormLegendElementTypeGroup" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FormLegendSymbolStyleGroup" xml:space="preserve">
+    <value>Symbol and Style</value>
+  </data>
+  <data name="FormLegendDescritiveGroup" xml:space="preserve">
+    <value>Descriptive</value>
+  </data>
+  <data name="FormLegendPlacementGroup" xml:space="preserve">
+    <value>Placement</value>
+  </data>
+  <data name="FormLegendOtherDetailGroup" xml:space="preserve">
+    <value>Other Details</value>
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\GSC_BEDROCKGDB_SCHEMA_V3_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FormLegendItemTypeUnitBox" xml:space="preserve">
+    <value>Unit Box</value>
+  </data>
+  <data name="FormLegendItemTypeUnitParent" xml:space="preserve">
+    <value>Unit Parent</value>
+  </data>
+  <data name="FormLegendItemTypeUnitChild" xml:space="preserve">
+    <value>Unit Child</value>
+  </data>
+  <data name="FormLegendItemTypeUnitSplit" xml:space="preserve">
+    <value>Unit Split</value>
+  </data>
+  <data name="FormLegendItemTypeUnitLine" xml:space="preserve">
+    <value>Unit Line</value>
+  </data>
+  <data name="FormLegendItemTypeOverlay" xml:space="preserve">
+    <value>Overlay</value>
+  </data>
+  <data name="FormLegendItemTypeBlob" xml:space="preserve">
+    <value>Blob</value>
+  </data>
+  <data name="FormLegendItemTypeUnitIndent1" xml:space="preserve">
+    <value>Unit Indent 1</value>
+  </data>
+  <data name="FormLegendItemTypeUnitIndent2" xml:space="preserve">
+    <value>Unit Indent 2</value>
+  </data>
+  <data name="FormLegendItemTypeUnitLineChild" xml:space="preserve">
+    <value>Unit Child Line</value>
+  </data>
+  <data name="FormLegendItemTypeLine" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="FormLegendItemTypeWave" xml:space="preserve">
+    <value>Wave</value>
+  </data>
+  <data name="FormLegendItemTypeTwoSidedLine" xml:space="preserve">
+    <value>Two Sided Line</value>
+  </data>
+  <data name="FormLegendItemTypeTwoSidedFlow" xml:space="preserve">
+    <value>Two Sided Flow</value>
+  </data>
+  <data name="FormLegendItemTypeBeach" xml:space="preserve">
+    <value>Beach</value>
+  </data>
+  <data name="FormLegendItemTypeMoraine" xml:space="preserve">
+    <value>Moraine</value>
+  </data>
+  <data name="FormLegendItemTypeLandslide" xml:space="preserve">
+    <value>Landslide</value>
+  </data>
+  <data name="FormLegendItemTypeDunes" xml:space="preserve">
+    <value>Dunes</value>
+  </data>
+  <data name="FormLegendItemTypeTwoSidedFlip" xml:space="preserve">
+    <value>Two Sided Flip</value>
+  </data>
+  <data name="FormLegendItemTypePoint" xml:space="preserve">
+    <value>Point</value>
+  </data>
+  <data name="FormLegendItemTypePointCC45" xml:space="preserve">
+    <value>Point Center Center 45</value>
+  </data>
+  <data name="FormLegendItemTypePointLC45" xml:space="preserve">
+    <value>Point Lower Left-Center 45</value>
+  </data>
+  <data name="FormLegendItemTypeHeader1" xml:space="preserve">
+    <value>Header 1</value>
+  </data>
+  <data name="FormLegendItemTypeHeader2" xml:space="preserve">
+    <value>Header 2</value>
+  </data>
+  <data name="FormLegendItemTypeHeader3" xml:space="preserve">
+    <value>Header 3</value>
+  </data>
+  <data name="FormLegendItemTypeHeader4" xml:space="preserve">
+    <value>Header 4</value>
+  </data>
+  <data name="FormLegendItemTypeHeader5" xml:space="preserve">
+    <value>Header 5</value>
+  </data>
+  <data name="FormLegendItemTypeNote" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="FormLegendItemTypeTopnote" xml:space="preserve">
+    <value>Top Note</value>
+  </data>
+  <data name="FormLegendItemTypeLeftBracketStart" xml:space="preserve">
+    <value>Left Bracket Start</value>
+  </data>
+  <data name="FormLegendItemTypeLeftBracketEnd" xml:space="preserve">
+    <value>Left Bracket End</value>
+  </data>
+  <data name="FormLegendItemTypeLeftBracketText" xml:space="preserve">
+    <value>Left Bracket Text</value>
+  </data>
+  <data name="FormLegendItemTypeRightBracketStart" xml:space="preserve">
+    <value>Right Bracket Start</value>
+  </data>
+  <data name="FormLegendItemTypeRightBracketEnd" xml:space="preserve">
+    <value>Right Bracket End</value>
+  </data>
+  <data name="FormLegendItemTypeBreak" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="FormLegendItemTypeBreakText" xml:space="preserve">
+    <value>Break Text</value>
   </data>
 </root>

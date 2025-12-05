@@ -465,7 +465,7 @@ namespace BedrockEditorPro.ProWindows
         /// <param name="inLayer"></param>
         public void RefreshLayerTemplates(FeatureLayer inLayer)
         {
-            Uri layerURI = Workspace.GetWorkspacePathFromFeatureLayer(inLayer);
+            Uri layerURI = Workspace.GetWorkspacePath(inLayer);
             if (layerURI != null)
             {
                 using (Geodatabase layerGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(layerURI)))
