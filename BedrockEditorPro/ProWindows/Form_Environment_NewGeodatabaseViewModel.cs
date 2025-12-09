@@ -301,7 +301,7 @@ namespace BedrockEditorPro.ProWindows
                         File.WriteAllText(JSONFilePath, replacedSchemaString);
 
                         //Convert schema from json to xml
-                        string assetFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V3_0);
+                        string assetFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V4_0);
                         if (_version210Checkbox)
                         {
                             assetFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V2_10);
@@ -384,8 +384,8 @@ namespace BedrockEditorPro.ProWindows
         public void ManageSchemaResources()
         {
             //Whole database is in json so feature datasets can have their spatial reference set see issue #5
-            string jsonfFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V3_0);
-            byte[] jsonBytes = Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V3_0;
+            string jsonfFileName = nameof(Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V4_0);
+            byte[] jsonBytes = Properties.Resources.GSC_BEDROCKGDB_SCHEMA_V4_0;
 
             if (_version210Checkbox)
             {

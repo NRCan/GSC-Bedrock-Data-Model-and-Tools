@@ -9,7 +9,8 @@ namespace BedrockEditorPro.Utilities
         public class Database
         {
 
-            public const double CurrentDBVersion = 3.0; //Update this when DB schema is changed
+            public const double CurrentDBVersion = 4.0; //Update this when DB schema is changed
+            public const double DBVersion_300 = 3.0; //Never implemented, skipped from 2.10 to 4.0 to align with software versioning
             public const double DBVersion_210 = 2.10; 
 
             //Tables
@@ -191,18 +192,19 @@ namespace BedrockEditorPro.Utilities
             #region Legend generator table
             public const string LegendLabelID = "LEGENDITEMID";
             public const string LegendGISDisplay = "GIS_DISPLAY_NAME";
-            public const string LegendItemType = "ELEMENT"; //Version 3.0
-            public const string LegendSymbol = "STYLE1"; //Version 3.0
-            public const string LegendSymbol2 = "STYLE2"; //Version 3.0
-            public const string LegendLabel1 = "LABEL1"; //Version 3.0
-            public const string LegendLabel1Style = "LABSTYLE1"; //Version 3.0
-            public const string LegendLabel2 = "LABEL2"; //Version 3.0
-            public const string LegendLabel2Style = "LABSTYLE2"; //Version 3.0
-            public const string LegendHeading = "HEADING"; //Version 3.0
-            public const string LegendColumn = "ELEMENT_COLUMN"; //Version 3.0
-            public const string LegendOrder = "ELEMENT_ORDER"; //Version 3.0
-            public const string LegendDescription = "DESCRIPTION"; //Version 3.0
+            public const string LegendItemType = "ELEMENT"; //Version 4.0
+            public const string LegendSymbol = "STYLE1"; //Version 4.0
+            public const string LegendSymbol2 = "STYLE2"; //Version 4.0
+            public const string LegendLabel1 = "LABEL1"; //Version 4.0
+            public const string LegendLabel1Style = "LABSTYLE1"; //Version 4.0
+            public const string LegendLabel2 = "LABEL2"; //Version 4.0
+            public const string LegendLabel2Style = "LABSTYLE2"; //Version 4.0
+            public const string LegendHeading = "HEADING"; //Version 4.0
+            public const string LegendColumn = "ELEMENT_COLUMN"; //Version 4.0
+            public const string LegendOrder = "ELEMENT_ORDER"; //Version 4.0
+            public const string LegendDescription = "DESCRIPTION"; //Version 4.0
             public const string LegendGeolRank = "GEOLRANK";
+            public const string LegendOverprint = "OVERPRINT"; //Version 4.0
 
             public const string LegendSymbol_190101 = "GSC_SYMBOL"; //Version 2.10
             public const string LegendSymType_190101 = "SYM_TYPE"; //Version 2.10
@@ -452,6 +454,7 @@ namespace BedrockEditorPro.Utilities
             //Legend
             public const string legendSymbolType = "LegendSymbolType_DID";
             public const string legendSymbolTheme = "LegendItemTheme_PID";
+            public const string legendOverprint = "OverprintLevel_DID";
 
             //Age
             public const string ageDesignator = "AgeDesignator_DID";
