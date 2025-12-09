@@ -17,13 +17,13 @@
         <tab id="BedrockEditorPro_Edit" caption="Bedrock Editor" keytip="tab key tip">
           <group refID="BedrockEditorPro_Templates" />
           <group refID="BedrockEditorPro_CreateEdit" />
-          <group refID="BedrockEditorPro_View" />
+          <!--<group refID="BedrockEditorPro_View" />-->
           <group refID="BedrockEditorPro_Legend" />
           <group refID="BedrockEditorPro_Root" />
         </tab>
         <tab id="BedrockEditorPro_Manager" caption="Bedrock Manager" keytip="tab key tip">
           <group refID="BedrockEditorPro_Environment" />
-          <group refID="BedrockEditorPro_Metadata" />
+          <!--<group refID="BedrockEditorPro_Metadata" />-->
           <group refID="BedrockEditorPro_Load" />
           <group refID="BedrockEditorPro_Help" />
         </tab>
@@ -45,7 +45,7 @@
         <group id="BedrockEditorPro_CreateEdit" caption="Create/Validate" appearsOnAddInTab="false" keytip="CreateEdit">
           <button refID="BedrockEditorPro_Buttons_Button_CreateEdit_CreateMapUnits" size="large" />
           <button refID="BedrockEditorPro_Buttons_Button_CreateEdit_ValidateGeolineIntegrity" size="large" />
-          <button refID="BedrockEditorPro_Buttons_Button_CreateEdit_QualityControl" size="large" />
+          <!--<button refID="BedrockEditorPro_Buttons_Button_CreateEdit_QualityControl" size="large" />-->
         </group>
         <!--View-->
         <group id="BedrockEditorPro_View" caption="View" appearsOnAddInTab="false" keytip="View">
@@ -54,8 +54,8 @@
         <!--Legend-->
         <group id="BedrockEditorPro_Legend" caption="Legend" appearsOnAddInTab="false" keytip="Legend">
           <button refID="BedrockEditorPro_Buttons_Button_Legend_ItemsModification" size="large" />
-          <button refID="BedrockEditorPro_Buttons_Button_Legend_IntersectItemsWithStudyArea" size="large" />
-          <button refID="BedrockEditorPro_Buttons_Button_Legend_ItemDescription" size="large" />
+          <!--<button refID="BedrockEditorPro_Buttons_Button_Legend_IntersectItemsWithStudyArea" size="large" />-->
+          <!--<button refID="BedrockEditorPro_Buttons_Button_Legend_ItemDescription" size="large" />-->
         </group>
         <!--Environment-->
         <group id="BedrockEditorPro_Environment" caption="Environment" appearsOnAddInTab="false" keytip="Enviromment">
@@ -64,9 +64,9 @@
           <button refID="BedrockEditorPro_Buttons_Button_Environment_AddProjectLayers" size="large" />
         </group>
         <!--Metadata-->
-        <group id="BedrockEditorPro_Metadata" caption="Project Metadata" appearsOnAddInTab="false" keytip="Metadata">
+        <!--<group id="BedrockEditorPro_Metadata" caption="Project Metadata" appearsOnAddInTab="false" keytip="Metadata">-->
           <!-- host controls within groups -->
-        </group>
+        <!--</group>-->
         <!--Load-->
         <group id="BedrockEditorPro_Load" caption="Load" appearsOnAddInTab="false" keytip="Load">
           <button refID="BedrockEditorPro_Buttons_Button_Load_StudyAreas" size="large" />
@@ -106,19 +106,19 @@
         <button id="BedrockEditorPro_Buttons_Button_CreateEdit_ValidateGeolineIntegrity" caption="Validate Geoline Integrity" keytip="Geoline validation tool." className="BedrockEditorPro.Buttons.Button_CreateEdit_ValidateGeolineIntegrity" loadOnClick="true" smallImage="EditingExplode16" largeImage="EditingExplode32">
           <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
-        <button id="BedrockEditorPro_Buttons_Button_CreateEdit_QualityControl" caption="Quality Control Tools" keytip="Quality Control Tools" className="BedrockEditorPro.Buttons.Button_CreateEdit_QualityControl.cs" loadOnClick="true" smallImage="ValidateAll16" largeImage="ValidateAll32">
+        <!--<button id="BedrockEditorPro_Buttons_Button_CreateEdit_QualityControl" caption="Quality Control Tools" keytip="Quality Control Tools" className="BedrockEditorPro.Buttons.Button_CreateEdit_QualityControl.cs" loadOnClick="true" smallImage="ValidateAll16" largeImage="ValidateAll32">
           <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
-        </button>
+        </button>-->
         <!--legend menu-->
         <button id="BedrockEditorPro_Buttons_Button_Legend_ItemsModification" caption="Items Modification" keytip="Manage Legend Items" className="BedrockEditorPro.Buttons.Button_Legend_ItemsModification" loadOnClick="true" smallImage="ItemThumbnailCreate16" largeImage="ItemThumbnailCreate32">
           <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
-        <button id="BedrockEditorPro_Buttons_Button_Legend_IntersectItemsWithStudyArea" caption="Intersect with Study Areas" keytip="Intersect Legend Items with Study Areas" className="BedrockEditorPro.Buttons.Button_Legend_IntersectItemsWithStudyArea" loadOnClick="true" smallImage="Layer_Intersect16" largeImage="Layer_Intersect32">
+        <!--<button id="BedrockEditorPro_Buttons_Button_Legend_IntersectItemsWithStudyArea" caption="Intersect with Study Areas" keytip="Intersect Legend Items with Study Areas" className="BedrockEditorPro.Buttons.Button_Legend_IntersectItemsWithStudyArea" loadOnClick="true" smallImage="Layer_Intersect16" largeImage="Layer_Intersect32">
           <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
         </button>
         <button id="BedrockEditorPro_Buttons_Button_Legend_ItemDescription" caption="Items Description" keytip="Manage Legend Item Descriptions" className="BedrockEditorPro.Buttons.Button_Legend_ItemDescription" loadOnClick="true" smallImage="Grouping16" largeImage="Grouping32">
           <tooltip heading="Create / Edit">Tooltip text<disabledText /></tooltip>
-        </button>
+        </button>-->
         <!--environment menu-->
         <button id="BedrockEditorPro_Buttons_Button_Environment_CreateApplyTopologicalRules" caption="Create and Apply Topological Rules" keytip="Create Topology Layer" className="BedrockEditorPro.Buttons.Button_Environment_CreateApplyTopologicalRules" loadOnClick="true" smallImage="EditingReshapeTopologyEdgeTool16" largeImage="EditingReshapeTopologyEdgeTool32">
           <tooltip heading="Environment">Creates a topological dataset (GEO_TOPO) inside the project geodatabase.<disabledText /></tooltip>
