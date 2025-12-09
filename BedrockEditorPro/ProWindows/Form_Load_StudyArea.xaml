@@ -74,7 +74,7 @@
 
         <!--Select study area layer-->
         <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormLoadStudyAreaLayer}" Style="{DynamicResource BedrockButtonLabel}"/>
-        <ComboBox x:Name="StudyAreaLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
+        <ComboBox x:Name="StudyAreaLayerCombobox" Grid.Row="1" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=StudyAreaLayers}" SelectedIndex="{Binding Path=StudyAreaSelectedLayerIndex}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -88,14 +88,14 @@
 
         <!--Associate to a purpose (source, activity, sub activity, project)-->
         <Label Grid.Row="3" Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaPurpose}" Style="{DynamicResource BedrockButtonLabel}"/>
-        <ComboBox Grid.Row="4" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+        <ComboBox Grid.Row="4"  Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
                   ItemsSource="{Binding Path=StudyAreaPurposes}" DisplayMemberPath="Name" SelectedValuePath="Value" 
                   SelectedItem="{Binding StudyAreaSelectedPurpose}">
 
         </ComboBox>
 
         <Label Grid.Row="6" Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLoadStudyAreaPurposeValues}" Style="{DynamicResource BedrockButtonLabel}"/>
-        <ComboBox Grid.Row="7" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
+        <ComboBox Grid.Row="7"  Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center"
                   ItemsSource="{Binding Path=StudyAreaPurposeValues}" DisplayMemberPath="Name" SelectedValuePath="Value"
                   SelectedIndex="{Binding Path=StudyAreaSelectedPurposeValueIndex}"
                   SelectedItem="{Binding Path=StudyAreaSelectedPurposeValue}"/>
@@ -157,7 +157,7 @@
         <GroupBox Grid.Row="17" Header="{x:Static local:Resources.FormLoadStudyAreaOption2Title}" Margin="0">
             <StackPanel>
                 <Label Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormLoadStudyAreaOption2Layer}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox  Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=StudyAreaOption2Layers}" SelectedIndex="{Binding Path=StudyAreaSelectedOption2LayerIndex}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>

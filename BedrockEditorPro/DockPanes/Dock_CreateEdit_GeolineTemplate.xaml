@@ -31,7 +31,7 @@
 
                 <!--Layer selection-->
                 <TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineLayer}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-                <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeolineLayers}" SelectedIndex="{Binding Path=GeolineSelectedLayerIndex}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -48,27 +48,27 @@
 
                 <!--Geoline type-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineType}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="GeolineTypeCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeolineTypeCombobox" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeolineType}" SelectedIndex="{Binding Path=GeolineTypeSelectedIndex}"/>
 
                 <!--Geoline qualifier-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineQualifier}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="GeolineQualifierCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeolineQualifierCombobox" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeolineQualifier}" SelectedIndex="{Binding Path=GeolineQualifierSelectedIndex}"/>
                 
                 <!--Geoline confidence-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineConfidence}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="GeolineConfidenceCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeolineConfidenceCombobox" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeolineConfidence}" SelectedIndex="{Binding Path=GeolineConfidenceSelectedIndex}"/>
                 
                 <!--Geoline attitude-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineAttitude}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="GeolineAttitudeCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeolineAttitudeCombobox" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeolineAttitude}" SelectedIndex="{Binding Path=GeolineAttitudeSelectedIndex}"/>
                 
                 <!--Geoline generation-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeolineGeneration}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="GeolineGenerationCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeolineGenerationCombobox" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeolineGeneration}" SelectedIndex="{Binding Path=GeolineGenerationSelectedIndex}"/>
                 
                 <!--<TextBlock Text="{x:Static local:Resources.FormCreateEditGeolineTemplate}" Margin="0,10,0,0" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>

@@ -42,7 +42,7 @@
         <!--Geoline layers-->
         <StackPanel Grid.Row="0">
             <TextBlock Text="{x:Static local:Resources.FormCreateEditValidateGeolineLayers}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-            <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+            <ComboBox x:Name="GeolineLayerCombobox" Grid.Row="1" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=ValidateLayers}" SelectedIndex="{Binding Path=ValidateSelectedLayerIndex}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

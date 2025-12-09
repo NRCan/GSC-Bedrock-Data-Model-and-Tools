@@ -156,7 +156,6 @@ namespace BedrockEditorPro.DockPanes
 
         #endregion
 
-
         protected Dock_CreateEdit_LabelTemplateViewModel() 
         {
             //Subscribe to symbol dialog events

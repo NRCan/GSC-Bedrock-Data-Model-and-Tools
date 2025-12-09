@@ -34,7 +34,7 @@
 
                 <!--Label layer-->
                 <TextBlock Text="{x:Static local:Resources.FormCreateEditLabelLayer}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-                <ComboBox x:Name="LabelLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="LabelLayerCombobox" Grid.Row="1" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=LabelLayers}" SelectedIndex="{Binding Path=LabelSelectedLayerIndex}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -76,12 +76,12 @@
 
                 <!--Age-->
                 <Label  Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelAgePrefix}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditGeopointSubset" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditGeopointSubset" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                             ItemsSource="{Binding Path=LabelAgePrefix}" SelectedIndex="{Binding Path=LabelAgePrefixSelectedIndex}"/>
 
                 <!--Overprint-->
                 <Label  Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelOveprintLevel}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditLabelOveprintLevel" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditLabelOveprintLevel" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                           IsEnabled="False"  ItemsSource="{Binding Path=LabelOverprintLevel}" SelectedIndex="{Binding Path=LabelOverprintLevelSelectedIndex}"/>
                 
             </StackPanel>

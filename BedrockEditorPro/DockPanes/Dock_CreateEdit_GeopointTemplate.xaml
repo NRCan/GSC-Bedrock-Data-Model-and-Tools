@@ -31,7 +31,7 @@
 
                 <!--Layer selection-->
                 <TextBlock Text="{x:Static local:Resources.FormCreateEditGeopointLayer}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
-                <ComboBox x:Name="GeopointLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="GeopointLayerCombobox" Grid.Row="1" Margin="0,10,0,10" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=GeopointLayers}" SelectedIndex="{Binding Path=GeopointSelectedLayerIndex}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -48,32 +48,32 @@
 
                 <!--Geopoint type-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointType}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditGeopointType" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditGeopointType" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                             ItemsSource="{Binding Path=GeopointType}" SelectedIndex="{Binding Path=GeopointTypeSelectedIndex}"/>
 
                 <!--Geopoint subset-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointSubset}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditGeopointSubset" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditGeopointSubset" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                             ItemsSource="{Binding Path=GeopointSubset}" SelectedIndex="{Binding Path=GeopointSubsetSelectedIndex}"/>
 
                 <!--Geopoint attitude-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointAttitude}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditGeopointAttitude" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditGeopointAttitude" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                            ItemsSource="{Binding Path=GeopointAttitude}" SelectedIndex="{Binding Path=GeopointAttitudeSelectedIndex}"/>
 
                 <!--Geopoint generation-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointGeneration}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditGeopointGeneration" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditGeopointGeneration" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                           ItemsSource="{Binding Path=GeopointGeneration}" SelectedIndex="{Binding Path=GeopointGenerationSelectedIndex}"/>
 
                 <!--Geopoint younging-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointYounging}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditGeopointYounging" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditGeopointYounging" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                           ItemsSource="{Binding Path=GeopointYounging}" SelectedIndex="{Binding Path=GeopointYoungingSelectedIndex}"/>
 
                 <!--Geopoint method-->
                 <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditGeopointMethod}" Style="{DynamicResource BedrockButtonLabel}"/>
-                <ComboBox x:Name="FormCreateEditGeopointMethod" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0" Height="22" VerticalContentAlignment="Center" 
+                <ComboBox x:Name="FormCreateEditGeopointMethod" Grid.Row="1" Margin="0" Height="22" VerticalContentAlignment="Center" 
                           ItemsSource="{Binding Path=GeopointMethod}" SelectedIndex="{Binding Path=GeopointMethodSelectedIndex}"/>
 
             </StackPanel>

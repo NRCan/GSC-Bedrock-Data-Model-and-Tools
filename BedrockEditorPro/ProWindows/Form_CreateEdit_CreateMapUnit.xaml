@@ -43,7 +43,7 @@
 
         <!--Select study area layer-->
         <Label Grid.Row="0" Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditCreateMapUnitLayers}" Style="{DynamicResource BedrockButtonLabel}"/>
-        <ComboBox x:Name="StudyAreaLayerCombobox" Grid.Row="1" Style="{DynamicResource BedrockTextboxInputs}" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
+        <ComboBox x:Name="StudyAreaLayerCombobox" Grid.Row="1" Margin="0,0,0,-5" Height="22" VerticalContentAlignment="Center" 
                                      ItemsSource="{Binding Path=MapUnitsLayers}" SelectedIndex="{Binding Path=MapUnitsSelectedLayerIndex}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
