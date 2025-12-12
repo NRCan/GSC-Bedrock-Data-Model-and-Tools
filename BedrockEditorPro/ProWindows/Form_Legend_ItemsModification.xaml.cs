@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BedrockEditorPro.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -80,6 +81,35 @@ namespace BedrockEditorPro.ProWindows
                     }
                 }
             }
+        }
+
+
+        /// <summary>
+        /// Event to track mouse hovering over buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MouseEnter(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Button senderButton = sender as Button;
+
+                if (senderButton != null)
+                {
+                    if (senderButton.Name != string.Empty)
+                    {
+                        this.ElementOverview.Source = new BitmapImage(new Uri($"pack://application:,,,/BedrockEditorPro;component/Images/{senderButton.Name}.png", UriKind.Absolute));
+                        
+                    }
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                //new ErrorService(ex).WriteToFile();
+            }
+
         }
     }
 }

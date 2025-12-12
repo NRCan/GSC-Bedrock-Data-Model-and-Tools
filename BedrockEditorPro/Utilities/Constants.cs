@@ -196,9 +196,9 @@ namespace BedrockEditorPro.Utilities
             public const string LegendSymbol = "STYLE1"; //Version 4.0
             public const string LegendSymbol2 = "STYLE2"; //Version 4.0
             public const string LegendLabel1 = "LABEL1"; //Version 4.0
-            public const string LegendLabel1Style = "LABSTYLE1"; //Version 4.0
+            public const string LegendLabel1Style = "LABEL1STYLE"; //Version 4.0
             public const string LegendLabel2 = "LABEL2"; //Version 4.0
-            public const string LegendLabel2Style = "LABSTYLE2"; //Version 4.0
+            public const string LegendLabel2Style = "LABEL2STYLE"; //Version 4.0
             public const string LegendHeading = "HEADING"; //Version 4.0
             public const string LegendColumn = "ELEMENT_COLUMN"; //Version 4.0
             public const string LegendOrder = "ELEMENT_ORDER"; //Version 4.0

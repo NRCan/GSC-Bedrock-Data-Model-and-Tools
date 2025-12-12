@@ -141,7 +141,7 @@
   <data name="FormEnvironmentNewGeodatabaseNote" xml:space="preserve">
     <value>Modèle intégré dans l'outil, par défaut.</value>
   </data>
-  <data name="FormEnvironmentNewGeodatabaseInput1" xml:space="preserve">
+  <data name="Sym" xml:space="preserve">
     <value>Gabarit de projet (.xml)</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseInput2" xml:space="preserve">
@@ -639,5 +639,53 @@
   </data>
   <data name="FormLegendItemTypeBreakText" xml:space="preserve">
     <value>Séparateur, texte</value>
+  </data>
+  <data name="FormLegendItemsStyle1" xml:space="preserve">
+    <value>Symbole pour style 1</value>
+  </data>
+  <data name="FormLegendItemsStyle2" xml:space="preserve">
+    <value>Symbole pour style 2</value>
+  </data>
+  <data name="FormLegendItemsLabel1Text" xml:space="preserve">
+    <value>Texte pour étiquette 1</value>
+  </data>
+  <data name="FormLegendItemsLabel1Style" xml:space="preserve">
+    <value>Symbole pour étiquette 1</value>
+  </data>
+  <data name="FormLegendItemsLabel2Style" xml:space="preserve">
+    <value>Symbole pour étiquette 2</value>
+  </data>
+  <data name="FormLegendItemsLabel2Text" xml:space="preserve">
+    <value>Texte pour étiquette 2</value>
+  </data>
+  <data name="FormLegendItemsGISLabel" xml:space="preserve">
+    <value>Texte affiché dans ArcGIS</value>
+  </data>
+  <data name="FormLegendItemsHeader" xml:space="preserve">
+    <value>En-tête</value>
+  </data>
+  <data name="FormLegendItemsDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="FormLegendItemsColumn" xml:space="preserve">
+    <value>No. de colonne</value>
+  </data>
+  <data name="FormLegendItemsOrder" xml:space="preserve">
+    <value>No. d'ordre</value>
+  </data>
+  <data name="FormLegendItemsIsOverprint" xml:space="preserve">
+    <value>Niveau de superposition de l'unité</value>
+  </data>
+  <data name="FormLegendItemsGeolRank" xml:space="preserve">
+    <value>Rang géologique</value>
+  </data>
+  <data name="FormLegendItemsColumnHint" xml:space="preserve">
+    <value>Total du nombre de colonnes {0}</value>
+  </data>
+  <data name="FormLegendItemsOrderHint" xml:space="preserve">
+    <value>Total du nombre d'élément {0}</value>
+  </data>
+  <data name="FormLegendItemsNewElement" xml:space="preserve">
+    <value>&lt;Nouvel élément&gt;</value>
   </data>
 </root>

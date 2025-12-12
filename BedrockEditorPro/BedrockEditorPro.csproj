@@ -10,14 +10,47 @@
   <ItemGroup>
     <None Remove="Assets\GSC_BEDROCKGDB_P_ORGANIZATION_V2_10.csv" />
     <None Remove="Assets\GSC_BEDROCKGDB_SCHEMA_V2_10.json" />
-    <None Remove="Assets\GSC_BEDROCKGDB_SCHEMA_V3_0.json" />
     <None Remove="Assets\GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10.csv" />
     <None Remove="Assets\GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10.csv" />
     <None Remove="Assets\GSC_SymbolStandard.stylx" />
     <None Remove="Assets\P_ORGANIZATION.csv" />
     <None Remove="Config.daml" />
+    <None Remove="Images\ANNO_BRACKET.png" />
+    <None Remove="Images\ANNO_BREAK.png" />
+    <None Remove="Images\BEACH.png" />
+    <None Remove="Images\BLOB.png" />
+    <None Remove="Images\BREAK.png" />
+    <None Remove="Images\DUNES.png" />
     <None Remove="Images\Hammer16.png" />
     <None Remove="Images\Hammer32.png" />
+    <None Remove="Images\HEADING1.png" />
+    <None Remove="Images\HEADING2.png" />
+    <None Remove="Images\HEADING3.png" />
+    <None Remove="Images\HEADING4.png" />
+    <None Remove="Images\HEADING5.png" />
+    <None Remove="Images\LANDSLIDE.png" />
+    <None Remove="Images\LINE.png" />
+    <None Remove="Images\L_BRACKET_L.png" />
+    <None Remove="Images\L_BRACKET_U.png" />
+    <None Remove="Images\MORAINES.png" />
+    <None Remove="Images\OVERLAY.png" />
+    <None Remove="Images\POINT_CC.png" />
+    <None Remove="Images\POINT_CC_45.png" />
+    <None Remove="Images\POINT_LC_45.png" />
+    <None Remove="Images\R_BRACKET_L.png" />
+    <None Remove="Images\R_BRACKET_U.png" />
+    <None Remove="Images\TWOSIDE.png" />
+    <None Remove="Images\TWOSIDE_FLIP.png" />
+    <None Remove="Images\TWOSIDE_FLOW.png" />
+    <None Remove="Images\UNIT_BOX.png" />
+    <None Remove="Images\UNIT_CHILD.png" />
+    <None Remove="Images\UNIT_CHILD_LINE.png" />
+    <None Remove="Images\UNIT_INDENT.png" />
+    <None Remove="Images\UNIT_INDENT2.png" />
+    <None Remove="Images\UNIT_LINE.png" />
+    <None Remove="Images\UNIT_PARENT.png" />
+    <None Remove="Images\UNIT_SPLIT.png" />
+    <None Remove="Images\WAVE.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config.daml" />    
@@ -25,13 +58,118 @@
     <Content Include="Images\AddInDesktop32.png" />
     <Content Include="DarkImages\AddInDesktop16.png" />
     <Content Include="DarkImages\AddInDesktop32.png" />
-    <Content Include="Images\Hammer16.png" />
-    <Content Include="Images\Hammer32.png" />    
+    <Resource Include="Images\ANNO_BRACKET.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ANNO_BREAK.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BEACH.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BLOB.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BREAK.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\DUNES.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Hammer16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\HEADING1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\HEADING2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\HEADING3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\HEADING4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\HEADING5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LANDSLIDE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LINE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\L_BRACKET_L.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\L_BRACKET_U.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\MORAINES.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\OVERLAY.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\POINT_CC.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\POINT_CC_45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\POINT_LC_45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\R_BRACKET_L.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\R_BRACKET_U.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TWOSIDE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TWOSIDE_FLIP.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TWOSIDE_FLOW.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_BOX.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_CHILD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_CHILD_LINE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_INDENT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_INDENT2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_LINE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_PARENT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\UNIT_SPLIT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\WAVE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Hammer32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>    
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_P_ORGANIZATION_V2_10.csv" />
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SCHEMA_V2_10.json" />
-    <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SCHEMA_V3_0.json" />
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SYMBOL_GEOLINES_V2_10.csv" />
     <EmbeddedResource Include="Assets\GSC_BEDROCKGDB_SYMBOL_GEOPOINTS_V2_10.csv" />
     <EmbeddedResource Include="Assets\GSC_SymbolStandard.stylx" />

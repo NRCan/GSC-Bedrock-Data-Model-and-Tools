@@ -20,7 +20,7 @@ namespace BedrockEditorPro.Utilities
         public static SortedList<object, string> GetDomDicoFromWorkspace(Geodatabase sourceGeodatabase, string domName)
         {
             //Variables
-            SortedList<object, string> domDico = null; 
+            SortedList<object, string> domDico = new SortedList<object, string>(); 
 
             //Get domain coded value object
             try

@@ -10,7 +10,10 @@ namespace BedrockEditorPro.Utilities
     public class CustomCombobox
     {
         public string Name { get; set; }
+        
         public string Value { get; set; }
+
+        public object ExtraValue { get; set; }
 
     }
 }

@@ -1,9 +1,11 @@
 ﻿using ArcGIS.Core.Geometry;
+using ArcGIS.Desktop.Core;
 using BedrockEditorPro.Utilities;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,16 +18,16 @@ namespace BedrockEditorPro.Models
         public int ItemID { get; set; }
 
         [Column(Constants.DatabaseFields.LegendGISDisplay)]
-        public double GISDisplay { get; set; }
+        public string GISDisplay { get; set; }
 
         [Column(Constants.DatabaseFields.LegendItemType)]
-        public double Element { get; set; }
+        public string Element { get; set; }
 
         [Column(Constants.DatabaseFields.LegendSymbol)]
-        public double Style1 { get; set; }
+        public string Style1 { get; set; }
 
         [Column(Constants.DatabaseFields.LegendSymbol2)]
-        public double Style2 { get; set; }
+        public string Style2 { get; set; }
 
         [Column(Constants.DatabaseFields.LegendLabel1)]
         public string Label1 { get; set; }
@@ -43,10 +45,10 @@ namespace BedrockEditorPro.Models
         public string Heading { get; set; }
 
         [Column(Constants.DatabaseFields.LegendColumn)]
-        public string Column { get; set; }
+        public int Column { get; set; }
 
         [Column(Constants.DatabaseFields.LegendOrder)]
-        public string Order { get; set; }
+        public double Order { get; set; }
 
         [Column(Constants.DatabaseFields.LegendDescription)]
         public string Description { get; set; }
@@ -54,8 +56,8 @@ namespace BedrockEditorPro.Models
         [Column(Constants.DatabaseFields.LegendGeolRank)]
         public string GeolRank { get; set; }
 
-        [Ignore]
-        public Geometry Geometry { get; set; }
+        [Column(Constants.DatabaseFields.LegendOverprint)]
+        public string Overprint { get; set; }
 
 
         /// <summary>
@@ -114,5 +116,43 @@ namespace BedrockEditorPro.Models
             set { }
         }
 
+        /// <summary>
+        ///Will prepare the model so it can be ready for inserting
+        /// </summary>
+        [Ignore]
+        public Dictionary<string, object> getModelReadyForInsert
+        {
+            get
+            {
+
+                Dictionary<string, object> valueDictionary = new Dictionary<string, object>();
+
+                foreach (System.Reflection.PropertyInfo item in this.GetType().GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ColumnAttribute))).ToList())
+                {
+                    if (item.CustomAttributes.First().ConstructorArguments.Count() > 0)
+                    {
+                        string fieldName = item.CustomAttributes.First().ConstructorArguments[0].ToString().Replace("\\", "").Replace("\"", "");
+                        if (item.GetValue(this) == null || item.GetValue(this).ToString() == string.Empty)
+                        {
+                            valueDictionary[fieldName] = null;
+                        }
+                        else
+                        {
+                            valueDictionary[fieldName] = item.GetValue(this);
+                        }
+                        
+                    }
+
+                }
+
+                return valueDictionary;
+            }
+            set { }
+        }
+
+        public List<string> LineElements = new List<string>() { "LINE", "TWOSIDE", "TWOSIDE_FLOW", "WAVE", "BEACH", "DUNES", "LANDSLIDE", "MORAINES", "TWOSIDE_FLIP" };
+        public List<string> MarkerElements = new List<string>() { "POINT_CC", "POINT_CC_45", "POINT_LC_45" };
+        public List<string> UnitElements = new List<string>() { "UNIT_BOX", "UNIT_SPLIT", "UNIT_PARENT", "UNIT_CHILD", "UNIT_CHILD_LINE", "UNIT_LINE", "UNIT_INDENT", "UNIT_INDENT2", "OVERLAY", "BLOB" };
+        public List<string> OtherElements = new List<string>() { "HEADING1", "HEADING2", "HEADING3", "HEADING4", "HEADING5", "NOTE", "TOP_NOTE", "ANNO_BRACKET", "ANNO_BREAK", "L_BRACKET_L", "L_BRACKET_U", "R_BRACKET_L", "R_BRACKET_U", "BREAK" };
     }
 }

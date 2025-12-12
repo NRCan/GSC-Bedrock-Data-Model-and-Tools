@@ -330,7 +330,7 @@ namespace BedrockEditorPro.DockPanes
             {
                 await QueuedTask.Run(() =>
                 {
-                    Dialog.GetSymbolPrompt();
+                    Dialog.GetSymbolPrompt(StyleItemType.PolygonSymbol);
                 });
             }
             catch (Exception ex)

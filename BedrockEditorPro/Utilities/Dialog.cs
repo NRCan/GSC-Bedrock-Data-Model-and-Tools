@@ -3,6 +3,7 @@ using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Internal.Mapping.Table.QueryTable;
+using ArcGIS.Desktop.Mapping;
 using BedrockEditorPro.Controls;
 using BedrockEditorPro.CustomDialogs;
 using System;
@@ -187,10 +188,10 @@ namespace BedrockEditorPro.Utilities
         /// Will prompt the symbol style selection dialog from ESRI
         /// </summary>
         /// <returns></returns>
-        public static void GetSymbolPrompt()
+        public static void GetSymbolPrompt(StyleItemType styleItemType)
         {
             //Create a new dialog instance
-            SymbolStyleDialog _symbolDialog = new SymbolStyleDialog();
+            SymbolStyleDialog _symbolDialog = new SymbolStyleDialog(styleItemType);
             _symbolDialog.Closing += _symbolDialog_Closing;
             _symbolDialog.ShowDialog();
         }

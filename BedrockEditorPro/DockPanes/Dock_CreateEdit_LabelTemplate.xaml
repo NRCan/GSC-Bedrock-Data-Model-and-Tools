@@ -54,7 +54,7 @@
                     Text="{Binding Path=LabelName}"/>
                 
                 <!--Map Unit Options-->
-                <TextBlock Text="{x:Static local:Resources.FormCreateEditLabelMapUnitOptions}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
+                <TextBox Text="{x:Static local:Resources.FormCreateEditLabelMapUnitOptions}" HorizontalAlignment="Left" Style="{DynamicResource Esri_TextBlockDockPaneHeader}"/>
 
                 <!--Symbol-->
                 <Label  Margin="-5,0,0,-5"  Content="{x:Static local:Resources.FormCreateEditLabelSymbol}" Style="{DynamicResource BedrockButtonLabel}"/>

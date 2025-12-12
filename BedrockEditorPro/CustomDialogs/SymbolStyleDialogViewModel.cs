@@ -36,7 +36,9 @@ namespace BedrockEditorPro.CustomDialogs
         private Element _selectedElement;
         private List<Element> _selectedElements = new List<Element>();
         private SymbolStyleDialog _view = null;
-
+        StyleProjectItem _styleProjectItem = null;
+        IList<SymbolStyleItem> _searchList = null;
+        IEnumerable<SymbolStyleItem[]> _chunkedList = null;
         private ObservableCollection<GeometrySymbolItem> _symbolStyleItemCollection = new ObservableCollection<GeometrySymbolItem>();
 
         public ObservableCollection<GeometrySymbolItem> SymbolStyleItemCollection
@@ -55,15 +57,19 @@ namespace BedrockEditorPro.CustomDialogs
             }
         }
 
-        public SymbolStyleDialogViewModel(SymbolStyleDialog view)
+        public SymbolStyleDialogViewModel(SymbolStyleDialog view, StyleItemType styleItemType)
         {
             _view = view;
             //Subscribe to the SelectedElementsChangedEvent to know when the selection changes
             //SelectedElementsChangedEvent.Subscribe(OnSelectedElementsChanged);
             //Initialize the selected elements collection
             string stylePath = Utilities.Symbols.ManageStyleFile();
-            StyleProjectItem styleProjectItem = Utilities.Symbols.GetStyleItemProject(stylePath);
-            UpdateSymbolCollection(styleProjectItem);
+            _styleProjectItem = Utilities.Symbols.GetStyleItemProject(stylePath);
+            _searchList = _styleProjectItem.SearchSymbols(styleItemType, null);
+            _chunkedList = _searchList.Chunk(36);
+
+            UpdateSymbolCollection(styleItemType, true);
+
         }
 
         /// <summary>
@@ -72,17 +78,25 @@ namespace BedrockEditorPro.CustomDialogs
         /// If they are the same type, they get added to the _selectedElements member variable. SymbolStyleItemCollection is the MVVM Binding variable that gets updated with Point symbols,
         /// if _SelectedElements are all points.
         /// </summary>
-        private async void UpdateSymbolCollection(StyleProjectItem styleProjectItem, StyleItemType itemstyle = StyleItemType.PolygonSymbol)
+        public async void UpdateSymbolCollection(StyleItemType itemstyle = StyleItemType.PolygonSymbol, bool quickViewMode = false)
         {
+            _symbolStyleItemCollection.Clear();
 
-            //Now we populate the listbox with the appropriate style items 
-            //If the _selectedElements collection contains a NorthArrow, we populate the listbox with NorthArrowStyleItems, etc
-            SymbolStyleItemCollection.Clear();
-
-            foreach (var item in styleProjectItem.SearchSymbols(itemstyle, ""))
+            foreach (SymbolStyleItem[] item in _chunkedList)
             {
-                GeometrySymbolItem itemToAdd = new GeometrySymbolItem(item, itemstyle);
-                SymbolStyleItemCollection.Add(itemToAdd);
+                foreach (var i in item)
+                {
+                    GeometrySymbolItem itemToAdd = new GeometrySymbolItem(i, itemstyle);
+                    _symbolStyleItemCollection.Add(itemToAdd);
+                }
+                NotifyPropertyChanged(nameof(SymbolStyleItemCollection));
+
+                if (quickViewMode)
+                {
+                    //Will break the loop after the first chunk to allow for quick viewing of symbols
+                    break;
+                }
+                
             }
 
         }

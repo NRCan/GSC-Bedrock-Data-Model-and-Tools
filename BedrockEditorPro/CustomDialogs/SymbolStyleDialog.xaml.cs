@@ -1,4 +1,5 @@
-﻿using BedrockEditorPro.ProWindows;
+﻿using ArcGIS.Desktop.Mapping;
+using BedrockEditorPro.ProWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,21 @@ namespace BedrockEditorPro.CustomDialogs
     /// </summary>
     public partial class SymbolStyleDialog : ArcGIS.Desktop.Framework.Controls.ProWindow
     {
-        SymbolStyleDialogViewModel _vm; 
-        public SymbolStyleDialog()
+        SymbolStyleDialogViewModel _vm;
+        StyleItemType _styleItemType;
+        public SymbolStyleDialog(StyleItemType styleItemType)
         {
             InitializeComponent();
-            this.DataContext = _vm = new SymbolStyleDialogViewModel(this);
+            _styleItemType = styleItemType;
+            this.DataContext = _vm = new SymbolStyleDialogViewModel(this, _styleItemType);
+
+            this.ContentRendered += SymbolStyleDialog_ContentRendered;
+        }
+
+        private void SymbolStyleDialog_ContentRendered(object sender, EventArgs e)
+        {
+            Task.Delay(100);
+            _vm.UpdateSymbolCollection(_styleItemType);
         }
 
         private void Close_OnClick(object sender, RoutedEventArgs e)
@@ -43,5 +54,7 @@ namespace BedrockEditorPro.CustomDialogs
                 return _vm.SelectedItem;
             }
         }
+
+        
     }
 }

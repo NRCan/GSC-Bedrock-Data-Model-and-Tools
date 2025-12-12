@@ -619,15 +619,6 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input Project Template (.xml).
-        /// </summary>
-        public static string FormEnvironmentNewGeodatabaseInput1 {
-            get {
-                return ResourceManager.GetString("FormEnvironmentNewGeodatabaseInput1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Output Database Path.
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseInput2 {
@@ -799,11 +790,155 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Column no..
+        /// </summary>
+        public static string FormLegendItemsColumn {
+            get {
+                return ResourceManager.GetString("FormLegendItemsColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total amount of columns {0}.
+        /// </summary>
+        public static string FormLegendItemsColumnHint {
+            get {
+                return ResourceManager.GetString("FormLegendItemsColumnHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string FormLegendItemsDescription {
+            get {
+                return ResourceManager.GetString("FormLegendItemsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geological Rank.
+        /// </summary>
+        public static string FormLegendItemsGeolRank {
+            get {
+                return ResourceManager.GetString("FormLegendItemsGeolRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArcGIS Layer Text.
+        /// </summary>
+        public static string FormLegendItemsGISLabel {
+            get {
+                return ResourceManager.GetString("FormLegendItemsGISLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Header.
+        /// </summary>
+        public static string FormLegendItemsHeader {
+            get {
+                return ResourceManager.GetString("FormLegendItemsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map Unit Overprint Level.
+        /// </summary>
+        public static string FormLegendItemsIsOverprint {
+            get {
+                return ResourceManager.GetString("FormLegendItemsIsOverprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label 1 Style.
+        /// </summary>
+        public static string FormLegendItemsLabel1Style {
+            get {
+                return ResourceManager.GetString("FormLegendItemsLabel1Style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label 1 Text.
+        /// </summary>
+        public static string FormLegendItemsLabel1Text {
+            get {
+                return ResourceManager.GetString("FormLegendItemsLabel1Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label 2 Style.
+        /// </summary>
+        public static string FormLegendItemsLabel2Style {
+            get {
+                return ResourceManager.GetString("FormLegendItemsLabel2Style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label 2 Text.
+        /// </summary>
+        public static string FormLegendItemsLabel2Text {
+            get {
+                return ResourceManager.GetString("FormLegendItemsLabel2Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Items Modifications.
         /// </summary>
         public static string FormLegendItemsModificationTitle {
             get {
                 return ResourceManager.GetString("FormLegendItemsModificationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New Element&gt;.
+        /// </summary>
+        public static string FormLegendItemsNewElement {
+            get {
+                return ResourceManager.GetString("FormLegendItemsNewElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order no..
+        /// </summary>
+        public static string FormLegendItemsOrder {
+            get {
+                return ResourceManager.GetString("FormLegendItemsOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total amount of items {0}.
+        /// </summary>
+        public static string FormLegendItemsOrderHint {
+            get {
+                return ResourceManager.GetString("FormLegendItemsOrderHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Symbol Style 1.
+        /// </summary>
+        public static string FormLegendItemsStyle1 {
+            get {
+                return ResourceManager.GetString("FormLegendItemsStyle1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Symbol Style 2.
+        /// </summary>
+        public static string FormLegendItemsStyle2 {
+            get {
+                return ResourceManager.GetString("FormLegendItemsStyle2", resourceCulture);
             }
         }
         
@@ -835,7 +970,7 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Break Text.
+        ///   Looks up a localized string similar to Break Annotation.
         /// </summary>
         public static string FormLegendItemTypeBreakText {
             get {
@@ -1532,9 +1667,9 @@ namespace BedrockEditorPro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] GSC_BEDROCKGDB_SCHEMA_V3_0 {
+        public static byte[] GSC_BEDROCKGDB_SCHEMA_V4_0 {
             get {
-                object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SCHEMA_V3_0", resourceCulture);
+                object obj = ResourceManager.GetObject("GSC_BEDROCKGDB_SCHEMA_V4_0", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1638,6 +1773,15 @@ namespace BedrockEditorPro.Properties {
         public static string Supp {
             get {
                 return ResourceManager.GetString("Supp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input Project Template (.xml).
+        /// </summary>
+        public static string Sym {
+            get {
+                return ResourceManager.GetString("Sym", resourceCulture);
             }
         }
     }

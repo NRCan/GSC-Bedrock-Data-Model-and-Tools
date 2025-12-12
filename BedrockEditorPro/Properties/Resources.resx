@@ -141,7 +141,7 @@
   <data name="FormEnvironmentNewGeodatabaseNote" xml:space="preserve">
     <value>By default, model is embedded in tool.</value>
   </data>
-  <data name="FormEnvironmentNewGeodatabaseInput1" xml:space="preserve">
+  <data name="Sym" xml:space="preserve">
     <value>Input Project Template (.xml)</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseInput2" xml:space="preserve">
@@ -532,9 +532,6 @@
   <data name="FormLegendOtherDetailGroup" xml:space="preserve">
     <value>Other Details</value>
   </data>
-  <data name="GSC_BEDROCKGDB_SCHEMA_V3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\GSC_BEDROCKGDB_SCHEMA_V3_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="FormLegendItemTypeUnitBox" xml:space="preserve">
     <value>Unit Box</value>
   </data>
@@ -641,6 +638,57 @@
     <value>Break</value>
   </data>
   <data name="FormLegendItemTypeBreakText" xml:space="preserve">
-    <value>Break Text</value>
+    <value>Break Annotation</value>
+  </data>
+  <data name="FormLegendItemsStyle1" xml:space="preserve">
+    <value>Symbol Style 1</value>
+  </data>
+  <data name="FormLegendItemsStyle2" xml:space="preserve">
+    <value>Symbol Style 2</value>
+  </data>
+  <data name="FormLegendItemsLabel1Text" xml:space="preserve">
+    <value>Label 1 Text</value>
+  </data>
+  <data name="FormLegendItemsLabel1Style" xml:space="preserve">
+    <value>Label 1 Style</value>
+  </data>
+  <data name="FormLegendItemsLabel2Style" xml:space="preserve">
+    <value>Label 2 Style</value>
+  </data>
+  <data name="FormLegendItemsLabel2Text" xml:space="preserve">
+    <value>Label 2 Text</value>
+  </data>
+  <data name="FormLegendItemsGISLabel" xml:space="preserve">
+    <value>ArcGIS Layer Text</value>
+  </data>
+  <data name="FormLegendItemsHeader" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="FormLegendItemsDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="FormLegendItemsColumn" xml:space="preserve">
+    <value>Column no.</value>
+  </data>
+  <data name="FormLegendItemsOrder" xml:space="preserve">
+    <value>Order no.</value>
+  </data>
+  <data name="FormLegendItemsIsOverprint" xml:space="preserve">
+    <value>Map Unit Overprint Level</value>
+  </data>
+  <data name="FormLegendItemsGeolRank" xml:space="preserve">
+    <value>Geological Rank</value>
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FormLegendItemsColumnHint" xml:space="preserve">
+    <value>Total amount of columns {0}</value>
+  </data>
+  <data name="FormLegendItemsOrderHint" xml:space="preserve">
+    <value>Total amount of items {0}</value>
+  </data>
+  <data name="FormLegendItemsNewElement" xml:space="preserve">
+    <value>&lt;New Element&gt;</value>
   </data>
 </root>
