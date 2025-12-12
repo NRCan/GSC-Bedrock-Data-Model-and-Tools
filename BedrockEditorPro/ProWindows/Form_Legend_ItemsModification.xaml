@@ -30,7 +30,7 @@
             <RowDefinition Height="65"/>
 
             <!--Select legend item-->
-            <RowDefinition Height="65"/>
+            <RowDefinition Height="85"/>
 
             <!--Element type selection group-->
             <RowDefinition Height="200"/>
@@ -75,8 +75,8 @@
                       ItemsSource="{Binding Path=LegendItems}" SelectedIndex="{Binding Path=LegendSelectedItemIndex}"/>
         </StackPanel>
 
-        <StackPanel Grid.RowSpan="2" Grid.Row="0" HorizontalAlignment="Left" Margin="250,0,0,0" Width="150" Height="150" Background="White">
-            <Image x:Name="ElementOverview" Stretch="Fill"/>
+        <StackPanel Grid.RowSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,0,-15" Width="500" Height="150" >
+            <Image x:Name="ElementOverview" Stretch="None" HorizontalAlignment="Left"  Width="500" Height="150"/>
         </StackPanel>
         
 
@@ -91,6 +91,15 @@
                     <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitBox}" x:Name="UNIT_BOX" MouseEnter="MouseEnter"
                         Style="{DynamicResource Esri_Button}" Background="{Binding Path=LegendButtonBackground}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
                         Command="{Binding ElementTypeButtonCommand}" />
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitIndent1}" x:Name="UNIT_INDENT"
+                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitIndent2}" x:Name="UNIT_INDENT2"
+                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    
                     <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitParent}" x:Name="UNIT_PARENT"
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
@@ -103,6 +112,7 @@
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    
                     <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitSplit}" x:Name="UNIT_SPLIT"
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
@@ -119,14 +129,7 @@
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitIndent1}" x:Name="UNIT_INDENT"
-                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
-                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
-                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                    <Button Content="{x:Static local:Resources.FormLegendItemTypeUnitIndent2}" x:Name="UNIT_INDENT2"
-                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
-                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
-                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+
                 </StackPanel>
 
                 <!--Lines-->
@@ -187,6 +190,14 @@
 
                 <!--Headers-->
                 <StackPanel Orientation="Horizontal" IsEnabled="{Binding Path=IsOtherElementEnabled}">
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeTopnote}" x:Name="TOP_NOTE"
+                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeNote}" x:Name="NOTE"
+                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
                     <Button Content="{x:Static local:Resources.FormLegendItemTypeHeader1}" x:Name="HEADING1"
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
@@ -207,14 +218,7 @@
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                    <Button Content="{x:Static local:Resources.FormLegendItemTypeNote}" x:Name="NOTE"
-                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
-                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
-                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                    <Button Content="{x:Static local:Resources.FormLegendItemTypeTopnote}" x:Name="TOP_NOTE"
-                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
-                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
-                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+
                 </StackPanel>
                 
                 <!--Other graphics-->

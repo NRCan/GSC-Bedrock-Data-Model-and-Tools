@@ -33,12 +33,14 @@
     <None Remove="Images\L_BRACKET_L.png" />
     <None Remove="Images\L_BRACKET_U.png" />
     <None Remove="Images\MORAINES.png" />
+    <None Remove="Images\NOTE.png" />
     <None Remove="Images\OVERLAY.png" />
     <None Remove="Images\POINT_CC.png" />
     <None Remove="Images\POINT_CC_45.png" />
     <None Remove="Images\POINT_LC_45.png" />
     <None Remove="Images\R_BRACKET_L.png" />
     <None Remove="Images\R_BRACKET_U.png" />
+    <None Remove="Images\TOP_NOTE.png" />
     <None Remove="Images\TWOSIDE.png" />
     <None Remove="Images\TWOSIDE_FLIP.png" />
     <None Remove="Images\TWOSIDE_FLOW.png" />
@@ -109,6 +111,9 @@
     <Resource Include="Images\MORAINES.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\NOTE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\OVERLAY.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -125,6 +130,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\R_BRACKET_U.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TOP_NOTE.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\TWOSIDE.png">
