@@ -158,7 +158,7 @@
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                    <Button Content="{x:Static local:Resources.FormLegendItemTypeMoraine}" x:Name="MORAINE"
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeDunes}" x:Name="DUNES"
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
@@ -166,10 +166,12 @@
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                    <Button Content="{x:Static local:Resources.FormLegendItemTypeDunes}" x:Name="DUNES"
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeMoraine}" x:Name="MORAINES"
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
+
+
                 </StackPanel>
                 
                 <!--Marker points-->
@@ -223,15 +225,15 @@
                 
                 <!--Other graphics-->
                 <StackPanel Orientation="Horizontal" IsEnabled="{Binding Path=IsOtherElementEnabled}">
+                    <Button Content="{x:Static local:Resources.FormLegendItemTypeLeftBracketText}" x:Name="ANNO_BRACKET"
+                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
+                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
                     <Button Content="{x:Static local:Resources.FormLegendItemTypeLeftBracketStart}" x:Name="L_BRACKET_U"
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
                     <Button Content="{x:Static local:Resources.FormLegendItemTypeLeftBracketEnd}" x:Name="L_BRACKET_L"
-                            Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
-                        Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
-                        CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                    <Button Content="{x:Static local:Resources.FormLegendItemTypeLeftBracketText}" x:Name="ANNO_BRACKET"
                             Style="{DynamicResource Esri_Button}" MouseEnter="MouseEnter"
                         Background="{Binding Path=LegendButtonBackground}" Command="{Binding ElementTypeButtonCommand}" 
                         CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
