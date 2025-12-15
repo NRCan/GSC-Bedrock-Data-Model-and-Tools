@@ -3,15 +3,15 @@
     <Name>GSC Bedrock Project</Name>
     <Description>Bedrock Data Management Tools</Description>
     <Image>Images\Hammer32.png</Image>
-    <Author>Geological Survey Canada</Author>
+    <Author>Geological Survey Canada - Commission géologique du Canada</Author>
     <Company>Government of Canada - Gouvernement du Canada; Natural Resources Canada - Ressources naturelles Canada</Company>
-    <Date>5/27/2025 9:40:03 AM</Date>
+    <Date>5/27/2025 9:41:03 AM</Date>
     <Subject>Framework, Editing, Geodatabase, Geometry, Geology, Bedrock</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <modules>
-    <insertModule id="BedrockEditorPro_Module" className="BedrockModule" autoLoad="false" caption="GSC Bedrock Module">
+    <insertModule id="BedrockEditorPro_Module" className="BedrockModule" autoLoad="true" caption="GSC Bedrock Module">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="BedrockEditorPro_Edit" caption="Bedrock Editor" keytip="tab key tip">
@@ -134,7 +134,7 @@
           <tooltip heading="Environment">Create a new project file geodatabase<disabledText /></tooltip>
         </button>
         <!--help menu-->
-        <button id="BedrockEditorPro_Buttons_Button_Help" caption="About" keytip="Help, about and more online resources" className="BedrockEditorPro.Buttons.Button_Help" loadOnClick="true" smallImage="Images\Hammer16.png" largeImage="Images\Hammer32.png">
+        <button id="BedrockEditorPro_Buttons_Button_Help" caption="About" keytip="Help, about and more online resources" className="BedrockEditorPro.Buttons.Button_Help" loadOnClick="true" smallImage="pack://application:,,,/BedrockEditorPro;component/Images/Hammer16.png" largeImage="pack://application:,,,/BedrockEditorPro;component/Images/Hammer32.png">
           <tooltip heading="Help">Help, about and more online resources<disabledText /></tooltip>
         </button>
       </controls>
