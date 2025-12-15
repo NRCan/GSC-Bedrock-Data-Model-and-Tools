@@ -2,6 +2,7 @@
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Internal.Catalog;
+using ArcGIS.Desktop.Internal.KnowledgeGraph;
 using ArcGIS.Desktop.Mapping;
 using System;
 using System.Collections.Generic;
@@ -136,8 +137,9 @@ namespace BedrockEditorPro.Utilities
                                     if (cIMFeatureLayer != null && flDescriptions != null && flDescriptions.Count() > 0)
                                     {
                                         //Will need GSC_SYMBOL to work on or a label field
-                                        bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
+                                        bool styleFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
                                         bool labelFieldDescription = flDescriptions.Exists(x => x.Alias == Constants.DatabaseFields.FLabelIDAlias);
+                                        bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol_190101);
 
                                         //If some extra filtering is needed
                                         bool extraFiltering = false;
@@ -147,7 +149,7 @@ namespace BedrockEditorPro.Utilities
                                         }
 
                                         //Add if any options are true
-                                        if (symbolFieldDescription || labelFieldDescription || extraFiltering)
+                                        if (symbolFieldDescription || labelFieldDescription || extraFiltering || styleFieldDescription)
                                         {
 
                                             LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
