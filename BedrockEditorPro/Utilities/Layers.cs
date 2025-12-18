@@ -124,7 +124,8 @@ namespace BedrockEditorPro.Utilities
                         List<FeatureLayer> layerEnum = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
                         if (layerEnum != null)
                         {
-
+                            layerList.Clear();
+                            NotifyPropertyChanged(nameof(layerListName));
                             foreach (FeatureLayer fl in layerEnum)
                             {
                                 //System.Threading.Thread.Sleep(1);
@@ -153,7 +154,11 @@ namespace BedrockEditorPro.Utilities
                                         {
 
                                             LayerDisplay layerItem = MakeComboBoxItemWithSymbolIcons(cIMFeatureLayer, fl);
-                                            layerList.Add(layerItem);
+                                            if (!layerList.Contains(layerItem))
+                                            {
+                                                layerList.Add(layerItem);
+                                            }
+                                            
 
                                         }
 
