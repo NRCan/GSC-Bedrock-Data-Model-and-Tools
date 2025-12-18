@@ -407,7 +407,7 @@ namespace BedrockEditorPro.DockPanes
 
                 QueuedTask.Run(() =>
                 {
-                    FillCombobox(Utilities.Constants.DatabaseFields.FGeolineAtt, _geolineGeneration, nameof(GeolineGeneration),
+                    FillCombobox(Utilities.Constants.DatabaseFields.FGeolineGeneration, _geolineGeneration, nameof(GeolineGeneration),
                         GeolineGenerationSelectedIndex, nameof(GeolineGenerationSelectedIndex));
                 });
             }
