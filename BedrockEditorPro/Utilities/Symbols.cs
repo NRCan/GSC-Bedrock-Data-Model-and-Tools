@@ -73,7 +73,7 @@ namespace BedrockEditorPro.Utilities
         public static string ManageStyleFile()
         {
             WorkingEnvironment workingEnvironment = new WorkingEnvironment();
-            string StyleFilePath = System.IO.Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_SymbolStandard) + ".stylex");
+            string StyleFilePath = System.IO.Path.Combine(workingEnvironment.WorkingEnvironmentPath, nameof(Properties.Resources.GSC_SymbolStandard) + ".stylx");
 
             if (!File.Exists(StyleFilePath))
             {
