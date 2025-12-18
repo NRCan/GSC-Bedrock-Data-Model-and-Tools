@@ -282,6 +282,7 @@ namespace BedrockEditorPro.Utilities
             public const string FLabelID = "LABELID";
             public const string FLabelIDAlias = "Label";
             public const string FLabelGeoEventID = "GEOEVENT_ID";
+            public const string FLabelSymbol = "GSC_SYMBOL";
             #endregion
 
             #region Feature Geoline

@@ -271,8 +271,32 @@ namespace BedrockEditorPro.DockPanes
                                             {
                                                 rowBuffer[Constants.DatabaseFields.LegendLabelID] = _labels.LabelID;
                                                 rowBuffer[Constants.DatabaseFields.LegendGISDisplay] = _labels.Name;
-                                                rowBuffer[Constants.DatabaseFields.LegendSymbol] = _labels.GSCSymbol;
-                                                rowBuffer[Constants.DatabaseFields.LegendItemType] = Constants.DatabaseDomainsValues.legendItemMapUnit;
+
+                                                //Model 4.0
+                                                if (rowBuffer.FindField(Constants.DatabaseFields.LegendSymbol) > 0)
+                                                {
+                                                    PLegend legend = new PLegend();
+                                                    rowBuffer[Constants.DatabaseFields.LegendSymbol] = _labels.GSCSymbol;
+                                                    rowBuffer[Constants.DatabaseFields.LegendItemType] = legend.UnitElements[0];
+                                                    rowBuffer[Constants.DatabaseFields.LegendColumn] = 1;
+                                                    try
+                                                    {
+                                                        rowBuffer[Constants.DatabaseFields.LegendOrder] = legendTable.GetCount() + 1;
+                                                    }
+                                                    catch (Exception)
+                                                    {
+                                                        rowBuffer[Constants.DatabaseFields.LegendOrder] = 0;
+                                                    }
+
+
+                                                }
+                                                //Model 2.10
+                                                //TODO Remove when release for 4.0 
+                                                if (rowBuffer.FindField(Constants.DatabaseFields.LegendSymbol_190101) > 0)
+                                                {
+                                                    rowBuffer[Constants.DatabaseFields.LegendSymbol_190101] = _labels.GSCSymbol;
+                                                    rowBuffer[Constants.DatabaseFields.LegendItemType_190101] = Constants.DatabaseDomainsValues.legendItemMapUnit;
+                                                }
 
                                                 //Create row with the buffer
                                                 using (Row row = legendTable.CreateRow(rowBuffer))

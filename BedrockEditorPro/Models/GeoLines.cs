@@ -64,7 +64,7 @@ namespace BedrockEditorPro.Models
         [Column(Constants.DatabaseFields.ETEditDate)]
         public string EditDate { get; set; }
 
-        [Column(Constants.DatabaseFields.LegendSymbol)]
+        [Column(Constants.DatabaseFields.FGeolineFGDC)]
         public string GSCSymbol { get; set; }
 
         [Column(Constants.DatabaseFields.SourceID)]

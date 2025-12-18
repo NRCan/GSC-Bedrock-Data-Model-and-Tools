@@ -54,7 +54,7 @@ namespace BedrockEditorPro.Models
         [Column(Constants.DatabaseFields.FGeopointFlat)]
         public string Flattening { get; set; }
 
-        [Column(Constants.DatabaseFields.LegendSymbol)]
+        [Column(Constants.DatabaseFields.FGeopointFGDC)]
         public string GSCSymbol { get; set; }
 
         [Column(Constants.DatabaseFields.ETCreatorID)]

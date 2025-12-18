@@ -512,7 +512,7 @@
     <value>Version 2.10</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseV300" xml:space="preserve">
-    <value>Version 3.0</value>
+    <value>Version 4.0</value>
   </data>
   <data name="FormEnvironmentNewGeodatabaseBetaOptions" xml:space="preserve">
     <value>Choose a model version</value>
@@ -679,9 +679,6 @@
   <data name="FormLegendItemsGeolRank" xml:space="preserve">
     <value>Geological Rank</value>
   </data>
-  <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="FormLegendItemsColumnHint" xml:space="preserve">
     <value>Total amount of columns {0}</value>
   </data>
@@ -690,5 +687,8 @@
   </data>
   <data name="FormLegendItemsNewElement" xml:space="preserve">
     <value>&lt;New Element&gt;</value>
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

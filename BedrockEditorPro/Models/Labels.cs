@@ -25,7 +25,7 @@ namespace BedrockEditorPro.Models
         [Column(Constants.DatabaseFields.FGeopointRemark)]
         public string Remarks { get; set; }
 
-        [Column(Constants.DatabaseFields.LegendSymbol)]
+        [Column(Constants.DatabaseFields.FLabelSymbol)]
         public string GSCSymbol { get; set; }
 
         [Column(Constants.DatabaseFields.ETCreatorID)]

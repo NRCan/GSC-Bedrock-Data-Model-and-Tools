@@ -664,7 +664,7 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Version 3.0.
+        ///   Looks up a localized string similar to Version 4.0.
         /// </summary>
         public static string FormEnvironmentNewGeodatabaseV300 {
             get {

@@ -15,7 +15,7 @@ namespace BedrockEditorPro.Models
     public class PLegend
     {
         [Column(Constants.DatabaseFields.LegendLabelID), PrimaryKey]
-        public int ItemID { get; set; }
+        public string ItemID { get; set; }
 
         [Column(Constants.DatabaseFields.LegendGISDisplay)]
         public string GISDisplay { get; set; }
