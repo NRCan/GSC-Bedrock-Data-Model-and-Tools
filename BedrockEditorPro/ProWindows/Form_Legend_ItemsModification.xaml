@@ -365,7 +365,7 @@
                 <StackPanel Orientation="Vertical" >
 
                     <Label Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLegendItemsGISLabel}" Style="{DynamicResource BedrockButtonLabel}"/>
-                    <TextBox Style="{DynamicResource BedrockTextboxInputs}" Width="200" HorizontalAlignment="Left" Margin="0,0,0,5" Height="22" VerticalContentAlignment="Center"
+                    <TextBox Style="{DynamicResource BedrockTextboxInputs}" Width="350" HorizontalAlignment="Left" Margin="0,0,0,5" Height="22" VerticalContentAlignment="Center"
                       Text="{Binding Path=Legend.GISDisplay}"/>
 
                     <Label  Margin="-5,0,0,-5" Content="{x:Static local:Resources.FormLegendItemsHeader}" Style="{DynamicResource BedrockButtonLabel}"/>

@@ -421,7 +421,11 @@ namespace BedrockEditorPro.ProWindows
                                                         _legendItems.Add(rowBox);
 
                                                         int currentColumnNo = 0;
-                                                        int.TryParse(legendRow[Constants.DatabaseFields.LegendColumn].ToString(), out currentColumnNo);
+                                                        if (legendRow[Constants.DatabaseFields.LegendColumn] != null)
+                                                        {
+                                                            int.TryParse(legendRow[Constants.DatabaseFields.LegendColumn].ToString(), out currentColumnNo);
+                                                        }
+                                                        
 
                                                         if (currentColumnNo > _noOfColumns)
                                                         {
@@ -833,88 +837,104 @@ namespace BedrockEditorPro.ProWindows
         /// </summary>
         public void UpdateUI()
         {
-            if (_legendSelectedItemIndex != -1)
+            try
             {
-                //Start by enabling/disabling some legend element buttons
-                SyncElements();
-
-                if (_legendSelectedItemIndex > 0 && _legendTableWorkspaceUri != null)
+                if (_legendSelectedItemIndex != -1)
                 {
-                    //Update model
-                    QueuedTask.Run(async () =>
+                    //Start by enabling/disabling some legend element buttons
+                    SyncElements();
+
+                    if (_legendSelectedItemIndex > 0 && _legendTableWorkspaceUri != null)
                     {
-                        //Get origin database
-                        using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_legendTableWorkspaceUri)))
+                        //Update model
+                        QueuedTask.Run(async () =>
                         {
-                            StandaloneTable legendSTable = LegendTables[LegendSelectedTableIndex].STable;
-                            if (legendSTable != null)
+                            //Get origin database
+                            using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_legendTableWorkspaceUri)))
                             {
-                                //Get table
-                                using (Table legendTable = legendSTable.GetTable())
+                                StandaloneTable legendSTable = LegendTables[LegendSelectedTableIndex].STable;
+                                if (legendSTable != null)
                                 {
-                                    //Select the record to be updated
-                                    QueryFilter itemFilter = new QueryFilter
+                                    //Get table
+                                    using (Table legendTable = legendSTable.GetTable())
                                     {
-                                        WhereClause = string.Format("{0} = '{1}'", Constants.DatabaseFields.LegendLabelID, _legendItems[_legendSelectedItemIndex].Value)
-                                    };
-
-                                    using (RowCursor itemCursor = legendTable.Search(itemFilter, false))
-                                    {
-                                        while (itemCursor.MoveNext())
+                                        //Select the record to be updated
+                                        QueryFilter itemFilter = new QueryFilter
                                         {
-                                            using (Row item = itemCursor.Current)
+                                            WhereClause = string.Format("{0} = '{1}'", Constants.DatabaseFields.LegendLabelID, _legendItems[_legendSelectedItemIndex].Value)
+                                        };
+
+                                        using (RowCursor itemCursor = legendTable.Search(itemFilter, false))
+                                        {
+                                            while (itemCursor.MoveNext())
                                             {
-                                                _legend.ItemID = int.Parse(_legendItems[_legendSelectedItemIndex].Value);
-                                                _legend.GISDisplay = Convert.ToString(item[Constants.DatabaseFields.LegendGISDisplay]);
-                                                _legend.Element = Convert.ToString(item[Constants.DatabaseFields.LegendItemType]);
-                                                _legend.Style1 = Convert.ToString(item[Constants.DatabaseFields.LegendSymbol]);
-                                                _legend.Style2 = Convert.ToString(item[Constants.DatabaseFields.LegendSymbol2]);
-                                                _legend.Label1 = Convert.ToString(item[Constants.DatabaseFields.LegendLabel1]);
-                                                _legend.Label1Style = Convert.ToString(item[Constants.DatabaseFields.LegendLabel1Style]);
-                                                _legend.Label2 = Convert.ToString(item[Constants.DatabaseFields.LegendLabel2]);
-                                                _legend.Label2Style = Convert.ToString(item[Constants.DatabaseFields.LegendLabel2Style]);
-                                                _legend.Heading = Convert.ToString(item[Constants.DatabaseFields.LegendHeading]);
-
-                                                int columnNo = 0;
-                                                int.TryParse(Convert.ToString(item[Constants.DatabaseFields.LegendColumn]), out columnNo);
-                                                _legend.Column = columnNo;
-
-                                                double orderNo = 0;
-                                                double.TryParse(Convert.ToString(item[Constants.DatabaseFields.LegendOrder]), out orderNo);
-                                                _legend.Order = orderNo;
-
-                                                _legend.Description = Convert.ToString(item[Constants.DatabaseFields.LegendDescription]);
-                                                _legend.GeolRank = Convert.ToString(item[Constants.DatabaseFields.LegendGeolRank]);
-                                                _legend.Overprint = Convert.ToString(item[Constants.DatabaseFields.LegendOverprint]);
-                                                NotifyPropertyChanged(nameof(Legend));
-
-                                                if (_geologicalRanks.Where(r => r.Value == _legend.GeolRank).Count() == 1)
+                                                using (Row item = itemCursor.Current)
                                                 {
-                                                    _geologicalRanksSelectedIndex = _geologicalRanks.IndexOf(_geologicalRanks.Where(r => r.Value == _legend.GeolRank).First());
-                                                    NotifyPropertyChanged(nameof(GeologicalRanksSelectedIndex));
-                                                }
+                                                    _legend.ItemID = _legendItems[_legendSelectedItemIndex].Value;
+                                                    _legend.GISDisplay = Convert.ToString(item[Constants.DatabaseFields.LegendGISDisplay]);
+                                                    _legend.Element = Convert.ToString(item[Constants.DatabaseFields.LegendItemType]);
+                                                    _legend.Style1 = Convert.ToString(item[Constants.DatabaseFields.LegendSymbol]);
+                                                    _legend.Style2 = Convert.ToString(item[Constants.DatabaseFields.LegendSymbol2]);
+                                                    _legend.Label1 = Convert.ToString(item[Constants.DatabaseFields.LegendLabel1]);
+                                                    _legend.Label1Style = Convert.ToString(item[Constants.DatabaseFields.LegendLabel1Style]);
+                                                    _legend.Label2 = Convert.ToString(item[Constants.DatabaseFields.LegendLabel2]);
+                                                    _legend.Label2Style = Convert.ToString(item[Constants.DatabaseFields.LegendLabel2Style]);
+                                                    _legend.Heading = Convert.ToString(item[Constants.DatabaseFields.LegendHeading]);
 
-                                                if (OverprintLevels.Where(r => r.Value == _legend.Overprint).Count() == 1)
-                                                {
-                                                    _overprintSelectedLevelIndex = OverprintLevels.IndexOf(OverprintLevels.Where(r => r.Value == _legend.Overprint).First());
-                                                    NotifyPropertyChanged(nameof(OverprintSelectedLevelIndex));
+                                                    int columnNo = 0;
+                                                    if (item[Constants.DatabaseFields.LegendColumn] != null)
+                                                    {
+                                                        int.TryParse(Convert.ToString(item[Constants.DatabaseFields.LegendColumn]), out columnNo);
+                                                    }
+
+                                                    _legend.Column = columnNo;
+
+                                                    double orderNo = 0;
+                                                    if (item[Constants.DatabaseFields.LegendOrder] != null)
+                                                    {
+                                                        double.TryParse(Convert.ToString(item[Constants.DatabaseFields.LegendOrder]), out orderNo);
+                                                    }
+
+                                                    _legend.Order = orderNo;
+
+                                                    _legend.Description = Convert.ToString(item[Constants.DatabaseFields.LegendDescription]);
+                                                    _legend.GeolRank = Convert.ToString(item[Constants.DatabaseFields.LegendGeolRank]);
+                                                    _legend.Overprint = Convert.ToString(item[Constants.DatabaseFields.LegendOverprint]);
+                                                    NotifyPropertyChanged(nameof(Legend));
+
+                                                    if (_geologicalRanks.Where(r => r.Value == _legend.GeolRank).Count() == 1)
+                                                    {
+                                                        _geologicalRanksSelectedIndex = _geologicalRanks.IndexOf(_geologicalRanks.Where(r => r.Value == _legend.GeolRank).First());
+                                                        NotifyPropertyChanged(nameof(GeologicalRanksSelectedIndex));
+                                                    }
+
+                                                    if (OverprintLevels.Where(r => r.Value == _legend.Overprint).Count() == 1)
+                                                    {
+                                                        _overprintSelectedLevelIndex = OverprintLevels.IndexOf(OverprintLevels.Where(r => r.Value == _legend.Overprint).First());
+                                                        NotifyPropertyChanged(nameof(OverprintSelectedLevelIndex));
+                                                    }
                                                 }
                                             }
-                                        }
 
+                                        }
                                     }
                                 }
+
                             }
 
-                        }
-
-                    });
+                        });
 
 
-                    //Update UI based on model
+                        //Update UI based on model
 
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                new ErrorService(e).WriteToFile();
+            }
+
         }
 
         #endregion
