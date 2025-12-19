@@ -473,7 +473,7 @@ namespace BedrockEditorPro.Buttons
 
                 catch (Exception layerProcessingException) 
                 {
-                    new ErrorService(layerProcessingException).WriteToFile();
+                    new ErrorService(layerProcessingException).WriteToFile("", false);
 
                     //Special case for topology, it is not mandatory so we can ignore this error
                     if (!layerProcessingException.Message.ToLower().Contains("topology"))
