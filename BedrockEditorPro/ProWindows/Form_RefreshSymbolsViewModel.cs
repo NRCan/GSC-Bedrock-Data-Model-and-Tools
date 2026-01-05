@@ -239,14 +239,40 @@ namespace BedrockEditorPro.ProWindows
                     {
                         using (Table purposeTable = sourceGeodatabase.OpenDataset<Table>(Constants.Database.TLegendGene))
                         {
+                            //Model version managing
+                            List<Field> legendFields = purposeTable.GetDefinition().GetFields().ToList();
+                            bool is210Model = false;
+                            PLegend pLegend = new PLegend();
+
+                            if (legendFields.Exists(f => f.Name == Constants.DatabaseFields.LegendSymbol))
+                            {
+                                is210Model = false;
+                            }
+                            else if (legendFields.Exists(f => f.Name == Constants.DatabaseFields.LegendSymbol_190101))
+                            {
+                                is210Model = true;
+                            }
+
                             QueryFilter queryFilter = new QueryFilter
                             {
                                 SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol),
                                 PrefixClause = "DISTINCT",
-                                WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} = '{3}'", 
+                                WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} in ({3})",
                                 Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
-                                Constants.DatabaseFields.LegendItemType, Constants.DatabaseDomainsValues.legendItemMapUnit)
+                                Constants.DatabaseFields.LegendItemType, string.Format("'{0}'", string.Join("','", pLegend.UnitElements)))
                             };
+
+                            if (is210Model)
+                            {
+                                queryFilter = new QueryFilter
+                                {
+                                    SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol_190101),
+                                    PrefixClause = "DISTINCT",
+                                    WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} = '{3}'",
+                                                                Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendLabelID,
+                                                                Constants.DatabaseFields.LegendItemType_190101, Constants.DatabaseDomainsValues.legendItemMapUnit)
+                                };
+                            }
 
                             using (RowCursor rc = purposeTable.Search(queryFilter, false))
                             {
@@ -254,7 +280,18 @@ namespace BedrockEditorPro.ProWindows
                                 {
                                     using (Row row = rc.Current)
                                     {
-                                        symbolDico[row[Constants.DatabaseFields.LegendLabelID].ToString()] = row[Constants.DatabaseFields.LegendSymbol].ToString();
+                                        //Model 4.0
+                                        if (row.FindField(Constants.DatabaseFields.LegendSymbol) > 0)
+                                        {
+                                            symbolDico[row[Constants.DatabaseFields.LegendLabelID].ToString()] = row[Constants.DatabaseFields.LegendSymbol].ToString();
+                                        }
+
+                                        //Model 2.10 TODO remove when first release
+                                        if (row.FindField(Constants.DatabaseFields.LegendSymbol_190101) > 0)
+                                        {
+                                            symbolDico[row[Constants.DatabaseFields.LegendLabelID].ToString()] = row[Constants.DatabaseFields.LegendSymbol_190101].ToString();
+                                        }
+
                                     }
                                 }
                             }
@@ -339,11 +376,18 @@ namespace BedrockEditorPro.ProWindows
                     },
                 };
 
-                //GSC_SYMBOL is needed for proper styling, else default color ramp will be used
+                //Model 4.0 - Style1 is needed for proper styling, else default color ramp will be used
                 bool symbolFieldDescription = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol);
                 if (symbolFieldDescription)
                 {
                     uniqueValueRenderer.ValueFields.Add(Constants.DatabaseFields.LegendSymbol);
+                }
+
+                //Model 2.10 - GSC_SYMBOL is needed for proper styling, else default color ramp will be used
+                bool symbolFieldDescription2 = flDescriptions.Exists(x => x.Name == Constants.DatabaseFields.LegendSymbol_190101);
+                if (symbolFieldDescription2)
+                {
+                    uniqueValueRenderer.ValueFields.Add(Constants.DatabaseFields.LegendSymbol_190101);
                 }
 
                 //Add label field to unique renderer, if any
@@ -472,6 +516,18 @@ namespace BedrockEditorPro.ProWindows
                 {
                     using (Table legendTable = layerGeodatabase.OpenDataset<Table>(Constants.Database.TLegendGene))
                     {
+                        List<Field> legendFields = legendTable.GetDefinition().GetFields().ToList();
+                        bool is210Model = false;
+                        PLegend pLegend = new PLegend();
+                        if (legendFields.Exists(f=>f.Name == Constants.DatabaseFields.LegendSymbol))
+                        {
+                            is210Model = false;
+                        }
+                        else if (legendFields.Exists(f => f.Name == Constants.DatabaseFields.LegendSymbol_190101))
+                        {
+                            is210Model = true;
+                        }
+
                         //Get list of all templates associated with feature layer
                         CIMFeatureLayer layerDefinition = inLayer.GetDefinition() as CIMFeatureLayer;
                         List<CIMEditingTemplate> templates = layerDefinition.FeatureTemplates?.ToList();
@@ -488,10 +544,21 @@ namespace BedrockEditorPro.ProWindows
                             {
                                 SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
                                 Constants.DatabaseFields.LegendGISDisplay),
-                                WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
-                                Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType,
-                                Constants.DatabaseDomainsValues.legendItemGeoline)
+                                WhereClause = string.Format("{0} IS NOT NULL AND {1} IN ({2})",
+                                Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType, string.Format("'{0}'", string.Join("','", pLegend.LineElements)))
                             };
+
+                            if (is210Model)
+                            {
+                                legendFilter = new QueryFilter
+                                {
+                                    SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendLabelID,
+                                                                Constants.DatabaseFields.LegendGISDisplay),
+                                    WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
+                                                                Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendItemType_190101,
+                                                                Constants.DatabaseDomainsValues.legendItemGeoline)
+                                };
+                            }
 
                             List<GeoLines> legendGeolines = new List<GeoLines>();
 
@@ -501,13 +568,26 @@ namespace BedrockEditorPro.ProWindows
                                 {
                                     using (Row lineRow = lineCursor.Current)
                                     {
-                                        legendGeolines.Add(new GeoLines
+                                        if (is210Model)
                                         {
-                                            GSCSymbol = lineRow[Constants.DatabaseFields.LegendSymbol].ToString(),
-                                            GeolineID = lineRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                            Name = lineRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                            CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                        });
+                                            legendGeolines.Add(new GeoLines
+                                            {
+                                                GSCSymbol = lineRow[Constants.DatabaseFields.LegendSymbol_190101].ToString(),
+                                                GeolineID = lineRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                Name = lineRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                            });
+                                        }
+                                        else
+                                        {
+                                            legendGeolines.Add(new GeoLines
+                                            {
+                                                GSCSymbol = lineRow[Constants.DatabaseFields.LegendSymbol].ToString(),
+                                                GeolineID = lineRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                Name = lineRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                            });
+                                        }
 
                                     }
                                 }
@@ -535,15 +615,26 @@ namespace BedrockEditorPro.ProWindows
                             if (layerClass.GetName().Contains(Constants.Database.FGeopoint))
                             {
                                 #region Geopoints
-
                                 QueryFilter legendFilter = new QueryFilter
                                 {
                                     SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
-                                    Constants.DatabaseFields.LegendGISDisplay),
-                                    WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
-                                    Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType,
-                                    Constants.DatabaseDomainsValues.legendItemGeopoint)
+                                        Constants.DatabaseFields.LegendGISDisplay),
+                                    WhereClause = string.Format("{0} IS NOT NULL AND {1} IN ({2})",
+                                        Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType, string.Format("'{0}'", string.Join("','", pLegend.MarkerElements)))
                                 };
+
+                                if (is210Model)
+                                {
+                                    legendFilter = new QueryFilter
+                                    {
+                                        SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendLabelID,
+                                                                    Constants.DatabaseFields.LegendGISDisplay),
+                                        WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
+                                                                    Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendItemType_190101,
+                                                                    Constants.DatabaseDomainsValues.legendItemGeopoint)
+                                    };
+                                }
+
 
                                 List<GeoPoints> legendGeopoints = new List<GeoPoints>();
 
@@ -553,13 +644,27 @@ namespace BedrockEditorPro.ProWindows
                                     {
                                         using (Row pointRow = pointCursor.Current)
                                         {
-                                            legendGeopoints.Add(new GeoPoints
+                                            if (is210Model)
                                             {
-                                                GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
-                                                GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                                Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                            });
+                                                legendGeopoints.Add(new GeoPoints
+                                                {
+                                                    GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol_190101].ToString(),
+                                                    GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                    Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                    CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                                });
+                                            }
+                                            else
+                                            {
+                                                legendGeopoints.Add(new GeoPoints
+                                                {
+                                                    GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
+                                                    GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                    Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                    CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                                });
+                                            }
+
 
                                         }
                                     }
@@ -588,10 +693,22 @@ namespace BedrockEditorPro.ProWindows
                                 {
                                     SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
                                         Constants.DatabaseFields.LegendGISDisplay),
-                                    WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
-                                        Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType,
-                                        Constants.DatabaseDomainsValues.legendItemMapUnit)
+                                     WhereClause = string.Format("{0} IS NOT NULL AND {1} IN ({2})",
+                                        Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendItemType, string.Format("'{0}'", string.Join("','", pLegend.UnitElements)))
                                 };
+
+                                if (is210Model)
+                                {
+                                    legendFilter = new QueryFilter
+                                    {
+                                        SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendLabelID,
+                                                                    Constants.DatabaseFields.LegendGISDisplay),
+                                        WhereClause = string.Format("{0} IS NOT NULL AND {1} = '{2}'",
+                                                                    Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendItemType_190101,
+                                                                    Constants.DatabaseDomainsValues.legendItemMapUnit)
+                                    };
+                                }
+
 
                                 List<Labels> legendLabels = new List<Labels>();
 
@@ -601,14 +718,26 @@ namespace BedrockEditorPro.ProWindows
                                     {
                                         using (Row pointRow = pointCursor.Current)
                                         {
-                                            legendLabels.Add(new Labels
+                                            if (is210Model)
                                             {
-                                                GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
-                                                LabelID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                                Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                            });
-
+                                                legendLabels.Add(new Labels
+                                                {
+                                                    GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol_190101].ToString(),
+                                                    LabelID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                    Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                    CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                                });
+                                            }
+                                            else
+                                            {
+                                                legendLabels.Add(new Labels
+                                                {
+                                                    GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
+                                                    LabelID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                    Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                    CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                                });
+                                            }
                                         }
                                     }
                                 }
