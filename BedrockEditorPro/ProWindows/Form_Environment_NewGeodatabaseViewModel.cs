@@ -204,7 +204,7 @@ namespace BedrockEditorPro.ProWindows
             {
                 if (_openProjectionBrowse == null)
                 {
-                    _openProjectionBrowse = new RelayCommand(() => Dialog.GetProjectionPrompt(), () => true);
+                    _openProjectionBrowse = new RelayCommand(ShowDialog, () => true);
                 }
                 return _openProjectionBrowse;
             }
@@ -242,10 +242,15 @@ namespace BedrockEditorPro.ProWindows
                 Controls.BrowseButton browseButton = commandControl as Controls.BrowseButton;
 
                 //Make user select a folder to build the geodatabase
-                if (browseButton.Name.Contains("OutputGDB"))
+                if (browseButton != null && browseButton.Name.Contains("OutputGDB"))
                 {
-                    OutputGDBPath = dialogs.GetFGDBSavePrompt();
+                    _outputGDBPath = dialogs.GetFGDBSavePrompt();
+                    NotifyPropertyChanged(nameof(OutputGDBPath));
                 }
+            }
+            else
+            {
+                dialogs.GetProjectionPrompt();
             }
         }
 
@@ -259,8 +264,10 @@ namespace BedrockEditorPro.ProWindows
         {
             if (sr != null)
             {
-                OutputSR = sr;
-                OutputSRName = sr.Name;
+                _outputSR = sr;
+                _outputSRName = sr.Name;
+                NotifyPropertyChanged(nameof(OutputSR));
+                NotifyPropertyChanged(nameof(OutputSRName));
             }
         }
 

@@ -8,8 +8,8 @@
         xmlns:bedrockcontrols="clr-namespace:BedrockEditorPro.Controls"
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions" 
         mc:Ignorable="d"
-        ResizeMode="NoResize" 
-        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" Height="285" Width="500"
+        ResizeMode="NoResize" Topmost="False"
+        Title="{x:Static local:Resources.FormEnvironmentNewGeodatabaseTitle}" MaxHeight="285" Width="500"
         WindowStartupLocation="CenterOwner">
     
     <controls:ProWindow.Resources>

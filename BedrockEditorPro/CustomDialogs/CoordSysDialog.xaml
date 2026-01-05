@@ -4,11 +4,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BedrockEditorPro.Properties"
         xmlns:extensions="clr-namespace:ArcGIS.Desktop.Extensions;assembly=ArcGIS.Desktop.Extensions"
         xmlns:mapping="clr-namespace:ArcGIS.Desktop.Mapping.Controls;assembly=ArcGIS.Desktop.Mapping"
         xmlns:common="clr-namespace:BedrockEditorPro.Utilities"
-        mc:Ignorable="d"
-        Title="CoordSysDialog" Height="600" Width="650"
+        mc:Ignorable="d" Topmost="False" ResizeMode="NoResize" 
+        Title="{x:Static local:Resources.FormCoordinateSystemDialogTitle}" MaxHeight="600" Width="650"
         WindowStartupLocation="CenterOwner"
     >
     <controls:ProWindow.Resources>
@@ -37,7 +38,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="8"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <CheckBox x:Name="ShowVCS" IsChecked="{Binding Path=ShowVCS, Mode=TwoWay}" Content="Show VCS"
@@ -48,7 +49,7 @@
             <mapping:CoordinateSystemsControl  x:Name="CoordinateSystemsControl"
                           ConfigureControl="{Binding Path=ControlProperties}"/>
         </Border>
-        <GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch" Foreground="{DynamicResource Esri_Color_Gray145}"/>
+        <GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch"/>
         <mapping:CoordinateSystemsDetailsControl Grid.Row="3" 
                    SpatialReference="{Binding ElementName=CoordinateSystemsControl, Path=SelectedSpatialReference}"
                    ShowVerticalCSDetails="{Binding Path=ShowVCS}"/>

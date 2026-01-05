@@ -151,6 +151,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coordinate Systems.
+        /// </summary>
+        public static string FormCoordinateSystemDialogTitle {
+            get {
+                return ResourceManager.GetString("FormCoordinateSystemDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select map unit layer.
         /// </summary>
         public static string FormCreateEditCreateMapUnitLayers {

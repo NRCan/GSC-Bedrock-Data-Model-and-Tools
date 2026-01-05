@@ -109,19 +109,18 @@ namespace BedrockEditorPro.Utilities
         /// Will prompt a projection dialog (spatial reference)
         /// </summary>
         /// <returns>Returns a spatial reference object</returns>
-        public static void GetProjectionPrompt()
+        public void GetProjectionPrompt()
         {
             try
             {
                 //Variable
                 SpatialReference spatialReference = null;
-                CoordSysDialog _coordDialog = null;
 
                 //Create a new dialog instance
-                _coordDialog = new CoordSysDialog();
+                CoordSysDialog _coordDialog = new CoordSysDialog();
                 _coordDialog.Closing += _coordDialog_Closing;
-                _coordDialog.Owner = FrameworkApplication.Current.MainWindow;
-                _coordDialog.Show();
+                //_coordDialog.Owner = FrameworkApplication.Current.MainWindow;
+                _coordDialog.ShowDialog();
             }
             catch (Exception e)
             {

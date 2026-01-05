@@ -688,4 +688,7 @@
   <data name="FormLegendItemsNewElement" xml:space="preserve">
     <value>&lt;Nouvel élément&gt;</value>
   </data>
+  <data name="FormCoordinateSystemDialogTitle" xml:space="preserve">
+    <value>Système de références</value>
+  </data>
 </root>
