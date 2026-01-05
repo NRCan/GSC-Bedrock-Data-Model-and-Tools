@@ -568,26 +568,28 @@ namespace BedrockEditorPro.ProWindows
                                 {
                                     using (Row lineRow = lineCursor.Current)
                                     {
+                                        GeoLines newGeolines = new GeoLines
+                                        {
+                                            GeolineID = lineRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                            Name = lineRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                            CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                        };
+                                        newGeolines.GeolineType = int.Parse(newGeolines.GetGeolineSubtypeFromID);
+                                        newGeolines.Qualifier = newGeolines.GetGeolineQualifierFromID;
+                                        newGeolines.Attitude = newGeolines.GetGeolineAttitudeFromID;
+                                        newGeolines.Confidence = newGeolines.GetGeolineConfidenceFromID;
+                                        newGeolines.Generation = newGeolines.GetGeolineGenerationFromID;
+
                                         if (is210Model)
                                         {
-                                            legendGeolines.Add(new GeoLines
-                                            {
-                                                GSCSymbol = lineRow[Constants.DatabaseFields.LegendSymbol_190101].ToString(),
-                                                GeolineID = lineRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                                Name = lineRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                            });
+                                            newGeolines.GSCSymbol = lineRow[Constants.DatabaseFields.LegendSymbol_190101].ToString();
                                         }
                                         else
                                         {
-                                            legendGeolines.Add(new GeoLines
-                                            {
-                                                GSCSymbol = lineRow[Constants.DatabaseFields.LegendSymbol].ToString(),
-                                                GeolineID = lineRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                                Name = lineRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                            });
+                                            newGeolines.GSCSymbol = lineRow[Constants.DatabaseFields.LegendSymbol].ToString();
                                         }
+
+                                        legendGeolines.Add(newGeolines);
 
                                     }
                                 }
@@ -644,27 +646,30 @@ namespace BedrockEditorPro.ProWindows
                                     {
                                         using (Row pointRow = pointCursor.Current)
                                         {
+
+                                            GeoPoints newGeopoint = new GeoPoints
+                                            {
+                                                GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
+                                                Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
+                                                CreatorID = Properties.Settings.Default.SelectedParticipantCode
+                                            };
+                                            newGeopoint.GeopointType = int.Parse(newGeopoint.GetGeopointSubtypeFromID);
+                                            newGeopoint.Subset = newGeopoint.GetGeolpointSubsetFromID;
+                                            newGeopoint.Attitude = newGeopoint.GetGeopointAttitudeFromID;
+                                            newGeopoint.Generation = newGeopoint.GetGeopointGenerationFromID;
+                                            newGeopoint.Younging = newGeopoint.GetGeopointYoungingFromID;
+                                            newGeopoint.Method = newGeopoint.GetGeopointMethodFromID;
+
                                             if (is210Model)
                                             {
-                                                legendGeopoints.Add(new GeoPoints
-                                                {
-                                                    GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol_190101].ToString(),
-                                                    GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                                    Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                                    CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                                });
+                                                newGeopoint.GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol_190101].ToString();
                                             }
                                             else
                                             {
-                                                legendGeopoints.Add(new GeoPoints
-                                                {
-                                                    GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString(),
-                                                    GeopointID = pointRow[Constants.DatabaseFields.LegendLabelID].ToString(),
-                                                    Name = pointRow[Constants.DatabaseFields.LegendGISDisplay].ToString(),
-                                                    CreatorID = Properties.Settings.Default.SelectedParticipantCode
-                                                });
+                                                newGeopoint.GSCSymbol = pointRow[Constants.DatabaseFields.LegendSymbol].ToString();
                                             }
 
+                                            legendGeopoints.Add(newGeopoint);
 
                                         }
                                     }

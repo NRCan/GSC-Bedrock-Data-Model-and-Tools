@@ -69,7 +69,7 @@ namespace BedrockEditorPro.Comboboxes
                 //Get list of layers and find if there is any matches for the bedrock geodatabase
                 try
                 {
-                    await QueuedTask.Run(() =>
+                    await QueuedTask.Run(async () =>
                     {
                         if (MapView.Active != null && MapView.Active.Map != null)
                         {
@@ -107,17 +107,32 @@ namespace BedrockEditorPro.Comboboxes
                                                             }
                                                         }
 
-                                                        //Select last selected item if any
-                                                        if (!string.IsNullOrEmpty(Properties.Settings.Default.SelectedParticipantCode))
-                                                        {
-                                                            ComboBoxItem toSelect = this.ItemCollection.FirstOrDefault(i => (i as ComboBoxItem).Tooltip == Properties.Settings.Default.SelectedParticipantCode) as ComboBoxItem;
-                                                            if (toSelect != null)
-                                                            {
-                                                                SelectedItem = toSelect;
-                                                            }
-                                                        }
-                                                        break; //exit the loop if we found the bedrock gdb and added the particpants
                                                     }
+                                                    else
+                                                    {
+                                                        //In case there are no participant, in order to allow user to still digitize anything, add current windows login name as default
+                                                        string currentUser = System.Environment.UserName;
+
+                                                        _ = await Utilities.Domains.AddDomainValue(sourceGeodatabase, Constants.DatabaseDomains.participant, currentUser, currentUser);
+
+                                                        //Add new participant in the combobox
+                                                        ComboBoxItem participantItem = new ComboBoxItem(currentUser, "", currentUser);
+                                                        if (!this.ItemCollection.Contains(participantItem))
+                                                        {
+                                                            Add(participantItem);
+                                                        }
+                                                    }
+
+                                                    //Select last selected item if any
+                                                    if (!string.IsNullOrEmpty(Properties.Settings.Default.SelectedParticipantCode))
+                                                    {
+                                                        ComboBoxItem toSelect = this.ItemCollection.FirstOrDefault(i => (i as ComboBoxItem).Tooltip == Properties.Settings.Default.SelectedParticipantCode) as ComboBoxItem;
+                                                        if (toSelect != null)
+                                                        {
+                                                            SelectedItem = toSelect;
+                                                        }
+                                                    }
+                                                    break; //exit the loop if we found the bedrock gdb and added the particpants
                                                 }
                                             }
                                         }
