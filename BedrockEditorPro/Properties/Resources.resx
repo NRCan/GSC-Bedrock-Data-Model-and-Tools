@@ -334,9 +334,6 @@
   <data name="FormCreateEditGeolineTemplate" xml:space="preserve">
     <value>Selected lines will be added as templates</value>
   </data>
-  <data name="ButtonEnvironmentAddProjectLayersPromptTitle" xml:space="preserve">
-    <value>Project layers</value>
-  </data>
   <data name="FormCreateEditGeolineType" xml:space="preserve">
     <value>Type</value>
   </data>
@@ -688,10 +685,10 @@
   <data name="FormLegendItemsNewElement" xml:space="preserve">
     <value>&lt;New Element&gt;</value>
   </data>
-  <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="FormCoordinateSystemDialogTitle" xml:space="preserve">
     <value>Coordinate Systems</value>
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

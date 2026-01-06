@@ -11,6 +11,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Internal.Mapping;
+using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
 using BedrockEditorPro.Models;
 using BedrockEditorPro.Services;
@@ -27,6 +28,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using static BedrockEditorPro.Utilities.Constants;
 using static BedrockEditorPro.Utilities.Layers;
+using Field = ArcGIS.Core.Data.Field;
 using Layers = BedrockEditorPro.Utilities.Layers;
 using QueryFilter = ArcGIS.Core.Data.QueryFilter;
 using Workspace = BedrockEditorPro.Utilities.Workspace;
@@ -443,13 +445,27 @@ namespace BedrockEditorPro.ProWindows
         /// <param name="geopolyFC"></param>
         private void UpdateSymbolField(FeatureClass inputPolygonFeature, Table legendTable)
         {
+            //Model version managing
+            List<Field> legendFields = legendTable.GetDefinition().GetFields().ToList();
+
+            PLegend pLegend = new PLegend();
+
+            if (!legendFields.Exists(f => f.Name == DatabaseFields.LegendSymbol))
+            {
+                return;
+            }
+
+
             //Build a dictionary of labelids and their associated symbol code
             Dictionary<string, string> symbolDictionary = new Dictionary<string, string>();
-            QueryFilter labelSymbolFilter = new QueryFilter()
+            QueryFilter labelSymbolFilter = new QueryFilter
             {
-                WhereClause = string.Format("{0} = '{1}'", DatabaseFields.LegendItemType, DatabaseDomainsValues.legendItemMapUnit),
-                SubFields = String.Format("{0}, {1}",DatabaseFields.LegendLabelID, DatabaseFields.LegendSymbol)
+                SubFields = string.Format("{0}, {1}", DatabaseFields.LegendLabelID, DatabaseFields.LegendSymbol),
+                WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} in ({3})",
+                DatabaseFields.LegendSymbol, DatabaseFields.LegendLabelID,
+                DatabaseFields.LegendItemType, string.Format("'{0}'", string.Join("','", pLegend.UnitElements)))
             };
+
             using (RowCursor labelRow = legendTable.Search(labelSymbolFilter, false))
             {
                 while (labelRow.MoveNext())
@@ -468,7 +484,7 @@ namespace BedrockEditorPro.ProWindows
                 //For update cursor with only two fields
                 QueryFilter geopolyFilter = new QueryFilter()
                 {
-                    SubFields = String.Format("{0}, {1}", DatabaseFields.FGeopolyLabel, DatabaseFields.LegendSymbol)
+                    SubFields = String.Format("{0}, {1}", DatabaseFields.FGeopolyLabel, DatabaseFields.FGeopolyFGDC)
                 };
 
                 //Update geopoly
@@ -483,7 +499,7 @@ namespace BedrockEditorPro.ProWindows
                                 //Invalidate view before editing
                                 context.Invalidate(gRow);
 
-                                gRow[DatabaseFields.LegendSymbol] = symbolDictionary[gRow[DatabaseFields.FGeopolyLabel].ToString()];
+                                gRow[DatabaseFields.FGeopolyFGDC] = symbolDictionary[gRow[DatabaseFields.FGeopolyLabel].ToString()];
 
                                 gRow.Store();
 

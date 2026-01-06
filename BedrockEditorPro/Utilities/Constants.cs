@@ -309,6 +309,7 @@ namespace BedrockEditorPro.Utilities
             #region Feature Geopolys
             public const string FGeopolyLabel = "LABELID";
             public const string FGeopolyRemark = "REMARKS";
+            public const string FGeopolyFGDC = "GSC_SYMBOL";
             #endregion
 
             #region Feature Study area

@@ -334,9 +334,6 @@
   <data name="FormCreateEditGeolineTemplate" xml:space="preserve">
     <value>Les lignes sélectionnées seront ajoutés comme gabarit</value>
   </data>
-  <data name="ButtonEnvironmentAddProjectLayersPromptTitle" xml:space="preserve">
-    <value>Couches de projet</value>
-  </data>
   <data name="FormCreateEditGeolineType" xml:space="preserve">
     <value>Type</value>
   </data>

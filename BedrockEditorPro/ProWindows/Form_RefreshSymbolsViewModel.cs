@@ -226,7 +226,7 @@ namespace BedrockEditorPro.ProWindows
             CIMFeatureTable lFeatureTable = lFeatureDef.FeatureTable;
 
             //Make sure it's only label feature class being processed
-            if (lFeatureDef.Description.ToLower() == Constants.Database.FLabel.ToLower())
+            if (lFeatureDef.Description.ToLower() == Constants.Database.FLabel.ToLower() || lFeatureDef.Description.ToLower() == Constants.ProjectLayers.geopoly.ToLower())
             {
 
                 //Iterate through values and find their match in the style
@@ -247,6 +247,11 @@ namespace BedrockEditorPro.ProWindows
                             if (legendFields.Exists(f => f.Name == Constants.DatabaseFields.LegendSymbol))
                             {
                                 is210Model = false;
+                                if (lFeatureDef.Description.ToLower() == Constants.ProjectLayers.geopoly.ToLower())
+                                {
+                                    //Should not process 4.0 poly
+                                    return symbolDico;
+                                }
                             }
                             else if (legendFields.Exists(f => f.Name == Constants.DatabaseFields.LegendSymbol_190101))
                             {
@@ -447,6 +452,7 @@ namespace BedrockEditorPro.ProWindows
                                 //Go through all field values
                                 foreach (CIMUniqueValue cimV in cimVC.Values)
                                 {
+                                    //Geolines,Geopoints, Geopoly 4.0
                                     if (labelSymbols.Count() == 0)
                                     {
                                         //Find symbol in style file from first field value
@@ -467,7 +473,7 @@ namespace BedrockEditorPro.ProWindows
                                     }
                                     else
                                     {
-
+                                        //Labels, Geopoly 2.10
                                         if (labelSymbols.ContainsKey(cimV.FieldValues[0]))
                                         {
                                             //Get symbol code
@@ -476,11 +482,21 @@ namespace BedrockEditorPro.ProWindows
                                             //Find symbol in style file from first field value
                                             SymbolStyleItem currentSymbol = workingStyle.SearchSymbols(StyleItemType.PolygonSymbol, symbolCode)[0];
 
-                                            CIMPointSymbol currentPntSymbol = Symbols.GetLabelDefaultRenderer(currentSymbol.Symbol.GetColor());
+                                            if (styleItemType == StyleItemType.PointSymbol)
+                                            {
+                                                //Set
+                                                CIMPointSymbol currentPntSymbol = Symbols.GetLabelDefaultRenderer(currentSymbol.Symbol.GetColor());
+                                                CIMSymbolReference cimSR = cimVC.Symbol;
+                                                cimSR.Symbol = currentPntSymbol;
+                                            }
+                                            else if (styleItemType == StyleItemType.PolygonSymbol)
+                                            {
+                                                //Set
+                                                CIMSymbolReference cimSR = cimVC.Symbol;
+                                                cimSR.Symbol = currentSymbol.Symbol;
 
-                                            //Set
-                                            CIMSymbolReference cimSR = cimVC.Symbol;
-                                            cimSR.Symbol = currentPntSymbol;
+                                            }
+                                            
                                         }
                                     }
                                 }
@@ -604,6 +620,10 @@ namespace BedrockEditorPro.ProWindows
                                     if (!templates.Exists(x => x.Description == gl.GeolineID))
                                     {
                                         Symbols.CreateLineTemplate(inLayer,gl);
+                                    }
+                                    else
+                                    {
+                                        //TODO Else refresh it
                                     }
                                 }
                             }
