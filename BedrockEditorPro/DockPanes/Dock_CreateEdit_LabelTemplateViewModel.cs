@@ -1,6 +1,7 @@
 ﻿using ArcGIS.Core.CIM;
 using ArcGIS.Core.Data;
 using ArcGIS.Core.Geometry;
+using ArcGIS.Core.Internal.CIM;
 using ArcGIS.Core.Internal.Threading.Tasks;
 using ArcGIS.Desktop.Catalog;
 using ArcGIS.Desktop.Core;
@@ -30,6 +31,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using static BedrockEditorPro.Utilities.Layers;
 using Constants = BedrockEditorPro.Utilities.Constants;
+using QueryFilter = ArcGIS.Core.Data.QueryFilter;
 
 namespace BedrockEditorPro.DockPanes
 {
@@ -229,14 +231,44 @@ namespace BedrockEditorPro.DockPanes
                                 //Add value to legend table and domain
                                 using (Table legendTable = sourceGeodatabase.OpenDataset<Table>(Utilities.Constants.Database.TLegendGene))
                                 {
+                                    //Model version managing
+                                    List<ArcGIS.Core.Data.Field> legendFields = legendTable.GetDefinition().GetFields().ToList();
+                                    bool is210Model = false;
+                                    PLegend pLegend = new PLegend();
+
+                                    if (legendFields.Exists(f => f.Name == Constants.DatabaseFields.LegendSymbol))
+                                    {
+                                        is210Model = false;
+                                    }
+                                    else if (legendFields.Exists(f => f.Name == Constants.DatabaseFields.LegendSymbol_190101))
+                                    {
+                                        is210Model = true;
+                                    }
+
                                     bool labelNameExists = false;
 
                                     //Query filter for geopoint only
-                                    QueryFilter labelFilter = new QueryFilter()
+                                    QueryFilter labelFilter = new QueryFilter
                                     {
-                                        SubFields = string.Format("{0}, {1}", Utilities.Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendGISDisplay),
-                                        WhereClause = string.Format("{0} = '{1}'", Utilities.Constants.DatabaseFields.LegendItemType, Constants.DatabaseDomainsValues.legendItemMapUnit),
+                                        SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol),
+                                        PrefixClause = "DISTINCT",
+                                        WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} in ({3})",
+                                        Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
+                                        Constants.DatabaseFields.LegendItemType, string.Format("'{0}'", string.Join("','", pLegend.UnitElements)))
                                     };
+
+
+                                    if (is210Model)
+                                    {
+                                        labelFilter = new QueryFilter
+                                        {
+                                            SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol_190101),
+                                            PrefixClause = "DISTINCT",
+                                            WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} = '{3}'",
+                                                                        Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendLabelID,
+                                                                        Constants.DatabaseFields.LegendItemType_190101, Constants.DatabaseDomainsValues.legendItemMapUnit)
+                                        };
+                                    }
 
                                     RowCursor rowCursor = legendTable.Search(labelFilter);
                                     while (rowCursor.MoveNext())
@@ -401,7 +433,7 @@ namespace BedrockEditorPro.DockPanes
                 {
                     FeatureLayer labelLayer = LabelLayers[LabelSelectedLayerIndex].FLayer;
 
-                    _uriGeodatabase = Workspace.GetWorkspacePath(labelLayer);
+                    _uriGeodatabase = Utilities.Workspace.GetWorkspacePath(labelLayer);
 
                     if (_uriGeodatabase != null && _labelAgePrefix.Count() == 0 && Directory.Exists(_uriGeodatabase.OriginalString))
                     {
