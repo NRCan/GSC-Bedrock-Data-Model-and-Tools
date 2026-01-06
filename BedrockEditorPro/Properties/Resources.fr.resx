@@ -688,4 +688,16 @@
   <data name="FormCoordinateSystemDialogTitle" xml:space="preserve">
     <value>Système de références</value>
   </data>
+  <data name="FormLegendItemWrongSchema" xml:space="preserve">
+    <value>L'outil actuel n'est pas adapté pour un schéma inférieur à 4.0.</value>
+  </data>
+  <data name="GenericButtonDelete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="FormLegendItemDeleteWarning" xml:space="preserve">
+    <value>Soyez avertis, supprimer un élément de légende est définitif. Souhaitez-vous continuer?</value>
+  </data>
+  <data name="FormLegendItemsDeleteAlreadyExists" xml:space="preserve">
+    <value>L'élément sélectionné possède encore des géométries numérisées, impossible de procéder avec l'effacement de l'enregistrement.</value>
+  </data>
 </root>

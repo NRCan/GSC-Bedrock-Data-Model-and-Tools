@@ -790,6 +790,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deleting a legend item cannot be undone. Are you sure you want to delete this item?.
+        /// </summary>
+        public static string FormLegendItemDeleteWarning {
+            get {
+                return ResourceManager.GetString("FormLegendItemDeleteWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select an Item.
         /// </summary>
         public static string FormLegendItems {
@@ -813,6 +822,15 @@ namespace BedrockEditorPro.Properties {
         public static string FormLegendItemsColumnHint {
             get {
                 return ResourceManager.GetString("FormLegendItemsColumnHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected item to delete still has digitized geometries, cannot proceed with deletion..
+        /// </summary>
+        public static string FormLegendItemsDeleteAlreadyExists {
+            get {
+                return ResourceManager.GetString("FormLegendItemsDeleteAlreadyExists", resourceCulture);
             }
         }
         
@@ -1276,6 +1294,15 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current tool is not available for schema under version 4.0..
+        /// </summary>
+        public static string FormLegendItemWrongSchema {
+            get {
+                return ResourceManager.GetString("FormLegendItemWrongSchema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other Details.
         /// </summary>
         public static string FormLegendOtherDetailGroup {
@@ -1470,6 +1497,15 @@ namespace BedrockEditorPro.Properties {
         public static string GenericButtonCancel {
             get {
                 return ResourceManager.GetString("GenericButtonCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string GenericButtonDelete {
+            get {
+                return ResourceManager.GetString("GenericButtonDelete", resourceCulture);
             }
         }
         

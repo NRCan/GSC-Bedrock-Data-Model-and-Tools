@@ -691,4 +691,16 @@
   <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="FormLegendItemWrongSchema" xml:space="preserve">
+    <value>Current tool is not available for schema under version 4.0.</value>
+  </data>
+  <data name="GenericButtonDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="FormLegendItemDeleteWarning" xml:space="preserve">
+    <value>Deleting a legend item cannot be undone. Are you sure you want to delete this item?</value>
+  </data>
+  <data name="FormLegendItemsDeleteAlreadyExists" xml:space="preserve">
+    <value>Selected item to delete still has digitized geometries, cannot proceed with deletion.</value>
+  </data>
 </root>

@@ -124,6 +124,7 @@ namespace BedrockEditorPro.Utilities
                 CodedValueDomain domain = sourceGeodatabase.GetDomains().First(d => d.GetName() == domainName) as CodedValueDomain;
                 if (domain != null)
                 {
+                    
                     //Add and update current domain
                     CodedValueDomainDescription domDescription = new CodedValueDomainDescription(domain);
                     domDescription.CodedValuePairs.Add(domainCode, domainDescription);
@@ -139,6 +140,42 @@ namespace BedrockEditorPro.Utilities
             }
 
             return valueAdded;
+
+        }
+
+        /// <summary>
+        /// Will delete value from an existing domain
+        /// </summary>
+        /// <param name="sourceGeodatabase"></param>
+        /// <param name="domainName"></param>
+        /// <param name="domainCode"></param>
+        /// <param name="domainDescription"></param>
+        public static async Task<bool> DeleteDomainValue(Geodatabase sourceGeodatabase, string domainName, string domainCode)
+        {
+            bool valueDeleted = false;
+
+            try
+            {
+                //Get current domain
+                SchemaBuilder domBuilder = new SchemaBuilder(sourceGeodatabase);
+                CodedValueDomain domain = sourceGeodatabase.GetDomains().First(d => d.GetName() == domainName) as CodedValueDomain;
+                if (domain != null)
+                {
+                    //Add and update current domain
+                    CodedValueDomainDescription domDescription = new CodedValueDomainDescription(domain);
+                    domDescription.CodedValuePairs.Remove(domainCode);
+                    domBuilder.Modify(domDescription);
+                    domBuilder.Build();
+
+                    valueDeleted = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                new ErrorService(ex).WriteToFile();
+            }
+
+            return valueDeleted;
 
         }
     }

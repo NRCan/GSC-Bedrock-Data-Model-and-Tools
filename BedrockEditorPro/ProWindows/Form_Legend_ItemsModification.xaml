@@ -9,7 +9,7 @@
         xmlns:bedrockcontrols="clr-namespace:BedrockEditorPro.Controls"
         xmlns:layerControls="clr-namespace:ArcGIS.Desktop.Internal.Mapping.CommonControls.LayerControls;assembly=ArcGIS.Desktop.Mapping"
         mc:Ignorable="d"
-        Title="{x:Static local:Resources.FormLegendItemsModificationTitle}" Height="850" Width="1200" ResizeMode="CanResize"
+        Title="{x:Static local:Resources.FormLegendItemsModificationTitle}" Height="850" MaxWidth="964" ResizeMode="CanResize"
         WindowStartupLocation="CenterOwner">
     
     <controls:ProWindow.Resources>
@@ -78,6 +78,7 @@
         <StackPanel Grid.RowSpan="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,0,-15" Width="500" Height="150" >
             <Image x:Name="ElementOverview" Stretch="None" HorizontalAlignment="Left"  Width="500" Height="150"/>
         </StackPanel>
+
         
 
         <!--Element type group-->
@@ -447,6 +448,20 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Image Source="{DynamicResource GenericRun16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
                         <TextBlock Text="{x:Static local:Resources.GenericButtonRun}" VerticalAlignment="Center" Margin="3"/>
+                    </StackPanel>
+                </Border>
+            </Button.Content>
+        </Button>
+
+        <!--Delete-->
+        <Button Grid.Row="6" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Right"
+            Style="{DynamicResource Esri_Button}" Width="75"
+            Command="{Binding DeleteItem}">
+            <Button.Content>
+                <Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{DynamicResource GenericDeleteRed16}"  Margin="2" HorizontalAlignment="Center" Width="16" Height="16"/>
+                        <TextBlock Text="{x:Static local:Resources.GenericButtonDelete}" VerticalAlignment="Center" Margin="3"/>
                     </StackPanel>
                 </Border>
             </Button.Content>

@@ -1,4 +1,5 @@
 ﻿using ArcGIS.Core.CIM;
+using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Internal.Catalog;
@@ -259,5 +260,47 @@ namespace BedrockEditorPro.Utilities
 
         }
 
+        /// <summary>
+        /// Will return a list of feature layers if it exist within the map content from a given geodatabase
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<FeatureLayer>> GetActiveFeatureLayerFromGeodatabase(Geodatabase geodatabase, string featureName)
+        {
+            List<FeatureLayer> outputFL = new List<FeatureLayer>();
+
+            try
+            {
+                await QueuedTask.Run(() =>
+                {
+                    if (MapView.Active != null && MapView.Active.Map != null)
+                    {
+                        List<FeatureLayer> layerList = MapView.Active.Map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
+                        if (layerList != null)
+                        {
+                            foreach (FeatureLayer fl in layerList)
+                            {
+                                FeatureClass fc = fl.GetFeatureClass();
+                                if (fc != null && fc.GetName() == featureName)
+                                {
+                                    Uri fcPath = fc.GetPath();
+                                    if (fcPath != null && fcPath.OriginalString.Contains(geodatabase.GetPath().OriginalString))
+                                    {
+                                        outputFL.Add(fl);
+                                    }
+
+                                }
+                            }
+                            
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                new ErrorService(ex).WriteToFile();
+            }
+
+            return outputFL;
+        }
     }
 }

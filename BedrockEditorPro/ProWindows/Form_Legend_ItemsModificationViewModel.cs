@@ -9,8 +9,10 @@ using ArcGIS.Desktop.Internal.Mapping.Events;
 using ArcGIS.Desktop.Mapping;
 using BedrockEditorPro.Comboboxes;
 using BedrockEditorPro.Models;
+using BedrockEditorPro.Services;
 using BedrockEditorPro.Utilities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -25,6 +27,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using static BedrockEditorPro.ProWindows.Form_Load_StudyAreaViewModel;
+using static BedrockEditorPro.Utilities.Constants;
 
 namespace BedrockEditorPro.ProWindows
 {
@@ -320,6 +323,19 @@ namespace BedrockEditorPro.ProWindows
                 return _openLabel2Browse;
             }
         }
+
+        private ICommand _deleteItem = null;
+        public ICommand DeleteItem
+        {
+            get
+            {
+                if (_deleteItem == null)
+                {
+                    _deleteItem = new RelayCommand(() => DeleteSelectedItem(), () => true);
+                }
+                return _deleteItem;
+            }
+        }
         #endregion
 
         #region METHOD
@@ -396,59 +412,69 @@ namespace BedrockEditorPro.ProWindows
                                     {
                                         if (legendTable != null)
                                         {
-                                            
-                                            QueryFilter itemFilter = new QueryFilter 
-                                            { 
-                                                PrefixClause = "DISTINCT",
-                                                SubFields = $"{Constants.DatabaseFields.LegendGISDisplay}, {Constants.DatabaseFields.LegendLabelID}, " +
-                                                $"{Constants.DatabaseFields.LegendColumn}, {Constants.DatabaseFields.LegendItemType}",
-                                                WhereClause = string.Format("{0} IS NOT NULL AND {0} NOT LIKE ''", Constants.DatabaseFields.LegendGISDisplay),
-                                                PostfixClause = $"ORDER BY {Constants.DatabaseFields.LegendOrder} ASC"
-                                            };
-
-                                            using (RowCursor legendCursor = legendTable.Search(itemFilter, false))
+                                            //Version 4.0 validation
+                                            List<Field> legendFields = legendTable.GetDefinition().GetFields().ToList();
+                                            if (legendFields.Exists(f => f.Name == DatabaseFields.LegendSymbol))
                                             {
-
-                                                while (legendCursor.MoveNext())
+                                                QueryFilter itemFilter = new QueryFilter
                                                 {
-                                                    using (Row legendRow = legendCursor.Current)
+                                                    PrefixClause = "DISTINCT",
+                                                    SubFields = $"{Constants.DatabaseFields.LegendGISDisplay}, {Constants.DatabaseFields.LegendLabelID}, " +
+                                                        $"{Constants.DatabaseFields.LegendColumn}, {Constants.DatabaseFields.LegendItemType}",
+                                                    WhereClause = string.Format("{0} IS NOT NULL AND {0} NOT LIKE ''", Constants.DatabaseFields.LegendGISDisplay),
+                                                    PostfixClause = $"ORDER BY {Constants.DatabaseFields.LegendOrder} ASC"
+                                                };
+
+                                                using (RowCursor legendCursor = legendTable.Search(itemFilter, false))
+                                                {
+
+                                                    while (legendCursor.MoveNext())
                                                     {
-                                                        CustomCombobox rowBox = new CustomCombobox();
-                                                        rowBox.Name = legendRow[Constants.DatabaseFields.LegendGISDisplay].ToString();
-                                                        rowBox.Value = legendRow[Constants.DatabaseFields.LegendLabelID].ToString();
-                                                        rowBox.ExtraValue = legendRow[Constants.DatabaseFields.LegendItemType];
-
-                                                        _legendItems.Add(rowBox);
-
-                                                        int currentColumnNo = 0;
-                                                        if (legendRow[Constants.DatabaseFields.LegendColumn] != null)
+                                                        using (Row legendRow = legendCursor.Current)
                                                         {
-                                                            int.TryParse(legendRow[Constants.DatabaseFields.LegendColumn].ToString(), out currentColumnNo);
-                                                        }
-                                                        
+                                                            CustomCombobox rowBox = new CustomCombobox();
+                                                            rowBox.Name = legendRow[Constants.DatabaseFields.LegendGISDisplay].ToString();
+                                                            rowBox.Value = legendRow[Constants.DatabaseFields.LegendLabelID].ToString();
+                                                            rowBox.ExtraValue = legendRow[Constants.DatabaseFields.LegendItemType];
 
-                                                        if (currentColumnNo > _noOfColumns)
-                                                        {
-                                                            _noOfColumns = currentColumnNo;
+                                                            _legendItems.Add(rowBox);
+
+                                                            int currentColumnNo = 0;
+                                                            if (legendRow[Constants.DatabaseFields.LegendColumn] != null)
+                                                            {
+                                                                int.TryParse(legendRow[Constants.DatabaseFields.LegendColumn].ToString(), out currentColumnNo);
+                                                            }
+
+
+                                                            if (currentColumnNo > _noOfColumns)
+                                                            {
+                                                                _noOfColumns = currentColumnNo;
+                                                            }
                                                         }
                                                     }
+
+                                                    //Add an item for new elements to be added
+                                                    CustomCombobox newElementBox = new CustomCombobox();
+                                                    newElementBox.Name = Properties.Resources.FormLegendItemsNewElement;
+                                                    newElementBox.Value = Properties.Resources.FormLegendItemsNewElement;
+                                                    newElementBox.Value = null;
+                                                    _legendItems.Insert(0, newElementBox);
+                                                    _legendSelectedItemIndex = 0;
+                                                    NotifyPropertyChanged(nameof(LegendSelectedItemIndex));
                                                 }
 
-                                                //Add an item for new elements to be added
-                                                CustomCombobox newElementBox = new CustomCombobox();
-                                                newElementBox.Name = Properties.Resources.FormLegendItemsNewElement;
-                                                newElementBox.Value = Properties.Resources.FormLegendItemsNewElement;
-                                                newElementBox.Value = null;
-                                                _legendItems.Insert(0, newElementBox);
-                                                _legendSelectedItemIndex = 0;
-                                                NotifyPropertyChanged(nameof(LegendSelectedItemIndex));
+                                                //Update some UI strings
+                                                _noOfOrderHint = string.Format(Properties.Resources.FormLegendItemsOrderHint, legendTable.GetCount().ToString());
+                                                NotifyPropertyChanged(nameof(NoOfOrderHint));
+                                                _noOfColumnsHint = string.Format(Properties.Resources.FormLegendItemsColumnHint, _noOfColumns.ToString());
+                                                NotifyPropertyChanged(nameof(NoOfColumnsHint));
+                                            }
+                                            else
+                                            {
+                                                _warningMessage = Properties.Resources.FormLegendItemWrongSchema;
+                                                NotifyPropertyChanged(nameof(WarningMessage));
                                             }
 
-                                            //Update some UI strings
-                                            _noOfOrderHint = string.Format(Properties.Resources.FormLegendItemsOrderHint, legendTable.GetCount().ToString());
-                                            NotifyPropertyChanged(nameof(NoOfOrderHint));
-                                            _noOfColumnsHint = string.Format(Properties.Resources.FormLegendItemsColumnHint, _noOfColumns.ToString());
-                                            NotifyPropertyChanged(nameof(NoOfColumnsHint));
                                         }
 
                                     }
@@ -935,6 +961,203 @@ namespace BedrockEditorPro.ProWindows
                 new ErrorService(e).WriteToFile();
             }
 
+        }
+
+        /// <summary>
+        /// Will delete a selected item from the legend
+        /// </summary>
+        public async Task DeleteSelectedItem()
+        {
+            try
+            {
+                if (_legendSelectedTableIndex != -1 && _legendSelectedItemIndex != -1 && Directory.Exists(_legendTableWorkspaceUri.OriginalString))
+                {
+                    //Make sure user consent to deleting item and is warned of consequences
+                    MessageBoxResult msgBoxResult = MessageBox.Show(Properties.Resources.FormLegendItemDeleteWarning, Properties.Resources.GenericWarningTitle, System.Windows.MessageBoxButton.YesNo, System.Windows.MessageBoxImage.Exclamation);
+                    if (msgBoxResult == MessageBoxResult.Yes)
+                    {
+                        WaitingCursorVisibility = Visibility.Visible;
+                        await QueuedTask.Run(async () => {
+
+                            //Get origin database
+                            using (Geodatabase sourceGeodatabase = new Geodatabase(new FileGeodatabaseConnectionPath(_legendTableWorkspaceUri)))
+                            {
+                                StandaloneTable legendSTable = LegendTables[LegendSelectedTableIndex].STable;
+                                if (legendSTable != null)
+                                {
+                                    using (Table ltable = legendSTable.GetTable())
+                                    {
+                                        string currentID = _legendItems[_legendSelectedItemIndex].Value;
+                                        bool validItemToDelete = true;
+                                        Layers activeLayers = new Layers();
+                                        List<FeatureLayer> flToRefresh = new List<FeatureLayer>();
+
+                                        #region For Map Units
+                                        if (_isMapUnitEnabled)
+                                        {
+                                            //Validate if any items are within geopoint feature class
+                                            validItemToDelete = ValidateItemToDelete(sourceGeodatabase, Constants.Database.FGeopoly, currentID, Constants.DatabaseFields.FGeopolyLabel);
+
+                                            //Delete associated domain value
+                                            if (validItemToDelete)
+                                            {
+                                                await Utilities.Domains.DeleteDomainValue(sourceGeodatabase, Constants.DatabaseDomains.MapUnit, currentID);
+                                            }
+
+                                            //Get layers
+                                            flToRefresh = await activeLayers.GetActiveFeatureLayerFromGeodatabase(sourceGeodatabase, Constants.Database.FGeopoly);
+                                        }
+                                        #endregion
+
+                                        #region For Geolines
+                                        if (_isGeolineEnabled)
+                                        {
+                                            //Validate if any items are within geopoint feature class
+                                            validItemToDelete = ValidateItemToDelete(sourceGeodatabase, Constants.Database.FGeoline, currentID, Constants.DatabaseFields.FGeolineID);
+
+                                            //Get layers
+                                            flToRefresh = await activeLayers.GetActiveFeatureLayerFromGeodatabase(sourceGeodatabase, Constants.Database.FGeoline);
+                                        }
+                                        #endregion
+
+                                        #region For Geopoints
+                                        if (_isGeopointEnabled)
+                                        {
+                                            //Validate if any items are within geopoint feature class
+                                            validItemToDelete = ValidateItemToDelete(sourceGeodatabase, Constants.Database.FGeopoint, currentID, Constants.DatabaseFields.FGeopointID);
+
+                                            //Get layers
+                                            flToRefresh = await activeLayers.GetActiveFeatureLayerFromGeodatabase(sourceGeodatabase, Constants.Database.FGeopoint);
+                                        }
+                                        #endregion
+
+                                        #region Headers and others
+                                        //No validation required for these items
+                                        #endregion
+
+                                        //Proceed only if item is ready for deletion
+                                        if (validItemToDelete)
+                                        {
+                                            //Delete from legend table
+                                            QueryFilter deleteFilter = new QueryFilter
+                                            {
+                                                WhereClause = string.Format("{0} = '{1}'", Constants.DatabaseFields.LegendLabelID, currentID)
+                                            };
+
+                                            EditOperation editOp = new EditOperation();
+                                            editOp.Callback(async context =>
+                                            {
+                                                ltable.DeleteRows(deleteFilter);
+                                            }, ltable);
+
+                                            try
+                                            {
+                                                editOp.Execute();
+                                            }
+                                            catch (GeodatabaseException gdbEx)
+                                            {
+                                                new ErrorService(gdbEx).WriteToFile();
+                                                WaitingCursorVisibility = Visibility.Collapsed;
+                                                _view.Close();
+
+                                                FrameworkApplication.AddNotification(new Notification()
+                                                {
+                                                    Title = Properties.Resources.FormCreateEditCreateMapUnitTitle,
+                                                    Message = Properties.Resources.GenericMessageError,
+                                                    ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                                                });
+                                            }
+
+                                            //Refresh layers
+                                            if (flToRefresh != null && flToRefresh.Count() > 0)
+                                            {
+                                                UserConfiguration userConfig = await UserConfigurationService.GetUserConfigurationAsync();
+                                                StyleProjectItem workingStyle = Symbols.GetStyleItemProject(userConfig.StyleFilePath);
+                                                Form_RefreshSymbolsViewModel refreshVM = new Form_RefreshSymbolsViewModel(null);
+                                                foreach (FeatureLayer fls in flToRefresh)
+                                                {
+                                                    refreshVM.RefreshLayerSymbols(fls, workingStyle);
+                                                }
+                                            }
+
+                                            
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show(Properties.Resources.FormLegendItemsDeleteAlreadyExists, Properties.Resources.GenericWarningTitle, System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                                        }
+
+                                    }
+
+                                }
+                            }
+                        });
+
+                        //Close window
+                        WaitingCursorVisibility = Visibility.Collapsed;
+
+                        //Save edits
+                        Project.Current.SaveEditsAsync();
+
+                        //Show notication success
+                        FrameworkApplication.AddNotification(new Notification()
+                        {
+                            Title = Properties.Resources.FormLegendItemsModificationTitle,
+                            Message = Properties.Resources.GenericMessageCompleted,
+                            ImageSource = System.Windows.Application.Current.Resources["Success_Toast48"] as ImageSource
+                        });
+                    }
+                }
+                else
+                {
+                    FrameworkApplication.AddNotification(new Notification()
+                    {
+                        Title = Properties.Resources.FormLegendItemsModificationTitle,
+                        Message = Properties.Resources.GenericMessageError,
+                        ImageSource = System.Windows.Application.Current.Resources["Warning_Toast48"] as ImageSource
+                    });
+                }
+            }
+            catch (Exception deleteException)
+            {
+                new ErrorService(deleteException).WriteToFile();
+                WaitingCursorVisibility = Visibility.Collapsed;
+                _view.Close();
+            }
+        }
+
+        /// <summary>
+        /// Will return a bool value whether an existing item is within a given table
+        /// </summary>
+        /// <param name="tableToVerify">The table to search for a value</param>
+        /// <returns></returns>
+        public bool ValidateItemToDelete(Geodatabase inputGeodatabase, string tableToVerify, string valueToVerify, string fieldToVerify)
+        {
+            //Variables
+            bool itemReadyForDelete = false;
+
+            //Get a count from given query with given layer
+            using (Table tbl = inputGeodatabase.OpenDataset<Table>(tableToVerify))
+            {
+                if (tbl != null)
+                {
+                    //Build query filter
+                    QueryFilter validateFilter = new QueryFilter
+                    {
+                        WhereClause = string.Format("{0} = '{1}'", fieldToVerify, valueToVerify)
+                    };
+
+                    long rowCount = tbl.Select(validateFilter, SelectionType.ObjectID, SelectionOption.OnlyOne).GetCount();
+
+                    //Validate if any values are returned
+                    if (rowCount == 0)
+                    {
+                        itemReadyForDelete = true;
+                    }
+                }
+            }
+
+            return itemReadyForDelete;
         }
 
         #endregion
