@@ -250,7 +250,8 @@ namespace BedrockEditorPro.DockPanes
                                     //Query filter for geopoint only
                                     QueryFilter labelFilter = new QueryFilter
                                     {
-                                        SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol),
+                                        SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol,
+                                        Constants.DatabaseFields.LegendGISDisplay),
                                         PrefixClause = "DISTINCT",
                                         WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} in ({3})",
                                         Constants.DatabaseFields.LegendSymbol, Constants.DatabaseFields.LegendLabelID,
@@ -262,7 +263,8 @@ namespace BedrockEditorPro.DockPanes
                                     {
                                         labelFilter = new QueryFilter
                                         {
-                                            SubFields = string.Format("{0}, {1}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol_190101),
+                                            SubFields = string.Format("{0}, {1}, {2}", Constants.DatabaseFields.LegendLabelID, Constants.DatabaseFields.LegendSymbol_190101,
+                                            Constants.DatabaseFields.LegendGISDisplay),
                                             PrefixClause = "DISTINCT",
                                             WhereClause = string.Format("{0} IS NOT NULL AND {1} IS NOT NULL AND {2} = '{3}'",
                                                                         Constants.DatabaseFields.LegendSymbol_190101, Constants.DatabaseFields.LegendLabelID,
