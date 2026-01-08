@@ -611,27 +611,23 @@ namespace BedrockEditorPro.ProWindows
                                 }
                             }
 
-                            if (legendGeolines.Count() > 0)
-                            {
+                            //Force full clean
+                            CIMFeatureLayer layerDef = inLayer.GetDefinition() as CIMFeatureLayer;
+                            layerDef.FeatureTemplates = [];
+                            inLayer.SetDefinition(layerDef);
 
-                                //Iterate through all legend geolines and see if a template exists, else add it
-                                foreach (GeoLines gl in legendGeolines)
-                                {
-                                    if (!templates.Exists(x => x.Description == gl.GeolineID))
-                                    {
-                                        Symbols.CreateLineTemplate(inLayer,gl);
-                                    }
-                                    else
-                                    {
-                                        //TODO Else refresh it
-                                    }
-                                }
+                            //Iterate through all legend geolines and see if a template exists, else add it
+                            foreach (GeoLines gl in legendGeolines)
+                            {
+                                Symbols.CreateLineTemplate(inLayer,gl);
                             }
+
 
                             #endregion
                         }
                         else if (inLayer.ShapeType == esriGeometryType.esriGeometryMultipoint || inLayer.ShapeType == esriGeometryType.esriGeometryPoint)
                         {
+                            
                             FeatureClass layerClass = inLayer.GetFeatureClass();
 
                             if (layerClass.GetName().Contains(Constants.Database.FGeopoint))
@@ -695,17 +691,15 @@ namespace BedrockEditorPro.ProWindows
                                     }
                                 }
 
-                                if (legendGeopoints.Count() > 0)
-                                {
+                                //Force full clean
+                                CIMFeatureLayer layerDef = inLayer.GetDefinition() as CIMFeatureLayer;
+                                layerDef.FeatureTemplates = [];
+                                inLayer.SetDefinition(layerDef);
 
-                                    //Iterate through all legend geolines and see if a template exists, else add it
-                                    foreach (GeoPoints gp in legendGeopoints)
-                                    {
-                                        if (!templates.Exists(x => x.Description == gp.GeopointID))
-                                        {
-                                            Symbols.CreatePointTemplate(inLayer, gp);
-                                        }
-                                    }
+                                //Iterate through all legend geolines and see if a template exists, else add it
+                                foreach (GeoPoints gp in legendGeopoints)
+                                {
+                                    Symbols.CreatePointTemplate(inLayer, gp);
                                 }
 
                                 #endregion
@@ -767,19 +761,16 @@ namespace BedrockEditorPro.ProWindows
                                     }
                                 }
 
-                                if (legendLabels.Count() > 0)
+                                //Force full clean
+                                CIMFeatureLayer layerDef = inLayer.GetDefinition() as CIMFeatureLayer;
+                                layerDef.FeatureTemplates = [];
+                                inLayer.SetDefinition(layerDef);
+
+                                //Iterate through all legend labels and see if a template exists, else add it
+                                foreach (Labels gp in legendLabels)
                                 {
-
-                                    //Iterate through all legend geolines and see if a template exists, else add it
-                                    foreach (Labels gp in legendLabels)
-                                    {
-                                        if (!templates.Exists(x => x.Description == gp.LabelID))
-                                        {
-                                            Symbols.CreateLabelTemplate(inLayer, gp);
-                                        }
-                                    }
+                                    Symbols.CreateLabelTemplate(inLayer, gp);
                                 }
-
 
                                 #endregion
                             }

@@ -139,7 +139,7 @@ namespace BedrockEditorPro.Utilities
         /// Creates templates of geoline
         /// </summary>
         /// <param name="m_doc"></param>
-        public static void CreateLineTemplate(FeatureLayer featureLayer, GeoLines geoLines, bool forceUpdate = false)
+        public static void CreateLineTemplate(FeatureLayer featureLayer, GeoLines geoLines)
         {
             try
             {
@@ -183,23 +183,6 @@ namespace BedrockEditorPro.Utilities
                 if (layerTemplates == null)
                     layerTemplates = new List<CIMEditingTemplate>();
 
-                //check if the template already exists and remplace it if so
-                if (forceUpdate)
-                {
-                    CIMEditingTemplate templateToUpdate = null;
-                    foreach (CIMEditingTemplate templates in layerTemplates)
-                    {
-                        if (templates.Name.Contains(geoLines.GeolineID))
-                        {
-                            templateToUpdate = templates;
-                            break;
-                        }
-                    }
-                    if (templateToUpdate != null)
-                    {
-                        layerTemplates.Remove(templateToUpdate);
-                    }
-                }
 
                 //add the new template to the layer template list
                 layerTemplates.Add(geolineTemplateDef);
@@ -227,7 +210,7 @@ namespace BedrockEditorPro.Utilities
         /// Creates templates of geoline
         /// </summary>
         /// <param name="m_doc"></param>
-        public static void CreatePointTemplate(FeatureLayer featureLayer, GeoPoints geoPoints, bool forceUpdate = false)
+        public static void CreatePointTemplate(FeatureLayer featureLayer, GeoPoints geoPoints)
         {
             try
             {
@@ -274,23 +257,6 @@ namespace BedrockEditorPro.Utilities
                 if (layerTemplates == null)
                     layerTemplates = new List<CIMEditingTemplate>();
 
-                //check if the template already exists and remplace it if so
-                if (forceUpdate)
-                {
-                    CIMEditingTemplate templateToUpdate = null;
-                    foreach (CIMEditingTemplate templates in layerTemplates)
-                    {
-                        if (templates.Name.Contains(geoPoints.GeopointID))
-                        {
-                            templateToUpdate = templates;
-                            break;
-                        }
-                    }
-                    if (templateToUpdate != null)
-                    {
-                        layerTemplates.Remove(templateToUpdate);
-                    }
-                }
 
                 //add the new template to the layer template list
                 layerTemplates.Add(geopointTemplateDef);
@@ -318,7 +284,7 @@ namespace BedrockEditorPro.Utilities
         /// Creates templates of geoline
         /// </summary>
         /// <param name="m_doc"></param>
-        public static void CreateLabelTemplate(FeatureLayer featureLayer, Labels labels, bool forceUpdate = false)
+        public static void CreateLabelTemplate(FeatureLayer featureLayer, Labels labels)
         {
             try
             {
@@ -346,24 +312,6 @@ namespace BedrockEditorPro.Utilities
                 var layerTemplates = layerDef.FeatureTemplates?.ToList();
                 if (layerTemplates == null)
                     layerTemplates = new List<CIMEditingTemplate>();
-
-                //check if the template already exists and remplace it if so
-                if (forceUpdate)
-                {
-                    CIMEditingTemplate templateToUpdate = null;
-                    foreach (CIMEditingTemplate templates in layerTemplates)
-                    {
-                        if (templates.Name.Contains(labels.LabelID))
-                        {
-                            templateToUpdate = templates;
-                            break;
-                        }
-                    }
-                    if (templateToUpdate != null)
-                    {
-                        layerTemplates.Remove(templateToUpdate);
-                    }
-                }
 
                 //add the new template to the layer template list
                 layerTemplates.Add(labelTemplateDef);
