@@ -955,6 +955,37 @@ namespace BedrockEditorPro.ProWindows
 
                     }
                 }
+                else
+                {
+                    _legend = new PLegend();
+                    _legend.GISDisplay = string.Empty;
+                    _legend.Element = string.Empty;
+                    _legend.Style1 = string.Empty;
+                    _legend.Style2 = string.Empty;
+                    _legend.Label1 = string.Empty;
+                    _legend.Label1Style = string.Empty;
+                    _legend.Label2 = string.Empty;
+                    _legend.Label2Style = string.Empty;
+                    _legend.Heading = string.Empty;
+                    _legend.Description = string.Empty;
+                    _legend.Column = 0;
+                    _legend.Order = 0;
+                    _legend.GeolRank = string.Empty;
+                    _legend.Overprint = string.Empty;
+                    NotifyPropertyChanged(nameof(Legend));
+
+                    _geologicalRanksSelectedIndex = -1;
+                    NotifyPropertyChanged(nameof(GeologicalRanksSelectedIndex));
+
+                    _overprintSelectedLevelIndex = -1;
+                    NotifyPropertyChanged(nameof(OverprintSelectedLevelIndex));
+
+                    _noOfColumnsHint = string.Empty;
+                    NotifyPropertyChanged(nameof(NoOfColumnsHint));
+
+                    _noOfOrderHint = string.Empty;
+                    NotifyPropertyChanged(nameof(NoOfOrderHint));
+                }
             }
             catch (Exception e)
             {
@@ -1077,6 +1108,7 @@ namespace BedrockEditorPro.ProWindows
                                                 foreach (FeatureLayer fls in flToRefresh)
                                                 {
                                                     refreshVM.RefreshLayerSymbols(fls, workingStyle);
+                                                    refreshVM.RefreshLayerTemplates(fls);
                                                 }
                                             }
 
@@ -1093,8 +1125,11 @@ namespace BedrockEditorPro.ProWindows
                             }
                         });
 
-                        //Close window
+                        //Refresh window
                         WaitingCursorVisibility = Visibility.Collapsed;
+                        _legendSelectedItemIndex = -1;
+                        NotifyPropertyChanged(nameof(LegendSelectedItemIndex));
+                        UpdateUI();
 
                         //Save edits
                         Project.Current.SaveEditsAsync();
