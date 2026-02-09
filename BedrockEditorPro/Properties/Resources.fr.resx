@@ -697,4 +697,7 @@
   <data name="FormLegendItemsDeleteAlreadyExists" xml:space="preserve">
     <value>L'élément sélectionné possède encore des géométries numérisées, impossible de procéder avec l'effacement de l'enregistrement.</value>
   </data>
+  <data name="ButtonEnvironmentAddProjectLayersTitle" xml:space="preserve">
+    <value>Couches de projet</value>
+  </data>
 </root>

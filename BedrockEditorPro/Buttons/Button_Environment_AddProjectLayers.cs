@@ -66,7 +66,7 @@ namespace BedrockEditorPro.Buttons
             try
             {
                 //Get wanted geodatabase to create layers with
-                string GeodatabasePath = Dialog.GetFGDBPrompt(Properties.Resources.ButtonEnvironmentAddProjectLayersPromptTitle);
+                string GeodatabasePath = Dialog.GetFGDBPrompt(Properties.Resources.ButtonEnvironmentAddProjectLayersTitle);
 
                 if (GeodatabasePath != null && GeodatabasePath != string.Empty)
                 {
