@@ -1,8 +1,8 @@
 {
-	"dateExported": "2026-01-06T10:21:43",
+	"dateExported": "2026-02-09T10:21:39",
 	"datasetType": "DEWorkspace",
-	"catalogPath": "D:\\DUMP\\ArcProDev\\Schema_400_260106.gdb",
-	"name": "Schema_400_260106.gdb",
+	"catalogPath": "C:\\Users\\ghuotvez\\OneDrive - NRCan RNCan\\Geological Data Flow\\GSC_Data_Models\\BedrockDataModel\\New File Geodatabase.gdb",
+	"name": "New File Geodatabase.gdb",
 	"childrenExpanded": false,
 	"workspaceType": "esriLocalDatabaseWorkspace",
 	"workspaceFactoryProgID": "esriDataSourcesGDB.FileGDBWorkspaceFactory",
@@ -13,114 +13,6 @@
 	"realm": "",
 	"maxAttributeRuleID": 0,
 	"domains": [
-		{
-			"type": "codedValue",
-			"name": "Qualif_limit_SID",
-			"description": "Qualifier values for subtype Limit",
-			"codedValues": [
-				{
-					"name": "outcrop extent",
-					"code": "5050"
-				},
-				{
-					"name": "gas field",
-					"code": "5051"
-				},
-				{
-					"name": "oil field",
-					"code": "5052"
-				},
-				{
-					"name": "extent of bitumen",
-					"code": "5053"
-				},
-				{
-					"name": "geothermal field",
-					"code": "5054"
-				},
-				{
-					"name": "mine, surface",
-					"code": "5055"
-				},
-				{
-					"name": "quarry",
-					"code": "5056"
-				},
-				{
-					"name": "edge of sinkhole",
-					"code": "5057"
-				},
-				{
-					"name": "lava flow margin",
-					"code": "5058"
-				},
-				{
-					"name": "edge of crater",
-					"code": "5059"
-				},
-				{
-					"name": "edge of caldera",
-					"code": "5060"
-				},
-				{
-					"name": "front of penetrative strain",
-					"code": "5061"
-				},
-				{
-					"name": "front of alteration",
-					"code": "5062"
-				},
-				{
-					"name": "extent of gossan or mineralization",
-					"code": "5063"
-				},
-				{
-					"name": "unique - see description",
-					"code": "5066"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "Struc_Method_SID",
-			"description": "Method of acquisition",
-			"codedValues": [
-				{
-					"name": "measured at station",
-					"code": "01"
-				},
-				{
-					"name": "estimated at station",
-					"code": "02"
-				},
-				{
-					"name": "estimated remotely",
-					"code": "03"
-				},
-				{
-					"name": "calculated from data",
-					"code": "04"
-				},
-				{
-					"name": "calculated from imagery",
-					"code": "05"
-				},
-				{
-					"name": "acquired from historical data",
-					"code": "06"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
 		{
 			"type": "codedValue",
 			"name": "PublicationType_DID",
@@ -372,16 +264,106 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Language_DID",
-			"description": "Language",
+			"name": "Qualif_limit_SID",
+			"description": "Qualifier values for subtype Limit",
 			"codedValues": [
 				{
-					"name": "english canadian",
-					"code": "en; CAN"
+					"name": "outcrop extent",
+					"code": "5050"
 				},
 				{
-					"name": "francais canadien",
-					"code": "fra; CAN"
+					"name": "gas field",
+					"code": "5051"
+				},
+				{
+					"name": "oil field",
+					"code": "5052"
+				},
+				{
+					"name": "extent of bitumen",
+					"code": "5053"
+				},
+				{
+					"name": "geothermal field",
+					"code": "5054"
+				},
+				{
+					"name": "mine, surface",
+					"code": "5055"
+				},
+				{
+					"name": "quarry",
+					"code": "5056"
+				},
+				{
+					"name": "edge of sinkhole",
+					"code": "5057"
+				},
+				{
+					"name": "lava flow margin",
+					"code": "5058"
+				},
+				{
+					"name": "edge of crater",
+					"code": "5059"
+				},
+				{
+					"name": "edge of caldera",
+					"code": "5060"
+				},
+				{
+					"name": "front of penetrative strain",
+					"code": "5061"
+				},
+				{
+					"name": "front of alteration",
+					"code": "5062"
+				},
+				{
+					"name": "extent of gossan or mineralization",
+					"code": "5063"
+				},
+				{
+					"name": "unique - see description",
+					"code": "5066"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Struc_Method_SID",
+			"description": "Method of acquisition",
+			"codedValues": [
+				{
+					"name": "measured at station",
+					"code": "01"
+				},
+				{
+					"name": "estimated at station",
+					"code": "02"
+				},
+				{
+					"name": "estimated remotely",
+					"code": "03"
+				},
+				{
+					"name": "calculated from data",
+					"code": "04"
+				},
+				{
+					"name": "calculated from imagery",
+					"code": "05"
+				},
+				{
+					"name": "acquired from historical data",
+					"code": "06"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -420,6 +402,54 @@
 				{
 					"name": "L tectonite",
 					"code": "09"
+				},
+				{
+					"name": "not applicable",
+					"code": "99"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Language_DID",
+			"description": "Language",
+			"codedValues": [
+				{
+					"name": "english canadian",
+					"code": "en; CAN"
+				},
+				{
+					"name": "francais canadien",
+					"code": "fra; CAN"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Dip_Desc_SID",
+			"description": "Dip Description",
+			"codedValues": [
+				{
+					"name": "gently inclined (0-30)",
+					"code": "01"
+				},
+				{
+					"name": "moderately inclined (31-60)",
+					"code": "02"
+				},
+				{
+					"name": "steeply inclined (61-90)",
+					"code": "03"
 				},
 				{
 					"name": "not applicable",
@@ -514,36 +544,6 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Dip_Desc_SID",
-			"description": "Dip Description",
-			"codedValues": [
-				{
-					"name": "gently inclined (0-30)",
-					"code": "01"
-				},
-				{
-					"name": "moderately inclined (31-60)",
-					"code": "02"
-				},
-				{
-					"name": "steeply inclined (61-90)",
-					"code": "03"
-				},
-				{
-					"name": "not applicable",
-					"code": "99"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
 			"name": "Boundary_DID",
 			"description": "Identifiies multi-subtype lines",
 			"codedValues": [
@@ -562,72 +562,12 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "QualityScope_DID",
-			"description": "Dataset quality scope",
+			"name": "Char_set_DID",
+			"description": "Character set",
 			"codedValues": [
 				{
-					"name": "attribute",
-					"code": "attribute"
-				},
-				{
-					"name": "attribute type",
-					"code": "attributeType"
-				},
-				{
-					"name": "collection hardware",
-					"code": "collectionHardware"
-				},
-				{
-					"name": "collection session",
-					"code": "collectionSession"
-				},
-				{
-					"name": "dataset",
-					"code": "dataset"
-				},
-				{
-					"name": "series",
-					"code": "series"
-				},
-				{
-					"name": "non geographic dataset",
-					"code": "nonGeographicDataset"
-				},
-				{
-					"name": "dimension group",
-					"code": "dimensionGroup"
-				},
-				{
-					"name": "feature",
-					"code": "feature"
-				},
-				{
-					"name": "feature type",
-					"code": "featureType"
-				},
-				{
-					"name": "property type",
-					"code": "propertyType"
-				},
-				{
-					"name": "field session",
-					"code": "fieldSession"
-				},
-				{
-					"name": "software",
-					"code": "software"
-				},
-				{
-					"name": "service",
-					"code": "service"
-				},
-				{
-					"name": "model",
-					"code": "model"
-				},
-				{
-					"name": "tile",
-					"code": "tile"
+					"name": "utf-8",
+					"code": "utf8"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -734,12 +674,72 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Char_set_DID",
-			"description": "Character set",
+			"name": "QualityScope_DID",
+			"description": "Dataset quality scope",
 			"codedValues": [
 				{
-					"name": "utf-8",
-					"code": "utf8"
+					"name": "attribute",
+					"code": "attribute"
+				},
+				{
+					"name": "attribute type",
+					"code": "attributeType"
+				},
+				{
+					"name": "collection hardware",
+					"code": "collectionHardware"
+				},
+				{
+					"name": "collection session",
+					"code": "collectionSession"
+				},
+				{
+					"name": "dataset",
+					"code": "dataset"
+				},
+				{
+					"name": "series",
+					"code": "series"
+				},
+				{
+					"name": "non geographic dataset",
+					"code": "nonGeographicDataset"
+				},
+				{
+					"name": "dimension group",
+					"code": "dimensionGroup"
+				},
+				{
+					"name": "feature",
+					"code": "feature"
+				},
+				{
+					"name": "feature type",
+					"code": "featureType"
+				},
+				{
+					"name": "property type",
+					"code": "propertyType"
+				},
+				{
+					"name": "field session",
+					"code": "fieldSession"
+				},
+				{
+					"name": "software",
+					"code": "software"
+				},
+				{
+					"name": "service",
+					"code": "service"
+				},
+				{
+					"name": "model",
+					"code": "model"
+				},
+				{
+					"name": "tile",
+					"code": "tile"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -794,109 +794,6 @@
 				{
 					"name": "Marker Point",
 					"code": "M"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "MapUnit_PID",
-			"description": "Project specific values for MapUnit",
-			"codedValues": [],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "Qualif_fault_SID",
-			"description": "Qualifier values for subtype Fault",
-			"codedValues": [
-				{
-					"name": "normal",
-					"code": "2001"
-				},
-				{
-					"name": "reverse",
-					"code": "2002"
-				},
-				{
-					"name": "thrust",
-					"code": "2003"
-				},
-				{
-					"name": "strike-slip, dextral",
-					"code": "2004"
-				},
-				{
-					"name": "strike-slip, sinistral",
-					"code": "2005"
-				},
-				{
-					"name": "oblique-slip, dextral, extensional",
-					"code": "2006"
-				},
-				{
-					"name": "oblique-slip, dextral, contractional",
-					"code": "2007"
-				},
-				{
-					"name": "oblique-slip, sinistral, extensional",
-					"code": "2008"
-				},
-				{
-					"name": "oblique-slip, sinistral, contractional",
-					"code": "2009"
-				},
-				{
-					"name": "back-thrust",
-					"code": "2012"
-				},
-				{
-					"name": "transverse, motion undefined",
-					"code": "2013"
-				},
-				{
-					"name": "generic, moderate dip",
-					"code": "2014"
-				},
-				{
-					"name": "generic, shallow dip",
-					"code": "2015"
-				},
-				{
-					"name": "generic, steep dip",
-					"code": "2016"
-				},
-				{
-					"name": "detachment, extensional",
-					"code": "2019"
-				},
-				{
-					"name": "tear",
-					"code": "2017"
-				},
-				{
-					"name": "detachment, contractional",
-					"code": "2020"
-				},
-				{
-					"name": "motion undefined",
-					"code": "2018"
-				},
-				{
-					"name": "transform, dextral",
-					"code": "2021"
-				},
-				{
-					"name": "transform, sinistral",
-					"code": "2022"
-				},
-				{
-					"name": "generic, downthrown",
-					"code": "2023"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -967,36 +864,6 @@
 				{
 					"name": "not entered",
 					"code": "not entered"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "Qualif_construct_SID",
-			"description": "Qualifier values for subtype Construct",
-			"codedValues": [
-				{
-					"name": "limit of mapping",
-					"code": "5001"
-				},
-				{
-					"name": "map neat line",
-					"code": "5002"
-				},
-				{
-					"name": "mapping precision change",
-					"code": "5004"
-				},
-				{
-					"name": "nomenclature change",
-					"code": "5005"
-				},
-				{
-					"name": "other, see remarks",
-					"code": "5007"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -1107,6 +974,36 @@
 		},
 		{
 			"type": "codedValue",
+			"name": "Qualif_construct_SID",
+			"description": "Qualifier values for subtype Construct",
+			"codedValues": [
+				{
+					"name": "limit of mapping",
+					"code": "5001"
+				},
+				{
+					"name": "map neat line",
+					"code": "5002"
+				},
+				{
+					"name": "mapping precision change",
+					"code": "5004"
+				},
+				{
+					"name": "nomenclature change",
+					"code": "5005"
+				},
+				{
+					"name": "other, see remarks",
+					"code": "5007"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
 			"name": "PresentationForm_DID",
 			"description": "Dataset presentation form",
 			"codedValues": [
@@ -1197,102 +1094,6 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Fault_move_SID",
-			"description": "Fault movement values",
-			"codedValues": [
-				{
-					"name": "N side down",
-					"code": "01"
-				},
-				{
-					"name": "NE side down",
-					"code": "02"
-				},
-				{
-					"name": "E side down",
-					"code": "03"
-				},
-				{
-					"name": "SE side down",
-					"code": "04"
-				},
-				{
-					"name": "S side down",
-					"code": "05"
-				},
-				{
-					"name": "SW side down",
-					"code": "06"
-				},
-				{
-					"name": "W side down",
-					"code": "07"
-				},
-				{
-					"name": "NW side down",
-					"code": "08"
-				},
-				{
-					"name": "undefined",
-					"code": "88"
-				},
-				{
-					"name": "not applicable",
-					"code": "99"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "DateType_DID",
-			"description": "Date type",
-			"codedValues": [
-				{
-					"name": "creation",
-					"code": "creation"
-				},
-				{
-					"name": "adopted",
-					"code": "adopted"
-				},
-				{
-					"name": "deprecated",
-					"code": "deprecated"
-				},
-				{
-					"name": "in force",
-					"code": "inForce"
-				},
-				{
-					"name": "not available",
-					"code": "notAvailable"
-				},
-				{
-					"name": "publication",
-					"code": "publication"
-				},
-				{
-					"name": "revision",
-					"code": "revision"
-				},
-				{
-					"name": "superseded",
-					"code": "superseded"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
 			"name": "CartoTheme_PID",
 			"description": "Project specific values for CARTOGRAPHIC_POINT feature class themes when it's time to load some data.",
 			"codedValues": [
@@ -1344,6 +1145,205 @@
 				}
 			],
 			"fieldType": "esriFieldTypeSmallInteger",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "MapUnit_PID",
+			"description": "Project specific values for MapUnit",
+			"codedValues": [],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Qualif_fault_SID",
+			"description": "Qualifier values for subtype Fault",
+			"codedValues": [
+				{
+					"name": "normal",
+					"code": "2001"
+				},
+				{
+					"name": "reverse",
+					"code": "2002"
+				},
+				{
+					"name": "thrust",
+					"code": "2003"
+				},
+				{
+					"name": "strike-slip, dextral",
+					"code": "2004"
+				},
+				{
+					"name": "strike-slip, sinistral",
+					"code": "2005"
+				},
+				{
+					"name": "oblique-slip, dextral, extensional",
+					"code": "2006"
+				},
+				{
+					"name": "oblique-slip, dextral, contractional",
+					"code": "2007"
+				},
+				{
+					"name": "oblique-slip, sinistral, extensional",
+					"code": "2008"
+				},
+				{
+					"name": "oblique-slip, sinistral, contractional",
+					"code": "2009"
+				},
+				{
+					"name": "back-thrust",
+					"code": "2012"
+				},
+				{
+					"name": "transverse, motion undefined",
+					"code": "2013"
+				},
+				{
+					"name": "generic, moderate dip",
+					"code": "2014"
+				},
+				{
+					"name": "generic, shallow dip",
+					"code": "2015"
+				},
+				{
+					"name": "generic, steep dip",
+					"code": "2016"
+				},
+				{
+					"name": "detachment, extensional",
+					"code": "2019"
+				},
+				{
+					"name": "tear",
+					"code": "2017"
+				},
+				{
+					"name": "detachment, contractional",
+					"code": "2020"
+				},
+				{
+					"name": "motion undefined",
+					"code": "2018"
+				},
+				{
+					"name": "transform, dextral",
+					"code": "2021"
+				},
+				{
+					"name": "transform, sinistral",
+					"code": "2022"
+				},
+				{
+					"name": "generic, downthrown",
+					"code": "2023"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "DateType_DID",
+			"description": "Date type",
+			"codedValues": [
+				{
+					"name": "creation",
+					"code": "creation"
+				},
+				{
+					"name": "adopted",
+					"code": "adopted"
+				},
+				{
+					"name": "deprecated",
+					"code": "deprecated"
+				},
+				{
+					"name": "in force",
+					"code": "inForce"
+				},
+				{
+					"name": "not available",
+					"code": "notAvailable"
+				},
+				{
+					"name": "publication",
+					"code": "publication"
+				},
+				{
+					"name": "revision",
+					"code": "revision"
+				},
+				{
+					"name": "superseded",
+					"code": "superseded"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Fault_move_SID",
+			"description": "Fault movement values",
+			"codedValues": [
+				{
+					"name": "N side down",
+					"code": "01"
+				},
+				{
+					"name": "NE side down",
+					"code": "02"
+				},
+				{
+					"name": "E side down",
+					"code": "03"
+				},
+				{
+					"name": "SE side down",
+					"code": "04"
+				},
+				{
+					"name": "S side down",
+					"code": "05"
+				},
+				{
+					"name": "SW side down",
+					"code": "06"
+				},
+				{
+					"name": "W side down",
+					"code": "07"
+				},
+				{
+					"name": "NW side down",
+					"code": "08"
+				},
+				{
+					"name": "undefined",
+					"code": "88"
+				},
+				{
+					"name": "not applicable",
+					"code": "99"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
 			"mergePolicy": "esriMPTDefaultValue",
 			"splitPolicy": "esriSPTDuplicate"
 		},
@@ -1478,6 +1478,276 @@
 			"name": "Hierar_lv_DID",
 			"description": "Hierarchical level",
 			"codedValues": [],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Planar_Younging_SID",
+			"description": "Confidence for younging direction",
+			"codedValues": [
+				{
+					"name": "younging known, sedimentary structure",
+					"code": "01"
+				},
+				{
+					"name": "younging known, igneous structure",
+					"code": "02"
+				},
+				{
+					"name": "younging known, stratigraphic order",
+					"code": "03"
+				},
+				{
+					"name": "younging inferred, stratigraphic order",
+					"code": "04"
+				},
+				{
+					"name": "younging inferred, bedding-cleavage",
+					"code": "05"
+				},
+				{
+					"name": "younging evidence unknown, historical data",
+					"code": "06"
+				},
+				{
+					"name": "no younging evidence",
+					"code": "07"
+				},
+				{
+					"name": "younging evidence not applicable",
+					"code": "99"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Subset_Linear_SID",
+			"description": "Type of linear structural measurement",
+			"codedValues": [
+				{
+					"name": "symmetrical ripple crest",
+					"code": "2001"
+				},
+				{
+					"name": "asymmetrical ripple paleoflow",
+					"code": "2002"
+				},
+				{
+					"name": "imbrication paleoflow",
+					"code": "2003"
+				},
+				{
+					"name": "tool mark",
+					"code": "2005"
+				},
+				{
+					"name": "prod mark",
+					"code": "2006"
+				},
+				{
+					"name": "parting lineation",
+					"code": "2007"
+				},
+				{
+					"name": "trough axis",
+					"code": "2008"
+				},
+				{
+					"name": "slump fold hinge",
+					"code": "2009"
+				},
+				{
+					"name": "slump fold hinge, Z",
+					"code": "2010"
+				},
+				{
+					"name": "slump fold hinge, S",
+					"code": "2011"
+				},
+				{
+					"name": "igenous flow lineation",
+					"code": "2012"
+				},
+				{
+					"name": "fold hinge",
+					"code": "2013"
+				},
+				{
+					"name": "fold hinge, soft-sediment",
+					"code": "2014"
+				},
+				{
+					"name": "fold hinge, anticline",
+					"code": "2015"
+				},
+				{
+					"name": "fold hinge, syncline",
+					"code": "2016"
+				},
+				{
+					"name": "fold hinge, antiform",
+					"code": "2017"
+				},
+				{
+					"name": "fold hinge, synform",
+					"code": "2018"
+				},
+				{
+					"name": "fold hinge, minor S",
+					"code": "2019"
+				},
+				{
+					"name": "fold hinge, S crenulation",
+					"code": "2020"
+				},
+				{
+					"name": "fold hinge, minor Z",
+					"code": "2021"
+				},
+				{
+					"name": "fold hinge, Z crenulation",
+					"code": "2022"
+				},
+				{
+					"name": "fold hinge, minor U",
+					"code": "2023"
+				},
+				{
+					"name": "fold hinge, U crenulation",
+					"code": "2024"
+				},
+				{
+					"name": "fold hinge, crenulation",
+					"code": "2025"
+				},
+				{
+					"name": "axis of sheath fold",
+					"code": "2026"
+				},
+				{
+					"name": "axis of sheath antiform",
+					"code": "2027"
+				},
+				{
+					"name": "axis of sheath synform",
+					"code": "2028"
+				},
+				{
+					"name": "intersection lineation",
+					"code": "2029"
+				},
+				{
+					"name": "intersection, cleavage-bedding",
+					"code": "2030"
+				},
+				{
+					"name": "intersection, cleavage-cleavage",
+					"code": "2031"
+				},
+				{
+					"name": "fault striae",
+					"code": "2032"
+				},
+				{
+					"name": "fault grooves",
+					"code": "2033"
+				},
+				{
+					"name": "slickensides",
+					"code": "2034"
+				},
+				{
+					"name": "mineral growth fibres",
+					"code": "2035"
+				},
+				{
+					"name": "mineral lineation",
+					"code": "2036"
+				},
+				{
+					"name": "stretching lineation",
+					"code": "2037"
+				},
+				{
+					"name": "boudinage axis",
+					"code": "2038"
+				},
+				{
+					"name": "rodding",
+					"code": "2039"
+				},
+				{
+					"name": "mullions",
+					"code": "2040"
+				},
+				{
+					"name": "boudins",
+					"code": "2041"
+				},
+				{
+					"name": "glacial striae",
+					"code": "2042"
+				},
+				{
+					"name": "glacial grooves",
+					"code": "2043"
+				},
+				{
+					"name": "flute, down plunge",
+					"code": "2044"
+				},
+				{
+					"name": "other, see remarks",
+					"code": "2999"
+				},
+				{
+					"name": "flute, up plunge",
+					"code": "2045"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Attitude_SID",
+			"description": "Attitude for fault, shear and fold",
+			"codedValues": [
+				{
+					"name": "upright",
+					"code": "01"
+				},
+				{
+					"name": "overturned",
+					"code": "02"
+				},
+				{
+					"name": "upright, assumed from archival data",
+					"code": "03"
+				},
+				{
+					"name": "not applicable",
+					"code": "99"
+				},
+				{
+					"name": "unknown",
+					"code": "77"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
+				}
+			],
 			"fieldType": "esriFieldTypeString",
 			"mergePolicy": "esriMPTDefaultValue",
 			"splitPolicy": "esriSPTDuplicate"
@@ -1750,242 +2020,6 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Planar_Younging_SID",
-			"description": "Confidence for younging direction",
-			"codedValues": [
-				{
-					"name": "younging known, sedimentary structure",
-					"code": "01"
-				},
-				{
-					"name": "younging known, igneous structure",
-					"code": "02"
-				},
-				{
-					"name": "younging known, stratigraphic order",
-					"code": "03"
-				},
-				{
-					"name": "younging inferred, stratigraphic order",
-					"code": "04"
-				},
-				{
-					"name": "younging inferred, bedding-cleavage",
-					"code": "05"
-				},
-				{
-					"name": "younging evidence unknown, historical data",
-					"code": "06"
-				},
-				{
-					"name": "no younging evidence",
-					"code": "07"
-				},
-				{
-					"name": "younging evidence not applicable",
-					"code": "99"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "Subset_Linear_SID",
-			"description": "Type of linear structural measurement",
-			"codedValues": [
-				{
-					"name": "symmetrical ripple crest",
-					"code": "2001"
-				},
-				{
-					"name": "asymmetrical ripple paleoflow",
-					"code": "2002"
-				},
-				{
-					"name": "imbrication paleoflow",
-					"code": "2003"
-				},
-				{
-					"name": "tool mark",
-					"code": "2005"
-				},
-				{
-					"name": "prod mark",
-					"code": "2006"
-				},
-				{
-					"name": "parting lineation",
-					"code": "2007"
-				},
-				{
-					"name": "trough axis",
-					"code": "2008"
-				},
-				{
-					"name": "slump fold hinge",
-					"code": "2009"
-				},
-				{
-					"name": "slump fold hinge, Z",
-					"code": "2010"
-				},
-				{
-					"name": "slump fold hinge, S",
-					"code": "2011"
-				},
-				{
-					"name": "igenous flow lineation",
-					"code": "2012"
-				},
-				{
-					"name": "fold hinge",
-					"code": "2013"
-				},
-				{
-					"name": "fold hinge, soft-sediment",
-					"code": "2014"
-				},
-				{
-					"name": "fold hinge, anticline",
-					"code": "2015"
-				},
-				{
-					"name": "fold hinge, syncline",
-					"code": "2016"
-				},
-				{
-					"name": "fold hinge, antiform",
-					"code": "2017"
-				},
-				{
-					"name": "fold hinge, synform",
-					"code": "2018"
-				},
-				{
-					"name": "fold hinge, minor S",
-					"code": "2019"
-				},
-				{
-					"name": "fold hinge, S crenulation",
-					"code": "2020"
-				},
-				{
-					"name": "fold hinge, minor Z",
-					"code": "2021"
-				},
-				{
-					"name": "fold hinge, Z crenulation",
-					"code": "2022"
-				},
-				{
-					"name": "fold hinge, minor U",
-					"code": "2023"
-				},
-				{
-					"name": "fold hinge, U crenulation",
-					"code": "2024"
-				},
-				{
-					"name": "fold hinge, crenulation",
-					"code": "2025"
-				},
-				{
-					"name": "axis of sheath fold",
-					"code": "2026"
-				},
-				{
-					"name": "axis of sheath antiform",
-					"code": "2027"
-				},
-				{
-					"name": "axis of sheath synform",
-					"code": "2028"
-				},
-				{
-					"name": "intersection lineation",
-					"code": "2029"
-				},
-				{
-					"name": "intersection, cleavage-bedding",
-					"code": "2030"
-				},
-				{
-					"name": "intersection, cleavage-cleavage",
-					"code": "2031"
-				},
-				{
-					"name": "fault striae",
-					"code": "2032"
-				},
-				{
-					"name": "fault grooves",
-					"code": "2033"
-				},
-				{
-					"name": "slickensides",
-					"code": "2034"
-				},
-				{
-					"name": "mineral growth fibres",
-					"code": "2035"
-				},
-				{
-					"name": "mineral lineation",
-					"code": "2036"
-				},
-				{
-					"name": "stretching lineation",
-					"code": "2037"
-				},
-				{
-					"name": "boudinage axis",
-					"code": "2038"
-				},
-				{
-					"name": "rodding",
-					"code": "2039"
-				},
-				{
-					"name": "mullions",
-					"code": "2040"
-				},
-				{
-					"name": "boudins",
-					"code": "2041"
-				},
-				{
-					"name": "glacial striae",
-					"code": "2042"
-				},
-				{
-					"name": "glacial grooves",
-					"code": "2043"
-				},
-				{
-					"name": "flute, down plunge",
-					"code": "2044"
-				},
-				{
-					"name": "other, see remarks",
-					"code": "2999"
-				},
-				{
-					"name": "flute, up plunge",
-					"code": "2045"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
 			"name": "MD_ContactRole_DID",
 			"description": "Contact role",
 			"codedValues": [
@@ -2048,40 +2082,6 @@
 				{
 					"name": "rights Holder",
 					"code": "rightsHolder"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "Attitude_SID",
-			"description": "Attitude for fault, shear and fold",
-			"codedValues": [
-				{
-					"name": "upright",
-					"code": "01"
-				},
-				{
-					"name": "overturned",
-					"code": "02"
-				},
-				{
-					"name": "upright, assumed from archival data",
-					"code": "03"
-				},
-				{
-					"name": "not applicable",
-					"code": "99"
-				},
-				{
-					"name": "unknown",
-					"code": "77"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -2186,34 +2186,6 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "NA_DID",
-			"description": "Not Applicable",
-			"codedValues": [
-				{
-					"name": "not applicable",
-					"code": "99"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "MD_stdVersion_DID",
-			"description": "Metadata standard version",
-			"codedValues": [
-				{
-					"name": "Version 1.2.1",
-					"code": "1.2.1"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
 			"name": "Fold_direct_SID",
 			"description": "Fold direction values",
 			"codedValues": [
@@ -2294,44 +2266,12 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Struc_Generation_SID",
-			"description": "Phase of generation",
+			"name": "NA_DID",
+			"description": "Not Applicable",
 			"codedValues": [
 				{
-					"name": "first",
-					"code": "01"
-				},
-				{
-					"name": "second",
-					"code": "02"
-				},
-				{
-					"name": "third",
-					"code": "03"
-				},
-				{
-					"name": "fourth",
-					"code": "04"
-				},
-				{
-					"name": "fifth",
-					"code": "05"
-				},
-				{
-					"name": "primary",
-					"code": "10"
-				},
-				{
-					"name": "multi-generation",
-					"code": "11"
-				},
-				{
-					"name": "undefined",
-					"code": "88"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
+					"name": "not applicable",
+					"code": "99"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -2340,36 +2280,12 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Format_DID",
-			"description": "Dataset format",
+			"name": "MD_stdVersion_DID",
+			"description": "Metadata standard version",
 			"codedValues": [
 				{
-					"name": "File Geodatabase",
-					"code": "gdb"
-				},
-				{
-					"name": "Personal Geodatabase",
-					"code": "mdb"
-				},
-				{
-					"name": "shapefile",
-					"code": "shapefile"
-				},
-				{
-					"name": "mapinfo",
-					"code": "mapinfo"
-				},
-				{
-					"name": "GML",
-					"code": "GML"
-				},
-				{
-					"name": "e00",
-					"code": "e00"
-				},
-				{
-					"name": "unknown",
-					"code": "unknown"
+					"name": "Version 1.2.1",
+					"code": "1.2.1"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -2428,6 +2344,90 @@
 				{
 					"name": "not applicable",
 					"code": "99"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Format_DID",
+			"description": "Dataset format",
+			"codedValues": [
+				{
+					"name": "File Geodatabase",
+					"code": "gdb"
+				},
+				{
+					"name": "Personal Geodatabase",
+					"code": "mdb"
+				},
+				{
+					"name": "shapefile",
+					"code": "shapefile"
+				},
+				{
+					"name": "mapinfo",
+					"code": "mapinfo"
+				},
+				{
+					"name": "GML",
+					"code": "GML"
+				},
+				{
+					"name": "e00",
+					"code": "e00"
+				},
+				{
+					"name": "unknown",
+					"code": "unknown"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Struc_Generation_SID",
+			"description": "Phase of generation",
+			"codedValues": [
+				{
+					"name": "first",
+					"code": "01"
+				},
+				{
+					"name": "second",
+					"code": "02"
+				},
+				{
+					"name": "third",
+					"code": "03"
+				},
+				{
+					"name": "fourth",
+					"code": "04"
+				},
+				{
+					"name": "fifth",
+					"code": "05"
+				},
+				{
+					"name": "primary",
+					"code": "10"
+				},
+				{
+					"name": "multi-generation",
+					"code": "11"
+				},
+				{
+					"name": "undefined",
+					"code": "88"
 				},
 				{
 					"name": "not entered",
@@ -2754,28 +2754,6 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Scale_PID",
-			"description": "Project specific values for GEO_POINTS",
-			"codedValues": [
-				{
-					"name": "Do not display",
-					"code": "0"
-				},
-				{
-					"name": "1:1",
-					"code": "1"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
 			"name": "SpatialType_DID",
 			"description": "Dataset spatial type",
 			"codedValues": [
@@ -2888,6 +2866,28 @@
 		},
 		{
 			"type": "codedValue",
+			"name": "Scale_PID",
+			"description": "Project specific values for GEO_POINTS",
+			"codedValues": [
+				{
+					"name": "Do not display",
+					"code": "0"
+				},
+				{
+					"name": "1:1",
+					"code": "1"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
 			"name": "SourceRef_PID",
 			"description": "Project specific values for Source and Reference",
 			"codedValues": [
@@ -2966,44 +2966,6 @@
 		},
 		{
 			"type": "codedValue",
-			"name": "Struc_Strain_SID",
-			"description": "Strain intensity",
-			"codedValues": [
-				{
-					"name": "no strain",
-					"code": "01"
-				},
-				{
-					"name": "massive",
-					"code": "02"
-				},
-				{
-					"name": "weak",
-					"code": "03"
-				},
-				{
-					"name": "moderate",
-					"code": "04"
-				},
-				{
-					"name": "strong",
-					"code": "05"
-				},
-				{
-					"name": "intense",
-					"code": "06"
-				},
-				{
-					"name": "not entered",
-					"code": "66"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
 			"name": "Struc_Attitude_Planar_SID",
 			"description": "Attitude of planar feature",
 			"codedValues": [
@@ -3042,6 +3004,44 @@
 				{
 					"name": "undefined",
 					"code": "88"
+				},
+				{
+					"name": "not entered",
+					"code": "66"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "Struc_Strain_SID",
+			"description": "Strain intensity",
+			"codedValues": [
+				{
+					"name": "no strain",
+					"code": "01"
+				},
+				{
+					"name": "massive",
+					"code": "02"
+				},
+				{
+					"name": "weak",
+					"code": "03"
+				},
+				{
+					"name": "moderate",
+					"code": "04"
+				},
+				{
+					"name": "strong",
+					"code": "05"
+				},
+				{
+					"name": "intense",
+					"code": "06"
 				},
 				{
 					"name": "not entered",
@@ -3132,36 +3132,6 @@
 				{
 					"name": "unknown",
 					"code": "unknown"
-				}
-			],
-			"fieldType": "esriFieldTypeString",
-			"mergePolicy": "esriMPTDefaultValue",
-			"splitPolicy": "esriSPTDuplicate"
-		},
-		{
-			"type": "codedValue",
-			"name": "OverprintLevel_DID",
-			"description": "Overprint Levels",
-			"codedValues": [
-				{
-					"name": "Level 1",
-					"code": "OP1"
-				},
-				{
-					"name": "Level 2",
-					"code": "OP2"
-				},
-				{
-					"name": "Level 3",
-					"code": "OP3"
-				},
-				{
-					"name": "Level 4",
-					"code": "OP4"
-				},
-				{
-					"name": "Level 5",
-					"code": "OP5"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -3270,6 +3240,36 @@
 				{
 					"name": "Late",
 					"code": "late"
+				}
+			],
+			"fieldType": "esriFieldTypeString",
+			"mergePolicy": "esriMPTDefaultValue",
+			"splitPolicy": "esriSPTDuplicate"
+		},
+		{
+			"type": "codedValue",
+			"name": "OverprintLevel_DID",
+			"description": "Overprint Levels",
+			"codedValues": [
+				{
+					"name": "Level 1",
+					"code": "OP1"
+				},
+				{
+					"name": "Level 2",
+					"code": "OP2"
+				},
+				{
+					"name": "Level 3",
+					"code": "OP3"
+				},
+				{
+					"name": "Level 4",
+					"code": "OP4"
+				},
+				{
+					"name": "Level 5",
+					"code": "OP5"
 				}
 			],
 			"fieldType": "esriFieldTypeString",
@@ -3465,7 +3465,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{9F6DB66F-0482-48C4-A9AF-9EEAACBF2226}",
+			"catalogID": "{FA89CFB0-8F0C-472F-BD2F-4776D0DD7CA3}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -5066,7 +5066,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{B3B99838-3FC5-474A-A8E9-FB85BF6A5067}",
+			"catalogID": "{D118825B-EBF7-456F-8020-9381011C8799}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -5258,7 +5258,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{7BA6B4D3-4407-4AF0-89F2-6B2180979C80}",
+			"catalogID": "{4D7F45DE-FF68-4695-9AF7-1A41392772E5}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -5449,7 +5449,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{8CD9A50D-60BE-4FEC-BF3E-78CF2D5E0533}",
+			"catalogID": "{7410E3B0-AA80-4F17-8076-FC9BBB590F57}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -6092,7 +6092,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{2142AC83-DFCB-4F6C-A263-ED5085D4F642}",
+			"catalogID": "{4207A4F0-CDD2-4D9E-9BE9-09C6AAC24B1C}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -6585,7 +6585,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{C9290286-3FC9-4F85-8536-97BDA13D7FF5}",
+			"catalogID": "{7FD12CD5-EA01-4E36-903B-DD81C935B35C}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -6762,7 +6762,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{A37ED617-3B52-47C0-A1E6-65978E168C62}",
+			"catalogID": "{AFAC419E-DAFA-4E7A-B479-EE48DE54672F}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -7104,7 +7104,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{A3D10A31-D636-4611-86A3-20659186B7D1}",
+			"catalogID": "{DBADBBD0-4245-4B86-B135-54F97A7C0B6C}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -7322,7 +7322,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{AD66031A-E491-4553-A078-5318199F25CE}",
+			"catalogID": "{490415B8-7F8D-45C5-848E-48C1C1A4525F}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -7494,7 +7494,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{7140AB4B-0991-4A43-93F1-DB0C56FA6090}",
+			"catalogID": "{D46E651F-7D2F-4D39-B54C-98FF740FB48D}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -7626,7 +7626,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{D49C481D-77CF-40A2-AE7D-C7A52664DF84}",
+			"catalogID": "{380658C6-266A-4766-A923-E5BD15AA0E58}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -7756,7 +7756,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{F75B8A89-7548-4899-B213-4DAC560FEFE4}",
+			"catalogID": "{73BD074C-79FB-4708-99FB-7BE8658486FC}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -7886,7 +7886,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{DF97720F-2F5C-4868-8D4C-37D522022D95}",
+			"catalogID": "{115DD08D-7DA1-41B6-80D4-3156E9B10B09}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": []
 		},
@@ -7899,6 +7899,725 @@
 				"wkid": null
 			},
 			"datasets": [
+				{
+					"catalogPath": "\\GEO\\GEO_POINTS",
+					"name": "GEO_POINTS",
+					"childrenExpanded": false,
+					"datasetType": "esriDTFeatureClass",
+					"dsId": 76,
+					"versioned": false,
+					"canVersion": false,
+					"configurationKeyword": "",
+					"requiredGeodatabaseClientVersion": "10.0",
+					"changeTracked": false,
+					"replicaTracked": false,
+					"hasOID": true,
+					"hasOID64": false,
+					"oidFieldName": "OBJECTID",
+					"fields": {
+						"fieldArray": [
+							{
+								"name": "OBJECTID",
+								"type": "esriFieldTypeOID",
+								"isNullable": false,
+								"length": 4,
+								"precision": 0,
+								"scale": 0,
+								"required": true,
+								"editable": false,
+								"aliasName": "OBJECTID",
+								"modelName": "OBJECTID"
+							},
+							{
+								"name": "Shape",
+								"type": "esriFieldTypeGeometry",
+								"isNullable": true,
+								"length": 0,
+								"precision": 0,
+								"scale": 0,
+								"required": true,
+								"geometryDef": {
+									"avgNumPoints": 0,
+									"geometryType": "esriGeometryPoint",
+									"hasM": false,
+									"hasZ": true,
+									"spatialReference": {
+										"wkid": null
+									},
+									"gridSize0": 0
+								},
+								"aliasName": "Shape",
+								"modelName": "Shape"
+							},
+							{
+								"name": "GEOPOINTID",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 13,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "GeopointID",
+								"modelName": "GEOPOINTID"
+							},
+							{
+								"name": "GEOPOINTSUBSET",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 4,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "GeoPoint Subset",
+								"modelName": "GEOPOINTSUBSET"
+							},
+							{
+								"name": "STRUCATTITUDE",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Attitude",
+								"modelName": "STRUCATTITUDE_"
+							},
+							{
+								"name": "STRUCGENERATION",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Generation",
+								"modelName": "STRUCGENERATION_"
+							},
+							{
+								"name": "STRUCYOUNGING",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Younging",
+								"modelName": "STRUCYOUNGING_"
+							},
+							{
+								"name": "STRUCMETHOD",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Method",
+								"modelName": "STRUCMETHOD_"
+							},
+							{
+								"name": "RELATEDSTRUC",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 15,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Related Structure",
+								"modelName": "RELATEDSTRUC_"
+							},
+							{
+								"name": "AZIMUTH",
+								"type": "esriFieldTypeSmallInteger",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Azimuth",
+								"modelName": "AZIMUTH_"
+							},
+							{
+								"name": "DIPPLUNGE",
+								"type": "esriFieldTypeSmallInteger",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "DipPlunge",
+								"modelName": "DIPPLUNGE_"
+							},
+							{
+								"name": "DIPDESC",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 30,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Dip Description",
+								"modelName": "DIPDESC"
+							},
+							{
+								"name": "SENSE_EVID",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 50,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Sense Evidence",
+								"modelName": "SENSE_EVID"
+							},
+							{
+								"name": "STRAIN",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Strain",
+								"modelName": "STRAIN"
+							},
+							{
+								"name": "FLATTENING",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Flattening",
+								"modelName": "FLATTENING"
+							},
+							{
+								"name": "F_STRUCID",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 25,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "F_StrucID",
+								"modelName": "F_STRUCID_"
+							},
+							{
+								"name": "GSC_SYMBOL",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 15,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "GSC Symbol",
+								"modelName": "FGDC_SYMBOL_"
+							},
+							{
+								"name": "CREATORID",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 25,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "CreatorID",
+								"modelName": "CREATORID"
+							},
+							{
+								"name": "CREATEDATE",
+								"type": "esriFieldTypeDate",
+								"isNullable": true,
+								"length": 8,
+								"precision": 0,
+								"scale": 0,
+								"editable": false,
+								"aliasName": "Create Date",
+								"modelName": "CREATEDATE"
+							},
+							{
+								"name": "EDITORID",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 25,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "EditorID",
+								"modelName": "EDITORID"
+							},
+							{
+								"name": "EDITDATE",
+								"type": "esriFieldTypeDate",
+								"isNullable": true,
+								"length": 8,
+								"precision": 0,
+								"scale": 0,
+								"editable": false,
+								"aliasName": "Edit Date",
+								"modelName": "EDITDATE"
+							},
+							{
+								"name": "SOURCEID",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 15,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "SourceID",
+								"modelName": "SRCREFID_"
+							},
+							{
+								"name": "ORIGCODE",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 50,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Original Code",
+								"modelName": "ORIGCODE"
+							},
+							{
+								"name": "REMARKS",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 255,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Point Remarks",
+								"modelName": "REMARKS_"
+							},
+							{
+								"name": "EDITREMARKS",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 255,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Editing Remarks",
+								"modelName": "EDITREMARKS"
+							},
+							{
+								"name": "DISPLAY_FROM",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 20,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Display from",
+								"modelName": "DISPLAY_FROM"
+							},
+							{
+								"name": "DISPLAY_TO",
+								"type": "esriFieldTypeString",
+								"isNullable": true,
+								"length": 20,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Display To",
+								"modelName": "DISPLAY_TO"
+							},
+							{
+								"name": "DISPLAYPUB",
+								"type": "esriFieldTypeSmallInteger",
+								"isNullable": true,
+								"length": 2,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "Display in Publication",
+								"modelName": "DISPLAYPUB"
+							},
+							{
+								"name": "GEOPOINTTYPE",
+								"type": "esriFieldTypeInteger",
+								"isNullable": true,
+								"length": 4,
+								"precision": 0,
+								"scale": 0,
+								"aliasName": "GeoPoint Type",
+								"modelName": "GEOPOINTTYPE",
+								"defaultValue": 1
+							}
+						]
+					},
+					"indexes": {
+						"indexArray": [
+							{
+								"name": "FDO_OBJECTID",
+								"isUnique": true,
+								"isAscending": true,
+								"fields": {
+									"fieldArray": [
+										{
+											"name": "OBJECTID",
+											"type": "esriFieldTypeOID",
+											"isNullable": false,
+											"length": 4,
+											"precision": 0,
+											"scale": 0,
+											"required": true,
+											"editable": false,
+											"aliasName": "OBJECTID",
+											"modelName": "OBJECTID"
+										}
+									]
+								}
+							},
+							{
+								"name": "FDO_Shape",
+								"isUnique": false,
+								"isAscending": true,
+								"fields": {
+									"fieldArray": [
+										{
+											"name": "Shape",
+											"type": "esriFieldTypeGeometry",
+											"isNullable": true,
+											"length": 0,
+											"precision": 0,
+											"scale": 0,
+											"required": true,
+											"geometryDef": {
+												"avgNumPoints": 0,
+												"geometryType": "esriGeometryPoint",
+												"hasM": false,
+												"hasZ": true,
+												"spatialReference": {
+													"wkid": null
+												},
+												"gridSize0": 0
+											},
+											"aliasName": "Shape",
+											"modelName": "Shape"
+										}
+									]
+								}
+							},
+							{
+								"name": "G76F_STRUCID",
+								"isUnique": false,
+								"isAscending": true,
+								"fields": {
+									"fieldArray": [
+										{
+											"name": "F_STRUCID",
+											"type": "esriFieldTypeString",
+											"isNullable": true,
+											"length": 25,
+											"precision": 0,
+											"scale": 0,
+											"aliasName": "F_StrucID",
+											"modelName": "F_STRUCID_"
+										}
+									]
+								}
+							},
+							{
+								"name": "G76SOURCEID",
+								"isUnique": false,
+								"isAscending": true,
+								"fields": {
+									"fieldArray": [
+										{
+											"name": "SOURCEID",
+											"type": "esriFieldTypeString",
+											"isNullable": true,
+											"length": 15,
+											"precision": 0,
+											"scale": 0,
+											"aliasName": "SourceID",
+											"modelName": "SRCREFID_"
+										}
+									]
+								}
+							},
+							{
+								"name": "G76GEOPOINTID",
+								"isUnique": false,
+								"isAscending": true,
+								"fields": {
+									"fieldArray": [
+										{
+											"name": "GEOPOINTID",
+											"type": "esriFieldTypeString",
+											"isNullable": true,
+											"length": 13,
+											"precision": 0,
+											"scale": 0,
+											"aliasName": "GeopointID",
+											"modelName": "GEOPOINTID"
+										}
+									]
+								}
+							}
+						]
+					},
+					"clsId": "{52353152-891A-11D0-BEC6-00805F7C4268}",
+					"extClsId": "",
+					"relationshipClassNames": {
+						"names": []
+					},
+					"aliasName": "Geopoints",
+					"modelName": "",
+					"hasGlobalID": false,
+					"globalIdFieldName": "",
+					"rasterFieldName": "",
+					"extensionProperties": {
+						"type": "PropertySet",
+						"propertySetItems": []
+					},
+					"subtypeFieldName": "GEOPOINTTYPE",
+					"defaultSubtypeCode": 1,
+					"subtypes": [
+						{
+							"subtypeName": "linear",
+							"subtypeCode": 2,
+							"fieldInfos": [
+								{
+									"fieldName": "GEOPOINTSUBSET",
+									"domainName": "Subset_Linear_SID",
+									"defaultValue": "2029"
+								},
+								{
+									"fieldName": "STRUCATTITUDE",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRUCGENERATION",
+									"domainName": "Struc_Generation_SID",
+									"defaultValue": "88"
+								},
+								{
+									"fieldName": "STRUCYOUNGING",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRUCMETHOD",
+									"domainName": "Struc_Method_SID",
+									"defaultValue": "01"
+								},
+								{
+									"fieldName": "DIPDESC",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "SENSE_EVID",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRAIN",
+									"domainName": "Struc_Strain_SID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "FLATTENING",
+									"domainName": "Struc_Flattening_SID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "CREATORID",
+									"domainName": "Participant_PID"
+								},
+								{
+									"fieldName": "EDITORID",
+									"domainName": "Participant_PID"
+								},
+								{
+									"fieldName": "SOURCEID",
+									"domainName": "SourceRef_PID"
+								},
+								{
+									"fieldName": "DISPLAY_FROM",
+									"domainName": "Scale_PID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "DISPLAY_TO",
+									"domainName": "Scale_PID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "DISPLAYPUB",
+									"domainName": "BooleanTruth_DID",
+									"defaultValue": 1
+								}
+							]
+						},
+						{
+							"subtypeName": "planar",
+							"subtypeCode": 1,
+							"fieldInfos": [
+								{
+									"fieldName": "GEOPOINTSUBSET",
+									"domainName": "Subset_Planar_SID",
+									"defaultValue": "1001"
+								},
+								{
+									"fieldName": "STRUCATTITUDE",
+									"domainName": "Struc_Attitude_Planar_SID",
+									"defaultValue": "05"
+								},
+								{
+									"fieldName": "STRUCGENERATION",
+									"domainName": "Struc_Generation_SID",
+									"defaultValue": "88"
+								},
+								{
+									"fieldName": "STRUCYOUNGING",
+									"domainName": "Planar_Younging_SID",
+									"defaultValue": "07"
+								},
+								{
+									"fieldName": "STRUCMETHOD",
+									"domainName": "Struc_Method_SID",
+									"defaultValue": "01"
+								},
+								{
+									"fieldName": "DIPDESC",
+									"domainName": "Dip_Desc_SID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "SENSE_EVID",
+									"domainName": "Sense_Evid_SID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "STRAIN",
+									"domainName": "Struc_Strain_SID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "FLATTENING",
+									"domainName": "Struc_Flattening_SID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "CREATORID",
+									"domainName": "Participant_PID"
+								},
+								{
+									"fieldName": "EDITORID",
+									"domainName": "Participant_PID"
+								},
+								{
+									"fieldName": "SOURCEID",
+									"domainName": "SourceRef_PID"
+								},
+								{
+									"fieldName": "DISPLAY_FROM",
+									"domainName": "Scale_PID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "DISPLAY_TO",
+									"domainName": "Scale_PID",
+									"defaultValue": "66"
+								},
+								{
+									"fieldName": "DISPLAYPUB",
+									"domainName": "BooleanTruth_DID",
+									"defaultValue": 1
+								}
+							]
+						},
+						{
+							"subtypeName": "map unit",
+							"subtypeCode": 3,
+							"fieldInfos": [
+								{
+									"fieldName": "GEOPOINTSUBSET",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRUCATTITUDE",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRUCGENERATION",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRUCYOUNGING",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRUCMETHOD",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "DIPDESC",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "SENSE_EVID",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "STRAIN",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "FLATTENING",
+									"domainName": "NA_DID",
+									"defaultValue": "99"
+								},
+								{
+									"fieldName": "CREATORID",
+									"domainName": "Participant_PID"
+								},
+								{
+									"fieldName": "EDITORID",
+									"domainName": "Participant_PID"
+								},
+								{
+									"fieldName": "SOURCEID",
+									"domainName": "SourceRef_PID"
+								},
+								{
+									"fieldName": "DISPLAY_FROM",
+									"domainName": "Scale_PID"
+								},
+								{
+									"fieldName": "DISPLAY_TO",
+									"domainName": "Scale_PID"
+								},
+								{
+									"fieldName": "DISPLAYPUB",
+									"domainName": "BooleanTruth_DID",
+									"defaultValue": 1
+								}
+							]
+						}
+					],
+					"controllerMemberships": [],
+					"editorTrackingEnabled": false,
+					"creatorFieldName": "",
+					"createdAtFieldName": "",
+					"lastEditorFieldName": "",
+					"editedAtFieldName": "",
+					"isTimeInUTC": true,
+					"catalogID": "{2238B910-78DC-49D9-8365-1D5DAE8DA8F9}",
+					"fieldFilteringEnabled": false,
+					"attributeRules": [],
+					"featureType": "esriFTSimple",
+					"shapeType": "esriGeometryPoint",
+					"shapeFieldName": "Shape",
+					"hasM": false,
+					"hasZ": true,
+					"hasSpatialIndex": true,
+					"areaFieldName": "",
+					"lengthFieldName": "",
+					"extent": {
+						"xmin": "NaN",
+						"ymin": "NaN",
+						"xmax": "NaN",
+						"ymax": "NaN",
+						"spatialReference": {
+							"wkid": null
+						}
+					},
+					"spatialReference": {
+						"wkid": null
+					},
+					"splitModel": "esriSMUpdateInsert"
+				},
 				{
 					"catalogPath": "\\GEO\\GEO_LINES",
 					"name": "GEO_LINES",
@@ -9121,7 +9840,7 @@
 					"lastEditorFieldName": "",
 					"editedAtFieldName": "",
 					"isTimeInUTC": true,
-					"catalogID": "{DEC60AF8-74D7-4D7D-9995-4539C9BC7DA2}",
+					"catalogID": "{4A40EDA7-BE29-4A9C-9594-73572CB06FDF}",
 					"fieldFilteringEnabled": false,
 					"attributeRules": [],
 					"featureType": "esriFTSimple",
@@ -9263,7 +9982,15 @@
 								"precision": 0,
 								"scale": 0,
 								"aliasName": "CreatorID",
-								"modelName": "CREATORID"
+								"modelName": "CREATORID",
+								"domain": {
+									"domainName": "Participant_PID",
+									"fieldType": "esriFieldTypeString",
+									"mergePolicy": "esriMPTDefaultValue",
+									"splitPolicy": "esriSPTDuplicate",
+									"description": "Project specific values for Participant",
+									"codedValues": []
+								}
 							},
 							{
 								"name": "CREATEDATE",
@@ -9284,7 +10011,15 @@
 								"precision": 0,
 								"scale": 0,
 								"aliasName": "EditorID",
-								"modelName": "EDITORID"
+								"modelName": "EDITORID",
+								"domain": {
+									"domainName": "Participant_PID",
+									"fieldType": "esriFieldTypeString",
+									"mergePolicy": "esriMPTDefaultValue",
+									"splitPolicy": "esriSPTDuplicate",
+									"description": "Project specific values for Participant",
+									"codedValues": []
+								}
 							},
 							{
 								"name": "EDITDATE",
@@ -9471,7 +10206,7 @@
 					"lastEditorFieldName": "",
 					"editedAtFieldName": "",
 					"isTimeInUTC": true,
-					"catalogID": "{6FB66AAE-5C0B-4238-B4ED-537F15E191A8}",
+					"catalogID": "{31167FF8-A311-4421-93D6-7E63F0E90B01}",
 					"fieldFilteringEnabled": false,
 					"attributeRules": [],
 					"featureType": "esriFTSimple",
@@ -9495,806 +10230,6 @@
 						"wkid": null
 					},
 					"splitModel": "esriSMUpdateInsert"
-				},
-				{
-					"catalogPath": "\\GEO\\GEO_POINTS",
-					"name": "GEO_POINTS",
-					"childrenExpanded": false,
-					"datasetType": "esriDTFeatureClass",
-					"dsId": 76,
-					"versioned": false,
-					"canVersion": false,
-					"configurationKeyword": "",
-					"requiredGeodatabaseClientVersion": "10.0",
-					"changeTracked": false,
-					"replicaTracked": false,
-					"hasOID": true,
-					"hasOID64": false,
-					"oidFieldName": "OBJECTID",
-					"fields": {
-						"fieldArray": [
-							{
-								"name": "OBJECTID",
-								"type": "esriFieldTypeOID",
-								"isNullable": false,
-								"length": 4,
-								"precision": 0,
-								"scale": 0,
-								"required": true,
-								"editable": false,
-								"aliasName": "OBJECTID",
-								"modelName": "OBJECTID"
-							},
-							{
-								"name": "Shape",
-								"type": "esriFieldTypeGeometry",
-								"isNullable": true,
-								"length": 0,
-								"precision": 0,
-								"scale": 0,
-								"required": true,
-								"geometryDef": {
-									"avgNumPoints": 0,
-									"geometryType": "esriGeometryPoint",
-									"hasM": false,
-									"hasZ": true,
-									"spatialReference": {
-										"wkid": null
-									},
-									"gridSize0": 0
-								},
-								"aliasName": "Shape",
-								"modelName": "Shape"
-							},
-							{
-								"name": "GEOPOINTID",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 13,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "GeopointID",
-								"modelName": "GEOPOINTID"
-							},
-							{
-								"name": "GEOPOINTSUBSET",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 4,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "GeoPoint Subset",
-								"modelName": "GEOPOINTSUBSET"
-							},
-							{
-								"name": "STRUCATTITUDE",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Attitude",
-								"modelName": "STRUCATTITUDE_"
-							},
-							{
-								"name": "STRUCGENERATION",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Generation",
-								"modelName": "STRUCGENERATION_"
-							},
-							{
-								"name": "STRUCYOUNGING",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Younging",
-								"modelName": "STRUCYOUNGING_"
-							},
-							{
-								"name": "STRUCMETHOD",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Method",
-								"modelName": "STRUCMETHOD_"
-							},
-							{
-								"name": "RELATEDSTRUC",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 15,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Related Structure",
-								"modelName": "RELATEDSTRUC_"
-							},
-							{
-								"name": "AZIMUTH",
-								"type": "esriFieldTypeSmallInteger",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Azimuth",
-								"modelName": "AZIMUTH_"
-							},
-							{
-								"name": "DIPPLUNGE",
-								"type": "esriFieldTypeSmallInteger",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "DipPlunge",
-								"modelName": "DIPPLUNGE_"
-							},
-							{
-								"name": "DIPDESC",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 30,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Dip Description",
-								"modelName": "DIPDESC"
-							},
-							{
-								"name": "SENSE_EVID",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 50,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Sense Evidence",
-								"modelName": "SENSE_EVID"
-							},
-							{
-								"name": "STRAIN",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Strain",
-								"modelName": "STRAIN"
-							},
-							{
-								"name": "FLATTENING",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Flattening",
-								"modelName": "FLATTENING"
-							},
-							{
-								"name": "F_STRUCID",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 25,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "F_StrucID",
-								"modelName": "F_STRUCID_"
-							},
-							{
-								"name": "GSC_SYMBOL",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 15,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "GSC Symbol",
-								"modelName": "FGDC_SYMBOL_"
-							},
-							{
-								"name": "CREATORID",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 25,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "CreatorID",
-								"modelName": "CREATORID"
-							},
-							{
-								"name": "CREATEDATE",
-								"type": "esriFieldTypeDate",
-								"isNullable": true,
-								"length": 8,
-								"precision": 0,
-								"scale": 0,
-								"editable": false,
-								"aliasName": "Create Date",
-								"modelName": "CREATEDATE"
-							},
-							{
-								"name": "EDITORID",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 25,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "EditorID",
-								"modelName": "EDITORID"
-							},
-							{
-								"name": "EDITDATE",
-								"type": "esriFieldTypeDate",
-								"isNullable": true,
-								"length": 8,
-								"precision": 0,
-								"scale": 0,
-								"editable": false,
-								"aliasName": "Edit Date",
-								"modelName": "EDITDATE"
-							},
-							{
-								"name": "SOURCEID",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 15,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "SourceID",
-								"modelName": "SRCREFID_"
-							},
-							{
-								"name": "ORIGCODE",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 50,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Original Code",
-								"modelName": "ORIGCODE"
-							},
-							{
-								"name": "REMARKS",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 255,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Point Remarks",
-								"modelName": "REMARKS_"
-							},
-							{
-								"name": "EDITREMARKS",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 255,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Editing Remarks",
-								"modelName": "EDITREMARKS"
-							},
-							{
-								"name": "DISPLAY_FROM",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 20,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Display from",
-								"modelName": "DISPLAY_FROM"
-							},
-							{
-								"name": "DISPLAY_TO",
-								"type": "esriFieldTypeString",
-								"isNullable": true,
-								"length": 20,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Display To",
-								"modelName": "DISPLAY_TO"
-							},
-							{
-								"name": "DISPLAYPUB",
-								"type": "esriFieldTypeSmallInteger",
-								"isNullable": true,
-								"length": 2,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "Display in Publication",
-								"modelName": "DISPLAYPUB"
-							},
-							{
-								"name": "GEOPOINTTYPE",
-								"type": "esriFieldTypeInteger",
-								"isNullable": true,
-								"length": 4,
-								"precision": 0,
-								"scale": 0,
-								"aliasName": "GeoPoint Type",
-								"modelName": "GEOPOINTTYPE",
-								"defaultValue": 1
-							}
-						]
-					},
-					"indexes": {
-						"indexArray": [
-							{
-								"name": "FDO_OBJECTID",
-								"isUnique": true,
-								"isAscending": true,
-								"fields": {
-									"fieldArray": [
-										{
-											"name": "OBJECTID",
-											"type": "esriFieldTypeOID",
-											"isNullable": false,
-											"length": 4,
-											"precision": 0,
-											"scale": 0,
-											"required": true,
-											"editable": false,
-											"aliasName": "OBJECTID",
-											"modelName": "OBJECTID"
-										}
-									]
-								}
-							},
-							{
-								"name": "FDO_Shape",
-								"isUnique": false,
-								"isAscending": true,
-								"fields": {
-									"fieldArray": [
-										{
-											"name": "Shape",
-											"type": "esriFieldTypeGeometry",
-											"isNullable": true,
-											"length": 0,
-											"precision": 0,
-											"scale": 0,
-											"required": true,
-											"geometryDef": {
-												"avgNumPoints": 0,
-												"geometryType": "esriGeometryPoint",
-												"hasM": false,
-												"hasZ": true,
-												"spatialReference": {
-													"wkid": null
-												},
-												"gridSize0": 0
-											},
-											"aliasName": "Shape",
-											"modelName": "Shape"
-										}
-									]
-								}
-							},
-							{
-								"name": "G76F_STRUCID",
-								"isUnique": false,
-								"isAscending": true,
-								"fields": {
-									"fieldArray": [
-										{
-											"name": "F_STRUCID",
-											"type": "esriFieldTypeString",
-											"isNullable": true,
-											"length": 25,
-											"precision": 0,
-											"scale": 0,
-											"aliasName": "F_StrucID",
-											"modelName": "F_STRUCID_"
-										}
-									]
-								}
-							},
-							{
-								"name": "G76SOURCEID",
-								"isUnique": false,
-								"isAscending": true,
-								"fields": {
-									"fieldArray": [
-										{
-											"name": "SOURCEID",
-											"type": "esriFieldTypeString",
-											"isNullable": true,
-											"length": 15,
-											"precision": 0,
-											"scale": 0,
-											"aliasName": "SourceID",
-											"modelName": "SRCREFID_"
-										}
-									]
-								}
-							},
-							{
-								"name": "G76GEOPOINTID",
-								"isUnique": false,
-								"isAscending": true,
-								"fields": {
-									"fieldArray": [
-										{
-											"name": "GEOPOINTID",
-											"type": "esriFieldTypeString",
-											"isNullable": true,
-											"length": 13,
-											"precision": 0,
-											"scale": 0,
-											"aliasName": "GeopointID",
-											"modelName": "GEOPOINTID"
-										}
-									]
-								}
-							}
-						]
-					},
-					"clsId": "{52353152-891A-11D0-BEC6-00805F7C4268}",
-					"extClsId": "",
-					"relationshipClassNames": {
-						"names": []
-					},
-					"aliasName": "Geopoints",
-					"modelName": "",
-					"hasGlobalID": false,
-					"globalIdFieldName": "",
-					"rasterFieldName": "",
-					"extensionProperties": {
-						"type": "PropertySet",
-						"propertySetItems": []
-					},
-					"subtypeFieldName": "GEOPOINTTYPE",
-					"defaultSubtypeCode": 1,
-					"subtypes": [
-						{
-							"subtypeName": "linear",
-							"subtypeCode": 2,
-							"fieldInfos": [
-								{
-									"fieldName": "GEOPOINTSUBSET",
-									"domainName": "Subset_Linear_SID",
-									"defaultValue": "2029"
-								},
-								{
-									"fieldName": "STRUCATTITUDE",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRUCGENERATION",
-									"domainName": "Struc_Generation_SID",
-									"defaultValue": "88"
-								},
-								{
-									"fieldName": "STRUCYOUNGING",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRUCMETHOD",
-									"domainName": "Struc_Method_SID",
-									"defaultValue": "01"
-								},
-								{
-									"fieldName": "DIPDESC",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "SENSE_EVID",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRAIN",
-									"domainName": "Struc_Strain_SID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "FLATTENING",
-									"domainName": "Struc_Flattening_SID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "CREATORID",
-									"domainName": "Participant_PID"
-								},
-								{
-									"fieldName": "EDITORID",
-									"domainName": "Participant_PID"
-								},
-								{
-									"fieldName": "SOURCEID",
-									"domainName": "SourceRef_PID"
-								},
-								{
-									"fieldName": "DISPLAY_FROM",
-									"domainName": "Scale_PID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "DISPLAY_TO",
-									"domainName": "Scale_PID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "DISPLAYPUB",
-									"domainName": "BooleanTruth_DID",
-									"defaultValue": 1
-								}
-							]
-						},
-						{
-							"subtypeName": "planar",
-							"subtypeCode": 1,
-							"fieldInfos": [
-								{
-									"fieldName": "GEOPOINTSUBSET",
-									"domainName": "Subset_Planar_SID",
-									"defaultValue": "1001"
-								},
-								{
-									"fieldName": "STRUCATTITUDE",
-									"domainName": "Struc_Attitude_Planar_SID",
-									"defaultValue": "05"
-								},
-								{
-									"fieldName": "STRUCGENERATION",
-									"domainName": "Struc_Generation_SID",
-									"defaultValue": "88"
-								},
-								{
-									"fieldName": "STRUCYOUNGING",
-									"domainName": "Planar_Younging_SID",
-									"defaultValue": "07"
-								},
-								{
-									"fieldName": "STRUCMETHOD",
-									"domainName": "Struc_Method_SID",
-									"defaultValue": "01"
-								},
-								{
-									"fieldName": "DIPDESC",
-									"domainName": "Dip_Desc_SID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "SENSE_EVID",
-									"domainName": "Sense_Evid_SID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "STRAIN",
-									"domainName": "Struc_Strain_SID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "FLATTENING",
-									"domainName": "Struc_Flattening_SID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "CREATORID",
-									"domainName": "Participant_PID"
-								},
-								{
-									"fieldName": "EDITORID",
-									"domainName": "Participant_PID"
-								},
-								{
-									"fieldName": "SOURCEID",
-									"domainName": "SourceRef_PID"
-								},
-								{
-									"fieldName": "DISPLAY_FROM",
-									"domainName": "Scale_PID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "DISPLAY_TO",
-									"domainName": "Scale_PID",
-									"defaultValue": "66"
-								},
-								{
-									"fieldName": "DISPLAYPUB",
-									"domainName": "BooleanTruth_DID",
-									"defaultValue": 1
-								}
-							]
-						},
-						{
-							"subtypeName": "map unit",
-							"subtypeCode": 3,
-							"fieldInfos": [
-								{
-									"fieldName": "GEOPOINTSUBSET",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRUCATTITUDE",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRUCGENERATION",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRUCYOUNGING",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRUCMETHOD",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "DIPDESC",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "SENSE_EVID",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "STRAIN",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "FLATTENING",
-									"domainName": "NA_DID",
-									"defaultValue": "99"
-								},
-								{
-									"fieldName": "CREATORID",
-									"domainName": "Participant_PID"
-								},
-								{
-									"fieldName": "EDITORID",
-									"domainName": "Participant_PID"
-								},
-								{
-									"fieldName": "SOURCEID",
-									"domainName": "SourceRef_PID"
-								},
-								{
-									"fieldName": "DISPLAY_FROM",
-									"domainName": "Scale_PID"
-								},
-								{
-									"fieldName": "DISPLAY_TO",
-									"domainName": "Scale_PID"
-								},
-								{
-									"fieldName": "DISPLAYPUB",
-									"domainName": "BooleanTruth_DID",
-									"defaultValue": 1
-								}
-							]
-						}
-					],
-					"controllerMemberships": [],
-					"editorTrackingEnabled": false,
-					"creatorFieldName": "",
-					"createdAtFieldName": "",
-					"lastEditorFieldName": "",
-					"editedAtFieldName": "",
-					"isTimeInUTC": true,
-					"catalogID": "{E6B3DFEF-3C70-4EF4-A7F1-7D3AE1F5FF3D}",
-					"fieldFilteringEnabled": false,
-					"attributeRules": [],
-					"featureType": "esriFTSimple",
-					"shapeType": "esriGeometryPoint",
-					"shapeFieldName": "Shape",
-					"hasM": false,
-					"hasZ": true,
-					"hasSpatialIndex": true,
-					"areaFieldName": "",
-					"lengthFieldName": "",
-					"extent": {
-						"xmin": "NaN",
-						"ymin": "NaN",
-						"xmax": "NaN",
-						"ymax": "NaN",
-						"spatialReference": {
-							"wkid": null
-						}
-					},
-					"spatialReference": {
-						"wkid": null
-					},
-					"splitModel": "esriSMUpdateInsert"
-				},
-				{
-					"catalogPath": "\\Rel_Label_Geopolys",
-					"name": "Rel_Label_Geopolys",
-					"childrenExpanded": false,
-					"datasetType": "esriDTRelationshipClass",
-					"dsId": 80,
-					"versioned": false,
-					"canVersion": false,
-					"configurationKeyword": "",
-					"requiredGeodatabaseClientVersion": "10.0",
-					"changeTracked": false,
-					"replicaTracked": false,
-					"hasOID": false,
-					"hasOID64": false,
-					"oidFieldName": "",
-					"fields": {
-						"fieldArray": []
-					},
-					"indexes": {
-						"indexArray": []
-					},
-					"clsId": "",
-					"extClsId": "",
-					"relationshipClassNames": {
-						"names": []
-					},
-					"aliasName": "",
-					"modelName": "",
-					"hasGlobalID": false,
-					"globalIdFieldName": "",
-					"rasterFieldName": "",
-					"extensionProperties": {
-						"type": "PropertySet",
-						"propertySetItems": []
-					},
-					"controllerMemberships": [],
-					"editorTrackingEnabled": false,
-					"creatorFieldName": "",
-					"createdAtFieldName": "",
-					"lastEditorFieldName": "",
-					"editedAtFieldName": "",
-					"isTimeInUTC": true,
-					"catalogID": "{2151B767-C97D-440B-A13C-DBC0119DB20A}",
-					"fieldFilteringEnabled": false,
-					"attributeRules": [],
-					"cardinality": "esriRelCardinalityOneToMany",
-					"notification": "esriRelNotificationNone",
-					"isAttributed": false,
-					"isComposite": false,
-					"originClassNames": [
-						{
-							"name": "LABELS"
-						}
-					],
-					"destinationClassNames": [
-						{
-							"name": "GEO_POLYS"
-						}
-					],
-					"keyType": "esriRelKeyTypeSingle",
-					"classKey": "esriRelClassKeyUndefined",
-					"forwardPathLabel": "LABELID",
-					"backwardPathLabel": "LABELID",
-					"isReflexive": false,
-					"originClassKeys": [
-						{
-							"datasetType": "RelationshipClassKey",
-							"objectKeyName": "LABELID",
-							"classKeyName": "",
-							"keyRole": "esriRelKeyRoleOriginPrimary"
-						},
-						{
-							"datasetType": "RelationshipClassKey",
-							"objectKeyName": "LABELID",
-							"classKeyName": "",
-							"keyRole": "esriRelKeyRoleOriginForeign"
-						}
-					],
-					"relationshipRules": [],
-					"isAttachmentRelationship": false
 				},
 				{
 					"catalogPath": "\\GEO\\LABELS",
@@ -10637,7 +10572,7 @@
 					"lastEditorFieldName": "",
 					"editedAtFieldName": "",
 					"isTimeInUTC": true,
-					"catalogID": "{48770327-550D-416F-A61C-EDD78DC22A81}",
+					"catalogID": "{376001AE-CE59-4025-85FA-A5BD360C1D75}",
 					"fieldFilteringEnabled": false,
 					"attributeRules": [],
 					"featureType": "esriFTSimple",
@@ -10661,6 +10596,87 @@
 						"wkid": null
 					},
 					"splitModel": "esriSMUpdateInsert"
+				},
+				{
+					"catalogPath": "\\Rel_Label_Geopolys",
+					"name": "Rel_Label_Geopolys",
+					"childrenExpanded": false,
+					"datasetType": "esriDTRelationshipClass",
+					"dsId": 80,
+					"versioned": false,
+					"canVersion": false,
+					"configurationKeyword": "",
+					"requiredGeodatabaseClientVersion": "10.0",
+					"changeTracked": false,
+					"replicaTracked": false,
+					"hasOID": false,
+					"hasOID64": false,
+					"oidFieldName": "",
+					"fields": {
+						"fieldArray": []
+					},
+					"indexes": {
+						"indexArray": []
+					},
+					"clsId": "",
+					"extClsId": "",
+					"relationshipClassNames": {
+						"names": []
+					},
+					"aliasName": "",
+					"modelName": "",
+					"hasGlobalID": false,
+					"globalIdFieldName": "",
+					"rasterFieldName": "",
+					"extensionProperties": {
+						"type": "PropertySet",
+						"propertySetItems": []
+					},
+					"controllerMemberships": [],
+					"editorTrackingEnabled": false,
+					"creatorFieldName": "",
+					"createdAtFieldName": "",
+					"lastEditorFieldName": "",
+					"editedAtFieldName": "",
+					"isTimeInUTC": true,
+					"catalogID": "{ADADA3CA-45A6-4B6B-82CC-3182E7C3F673}",
+					"fieldFilteringEnabled": false,
+					"attributeRules": [],
+					"cardinality": "esriRelCardinalityOneToMany",
+					"notification": "esriRelNotificationNone",
+					"isAttributed": false,
+					"isComposite": false,
+					"originClassNames": [
+						{
+							"name": "LABELS"
+						}
+					],
+					"destinationClassNames": [
+						{
+							"name": "GEO_POLYS"
+						}
+					],
+					"keyType": "esriRelKeyTypeSingle",
+					"classKey": "esriRelClassKeyUndefined",
+					"forwardPathLabel": "LABELID",
+					"backwardPathLabel": "LABELID",
+					"isReflexive": false,
+					"originClassKeys": [
+						{
+							"datasetType": "RelationshipClassKey",
+							"objectKeyName": "LABELID",
+							"classKeyName": "",
+							"keyRole": "esriRelKeyRoleOriginPrimary"
+						},
+						{
+							"datasetType": "RelationshipClassKey",
+							"objectKeyName": "LABELID",
+							"classKeyName": "",
+							"keyRole": "esriRelKeyRoleOriginForeign"
+						}
+					],
+					"relationshipRules": [],
+					"isAttachmentRelationship": false
 				}
 			]
 		},
@@ -11193,7 +11209,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{C69913C3-0BCB-49C7-AFD9-CD1B94883411}",
+			"catalogID": "{6D214C62-7748-41CF-9F6D-F04DDD9545F9}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"featureType": "esriFTSimple",
@@ -11459,7 +11475,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{967AA165-CEA8-47ED-BE5B-044870CC2DAB}",
+			"catalogID": "{93897312-4A58-496F-85A8-91761CBFD0A2}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"featureType": "esriFTSimple",
@@ -11526,7 +11542,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{3529DDA2-2901-44DA-926D-C3A8D77C8EF5}",
+			"catalogID": "{6D43D3C4-C0FD-43DD-A494-F6FCF5EAD66B}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -11607,7 +11623,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{D612DE9B-72AA-4FE3-8052-FD4081596A67}",
+			"catalogID": "{D1FEDC70-A468-4505-A60F-E936C4CE963F}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToOne",
@@ -11688,7 +11704,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{2582967D-420B-4EAD-9712-AA43B26819E6}",
+			"catalogID": "{7FC2F2E3-68B2-4F48-87CD-64D03D0E33D8}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -11769,7 +11785,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{DFB9944B-4C28-4B38-8A26-1E7A194F00A3}",
+			"catalogID": "{D27838E7-E3BD-4170-A0F4-5FE16BEED95B}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -11850,7 +11866,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{220FAFA7-1121-42AC-9031-F57EA6B969C7}",
+			"catalogID": "{D6352CD4-8896-4B23-9DF8-B197094ED407}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -11931,7 +11947,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{A3A21426-59D8-4B71-917D-FD35842F36E4}",
+			"catalogID": "{D2E1A845-161D-48F8-960A-46CBB53FD97B}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12012,7 +12028,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{6BBCC88C-0A0A-4A7F-96D7-0AB43C9B98C9}",
+			"catalogID": "{3CDBDF0F-2004-48E7-837A-D3B6122189C8}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12093,7 +12109,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{3FEADD90-EBF4-491E-BEBD-2C286C5B9DE4}",
+			"catalogID": "{94729E16-9D7E-40EE-83CC-00A3DC3372A2}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToOne",
@@ -12174,7 +12190,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{5F757B7B-CDB6-438E-8E61-38CCA992029D}",
+			"catalogID": "{4D87FA74-2209-4376-A5A7-6C592682F394}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12255,7 +12271,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{AB266861-8D9B-4798-BA0E-9A442AE014F4}",
+			"catalogID": "{7031F607-1185-4092-946E-5925BEDF8417}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12336,7 +12352,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{F2BC8FF4-D7DD-4E1C-99B7-D51AB96430BD}",
+			"catalogID": "{89C0D479-F0A9-446F-83A7-105E96FDCDBA}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12417,7 +12433,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{700E6B3D-AEAC-4215-8AEC-79D29EBA092F}",
+			"catalogID": "{B00C6367-509E-43F7-BF9D-D52DE2C867DA}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12498,7 +12514,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{3A8C1FB8-22C4-4884-96AF-D046D075B025}",
+			"catalogID": "{0E79DFC6-EF0F-48EF-8B54-0AF24A004A43}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToOne",
@@ -12579,7 +12595,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{48D73F2D-C582-4878-88EA-47C5D5241782}",
+			"catalogID": "{7F8D5640-F869-4912-88DA-251A1F541067}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12660,7 +12676,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{05AF6B6E-12E0-4637-B6D6-93ED3C6912B5}",
+			"catalogID": "{E3FEE67D-662F-41A0-80E9-B49ED253327D}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToOne",
@@ -12741,7 +12757,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{E6C723AA-7CBB-4602-800A-E702F2E90942}",
+			"catalogID": "{B35EA53C-476B-4E03-B0DC-4F756A553F98}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToOne",
@@ -12822,7 +12838,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{BFE8A32F-E054-44C9-B603-5AF43FAF6C62}",
+			"catalogID": "{D17EE533-6973-4D34-BACE-D22FD3881FD3}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12903,7 +12919,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{288B3153-0898-4DF2-A597-E332FCC14A8C}",
+			"catalogID": "{6B34ABB9-6CCF-4ED4-A67F-4988998F8E6B}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -12984,7 +13000,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{FCD42230-105B-4094-A2A4-F231D84A6C9F}",
+			"catalogID": "{12030204-A090-473B-8570-029EFB21ED0F}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -13065,7 +13081,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{7FAF9BD4-1865-49D1-8059-A39533498F2A}",
+			"catalogID": "{37D88DD5-100A-45BA-AF0B-09A0F472C984}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -13146,7 +13162,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{82BD8005-5054-4E87-B6A7-40D26BCD5473}",
+			"catalogID": "{1298A251-7DDF-453F-860C-027D54A7AE7B}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -13227,7 +13243,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{66913452-9E9E-435E-BF83-4A4E14F19132}",
+			"catalogID": "{A0A0D5AC-671C-4936-9DDB-73854FCF7264}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToOne",
@@ -13308,7 +13324,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{8F33D479-FCDA-438B-A2B3-D2DD5E62A3EE}",
+			"catalogID": "{AD1817D5-3B00-429D-8BBD-E877C0297969}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToOne",
@@ -13389,7 +13405,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{F3913350-6811-4A37-90B3-F67751F22F0A}",
+			"catalogID": "{C291A42C-A2FD-4C27-9A48-FF6DCC4C2B69}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",
@@ -13470,7 +13486,7 @@
 			"lastEditorFieldName": "",
 			"editedAtFieldName": "",
 			"isTimeInUTC": true,
-			"catalogID": "{C2818F5D-3DB9-47D0-A17D-56DA15182FB2}",
+			"catalogID": "{4B0C6BB4-3A8A-4092-B160-AAF1AF9203C2}",
 			"fieldFilteringEnabled": false,
 			"attributeRules": [],
 			"cardinality": "esriRelCardinalityOneToMany",

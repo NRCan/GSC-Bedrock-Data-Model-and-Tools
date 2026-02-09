@@ -120,9 +120,6 @@
   <data name="Guide" xml:space="preserve">
     <value>Select database source to build layers from</value>
   </data>
-  <data name="ButtonEnvironmentAddProjectLayersTitle" xml:space="preserve">
-    <value>Project layers</value>
-  </data>
   <data name="ButtonEnvironmentTopologicalRulesTitle" xml:space="preserve">
     <value>Topological rules</value>
   </data>
@@ -688,9 +685,6 @@
   <data name="FormCoordinateSystemDialogTitle" xml:space="preserve">
     <value>Coordinate Systems</value>
   </data>
-  <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="FormLegendItemWrongSchema" xml:space="preserve">
     <value>Current tool is not available for schema under version 4.0.</value>
   </data>
@@ -702,5 +696,8 @@
   </data>
   <data name="FormLegendItemsDeleteAlreadyExists" xml:space="preserve">
     <value>Selected item to delete still has digitized geometries, cannot proceed with deletion.</value>
+  </data>
+  <data name="GSC_BEDROCKGDB_SCHEMA_V4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GSC_BEDROCKGDB_SCHEMA_V4_0.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

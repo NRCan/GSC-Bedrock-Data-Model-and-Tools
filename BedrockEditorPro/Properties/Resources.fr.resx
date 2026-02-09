@@ -120,9 +120,6 @@
   <data name="Guide" xml:space="preserve">
     <value>Sélectionnez une File Geodatabase comme sources des couches</value>
   </data>
-  <data name="ButtonEnvironmentAddProjectLayersTitle" xml:space="preserve">
-    <value>Couches de projet</value>
-  </data>
   <data name="ButtonEnvironmentTopologicalRulesTitle" xml:space="preserve">
     <value>Règle topologique</value>
   </data>

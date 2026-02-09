@@ -61,24 +61,6 @@ namespace BedrockEditorPro.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Project layers.
-        /// </summary>
-        public static string ButtonEnvironmentAddProjectLayersPromptTitle {
-            get {
-                return ResourceManager.GetString("ButtonEnvironmentAddProjectLayersPromptTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Project layers.
-        /// </summary>
-        public static string ButtonEnvironmentAddProjectLayersTitle {
-            get {
-                return ResourceManager.GetString("ButtonEnvironmentAddProjectLayersTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Select File Geodatabase to add Topology to:.
         /// </summary>
         public static string ButtonEnvironmentTopologicalRulesPromptTitle {
