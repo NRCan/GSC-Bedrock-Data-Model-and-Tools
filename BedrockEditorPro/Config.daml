@@ -1,11 +1,11 @@
 ﻿<ArcGIS defaultAssembly="BedrockEditorPro.dll" defaultNamespace="BedrockEditorPro" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Users/ghuotvez/AppData/Local/Programs/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{c4ac06a4-3afa-4bf5-ad80-8080d10b68f3}" version="4.0.0" desktopVersion="3.5.57366" product="ArcGISPro">
+  <AddInInfo id="{c4ac06a4-3afa-4bf5-ad80-8080d10b68f3}" version="4.0.1" desktopVersion="3.5.57366" product="ArcGISPro">
     <Name>GSC Bedrock Project</Name>
     <Description>Bedrock Data Management Tools</Description>
     <Image>Images\Hammer32.png</Image>
     <Author>Geological Survey Canada - Commission géologique du Canada</Author>
     <Company>Government of Canada - Gouvernement du Canada; Natural Resources Canada - Ressources naturelles Canada</Company>
-    <Date>01/08/2026 3:47:00 PM</Date>
+    <Date>08/28/2026 3:47:00 PM</Date>
     <Subject>Framework, Editing, Geodatabase, Geometry, Geology, Bedrock</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
